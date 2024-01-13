@@ -1,0 +1,5 @@
+#!/bin/bash
+sudo mount /dev/nvme0n1p4 /windows/Data
+sudo mount /dev/nvme0n1p3 /windows/Windows-SSD
+sudo mount /dev/nvme1n1p3 /windows/Code
+sudo mount /dev/nvme1n1p2 /windows/Hyper

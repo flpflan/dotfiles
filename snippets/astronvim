@@ -1,0 +1,1 @@
+exec -a "$NVIM_APPNAME" neovide -- -u "~/.config/astronvim/init.lua" "$@"
