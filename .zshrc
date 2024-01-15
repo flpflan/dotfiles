@@ -54,9 +54,6 @@ zinit ice depth=1; zinit light romkatv/powerlevel10k
 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
-alias nvim=neovide
-alias vim=neovide
-alias vi=neovide
 
 function launch_hyprland {
     exec Hyprland
