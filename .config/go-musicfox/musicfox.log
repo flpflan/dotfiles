@@ -1,0 +1,29 @@
+2024/01/16 23:26:35 [ERROR] Lastfm other err: lastfm key或secret为空
+github.com/go-musicfox/go-musicfox/internal/lastfm.NewClient
+	/home/flpflan/.cache/yay/go-musicfox-git/src/go-musicfox/internal/lastfm/api.go:26
+github.com/go-musicfox/go-musicfox/internal/ui.NewNetease
+	/home/flpflan/.cache/yay/go-musicfox-git/src/go-musicfox/internal/ui/netease.go:41
+github.com/go-musicfox/go-musicfox/internal/commands.runPlayer
+	/home/flpflan/.cache/yay/go-musicfox-git/src/go-musicfox/internal/commands/netease.go:44
+github.com/gookit/gcli/v2.(*Command).execute
+	/home/flpflan/.cache/yay/go-musicfox-git/src/go-musicfox/vendor/github.com/gookit/gcli/v2/cmd.go:243
+github.com/gookit/gcli/v2.(*App).doRun
+	/home/flpflan/.cache/yay/go-musicfox-git/src/go-musicfox/vendor/github.com/gookit/gcli/v2/app_run.go:173
+github.com/gookit/gcli/v2.(*App).Run
+	/home/flpflan/.cache/yay/go-musicfox-git/src/go-musicfox/vendor/github.com/gookit/gcli/v2/app_run.go:126
+github.com/go-musicfox/go-musicfox/internal/entry.runCLI
+	/home/flpflan/.cache/yay/go-musicfox-git/src/go-musicfox/internal/entry/cli.go:53
+github.com/go-musicfox/go-musicfox/internal/entry.AppEntry
+	/home/flpflan/.cache/yay/go-musicfox-git/src/go-musicfox/internal/entry/entry.go:10
+main.main
+	/home/flpflan/.cache/yay/go-musicfox-git/src/go-musicfox/cmd/musicfox.go:8
+runtime.main
+	/usr/lib/go/src/runtime/proc.go:267
+runtime.goexit
+	/usr/lib/go/src/runtime/asm_amd64.s:1650
+2024/01/16 23:26:35 [WARNIG] MPD kill失败:exit status 1, 详情:
+exception: unable to read the pid from file "/home/flpflan/.config/mpd/pid": No such file or directory
+2024/01/16 23:26:35 [ERROR] mpdPlayer, err: command 'setvol' failed: All outputs are disabled
+2024/01/16 23:26:43 [ERROR] mpdPlayer, err: command 'setvol' failed: Failed to set mixer for 'MPD PulseAudio Output'; disconnected
+2024/01/16 23:26:43 [ERROR] mpdPlayer, err: command 'setvol' failed: Failed to set mixer for 'MPD PulseAudio Output'; disconnected
+2024/01/16 23:26:43 [ERROR] mpdPlayer, err: command 'setvol' failed: Failed to set mixer for 'MPD PulseAudio Output'; disconnected
