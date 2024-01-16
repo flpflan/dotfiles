@@ -1,9 +1,9 @@
 ignore-empty-password
-font=JetBrainsMono Nerd Font
+font="JetBrainsMono Nerd Font"
 
 clock
 timestr=%R
-datestr=%a, %e of %B
+datestr=星期%a, %b%e
 
 screenshots
 
