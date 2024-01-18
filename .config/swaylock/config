@@ -1,6 +1,6 @@
 ignore-empty-password
-font="JetBrainsMono Nerd Font"
-
+font=LXGW Neo XiHei
+#font=Sarasa Term SC Nerd
 clock
 timestr=%R
 datestr=星期%a, %b%e
