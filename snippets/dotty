@@ -22,3 +22,11 @@ config add ~/.config/mimeapps.list
 config add ~/.local/share/fcitx5/themes
 config add ~/.local/share/fcitx5/rime/clover.custom.yaml
 config add ~/.local/share/fcitx5/rime/default.custom.yaml
+
+if [ -z "$1" ]; then
+  msg="meh"
+else
+  msg="$1"
+fi
+
+config commit -m "$msg" && config push
