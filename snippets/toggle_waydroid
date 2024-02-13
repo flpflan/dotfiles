@@ -1,0 +1,9 @@
+#!/bin/bash
+
+if pidof lxc-start >/dev/null; then
+	waydroid session stop
+	echo waydroid session power off
+else
+	waydroid session start
+	echo waydroid session power on
+fi

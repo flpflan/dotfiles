@@ -1,0 +1,8 @@
+{
+  "custom/arch": {
+    "format": "",
+    "tooltip": false,
+    "on-click": "wlogout",
+    "on-click-right": "fuzzel"
+  }
+}

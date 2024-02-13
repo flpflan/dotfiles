@@ -1,0 +1,1 @@
+吹毛求疵的检查：`cargo clippy -- -W clippy::pedantic` ( 具体还是要看clippy文档 )

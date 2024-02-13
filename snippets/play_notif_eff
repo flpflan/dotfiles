@@ -1,0 +1,16 @@
+#!/bin/sh
+
+APPNAME=$1
+SUMMARY=$2
+BODY=$3
+ICON=$4
+URGENCY=$5
+
+case $URGENCY in
+NORMAL)
+	mpv --no-video ~/Documents/normal.mp3
+	;;
+CRITICAL)
+	mpv --no-video ~/Documents/critical.wav
+	;;
+esac

@@ -4,5 +4,6 @@ return {
       format_on_save = false,
     },
   },
-  colorscheme = "catppuccin"
+  -- colorscheme = "tokyonight",
+  colorscheme = "catppuccin",
 }

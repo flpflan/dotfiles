@@ -1,0 +1,94 @@
+
+[global]
+    font = "Font Awesome 5 Free Regular 14, Ubuntu Light 13"
+    allow_markup = yes
+    markup = yes
+    format = "<span foreground='#5bb1b4'><b>%s</b></span>\n%b"
+    sort = yes
+    indicate_hidden = yes
+    bounce_freq = 0
+    show_age_threshold = 60
+    word_wrap = yes
+    ignore_newline = false
+    origin = top-right
+    transparency = 0
+    idle_threshold = 120
+    monitor = 0
+    follow = mouse
+    line_height = 0
+    separator_height = 2
+    padding = 12
+    horizontal_padding = 12
+    separator_color = "#3c4549"
+    separator_width = 1
+    startup_notification = false
+    corner_radius = 15
+    frame_color = "#3c4549"
+    frame_width = 1
+    width = 400
+    progress_bar_max_width = 400
+    progress_bar_min_width = 400
+    progress_bar_height = 10
+    progress_bar_frame_width = 1
+    progress_bar_corner_radius = 5
+    scale = 1
+    alignment = center
+    vertical_alignment = center
+    #offset = 12x67
+
+    ### Icons ###
+    min_icon_size = 64
+    max_icon_size = 64
+
+    ### History ###
+    sticky_history = no
+    history_length = 20
+
+    ### Mouse ###
+    mouse_left_click = do_action, close_current
+    mouse_middle_click = context, close_current
+    mouse_right_click = close_all
+
+    ### Misc/Advanced ###
+    dmenu = /usr/bin/fuzzel -d
+    browser = /usr/bin/xdg-open
+    enable_posix_regex = true
+
+[shortcuts]
+    close = ctrl+space
+    close_all = ctrl+shift+space
+    history = ctrl+grave
+    context = ctrl+shift+period
+
+[urgency_low]
+    background = "#131519"
+    foreground = "#ffffff"
+    highlight = "#5bb1b4"
+    timeout = 5
+
+[urgency_normal]
+    background = "#131519"
+    foreground = "#ffffff"
+    highlight = "#5bb1b4"
+    timeout = 10
+
+[urgency_critical]
+    background = "#131519"
+    foreground = "#ffffff"
+    highlight = "#5bb1b4"
+    timeout = 0
+    script = ~/snippets/play_notif_eff critical
+    format = "<span foreground='#e55265'><b>%s</b></span>\n%b"
+
+[play_sounds]
+    summary = ".*"
+    script = ~/snippets/play_notif_eff
+
+#[ignore]
+#    summary = "正在播放:.*"
+#    skip_display = true
+#    history_ignore = yes
+
+[history-ignore]
+    summary = "(Battery status)|([]  [0-9]+%)"
+    history_ignore = yes

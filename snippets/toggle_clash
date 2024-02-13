@@ -1,0 +1,8 @@
+#!/bin/bash
+if pidof clash >/dev/null; then
+	sudo systemctl stop clash.service
+	echo clash closed
+else
+	sudo systemctl start clash.service
+	echo start clash "(pid: $(pidof clash))"
+fi

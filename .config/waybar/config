@@ -1,159 +1,36 @@
-// -*- mode: json -*-
-
 {
-	"layer": "top",
-	"position": "bottom",
+    "layer": "top",
+    "position": "top",
+    "height": 30,
+    // "width": 1280,
+    "spacing": 8,
 
-	"modules-left": [
-		"hyprland/workspaces",
-		"custom/right-arrow-dark"
-	],
-	"modules-center": [
-		"custom/left-arrow-dark",
-		"clock#1",
-		"custom/left-arrow-light",
-		"custom/left-arrow-dark",
-		"clock#2",
-		"custom/right-arrow-dark",
-		"custom/right-arrow-light",
-		"clock#3",
-		"custom/right-arrow-dark"
-	],
-	"modules-right": [
-		"custom/left-arrow-dark",
-		"custom/notification",
-		"custom/left-arrow-light",
-		"custom/left-arrow-dark",
-		"pulseaudio",
-		"custom/left-arrow-light",
-		"custom/left-arrow-dark",
-		"memory",
-		"custom/left-arrow-light",
-		"custom/left-arrow-dark",
-		"cpu",
-		"custom/left-arrow-light",
-		"custom/left-arrow-dark",
-		"battery",
-		"custom/left-arrow-light",
-		"custom/left-arrow-dark",
-		"disk",
-		"custom/left-arrow-light",
-		"custom/left-arrow-dark",
-		"tray"
-	],
+    "include": [
+        "~/.config/waybar/modules/arch.json",
+        "~/.config/waybar/modules/backlight.json",
+        "~/.config/waybar/modules/battery#bat2.json",
+        "~/.config/waybar/modules/battery.json",
+        "~/.config/waybar/modules/bluetooth.json",
+        "~/.config/waybar/modules/clock.json",
+        "~/.config/waybar/modules/cpu.json",
+        "~/.config/waybar/modules/gamemode.json",
+        "~/.config/waybar/modules/idle_inhibitor.json",
+        "~/.config/waybar/modules/keyboard-state.json",
+        "~/.config/waybar/modules/media.json",
+        "~/.config/waybar/modules/memory.json",
+        "~/.config/waybar/modules/mpd.json",
+        "~/.config/waybar/modules/mpris.json",
+        "~/.config/waybar/modules/network.json",
+        "~/.config/waybar/modules/pulseaudio.json",
+        "~/.config/waybar/modules/scrathpad.json",
+        "~/.config/waybar/modules/submap.json",
+        "~/.config/waybar/modules/temperature.json",
+        "~/.config/waybar/modules/tray.json",
+        "~/.config/waybar/modules/workspace.json",
+    ],
 
-	"custom/notification": {
-		"tooltip": false,
-		"format": "{icon} {}",
-		"format-icons": {
-		        "notification": "<span foreground='red'><sup></sup></span>",
-			"none": "",
-			"dnd-notification": "<span foreground='red'><sup></sup></span>",
-			"dnd-none": "",
-			"inhibited-notification": "<span foreground='red'><sup></sup></span>",
-			"inhibited-none": "",
-			"dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
-			"dnd-inhibited-none": ""
-		},
-		"return-type": "json",
-		"exec-if": "which swaync-client",
-		"exec": "swaync-client -swb",
-		"on-click": "swaync-client -t -sw",
-		"on-click-right": "swaync-client -d -sw",
-		"escape": true
-	},
-	"custom/left-arrow-dark": {
-		"format": "",
-		"tooltip": false
-	},
-	"custom/left-arrow-light": {
-		"format": "",
-		"tooltip": false
-	},
-	"custom/right-arrow-dark": {
-		"format": "",
-		"tooltip": false
-	},
-	"custom/right-arrow-light": {
-		"format": "",
-		"tooltip": false
-	},
-
-	"hyprland/workspaces": {
-		"active-only": false,
-		"all-outputs": false,
-		"on-scroll-up": "hyprctl dispatch workspace e+1",
-		"on-scroll-down": "hyprctl dispatch workspace e-1",
-		"format": "{name}",
-		"on-click": "active",
-		"sort-by-number": true,
-		"persistent-workspaces": {
-			"*": 6
-		}
-	},
-
-	"clock#1": {
-		"format": "{:%a}",
-		"tooltip": false
-	},
-	"clock#2": {
-		"format": "{:%H:%M}",
-		"tooltip": false
-	},
-	"clock#3": {
-		"format": "{:%m-%d}",
-		"tooltip": false
-	},
-
-	"pulseaudio": {
-		"format": "{icon} {volume:2}%",
-		"format-bluetooth": "{icon}  {volume}%",
-		"format-muted": "MUTE",
-		"format-icons": {
-			"headphones": "",
-			"default": [
-				"",
-				""
-			]
-		},
-		"scroll-step": 5,
-		"on-click": "pamixer -t",
-		"on-click-right": "pavucontrol"
-	},
-	"memory": {
-		"interval": 5,
-		"format": "Mem {}%"
-	},
-	"cpu": {
-		"interval": 5,
-		"format": "CPU {usage:2}%"
-	},
-	"battery": {
-		"states": {
-			"good": 95,
-			"warning": 30,
-			"critical": 15
-		},
-		"format": "{icon} {capacity}%",
-		"format-charging": "󱎗 {capacity}%",
-    "format-plugged": " {capacity}%",
-    "format-alt": "{time} {icon}",
-		"format-icons": [
-			"",
-			"",
-			"",
-			"",
-			""
-		]
-	},
-	"disk": {
-		"interval": 5,
-		"format": "Disk {percentage_used:2}%",
-		"path": "/"
-	},
-	"tray": {
-		"icon-size": 21,
-		"spacing": 3,
-		"reverse-direction": true
-	},
+    "modules-left": ["custom/arch", "hyprland/workspaces"],
+    "modules-center": ["mpris"],
+    "modules-right": ["gamemode", "pulseaudio", "cpu", "memory", "backlight", "network", "bluetooth", "battery","clock", "tray"],
 }
+

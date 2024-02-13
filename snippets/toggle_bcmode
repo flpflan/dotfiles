@@ -1,0 +1,16 @@
+#!/bin/bash
+#
+# This script toggle the Battery Conservation Mode status.
+# Battery Conservation Mode is a feature that limits battery
+# charging to 55-60% of its capacity to improve battery life.
+#
+conservation_mode_file="/sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/conservation_mode"
+current_value=$(cat "$conservation_mode_file")
+
+if [ "$current_value" -eq 0 ]; then
+	su -c "echo 1 > $conservation_mode_file"
+	echo "Battery conservation mode enabled."
+else
+	su -c "echo 0 > $conservation_mode_file"
+	echo "Battery conservation mode disabled."
+fi

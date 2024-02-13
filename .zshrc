@@ -5,20 +5,16 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# Lines configured by zsh-newuser-install
-HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
-bindkey -v
-# End of lines configured by zsh-newuser-install
-# The following lines were added by compinstall
+##############################
+# Lines added by compinstall #
+##############################
 zstyle :compinstall filename '/home/flpflan/.zshrc'
-
 autoload -Uz compinit
 compinit
-# End of lines added by compinstall
 
-### Added by Zinit's installer
+###########################
+# Zinit's installer chunk #
+###########################
 if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
     print -P "%F{33} %F{220}Installing %F{33}ZDHARMA-CONTINUUM%F{220} Initiative Plugin Manager (%F{33}zdharma-continuum/zinit%F{220})…%f"
     command mkdir -p "$HOME/.local/share/zinit" && command chmod g-rwX "$HOME/.local/share/zinit"
@@ -39,9 +35,24 @@ zinit light-mode for \
     zdharma-continuum/zinit-annex-patch-dl \
     zdharma-continuum/zinit-annex-rust
 
-### End of Zinit's installer chunk
+################################
+# Global envirenment for shell #
+################################
+export GOPROXY="https://goproxy.io,direct"
 
-### My Configs
+export PATH="$PATH:$HOME/.cargo/bin:$HOME/snippets"
+
+export EDITOR="nvim"
+export VISUAL="nvim"
+
+##############
+# My configs #
+##############
+HISTFILE=~/.cache/.zsh_history
+HISTSIZE=1000
+SAVEHIST=1000
+bindkey -v
+
 zinit wait lucid for \
  atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay" \
     zdharma-continuum/fast-syntax-highlighting \
@@ -51,9 +62,29 @@ zinit wait lucid for \
     zsh-users/zsh-autosuggestions
 
 zinit ice depth=1; zinit light romkatv/powerlevel10k
+if [[ $TERM == "linux" ]]; then
+    [[ ! -f ~/.p10k.tty.zsh ]] || source ~/.p10k.tty.zsh
+  else
+    [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+fi
+zinit load ellie/atuin
+zinit load MichaelAquilina/zsh-you-should-use
 
-alias ls='ls --color=auto'
-alias grep='grep --color=auto'
+zstyle ':completion:*' menu select
+eval "$(zoxide init zsh)"
+autoload -U compinit && compinit -u
+
+
+alias rgrep=$(which grep); alias grep='rg'
+alias rcat=$(which cat); alias cat='bat'
+alias rdf=$(which df); alias df='duf'
+alias rdu=$(which du); alias du='ncdu'
+alias rls=$(which ls); alias ls='eza'
+alias rcd=$(which cd); alias cd='z'
+
+alias lsgit='eza -l --git'
+alias sudo='sudo -E'
+alias -g -- --help='--help 2>&1 | bat --language=help --style=plain'
 
 function launch_hyprland {
     exec Hyprland
@@ -67,10 +98,3 @@ function ya() {
     fi
     rm -f -- "$tmp"
 }
-
-eval "$(zoxide init zsh)"
-
-### End My Configs
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

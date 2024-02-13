@@ -1,0 +1,24 @@
+#!/bin/bash
+shopt -s expand_aliases
+alias config="/usr/bin/git --git-dir $HOME/.dotfiles --work-tree=$HOME"
+
+config add ~/gamemode.ini
+config add ~/snippets
+config add ~/profile/圈九 ~/profile/DE_PAKAGE
+config add ~/.zshrc ~/.zlogin ~/.p10k.zsh ~/.p10k.tty.zsh
+config add ~/.npmrc ~/.ideavimrc ~/.gtkrc-2.0
+config add ~/Documents/"Obsidian Vault" ~/Documents/normal.mp3 ~/Documents/critical.wav ~/Documents/neovide_cursor.js
+config add ~/.config/electron-flags.conf ~/.config/code-flags.conf
+config add ~/.config/alacritty ~/.config/atuin
+config add ~/.config/bat ~/.config/dooit ~/.config/dunst ~/.config/fcitx5
+config add ~/.config/feh ~/.config/fontconfig ~/.config/fsh
+config add ~/.config/fuzzel ~/.config/go-musicfox/go-musicfox.ini ~/.config/go-musicfox/logo.png
+config add ~/.config/htop ~/.config/hypr ~/.config/kitty
+config add ~/.config/mpv ~/.config/neofetch
+config add ~/.config/nvim ~/.config/qt5ct ~/.config/qt6ct
+config add ~/.config/swaylock ~/.config/waybar ~/.config/wlogout
+config add ~/.config/xsettingsd ~/.config/yazi
+config add ~/.config/mimeapps.list
+config add ~/.local/share/fcitx5/themes
+config add ~/.local/share/fcitx5/rime/clover.custom.yaml
+config add ~/.local/share/fcitx5/rime/default.custom.yaml

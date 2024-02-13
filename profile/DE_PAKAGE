@@ -1,34 +1,51 @@
 ## Hyprland Stuff
 yay -S hyprland-git hyprpicker-git waybar \
-swaync nwg-look wlogout \
-fcitx5 fcitx5-rime rime-cloverpinyin wofi pulseaudio pamixer \
+nwg-look wlogout hyprpicker \
+fcitx5 fcitx5-rime rime-cloverpinyin pamixer \
 kitty swayidle swaylock-effects-improved-git htop wev polkit-kde-agent \
-catppuccin-gtk-theme/cursors greetd-tuigreet brightnessctl hyprshot \
+catppuccin-gtk-theme/cursors brightnessctl hyprshot \
 udiskie fontconfig hyprpaper wps-office-cn wps-office-mui-zh-cn ttf-wps-fonts \
 papirus-icon-theme-git papirus-folders-catppuccin-git catppuccin-fcitx5-git \
-pavucontrol fuzzel alacritty zsh ttf-hack-nerd ttf-apple-emoji ttf-jetbrains-mono-nerd \
-ttf-firacode-nerd ttf-yrsa nerd-fonts-sarasa-term \
-sddm-git sddm-catppuccin-git wine wine-mono wine-gecko winetricks-git zenity \
+pavucontrol fuzzel alacritty zsh ttf-apple-emoji ttf-jetbrains-mono-nerd \
+ttf-firacode-nerd ttf-yrsa ttf-merriweather-sans ttf-merriweather ttf-lxgw-neo-xihei \
+sddm-git sddm-catppuccin-git dunst \
 
 ## Dependencies
-yay -S colord ffmpegthumbnailer gtk-engine-murrine gnome-keyring \
-playerctl \
+yay -S \
+playerctl bulez bluetuith pipewire-pulse networkmanager tlp tlp-rdw \
 ttf-font-awesome \
-ttf-icomoon-feather xdg-desktop-portal-hyprland-git \
-cliphist qt5ct qt6ct xdg-desktop-portal-gtk \
-xorg-xwayland qt5-wayland qt6-wayland glfw-wayland
+ttf-icomoon-feather xdg-desktop-portal-hyprland-git xdg-desktop-portal-gtk \
+qt5ct qt6ct \
+xorg-xwayland qt5-wayland qt6-wayland glfw-wayland \
+linux-zen clash-premium-bin batify-git 
 
 ## Apps
 yay -S visual-studio-code-bin google-chrome obs-studio-git linuxqq baidunetdisk-bin prismlauncher \
-intellij-idea-ultimate-edition clion neovim neovide beekeeper-studio
+intellij-idea-ultimate-edition neovim neovide beekeeper-studio-appimage unityhub-cn \
+obsidian rider godot blender hip-runtime-amd
 
 ## Toolchains
-yay -S rustup nodejs npm pnpm deno python-pip jre17-openjdk typescript go jdk-openjdk \
-cmake vcpkg
+yay -S rustup nodejs npm pnpm deno jre17-openjdk typescript go jdk-openjdk \
+cmake vcpkg clang lldb lld webkit2gtk
 
 ## cli tools
 yay -S yazi-git ffmpegthumbnailer unarchiver jq poppler fd ripgrep fzf zoxide \
-feh mpv unzip unrar p7zip lazygit imv figlet go-musicfox mpd dooit
+feh mpv unzip rar p7zip lazygit imv figlet go-musicfox dooit \
+zellij atuin eza bat duf ncdu subversion aria2 wget imhex 
 
 ## graphic driver
-sudo pacman -S mesa lib32-mesa xf86-video-amdgpu vulkan-radeon lib32-vulkan-radeon
+sudo pacman -S mesa xf86-video-amdgpu vulkan-radeon lib32-vulkan-radeon
+
+## Wine
+wine winetricks wine-mono wine-gecko lib32-mesa lib32-libpulse lib32-gnutls wine-nine \
+dxvk-bin vkd3d-proton-bin samba zenity
+
+## Steam
+steam ttf-libration adobe-source-han-sans-jp-fonts
+gamemode lib32-gamemode
+
+## Media
+libva-mesa-driver mesa-vdpau 
+
+## Waydroid
+
