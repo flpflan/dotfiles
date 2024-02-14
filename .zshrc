@@ -5,13 +5,6 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-##############################
-# Lines added by compinstall #
-##############################
-zstyle :compinstall filename '/home/flpflan/.zshrc'
-autoload -Uz compinit
-compinit
-
 ###########################
 # Zinit's installer chunk #
 ###########################
@@ -53,6 +46,12 @@ HISTSIZE=1000
 SAVEHIST=1000
 bindkey -v
 
+#zstyle ':completion:*' menu select
+# compinit must be located after sourcing zinit.zsh
+zstyle :compinstall filename '/home/flpflan/.zshrc'
+
+autoload -Uz compinit && compinit -u
+
 zinit wait lucid for \
  atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay" \
     zdharma-continuum/fast-syntax-highlighting \
@@ -67,20 +66,23 @@ if [[ $TERM == "linux" ]]; then
   else
     [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 fi
-zinit load ellie/atuin
-zinit load MichaelAquilina/zsh-you-should-use
+zinit ice wait"2" as"command" from"gh-r" lucid \
+  mv"zoxide*/zoxide -> zoxide" \
+  atclone"./zoxide init zsh --cmd cd > init.zsh" \
+  atpull"%atclone" src"init.zsh" nocompile'!'
+zinit ice atload "eval $(zoxide init zsh --cmd cd)"
+zinit light ajeetdsouza/zoxide
+zinit light ellie/atuin
+zinit light MichaelAquilina/zsh-you-should-use
 
-zstyle ':completion:*' menu select
-eval "$(zoxide init zsh)"
-autoload -U compinit && compinit -u
-
+zinit snippet OMZ::lib/completion.zsh
 
 alias rgrep=$(which grep); alias grep='rg'
+alias rnvim$(which vim); alias vim='nvim'
 alias rcat=$(which cat); alias cat='bat'
-alias rdf=$(which df); alias df='duf'
+alias rdf=$(which df);   alias df='duf'
 alias rdu=$(which du); alias du='ncdu'
 alias rls=$(which ls); alias ls='eza'
-alias rcd=$(which cd); alias cd='z'
 
 alias lsgit='eza -l --git'
 alias sudo='sudo -E'
