@@ -1,0 +1,6 @@
+{
+  "custom/lyrics": {
+    "exec": "~/.config/waybar/scripts/song.sh",
+    "interval": 1
+  }
+}

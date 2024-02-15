@@ -1,5 +1,5 @@
 ## Hyprland Stuff
-yay -S hyprland-git hyprpicker-git waybar \
+hyprland-git hyprpicker-git waybar \
 nwg-look wlogout hyprpicker \
 fcitx5 fcitx5-rime rime-cloverpinyin pamixer \
 kitty swayidle swaylock-effects-improved-git htop wev polkit-kde-agent \
@@ -11,25 +11,24 @@ ttf-firacode-nerd ttf-yrsa ttf-merriweather-sans ttf-merriweather ttf-lxgw-neo-x
 sddm-git sddm-catppuccin-git dunst \
 
 ## Dependencies
-yay -S \
 playerctl bulez bluetuith pipewire-pulse pipewire-alsa networkmanager tlp tlp-rdw \
 ttf-font-awesome \
 ttf-icomoon-feather xdg-desktop-portal-hyprland-git xdg-desktop-portal-gtk \
 qt5ct qt6ct \
 xorg-xwayland qt5-wayland qt6-wayland glfw-wayland \
-linux-zen clash-premium-bin batify-git 
+linux-zen clash-premium-bin batify-git ntfs-3g util-linux
 
 ## Apps
-yay -S visual-studio-code-bin google-chrome obs-studio-git linuxqq baidunetdisk-bin prismlauncher \
+visual-studio-code-bin google-chrome obs-studio-git linuxqq baidunetdisk-bin prismlauncher \
 intellij-idea-ultimate-edition neovim neovide beekeeper-studio-appimage unityhub-cn \
 obsidian rider godot blender hip-runtime-amd
 
 ## Toolchains
-yay -S rustup nodejs npm pnpm deno jre17-openjdk typescript go jdk-openjdk \
+rustup nodejs npm pnpm deno jre17-openjdk typescript go jdk-openjdk \
 cmake vcpkg clang lldb lld webkit2gtk
 
 ## cli tools
-yay -S yazi-git ffmpegthumbnailer unarchiver jq poppler fd ripgrep fzf zoxide \
+yazi-git ffmpegthumbnailer unarchiver jq poppler fd ripgrep fzf zoxide \
 feh mpv unzip rar p7zip lazygit imv figlet go-musicfox dooit \
 zellij atuin eza bat duf ncdu subversion aria2 wget imhex 
 
@@ -49,3 +48,5 @@ libva-mesa-driver mesa-vdpau
 
 ## Waydroid
 
+## Development
+redis

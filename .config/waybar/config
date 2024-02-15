@@ -16,6 +16,7 @@
         "~/.config/waybar/modules/gamemode.json",
         "~/.config/waybar/modules/idle_inhibitor.json",
         "~/.config/waybar/modules/keyboard-state.json",
+        "~/.config/waybar/modules/lyrics.json",
         "~/.config/waybar/modules/media.json",
         "~/.config/waybar/modules/memory.json",
         "~/.config/waybar/modules/mpd.json",
