@@ -12,7 +12,7 @@ sddm-git sddm-catppuccin-git dunst \
 
 ## Dependencies
 playerctl bulez bluetuith pipewire-pulse pipewire-alsa networkmanager tlp tlp-rdw \
-ttf-font-awesome \
+ttf-font-awesome alhp-keyring alhp-mirrorlist \
 ttf-icomoon-feather xdg-desktop-portal-hyprland-git xdg-desktop-portal-gtk \
 qt5ct qt6ct \
 xorg-xwayland qt5-wayland qt6-wayland glfw-wayland \
