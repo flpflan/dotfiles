@@ -18,17 +18,7 @@ window#waybar {
 	background: #1a1a1a;
 }
 
-#workspaces,
-#clock.1,
-#clock.2,
-#clock.3,
-#pulseaudio,
-#memory,
-#cpu,
-#battery,
-#disk,
-#custom-notification,
-#tray {
+#workspaces, #clock.1, #clock.2, #clock.3, #pulseaudio, #memory, #cpu, #battery, #disk, #custom-notification, #tray {
 	background: #1a1a1a;
 }
 

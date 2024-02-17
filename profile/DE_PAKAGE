@@ -8,7 +8,7 @@ udiskie fontconfig hyprpaper wps-office-cn wps-office-mui-zh-cn ttf-wps-fonts \
 papirus-icon-theme-git papirus-folders-catppuccin-git catppuccin-fcitx5-git \
 pavucontrol fuzzel alacritty zsh ttf-apple-emoji ttf-jetbrains-mono-nerd \
 ttf-firacode-nerd ttf-yrsa ttf-merriweather-sans ttf-merriweather ttf-lxgw-neo-xihei \
-sddm-git sddm-catppuccin-git dunst \
+dunst \
 
 ## Dependencies
 playerctl bulez bluetuith pipewire-pulse pipewire-alsa networkmanager tlp tlp-rdw \
@@ -25,12 +25,12 @@ obsidian rider godot blender hip-runtime-amd
 
 ## Toolchains
 rustup nodejs npm pnpm deno jre17-openjdk typescript go jdk-openjdk \
-cmake vcpkg clang lldb lld webkit2gtk
+cmake vcpkg clang lldb lld webkit2gtk dotnet-sdk
 
 ## cli tools
 yazi-git ffmpegthumbnailer unarchiver jq poppler fd ripgrep fzf zoxide \
 feh mpv unzip rar p7zip lazygit imv figlet go-musicfox dooit \
-zellij atuin eza bat duf ncdu subversion aria2 wget imhex 
+zellij atuin eza bat duf ncdu aria2 wget imhex 
 
 ## graphic driver
 sudo pacman -S mesa xf86-video-amdgpu vulkan-radeon lib32-vulkan-radeon
