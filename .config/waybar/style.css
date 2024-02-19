@@ -9,7 +9,8 @@ window#waybar {
     /* color: #fbf1c7; */
     color: #fdf6e3;
     /* background:  rgba(40,40,40,0.9); */
-	background: #292b2e;
+	/* background: #292b2e; */
+	background: rgba(41,43,46,0.9);
 }
 
 #custom-arch {

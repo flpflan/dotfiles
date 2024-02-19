@@ -7,8 +7,6 @@ EnumerateWithTriggerKeys=True
 AltTriggerKeys=
 # 向前切换输入法
 EnumerateForwardKeys=
-# 向后切换输入法
-EnumerateBackwardKeys=
 # 轮换输入法时跳过第一个输入法
 EnumerateSkipFirst=False
 # 向前切换输入分组
@@ -29,6 +27,9 @@ PrevCandidate=
 NextCandidate=
 # 切换是否使用嵌入预编辑
 TogglePreedit=
+
+[Hotkey/EnumerateBackwardKeys]
+0=Control+at
 
 [Behavior]
 # 默认状态为激活

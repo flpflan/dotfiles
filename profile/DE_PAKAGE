@@ -21,16 +21,16 @@ linux-zen clash-premium-bin batify-git ntfs-3g util-linux
 ## Apps
 visual-studio-code-bin google-chrome obs-studio-git linuxqq baidunetdisk-bin prismlauncher \
 intellij-idea-ultimate-edition neovim neovide beekeeper-studio-appimage unityhub-cn \
-obsidian rider godot blender hip-runtime-amd
+obsidian rider godot blender hip-runtime-amd zathura
 
 ## Toolchains
 rustup nodejs npm pnpm deno jre17-openjdk typescript go jdk-openjdk \
-cmake vcpkg clang lldb lld webkit2gtk dotnet-sdk
+cmake vcpkg clang lldb lld webkit2gtk dotnet-sdk python
 
 ## cli tools
 yazi-git ffmpegthumbnailer unarchiver jq poppler fd ripgrep fzf zoxide \
 feh mpv unzip rar p7zip lazygit imv figlet go-musicfox dooit \
-zellij atuin eza bat duf ncdu aria2 wget imhex 
+zellij atuin eza bat duf ncdu aria2 wget imhex git
 
 ## graphic driver
 sudo pacman -S mesa xf86-video-amdgpu vulkan-radeon lib32-vulkan-radeon
