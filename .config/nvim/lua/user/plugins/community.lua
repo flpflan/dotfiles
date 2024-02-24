@@ -22,6 +22,4 @@ return {
   { import = "astrocommunity.markdown-and-latex.peek-nvim" },
 
   { import = "astrocommunity.editing-support.todo-comments-nvim" },
-
-  { import = "astrocommunity.workflow.hardtime-nvim" },
 }

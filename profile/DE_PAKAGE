@@ -21,11 +21,11 @@ linux-zen clash-premium-bin batify-git ntfs-3g util-linux
 ## Apps
 visual-studio-code-bin google-chrome obs-studio linuxqq baidunetdisk-bin prismlauncher \
 intellij-idea-ultimate-edition neovim neovide beekeeper-studio-appimage unityhub-cn \
-obsidian rider godot blender hip-runtime-amd zathura zathur-pdf-poppler 
+obsidian rider godot blender hip-runtime-amd zathura zathur-pdf-poppler redis-insight-bin
 
 ## Toolchains
 rustup nodejs npm pnpm deno jre17-openjdk typescript go jdk-openjdk \
-cmake vcpkg clang lldb lld webkit2gtk dotnet-sdk python
+cmake vcpkg clang lldb lld webkit2gtk dotnet-sdk python 
 
 ## cli tools
 yazi ffmpegthumbnailer unarchiver jq poppler fd ripgrep fzf zoxide \
