@@ -8,7 +8,7 @@ udiskie fontconfig hyprpaper wps-office-cn wps-office-mui-zh-cn ttf-wps-fonts \
 papirus-icon-theme-git papirus-folders-catppuccin-git catppuccin-fcitx5-git \
 pavucontrol fuzzel alacritty zsh ttf-apple-emoji ttf-jetbrains-mono-nerd \
 ttf-firacode-nerd ttf-yrsa ttf-merriweather-sans ttf-merriweather ttf-lxgw-neo-xihei \
-dunst \
+ttf-recursive dunst \
 
 ## Dependencies
 playerctl bulez bluetuith pipewire-pulse pipewire-alsa networkmanager tlp tlp-rdw \

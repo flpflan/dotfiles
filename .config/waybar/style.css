@@ -6,7 +6,10 @@
 }
 
 window#waybar {
-    font-family: LXGW WenKai Screen;
+    /* font-family: LXGW WenKai Screen; */
+    /* font-family: Merriweather; */
+    /* font-family: LXGW Neo XiHei Screen; */
+    font-family: Rec Mono Casual;
     font-size: 15px;
     /* color: #fbf1c7; */
     /* color: #fdf6e3; */
