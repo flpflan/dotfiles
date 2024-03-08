@@ -220,6 +220,10 @@ tun:
 
 最后重启 Clash 服务即可，这样流量就会通过 TUN 接口转发，同时利用强大的分流规则，实现按需代理。也可以设置局域网内的网关地址和 DNS 服务器地址，实现透明网关。
 
-## 在 Chrome 浏览器中使用 Fcitx5
+## 在 Chrome 浏览器(Wayland Mode)中使用 Fcitx5
 
 添加 `--enable-wayland-ime` 启动参数
+
+# 使用 Photoshop
+
+[参考这个](https://forum.mattkc.com/viewtopic.php?t=336)
