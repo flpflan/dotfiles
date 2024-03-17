@@ -1,6 +1,6 @@
 {
     "label": "lock",
-    "action": "swaylock -f -i $(find ~/Pictures/lockscreens -type f|shuf -n 1)",
+    "action": "hyprlock -q",
     "text": "Lock",
     "keybind": "l"
 }

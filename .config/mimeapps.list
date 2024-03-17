@@ -9,6 +9,6 @@ x-scheme-handler/baiduyunguanjia=baidunetdisk.desktop
 x-scheme-handler/mailto=google-chrome.desktop
 inode/directory=yazi.desktop
 application/pdf=org.pwmt.zathura.desktop
-image/vnd.adobe.photoshop=krita_psd.desktop
+image/vnd.adobe.photoshop=photoshop.desktop
 image/png=feh.desktop
 image/jpeg=feh.desktop

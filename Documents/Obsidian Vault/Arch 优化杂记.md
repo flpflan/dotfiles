@@ -226,4 +226,4 @@ tun:
 
 # 使用 Photoshop
 
-[参考这个](https://forum.mattkc.com/viewtopic.php?t=336)
+[参考这个](https://forum.mattkc.com/viewtopic.php?t=336) [还有这个](https://appdb.winehq.org/objectManager.php?sClass=version&iId=41345)

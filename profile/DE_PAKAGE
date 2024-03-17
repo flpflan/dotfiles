@@ -2,14 +2,14 @@
 hyprland hyprpicker waybar \
 nwg-look wlogout hyprpicker \
 fcitx5 fcitx5-rime rime-cloverpinyin pamixer \
-kitty swayidle swaylock-effects-improved-git htop wev polkit-kde-agent \
+kitty hypridle htop wev polkit-kde-agent \
 catppuccin-gtk-theme/cursors brightnessctl hyprshot \
 udiskie fontconfig hyprpaper \
 wps-office-cn wps-office-mui-zh-cn ttf-wps-fonts otf-noto-sans-cjk \ # wps
 papirus-icon-theme-git papirus-folders-catppuccin-git catppuccin-fcitx5-git \
 pavucontrol fuzzel alacritty zsh ttf-apple-emoji ttf-jetbrains-mono-nerd \
 ttf-firacode-nerd ttf-yrsa ttf-merriweather-sans ttf-merriweather ttf-lxgw-neo-xihei \
-ttf-recursive dunst waylyrics \
+ttf-recursive dunst waylyrics hyprlock \
 
 ## Dependencies
 playerctl bulez bluetuith pipewire-pulse pipewire-alsa networkmanager tlp tlp-rdw \
