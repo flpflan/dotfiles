@@ -8,6 +8,7 @@ udiskie fontconfig hyprpaper \
 wps-office-cn wps-office-mui-zh-cn ttf-wps-fonts otf-noto-sans-cjk \ # wps
 papirus-icon-theme-git papirus-folders-catppuccin-git catppuccin-fcitx5-git \
 pavucontrol fuzzel alacritty zsh ttf-apple-emoji ttf-jetbrains-mono-nerd \
+adobe-source-code-pro-fonts \
 ttf-firacode-nerd ttf-yrsa ttf-merriweather-sans ttf-merriweather ttf-lxgw-neo-xihei \
 ttf-recursive dunst waylyrics hyprlock \
 
