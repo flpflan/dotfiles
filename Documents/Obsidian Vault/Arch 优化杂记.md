@@ -227,3 +227,7 @@ tun:
 # 使用 Photoshop
 
 [参考这个](https://forum.mattkc.com/viewtopic.php?t=336) [还有这个](https://appdb.winehq.org/objectManager.php?sClass=version&iId=41345)
+
+# Pipewire Setup
+
+[参考这个](https://www.delinuxco.com/2023/07/04/pipewire-audio-setup-make-linux-sound-great/)

@@ -34,6 +34,12 @@ show-default-text-on-idle = false
 # whether to run tray-icon service
 show-tray-icon = true
 
+# player with these name will be ignored
+player-name-blacklist = ["firefox"]
+
+# player with these identity will be ignored
+player-identity-blacklist = []
+
 [triggers]
 # shortcuts when focusing on waylyrics
 # for global ones, please install the `.desktop` file
