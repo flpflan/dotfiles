@@ -11,6 +11,7 @@ pavucontrol fuzzel alacritty zsh ttf-apple-emoji ttf-jetbrains-mono-nerd \
 adobe-source-code-pro-fonts \
 ttf-firacode-nerd ttf-yrsa ttf-merriweather-sans ttf-merriweather ttf-lxgw-neo-xihei \
 ttf-recursive dunst waylyrics hyprlock \
+liteloader-qqnt-bin
 
 ## Dependencies
 playerctl bulez bluetuith networkmanager tlp tlp-rdw \
@@ -27,12 +28,12 @@ obsidian rider godot blender hip-runtime-amd zathura zathur-pdf-poppler krita mu
 
 ## Toolchains
 rustup nodejs npm pnpm deno jre17-openjdk typescript go jdk-openjdk \
-cmake vcpkg clang lldb lld webkit2gtk dotnet-sdk python 
+cmake vcpkg clang lldb lld webkit2gtk dotnet-sdk python maturin
 
 ## cli tools
 yazi ffmpegthumbnailer unarchiver jq poppler fd ripgrep fzf zoxide \
 feh mpv unzip rar p7zip lazygit imv figlet go-musicfox dooit \
-zellij atuin eza bat duf ncdu aria2 wget imhex git valgrind
+zellij atuin eza bat duf ncdu aria2 wget imhex git valgrind bottom
 
 ## graphic driver
 sudo pacman -S mesa xf86-video-amdgpu vulkan-radeon lib32-vulkan-radeon
@@ -52,7 +53,7 @@ gstreamer-vaapi gst-plugins-bad
 ## Waydroid
 
 ## Development
-redis redis-insight-bin beekeeper-studio-appimage 
+redis redis-insight-bin beekeeper-studio-appimage docker docker-compose
 
 ## Audio
 pipewire-pulse pipewire-alsa pipewire-jack 
