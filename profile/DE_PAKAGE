@@ -3,7 +3,7 @@ hyprland hyprpicker waybar \
 nwg-look wlogout hyprpicker \
 fcitx5 fcitx5-rime rime-cloverpinyin pamixer \
 kitty hypridle htop wev polkit-kde-agent \
-catppuccin-gtk-theme/cursors brightnessctl hyprshot \
+catppuccin-gtk-theme brightnessctl hyprshot \
 udiskie fontconfig hyprpaper \
 wps-office-cn wps-office-mui-zh-cn ttf-wps-fonts otf-noto-sans-cjk \ # wps
 papirus-icon-theme-git papirus-folders-catppuccin-git catppuccin-fcitx5-git \
@@ -28,7 +28,7 @@ obsidian rider godot blender hip-runtime-amd zathura zathur-pdf-poppler krita mu
 
 ## Toolchains
 rustup nodejs npm pnpm deno jre17-openjdk typescript go jdk-openjdk \
-cmake vcpkg clang lldb lld webkit2gtk dotnet-sdk python maturin
+cmake vcpkg clang lldb lld webkit2gtk dotnet-sdk python maturin rust-analyzer
 
 ## cli tools
 yazi ffmpegthumbnailer unarchiver jq poppler fd ripgrep fzf zoxide \

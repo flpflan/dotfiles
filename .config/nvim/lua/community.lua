@@ -32,7 +32,7 @@ return {
   { import = "astrocommunity.markdown-and-latex.peek-nvim" },
   -- { import = "astrocommunity.markdown-and-latex.markdown-preview-nvim" },
 
-  -- { import = "astrocommunity.editing-support.todo-comments-nvim" },
+  -- { import = "astrocommunity.editing-support.todo-comments-nvim" }, -- Now it's part of AstroNvim
   { import = "astrocommunity.editing-support.nvim-treesitter-endwise" },
   -- { import = "astrocommunity.editing-support.nvim-devdocs" },
 
