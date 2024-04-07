@@ -235,3 +235,7 @@ tun:
 ## Docker
 
 [配置 docker 使用 btrfs 驱动](https://docs.docker.com/storage/storagedriver/btrfs-driver/)
+
+## Wine / Proton 下使用 BepinEx
+
+添加 `winhttp` 函数库顶替

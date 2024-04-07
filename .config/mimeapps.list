@@ -12,3 +12,4 @@ application/pdf=org.pwmt.zathura.desktop
 image/vnd.adobe.photoshop=photoshop.desktop
 image/png=feh.desktop
 image/jpeg=feh.desktop
+x-scheme-handler/bilipc=bilibili.desktop
