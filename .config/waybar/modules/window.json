@@ -1,0 +1,11 @@
+{
+  "hyprland/window": {
+    "format": "👉 {}",
+    "rewrite": {
+      "(.*) — Mozilla Firefox": "🌎 $1",
+      "(.*) - fish": "> [$1]"
+    },
+    "separate-outputs": true,
+    "max-length": 64
+  }
+}

@@ -3,7 +3,7 @@
     "position": "top",
     "height": 30,
     // "width": 1280,
-    "spacing": 8,
+    "spacing": 4,
 
     "include": [
         "~/.config/waybar/modules/arch.json",
@@ -27,6 +27,7 @@
         "~/.config/waybar/modules/submap.json",
         "~/.config/waybar/modules/temperature.json",
         "~/.config/waybar/modules/tray.json",
+        "~/.config/waybar/modules/window.json",
         "~/.config/waybar/modules/workspace.json",
     ],
 

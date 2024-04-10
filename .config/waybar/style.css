@@ -141,3 +141,11 @@ window#waybar {
 #custom-arch {
     color: #6c71ff;
 }
+
+#battery.critical:not(.charging) {
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
