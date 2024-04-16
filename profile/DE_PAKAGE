@@ -11,7 +11,8 @@ pavucontrol fuzzel alacritty zsh ttf-apple-emoji ttf-jetbrains-mono-nerd \
 adobe-source-code-pro-fonts \
 ttf-firacode-nerd ttf-yrsa ttf-merriweather-sans ttf-merriweather ttf-lxgw-neo-xihei \
 ttf-recursive dunst waylyrics hyprlock \
-liteloader-qqnt-bin
+liteloader-qqnt-bin \
+catppuccin-cursors-macchiato
 
 ## Dependencies
 playerctl bulez bluetuith networkmanager tlp tlp-rdw \
@@ -23,7 +24,7 @@ linux-zen clash-premium-bin batify-git ntfs-3g util-linux
 
 ## Apps
 visual-studio-code-bin google-chrome obs-studio linuxqq baidunetdisk-bin prismlauncher \
-intellij-idea-ultimate-edition neovim neovide unityhub-cn \
+intellij-idea-ultimate-edition intellij-idea-ultimate-edition-jre neovim neovide unityhub-cn \
 obsidian rider godot blender hip-runtime-amd zathura zathur-pdf-poppler krita mumble \
 bilibili
 

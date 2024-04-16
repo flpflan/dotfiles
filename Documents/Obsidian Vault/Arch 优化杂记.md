@@ -239,3 +239,13 @@ tun:
 ## Wine / Proton 下使用 BepinEx
 
 添加 `winhttp` 函数库顶替
+
+## JetBrains 系 IDE 字体发虚
+
+找到 IDE 对应的 vmoptions 文件，添加：
+
+```
+-Dawt.useSystemAAFontSettings=on
+-Dswing.aatext=true
+-Dsun.java2d.xrender=true
+```

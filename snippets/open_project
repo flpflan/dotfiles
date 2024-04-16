@@ -1,0 +1,17 @@
+#!/bin/bash
+
+projects="$(dir ~/myproject/)"
+
+select name in $projects; do
+	project="$(realpath ~/myproject)/$name"
+
+	if [ $VISUAL ]; then
+		$VISUAL $project
+	elif [ $EDITOR ]; then
+		$EDITOR $project
+	else
+		xdg-open $project
+	fi
+
+	break
+done

@@ -36,7 +36,7 @@ export GOPROXY="https://goproxy.io,direct"
 export PATH="$PATH:$HOME/.cargo/bin:$HOME/snippets"
 
 export EDITOR="nvim"
-export VISUAL="nvim"
+export VISUAL="neovide"
 
 ##############
 # My configs #
