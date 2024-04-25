@@ -26,7 +26,7 @@ linux-zen clash-premium-bin batify-git ntfs-3g util-linux
 visual-studio-code-bin google-chrome obs-studio linuxqq baidunetdisk-bin prismlauncher \
 intellij-idea-ultimate-edition intellij-idea-ultimate-edition-jre neovim neovide unityhub-cn \
 obsidian rider godot blender hip-runtime-amd zathura zathur-pdf-poppler krita mumble \
-bilibili
+bilibili 
 
 ## Toolchains
 rustup nodejs npm pnpm deno jre17-openjdk typescript go jdk-openjdk \
