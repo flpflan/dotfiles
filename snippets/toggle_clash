@@ -1,8 +1,39 @@
 #!/bin/bash
-if pidof clash >/dev/null; then
+
+toggle() {
+	if pidof clash >/dev/null; then
+		sudo systemctl stop clash.service
+		echo clash closed
+	else
+		sudo systemctl start clash.service
+		echo start clash "(pid: $(pidof clash))"
+	fi
+}
+
+close() {
 	sudo systemctl stop clash.service
 	echo clash closed
-else
+}
+
+start() {
 	sudo systemctl start clash.service
 	echo start clash "(pid: $(pidof clash))"
+}
+
+query() {
+	if pidof clash >/dev/null; then
+		echo "clash status: On"
+	else
+		echo "clash status: Off"
+	fi
+}
+
+if [ -z "$1" ] || [ "$1" == "toggle" ]; then
+	toggle
+elif [ "$1" == "close" ]; then
+	close
+elif [ "$1" == "start" ]; then
+	start
+elif [ "$1" == "query" ]; then
+	query
 fi
