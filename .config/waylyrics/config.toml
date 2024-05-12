@@ -20,6 +20,11 @@ theme = "no-background"
 # if enabled, lyrics match one or more `filter_regex` will be hidden
 enable-filter-regex = false
 
+# if enabled, when waylyrics find `xesam:url`
+# starts with `file://` and no any other hint was matched,
+# waylyrics will try to read the `.lrc` file has same filename
+enable-local-lyric = true
+
 # hide lyric if it matches any of these regexies
 # inspired by LyricX's filter list
 filter-regexies = ["^作词", "^作詞", "^作曲", "^編曲", "^编曲", "^収録", "^收录", "^演唱", "^歌手", "^歌曲", "^制作", "^製作", "^歌词", "^歌詞", "^翻譯", "^翻译", "^插曲", "^插入歌", "^主题歌", "^主題歌", "^片頭曲", "^片头曲", "^片尾曲", "^SoundTrack", "^アニメ"]
@@ -30,6 +35,9 @@ lyric-search-source = ["网易云音乐"]
 # if enabled, waylyrics will set `DEFAULT_TEXT` on idle,
 # otherwise it just show nothing
 show-default-text-on-idle = false
+
+# if enabled, waylyrics will show lyric on `Pause`
+show-lyric-on-pause = true
 
 # whether to run tray-icon service
 show-tray-icon = true

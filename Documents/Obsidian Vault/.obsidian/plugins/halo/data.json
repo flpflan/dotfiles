@@ -1,0 +1,11 @@
+{
+  "sites": [
+    {
+      "name": "Elixirs",
+      "url": "https://blog.flpflan.moe",
+      "token": "pat_eyJraWQiOiJUMW1UMkVuN1FMSkVJNWtKa3YxWUlfWmJacGJaZXhZakRuUG00ZWxGeGdBIiwiYWxnIjoiUlMyNTYifQ.eyJpc3MiOiJodHRwczovL2Jsb2cuZmxwZmxhbi5tb2UiLCJzdWIiOiJmb3J5cnJyciIsImlhdCI6MTcxNTQxNTQyNSwianRpIjoiN2ZjZDRlMWMtYTEzMi04YTczLTEwZTItM2E1NTlmMzAyNWI5IiwicGF0X25hbWUiOiJwYXQtZm9yeXJycnItZExsVVgifQ.gqk49_InOZ0WZQJtZ3XkxPiYMTDn1DeFAqMzjXQA00D8EpUp7aWr4ahCHiVJyfr5fBdHBW2K3hrhGTY--QkxffXaHAlxdIiDlUYUqHiljEex4x7Bbc-NcIMsG8DmCeSlicUDK69OBhLvnlwXHR1bEkfBcZ57FgnYXQlKfPp0_Sxb9XuXbJy518lshl6mLAbMoP6yzuAQM2fak81GB9Pd3QJ7ADUNHQD7CzaqfDL-EkSOzqgksHMSWtppdFGvP8HIYSD3CsuHCL9GneQUbkAyHVhP1FIoFt696s_X4k6YgKyE56Cy9kfhLiLkSibjmYlcc-sxzaS0meESJFrGSEUwlJU3uJRJRpk_6Pq8Zcwewo2Wzh242NXNmmKDFnQWAmuhLe0TIc6QEk_Yc8zsgIzSsOOWN0RIhUg8boGM3tpzkyWB2XgWFeSKM8ViW-43xeDq7sl5i0XpJ02AQQJHfE0o2u4cv8a8pBKSdPHgeJIqyH2qMF_DGvx84z7d8n8NZBtSEpsYRwIVuJTgGw3vJitf8-ZOi-qTZbbYxwQt22OrN89f52K4HAzDttCXe2TzI_nO9sBEM_r5F5mhEjbBdLWQLazpTLBAxSxHjW34X1iM0wpYzthM13Un8xjlySW_lnGcWgx9KWeHtHAUBypcm0_l41BeyKvA0EsVFG0Fcf4pk9o",
+      "default": true
+    }
+  ],
+  "publishByDefault": false
+}

@@ -9,4 +9,5 @@ import = [
 [font]
 size = 14
 #normal = { family = "JetBrainsMono Nerd Font", style = "Regular" }
-normal = { family = "Recursive Mono Casual Static", style = "Medium" }
+#normal = { family = "Recursive Mono Casual Static", style = "Medium" }
+normal = { family = "FiraCode Nerd Font", style = "Retina" }

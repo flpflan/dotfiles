@@ -62,8 +62,8 @@ zinit wait lucid for \
 
 zinit ice depth=1; zinit light romkatv/powerlevel10k
 if [[ $TERM == "linux" ]]; then
-    [[ ! -f ~/.p10k.tty.zsh ]] || source ~/.p10k.tty.zsh
-  else
+    [[ ! -f ~/.p10k-tty.zsh ]] || source ~/.p10k-tty.zsh
+else
     [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 fi
 zinit ice wait"2" as"command" from"gh-r" lucid \
@@ -87,6 +87,8 @@ alias rls=$(which ls); alias ls='eza'
 alias lsgit='eza -l --git'
 alias sudo='sudo -E'
 alias -g -- --help='--help 2>&1 | bat --language=help --style=plain'
+alias tc='toggle_clash'
+alias tb='toggle_bcmode'
 
 function launch_hyprland {
     exec Hyprland

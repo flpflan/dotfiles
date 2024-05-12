@@ -25,7 +25,7 @@ linux-zen clash-premium-bin batify-git ntfs-3g util-linux
 ## Apps
 visual-studio-code-bin google-chrome obs-studio linuxqq baidunetdisk-bin prismlauncher \
 intellij-idea-ultimate-edition intellij-idea-ultimate-edition-jre neovim neovide unityhub-cn \
-obsidian rider godot blender hip-runtime-amd zathura zathur-pdf-poppler krita mumble \
+obsidian rider godot blender hip-runtime-amd zathura zathur-pdf-poppler krita \
 bilibili 
 
 ## Toolchains
@@ -35,7 +35,7 @@ cmake vcpkg clang lldb lld webkit2gtk dotnet-sdk python maturin rust-analyzer
 ## cli tools
 yazi ffmpegthumbnailer unarchiver jq poppler fd ripgrep fzf zoxide \
 feh mpv unzip rar p7zip lazygit imv figlet go-musicfox dooit \
-zellij atuin eza bat duf ncdu aria2 wget imhex git valgrind bottom dnslookup
+zellij atuin eza bat duf ncdu aria2 wget imhex git valgrind bottom dnslookup nmap
 
 ## graphic driver
 sudo pacman -S mesa xf86-video-amdgpu vulkan-radeon lib32-vulkan-radeon
@@ -55,7 +55,8 @@ gstreamer-vaapi gst-plugins-bad
 ## Waydroid
 
 ## Development
-redis redis-insight-bin beekeeper-studio-appimage docker docker-compose
+redis redis-insight-bin beekeeper-studio-appimage docker docker-compose \
+minicom 
 
 ## Audio
 pipewire-pulse pipewire-alsa pipewire-jack 

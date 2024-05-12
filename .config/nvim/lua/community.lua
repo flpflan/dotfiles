@@ -10,7 +10,6 @@ return {
   { import = "astrocommunity.pack.rust" },
   { import = "astrocommunity.pack.bash" },
   { import = "astrocommunity.pack.lua" },
-  { import = "astrocommunity.pack.json" },
   { import = "astrocommunity.pack.go" },
   { import = "astrocommunity.pack.html-css" },
   { import = "astrocommunity.pack.markdown" },
@@ -39,4 +38,8 @@ return {
   { import = "astrocommunity.programming-language-support.web-tools-nvim", enabled = false },
 
   { import = "astrocommunity.utility.nvim-toggler" },
+
+  -- { import = "astrocommunity.diagnostics.error-lens-nvim" },
+  { import = "astrocommunity.diagnostics.trouble-nvim" },
+  -- { import = "astrocommunity.diagnostics.lsp_lines-nvim" },
 }

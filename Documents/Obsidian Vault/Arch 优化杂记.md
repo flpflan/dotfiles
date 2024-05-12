@@ -1,8 +1,19 @@
-## 关闭CPU漏洞环境措施以提高性能
+---
+title: Arch 优化杂记
+slug: arch-you-hua-za-ji
+cover: ""
+categories: []
+tags: []
+halo:
+  site: https://blog.flpflan.moe
+  name: 4872133c-66f7-4979-8072-953ecd78e840
+  publish: true
+---
+# 关闭CPU漏洞环境措施以提高性能
 
 添加内核参数：`mitigations=off`
 
-## 使用TLP延长待机时间
+# 使用TLP延长待机时间
 
 安装软件包：`tlp` `tlp-rdw` `ethtool` `smartmontools`
 
@@ -10,33 +21,34 @@
 
 屏蔽 systemd 服务`systemd-rfkill.service` 以及套接字 `systemd-rfkill.socket`
 
-```
+```bash
 systemctl mask systemd-rfkill.service systemd-rfkill.socket
 ```
 
 配置文件位于`/etc/tlp.conf`, 可能需要手动改一下配置（如`DISK_DEVICES`）
-## 硬件视频加速
+# 硬件视频加速
 
 `yay -S libva-mesa-driver lib32-libva-mesa-driver mesa-vdpau lib32-mesa-vdpau`
 
 对于vdpau硬解，amdgpu要添加环境变量：`VDPAU_DRIVER=radeonsi`
 
-## 关闭看门狗
+# 关闭看门狗
 
 用`journalctl -b -1|grep watchdog`找出看门狗名称，然后添加内核参数：`nowatchdog` `modprobe.blacklist=wdat_wdt`
 
 AMD Ryzen CPU需要额外禁用`sp5100_tco`
-## 微码
+# 微码
 
 参见 [Arch Wiki](https://wiki.archlinuxcn.org/wiki/AMD_Ryzen)
 
-## 音频静音 LED
+# 音频静音 LED
 
 参见 [Arch Wiki](https://wiki.archlinuxcn.org/wiki/%E7%AC%94%E8%AE%B0%E6%9C%AC%E7%94%B5%E8%84%91#%E9%9F%B3%E9%A2%91%E9%9D%99%E9%9F%B3_LED)
 
-## 自动登录和自动NumLock on
+# 自动登录和自动NumLock on
+## 通用
 
-```
+```ini
 # /etc/systemd/system/getty@tty1.service.d/autologin.conf
 
 [Service]
@@ -44,41 +56,52 @@ ExecStart=
 ExecStart=-/sbin/agetty -o '-p -f -- \\u' --noclear --autologin username %I $TERM
 ```
 
-```
+```ini
 # /etc/systemd/system/getty@.service.d/activate-numlock.conf
 
 [Service]
 ExecStartPre=/bin/sh -c 'setleds -D +num < /dev/%I'
 ```
 
-## GameMode
+## Hyprland
+
+在配置文件的 `input` 变量里添加 `numlock_by_default = true`
+
+```
+input {
+	...
+	numlock_by_default = true
+}
+```
+
+# GameMode
 
 将自己添加到gamemode组：`sudo usermod -aG gamemode $USER`
 
-## Wine
+# Wine
 
 黑屏的话，可以尝试用`--disable-gpu`启动参数禁用GPU加速
 
-## SSD TRIM
+# SSD TRIM
 
 安装 `util-linux` 包，然后 `systemctl enable fstrim.timer` 启用定时 TRIM
 
-## SSD 调度器
+# SSD 调度器
 
 `cat /sys/block/nvme0n1/queue/scheduler`(nvme0n1为对应盘符)查看当前调度器，固态盘用kyber就好
 
-## Ext4 禁用屏障
+# Ext4 禁用屏障
 
 文件系统中添加`barrier=0`选项（非笔记本不建议启用）
 
 通过`cat /proc/mounts`，如果有出现barrier=1说明启用了barrier
 
-## 备份盘
+# 备份盘
 
 建议用 rsync, 连同文件权限及修改时间一起备份(路径最后的 **/** 不能省略，有无 **/** 对 rsync 来说是不同的路径)
 `rsync -avrh --progress /mnt/to/ /from/`
 
-## BBR算法
+# BBR算法
 
 谷歌开发的BBR 拥塞控制算法，可以实现更高的带宽和更低的延迟，想要优化网速，可以尝试开启这个功能，首先加载内核模块 `tcp_bbr`，`sudo modprobe tcp_bbr`，之后编辑 `/etc/sysctl.d/30-bbr.conf`：
 
@@ -89,7 +112,7 @@ net.ipv4.tcp_congestion_control = bbr
 
 之后重启，应该就能生效了。
 
-## ALHP
+# ALHP
 
 ALHP 软件源将 Arch Linux 官方源中的软件包进行了重新编译，使用了 `x86-64-v2` 和 `x86-64-v3` 优化，可以提升一部分性能。
 
@@ -106,7 +129,7 @@ Subdirectories of glibc-hwcaps directories, in priority order:
 
 之后从 AUR 安装 `alhp-keyring` 和 `alhp-mirrorlist`，之后编辑 `/etc/pacman.d/alhp-mirrorlist` 镜像列表，alhp 在国内有上海科技大学镜像站一个镜像源，这个镜像源速度不太稳定，不过也比其他国外镜像快许多，推荐将这个镜像源放在首位。之后编辑 `/etc/pacman.conf`，添加：
 
-```
+```ini
 [core-x86-64-v3]
 Include = /etc/pacman.d/alhp-mirrorlist
 
@@ -123,7 +146,9 @@ Include = /etc/pacman.d/alhp-mirrorlist
 
 若遇到了问题，想要禁用这个软件源，只需删除 `/etc/pacman.conf` 中对应的内容，卸载 `alhp-keyring` 和 `alhp-mirrorlist`，之后运行 `sudo pacman -Suuy`，就可以将所有软件包恢复到官方了。
 
-## 时间同步
+**注：可添加 'cachyos' 仓库，参考[这个](https://blog.chyk.ink/2022/08/11/arch-linux-upgrade-to-x86-64-v3-microarchitecture/)**
+
+# 时间同步
 
 systemd 自带了一个 systemd-timesyncd 服务，提供了简单的时间同步服务，若是没有特别需求，这个服务已经够用了。不过这个服务默认使用的是 Arch Linux 自己的 NTP 服务器，在国内访问较慢，有时会导致时间同步失败，为了更快地同步时间，可以选用其他的 NTP 服务器，我选用了中国 NTP 快速授时服务和中国计量科学研究院 NIM 授时服务的 NTP 服务器，编辑 `/etc/systemd/timesyncd.conf`，添加或编辑如下一行：
 
@@ -165,12 +190,12 @@ Root distance: 45us (max: 5s)
 
 可以看到这里 offset 只有不到 3 毫秒，还是很精准的。
 
-## Clash TUN 模式
+# Clash TUN 模式
 新版的 Clash Premium 内核支持 TUN 模式，且目前已支持 Linux 系统下的 auto-route 和 auto-detect-interface，无需手动设置转发表，可以方便快捷的实现 透明网关（旁路由） 的功能。
 
 首先需要下载 Clash Premium 版本：
 
-```
+```bash
 yay -S clash-premium-bin
 ```
 
@@ -182,13 +207,13 @@ net.ipv4.ip_forward=1
 
 保存退出后，执行以下命令使修改生效：
 
-```
+```bash
 sudo sysctl -p
 ```
 
 然后接着需要关闭系统的 DNS 服务，使用以下命令：
 
-```
+```bash
 sudo systemctl stop systemd-resolved
 sudo systemctl disable systemd-resolved
 ```
@@ -197,7 +222,7 @@ sudo systemctl disable systemd-resolved
 
 接着需要设置 Clash 的配置文件，添加以下内容：
 
-```
+```yaml
 dns:
   enable: true
   listen: 0.0.0.0:53
@@ -220,7 +245,7 @@ tun:
 
 最后重启 Clash 服务即可，这样流量就会通过 TUN 接口转发，同时利用强大的分流规则，实现按需代理。也可以设置局域网内的网关地址和 DNS 服务器地址，实现透明网关。
 
-## 在 Chrome 浏览器(Wayland Mode)中使用 Fcitx5
+# 在 Chrome 浏览器(Wayland Mode)中使用 Fcitx5
 
 添加 `--enable-wayland-ime` 启动参数
 
@@ -232,15 +257,17 @@ tun:
 
 [参考这个](https://www.delinuxco.com/2023/07/04/pipewire-audio-setup-make-linux-sound-great/)
 
-## Docker
+# Docker
 
 [配置 docker 使用 btrfs 驱动](https://docs.docker.com/storage/storagedriver/btrfs-driver/)
 
-## Wine / Proton 下使用 BepinEx
+# Wine / Proton 下使用 BepinEx
 
 添加 `winhttp` 函数库顶替
 
-## JetBrains 系 IDE 字体发虚
+# JetBrains 系 IDE 字体发虚
+
+## 启动参数
 
 找到 IDE 对应的 vmoptions 文件，添加：
 
@@ -249,3 +276,7 @@ tun:
 -Dswing.aatext=true
 -Dsun.java2d.xrender=true
 ```
+
+## 字体
+
+设置 -> 编辑器 -> 字体 -> 版式设置 -> 主要粗细，比如我的字体是 `FiraCode`，设置为 `Retina`，是比较合适的
