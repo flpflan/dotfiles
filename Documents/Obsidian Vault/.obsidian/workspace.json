@@ -13,13 +13,24 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Arch 优化杂记.md",
-                "mode": "source",
+                "file": "waydroid笔记.md",
+                "mode": "preview",
                 "source": false
               }
             }
+          },
+          {
+            "id": "8dd0624f2bbc779c",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.6.3"
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -85,7 +96,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Arch 优化杂记.md",
+                "file": "waydroid笔记.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +113,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Arch 优化杂记.md",
+                "file": "waydroid笔记.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +136,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Arch 优化杂记.md"
+                "file": "waydroid笔记.md"
               }
             }
           }
@@ -138,6 +149,7 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "halo:发布当前文档到 Halo": false,
       "switcher:打开快速切换": false,
       "graph:查看关系图谱": false,
       "canvas:新建白板": false,
@@ -146,16 +158,17 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "f4dcf788bbd45426",
+  "active": "8dd0624f2bbc779c",
   "lastOpenFiles": [
-    "javascript 笔记.md",
+    "Rust 笔记.md",
+    "常用文件头信息.md",
+    "临时修改语言环境.md",
     "Arch 优化杂记.md",
     "C & C++ 笔记.md",
+    "2024-05-23.md",
+    "javascript 笔记.md",
     "waydroid笔记.md",
-    "Rust 笔记.md",
     "未命名",
-    "临时修改语言环境.md",
-    "常用文件头信息.md",
     "().md",
     "C++ 笔记",
     "Arch",

@@ -11,7 +11,7 @@ pavucontrol fuzzel alacritty zsh ttf-apple-emoji ttf-jetbrains-mono-nerd \
 adobe-source-code-pro-fonts \
 ttf-firacode-nerd ttf-yrsa ttf-merriweather-sans ttf-merriweather ttf-lxgw-neo-xihei \
 ttf-recursive dunst waylyrics hyprlock \
-liteloader-qqnt-bin \
+liteloader-qqnt-bin linux-wifi-hotspot dnsmasq \
 catppuccin-cursors-macchiato
 
 ## Dependencies
@@ -23,18 +23,21 @@ xorg-xwayland qt5-wayland qt6-wayland glfw \
 linux-zen clash-premium-bin batify-git ntfs-3g util-linux
 
 ## Apps
-visual-studio-code-bin google-chrome obs-studio linuxqq baidunetdisk-bin prismlauncher \
-intellij-idea-ultimate-edition intellij-idea-ultimate-edition-jre neovim neovide unityhub-cn \
+visual-studio-code-bin google-chrome obs-studio v4l2loopback-dkms linuxqq baidunetdisk-bin prismlauncher \
+intellij-idea-ultimate-edition intellij-idea-ultimate-edition-jre neovim neovide unityhub-cn cpio neokoray \
 obsidian rider godot blender hip-runtime-amd zathura zathur-pdf-poppler krita \
-bilibili 
+bilibili wemeet-bin
+
+## Game
+shattered-pixel-dungeon
 
 ## Toolchains
 rustup nodejs npm pnpm deno jre17-openjdk typescript go jdk-openjdk \
-cmake vcpkg clang lldb lld webkit2gtk dotnet-sdk python maturin rust-analyzer
+cmake vcpkg clang lldb lld webkit2gtk dotnet-sdk python maturin rust-analyzer zig xz
 
 ## cli tools
 yazi ffmpegthumbnailer unarchiver jq poppler fd ripgrep fzf zoxide \
-feh mpv unzip rar p7zip lazygit imv figlet go-musicfox dooit \
+swappy mpv unzip rar p7zip lazygit imv figlet go-musicfox dooit \
 zellij atuin eza bat duf ncdu aria2 wget imhex git valgrind bottom dnslookup nmap
 
 ## graphic driver
@@ -42,7 +45,7 @@ sudo pacman -S mesa xf86-video-amdgpu vulkan-radeon lib32-vulkan-radeon
 
 ## Wine
 wine winetricks wine-mono wine-gecko lib32-mesa lib32-libpulse lib32-gnutls wine-nine \
-dxvk-bin vkd3d-proton-bin zenity
+dxvk-bin vkd3d-proton-bin zenity lib32-gst-plugins-{base,good}
 
 ## Steam
 steam ttf-libration adobe-source-han-sans-jp-fonts
@@ -50,13 +53,14 @@ gamemode lib32-gamemode
 
 ## Media
 libva-mesa-driver mesa-vdpau 
-gstreamer-vaapi gst-plugins-bad
+gstreamer-vaapi gst-{libav,plugin-openh264,plugins-{base,bad,good,ugly}}
 
 ## Waydroid
+waydroid lzip
 
 ## Development
 redis redis-insight-bin beekeeper-studio-appimage docker docker-compose \
-minicom 
+minicom postman-bin
 
 ## Audio
 pipewire-pulse pipewire-alsa pipewire-jack 
