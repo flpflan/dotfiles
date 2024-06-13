@@ -73,7 +73,10 @@ zinit ice wait"2" as"command" from"gh-r" lucid \
 zinit ice atload "eval $(zoxide init zsh --cmd cd)"
 zinit light ajeetdsouza/zoxide
 zinit light ellie/atuin
+#zinit ice lucid wait"0a" from"gh-r" as"program" atload'eval "$(mcfly init zsh)"'
+#zinit light cantino/mcfly
 zinit light MichaelAquilina/zsh-you-should-use
+zinit light ziglang/shell-completions
 
 zinit snippet OMZ::lib/completion.zsh
 

@@ -5,7 +5,7 @@ alias config="/usr/bin/git --git-dir $HOME/.dotfiles --work-tree=$HOME"
 config add ~/gamemode.ini
 config add ~/snippets
 config add ~/profile/圈九 ~/profile/DE_PAKAGE
-config add ~/.zshrc ~/.zlogin ~/.p10k.zsh ~/.p10k.tty.zsh
+config add ~/.zshrc ~/.zlogin ~/.p10k.zsh ~/.p10k-tty.zsh
 config add ~/.npmrc ~/.ideavimrc ~/.gtkrc-2.0
 config add ~/Documents/"Obsidian Vault" ~/Documents/normal.mp3 ~/Documents/critical.wav ~/Documents/neovide_cursor.js
 config add ~/.config/electron-flags.conf ~/.config/code-flags.conf ~/.config/chrome-flags.conf ~/.config/bilibili/bilibili-flags.conf
