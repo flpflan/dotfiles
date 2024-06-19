@@ -23,9 +23,11 @@
             "id": "8dd0624f2bbc779c",
             "type": "leaf",
             "state": {
-              "type": "release-notes",
+              "type": "markdown",
               "state": {
-                "currentVersion": "1.6.3"
+                "file": "Arch 优化杂记.md",
+                "mode": "source",
+                "source": false
               }
             }
           }
@@ -96,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "waydroid笔记.md",
+                "file": "Arch 优化杂记.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -113,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "waydroid笔记.md",
+                "file": "Arch 优化杂记.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -136,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "waydroid笔记.md"
+                "file": "Arch 优化杂记.md"
               }
             }
           }
@@ -160,6 +162,7 @@
   },
   "active": "8dd0624f2bbc779c",
   "lastOpenFiles": [
+    "waydroid笔记.md",
     "Rust 笔记.md",
     "常用文件头信息.md",
     "临时修改语言环境.md",
@@ -167,7 +170,6 @@
     "C & C++ 笔记.md",
     "2024-05-23.md",
     "javascript 笔记.md",
-    "waydroid笔记.md",
     "未命名",
     "().md",
     "C++ 笔记",

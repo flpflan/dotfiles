@@ -20,13 +20,14 @@ ttf-font-awesome alhp-keyring alhp-mirrorlist \
 ttf-icomoon-feather xdg-desktop-portal-hyprland xdg-desktop-portal-gtk \
 qt5ct qt6ct \
 xorg-xwayland qt5-wayland qt6-wayland glfw \
-linux-zen clash-premium-bin batify-git ntfs-3g util-linux
+linux-zen clash-premium-bin batify-git ntfs-3g util-linux kea
 
 ## Apps
 visual-studio-code-bin google-chrome obs-studio v4l2loopback-dkms linuxqq baidunetdisk-bin prismlauncher \
 intellij-idea-ultimate-edition intellij-idea-ultimate-edition-jre neovim neovide unityhub-cn cpio neokoray \
 obsidian rider godot blender hip-runtime-amd zathura zathur-pdf-poppler krita \
-bilibili wemeet-bin
+bilibili wemeet-bin android-studio
+xorg-xhost gparted
 
 ## Game
 shattered-pixel-dungeon
@@ -38,7 +39,7 @@ cmake vcpkg clang lldb lld webkit2gtk dotnet-sdk python maturin rust-analyzer zi
 ## cli tools
 yazi ffmpegthumbnailer unarchiver jq poppler fd ripgrep fzf zoxide \
 swappy mpv unzip rar p7zip lazygit imv figlet go-musicfox dooit \
-zellij atuin eza bat duf ncdu aria2 wget imhex git valgrind bottom dnslookup nmap
+zellij atuin eza bat duf ncdu aria2 wget imhex git valgrind bottom dnslookup nmap scrcpy
 
 ## graphic driver
 sudo pacman -S mesa xf86-video-amdgpu vulkan-radeon lib32-vulkan-radeon
@@ -56,7 +57,6 @@ libva-mesa-driver mesa-vdpau
 gstreamer-vaapi gst-{libav,plugin-openh264,plugins-{base,bad,good,ugly}}
 
 ## Waydroid
-waydroid lzip
 
 ## Development
 redis redis-insight-bin beekeeper-studio-appimage docker docker-compose \
