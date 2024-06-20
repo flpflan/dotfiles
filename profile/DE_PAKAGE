@@ -16,7 +16,7 @@ catppuccin-cursors-macchiato
 
 ## Dependencies
 playerctl bulez bluetuith networkmanager tlp tlp-rdw \
-ttf-font-awesome alhp-keyring alhp-mirrorlist \
+ttf-font-awesome alhp-keyring alhp-mirrorlist ttf-maple \
 ttf-icomoon-feather xdg-desktop-portal-hyprland xdg-desktop-portal-gtk \
 qt5ct qt6ct \
 xorg-xwayland qt5-wayland qt6-wayland glfw \
@@ -25,8 +25,8 @@ linux-zen clash-premium-bin batify-git ntfs-3g util-linux kea
 ## Apps
 visual-studio-code-bin google-chrome obs-studio v4l2loopback-dkms linuxqq baidunetdisk-bin prismlauncher \
 intellij-idea-ultimate-edition intellij-idea-ultimate-edition-jre neovim neovide unityhub-cn cpio neokoray \
-obsidian rider godot blender hip-runtime-amd zathura zathur-pdf-poppler krita \
-bilibili wemeet-bin android-studio
+obsidian rider godot blender hip-runtime-amd zathura zathur-pdf-mupdf krita \
+bilibili wemeet-bin android-studio telegram-desktop
 xorg-xhost gparted
 
 ## Game
