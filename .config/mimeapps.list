@@ -1,4 +1,3 @@
-
 [Default Applications]
 text/html=google-chrome.desktop
 x-scheme-handler/http=google-chrome.desktop
@@ -14,3 +13,7 @@ image/png=imv.desktop
 image/jpeg=imv.desktop
 x-scheme-handler/bilipc=bilibili.desktop
 x-scheme-handler/postman=Postman.desktop
+
+[Added Associations]
+text/plain=neovide.desktop;
+inode/directory=code.desktop;neovide.desktop;

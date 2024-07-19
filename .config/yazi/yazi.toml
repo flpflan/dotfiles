@@ -44,8 +44,8 @@ play = [
 	{ run = 'mpv "%1"', orphan = true, for = "windows" },
 	{ run = '''mediainfo "$1"; echo "Press enter to exit"; read''', block = true, desc = "Show media info", for = "unix" },
 ]
-wine = [
-	{run = 'wine "$@"', for = "linux" },
+bottles = [
+	{run = 'bottles-cli run -b win64-default -e "$@"', for = "linux" },
 ]
 
 [open]
@@ -70,7 +70,7 @@ rules = [
 	{ mime = "application/x-rar",           use = [ "extract", "reveal" ] },
 	{ mime = "application/xz",              use = [ "extract", "reveal" ] },
 
-	{ mime = "application/vnd.microsoft.portable-executable", use = [ "wine" ]},
+	{ mime = "application/vnd.microsoft.portable-executable", use = [ "bottles" ]},
 
 	{ mime = "*", use = [ "open", "reveal" ] },
 ]

@@ -150,6 +150,9 @@ keymap = [
 
 	# Drop to Shell
 	{ on = [ "<C-t>" ], run = '''shell "$SHELL" --block --confirm''', desc = "Open shell here" },
+
+	# Open thunar
+	{ on = [ "<C-Space>" ], run = '''shell thunar --block --confirm''', desc = "Open thunar here" },
 ]
 
 [tasks]

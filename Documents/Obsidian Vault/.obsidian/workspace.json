@@ -30,9 +30,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "41d3711d114024d9",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Arch 优化杂记.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -160,11 +172,11 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "8dd0624f2bbc779c",
+  "active": "41d3711d114024d9",
   "lastOpenFiles": [
+    "常用文件头信息.md",
     "waydroid笔记.md",
     "Rust 笔记.md",
-    "常用文件头信息.md",
     "临时修改语言环境.md",
     "Arch 优化杂记.md",
     "C & C++ 笔记.md",
