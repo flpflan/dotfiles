@@ -3,7 +3,6 @@ shopt -s expand_aliases
 alias config="/usr/bin/git --git-dir $HOME/.dotfiles --work-tree=$HOME"
 
 config add ~/.config/gamemode.ini
-config add ~/gamemode.ini
 config add ~/snippets
 config add ~/profile/圈九 ~/profile/DE_PAKAGE
 config add ~/.zshrc ~/.zlogin ~/.p10k.zsh ~/.p10k-tty.zsh
