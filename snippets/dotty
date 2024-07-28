@@ -8,6 +8,7 @@ config add ~/profile/圈九 ~/profile/DE_PAKAGE
 config add ~/.zshrc ~/.zlogin ~/.p10k.zsh ~/.p10k-tty.zsh
 config add ~/.npmrc ~/.ideavimrc ~/.gtkrc-2.0
 config add ~/Documents/"Obsidian Vault" ~/Documents/normal.mp3 ~/Documents/critical.wav ~/Documents/neovide_cursor.js
+config add ~/.config/xdg-desktop-portal
 config add ~/.config/electron-flags.conf ~/.config/code-flags.conf ~/.config/chrome-flags.conf ~/.config/bilibili/bilibili-flags.conf
 config add ~/.config/alacritty ~/.config/atuin
 config add ~/.config/bat ~/.config/dooit ~/.config/dunst ~/.config/fcitx5

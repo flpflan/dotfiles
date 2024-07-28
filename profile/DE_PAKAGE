@@ -15,7 +15,7 @@ liteloader-qqnt-bin linux-wifi-hotspot dnsmasq \
 bibata-cursor-theme
 
 ## Dependencies
-playerctl bulez bluetuith networkmanager tlp tlp-rdw \
+playerctl bulez bluetuith bluez-obex networkmanager tlp tlp-rdw \
 ttf-font-awesome alhp-keyring alhp-mirrorlist ttf-maple \
 ttf-icomoon-feather xdg-desktop-portal-hyprland xdg-desktop-portal-gtk \
 qt5ct qt6ct \
