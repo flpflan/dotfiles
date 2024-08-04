@@ -1,4 +1,16 @@
 patch:
   "menu/page_size": 8
-  schema_list:
-    - schema: clover
+  # schema_list:
+    # - schema: clover
+  
+  __include: rime_ice_suggestion:/
+  __patch:
+    key_binder/bindings/+:
+      # [ 或 ] 翻页
+      - { when: paging, accept: bracketleft, send: Page_Up }
+      - { when: has_menu, accept: bracketright, send: Page_Down }
+      # 切换全半角
+      - { when: always, toggle: full_shape, accept: Control+Shift+5 }
+      - { when: always, toggle: full_shape, accept: Control+Shift+percent }
+    key_binder/select_first_character: comma
+    key_binder/select_last_character: period

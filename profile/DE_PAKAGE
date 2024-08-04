@@ -1,7 +1,7 @@
 ## Hyprland Stuff
 hyprland hyprpicker waybar \
 nwg-look wlogout hyprpicker \
-fcitx5 fcitx5-rime rime-cloverpinyin pamixer \
+fcitx5 fcitx5-rime rime-ice-git fcitx5-pinyin-moegirl-rime pamixer \
 kitty hypridle htop wev polkit-kde-agent \
 catppuccin-gtk-theme brightnessctl hyprshot \
 udiskie fontconfig hyprpaper \
@@ -24,11 +24,12 @@ linux-zen clash-premium-bin batify-git ntfs-3g util-linux kea
 
 ## Apps
 visual-studio-code-bin google-chrome obs-studio v4l2loopback-dkms linuxqq baidunetdisk-bin prismlauncher \
-intellij-idea-ultimate-edition intellij-idea-ultimate-edition-jre neovim neovide unityhub-cn cpio neokoray \
-obsidian rider godot blender hip-runtime-amd zathura zathur-pdf-mupdf krita \
+intellij-idea-ultimate-edition intellij-idea-ultimate-edition-jre neovim neovide unityhub gconf icu70 libicu50 libappindicator-gtk3 \
+neokoray obsidian rider godot blender hip-runtime-amd zathura zathur-pdf-mupdf krita \
 bilibili wemeet-bin android-studio telegram-desktop discord wireshark-qt
 xorg-xhost gparted 
-thunar catfish gvfs thunar-archive-plugin thunar-media-tags-plugin thunar-volman tumbler mathematica-light
+thunar catfish gvfs thunar-archive-plugin thunar-media-tags-plugin thunar-volman tumbler mathematica-light \
+aliyunpan-gaozhangmin-bin
 
 ## Game
 shattered-pixel-dungeon gameconqueror
