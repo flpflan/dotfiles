@@ -39,8 +39,8 @@ rustup nodejs npm pnpm deno jre17-openjdk typescript go jdk-openjdk \
 cmake vcpkg clang lldb lld webkit2gtk dotnet-sdk python maturin rust-analyzer zig xz
 
 ## cli tools
-yazi ffmpegthumbnailer unarchiver jq poppler fd ripgrep fzf zoxide \
-swappy mpv unzip rar p7zip lazygit imv figlet go-musicfox dooit \
+yazi ffmpegthumbnailer p7zip jq poppler fd ripgrep fzf zoxide imagemagick chafa \
+swappy mpv unzip rar lazygit imv figlet go-musicfox dooit \
 zellij atuin eza bat duf ncdu aria2 wget imhex git valgrind bottom dnslookup nmap scrcpy asar tcpdump \
 protonhax binwalk foremost gef
 

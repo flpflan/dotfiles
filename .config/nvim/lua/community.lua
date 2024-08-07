@@ -35,6 +35,7 @@ return {
   { import = "astrocommunity.pack.cmake" },
   { import = "astrocommunity.pack.json" },
   { import = "astrocommunity.pack.zig" },
+  { import = "astrocommunity.pack.hyprlang" },
 
   { import = "astrocommunity.debugging.nvim-dap-virtual-text" },
   { import = "astrocommunity.debugging.nvim-dap-repl-highlights" },

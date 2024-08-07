@@ -61,7 +61,7 @@ keymap = [
 	{ on = [ "o" ],         run = "open",                                                 desc = "Open the selected files" },
 	{ on = [ "O" ],         run = "open --interactive",                                   desc = "Open the selected files interactively" },
 	{ on = [ "<Enter>" ],   run = "open",                                                 desc = "Open the selected files" },
-	{ on = [ "<C-Enter>" ], run = "open --interactive",                                   desc = "Open the selected files interactively" },
+	{ on = [ "<S-Enter>" ], run = "open --interactive",                                   desc = "Open the selected files interactively" },
 	{ on = [ "y" ],         run = [ "yank", "escape --visual --select" ],                 desc = "Copy the selected files" },
 	{ on = [ "x" ],         run = [ "yank --cut", "escape --visual --select" ],           desc = "Cut the selected files" },
 	{ on = [ "p" ],         run = "paste",                                                desc = "Paste the files" },
@@ -72,8 +72,8 @@ keymap = [
 	{ on = [ "D" ],         run = [ "remove --permanently", "escape --visual --select" ], desc = "Permanently delete the files" },
 	{ on = [ "a" ],         run = "create",                                               desc = "Create a file or directory (ends with / for directories)" },
 	{ on = [ "r" ],         run = "rename --cursor=before_ext",                           desc = "Rename a file or directory" },
-	{ on = [ ";" ],         run = "shell",                                                desc = "Run a shell command" },
-	{ on = [ ":" ],         run = "shell --block",                                        desc = "Run a shell command (block the UI until the command finishes)" },
+	{ on = [ ";" ],         run = "shell --interactive",                                  desc = "Run a shell command" },
+	{ on = [ ":" ],         run = "shell --block --interactive",                          desc = "Run a shell command (block the UI until the command finishes)" },
 	{ on = [ "." ],         run = "hidden toggle",                                        desc = "Toggle the visibility of hidden files" },
 	{ on = [ "s" ],         run = "search fd",                                            desc = "Search files by name using fd" },
 	{ on = [ "S" ],         run = "search rg",                                            desc = "Search files by content using ripgrep" },
@@ -103,18 +103,18 @@ keymap = [
 	{ on = [ "N" ], run = "find_arrow --previous",   desc = "Go to previous found file" },
 
 	# Sorting
-	{ on = [ ",", "m" ], run = "sort modified --dir-first",               desc = "Sort by modified time" },
-	{ on = [ ",", "M" ], run = "sort modified --reverse --dir-first",     desc = "Sort by modified time (reverse)" },
-	{ on = [ ",", "c" ], run = "sort created --dir-first",                desc = "Sort by created time" },
-	{ on = [ ",", "C" ], run = "sort created --reverse --dir-first",      desc = "Sort by created time (reverse)" },
-	{ on = [ ",", "e" ], run = "sort extension --dir-first",         	   desc = "Sort by extension" },
-	{ on = [ ",", "E" ], run = "sort extension --reverse --dir-first",    desc = "Sort by extension (reverse)" },
-	{ on = [ ",", "a" ], run = "sort alphabetical --dir-first",           desc = "Sort alphabetically" },
-	{ on = [ ",", "A" ], run = "sort alphabetical --reverse --dir-first", desc = "Sort alphabetically (reverse)" },
-	{ on = [ ",", "n" ], run = "sort natural --dir-first",                desc = "Sort naturally" },
-	{ on = [ ",", "N" ], run = "sort natural --reverse --dir-first",      desc = "Sort naturally (reverse)" },
-	{ on = [ ",", "s" ], run = "sort size --dir-first",                   desc = "Sort by size" },
-	{ on = [ ",", "S" ], run = "sort size --reverse --dir-first",         desc = "Sort by size (reverse)" },
+ 	{ on = [ ",", "m" ], run = "sort modified --reverse=no",     desc = "Sort by modified time" }, 
+ 	{ on = [ ",", "M" ], run = "sort modified --reverse",        desc = "Sort by modified time (reverse)" }, 
+ 	{ on = [ ",", "c" ], run = "sort created --reverse=no",      desc = "Sort by created time" }, 
+ 	{ on = [ ",", "C" ], run = "sort created  --reverse",        desc = "Sort by created time (reverse)" }, 
+ 	{ on = [ ",", "e" ], run = "sort extension --reverse=no",    desc = "Sort by extension" }, 
+ 	{ on = [ ",", "E" ], run = "sort extension --reverse",       desc = "Sort by extension (reverse)" }, 
+ 	{ on = [ ",", "a" ], run = "sort alphabetical --reverse=no", desc = "Sort alphabetically" }, 
+ 	{ on = [ ",", "A" ], run = "sort alphabetical --reverse",    desc = "Sort alphabetically (reverse)" }, 
+ 	{ on = [ ",", "n" ], run = "sort natural --reverse=no",      desc = "Sort naturally" }, 
+ 	{ on = [ ",", "N" ], run = "sort natural --reverse",         desc = "Sort naturally (reverse)" }, 
+ 	{ on = [ ",", "s" ], run = "sort size --reverse=no",         desc = "Sort by size" }, 
+ 	{ on = [ ",", "S" ], run = "sort size --reverse",            desc = "Sort by size (reverse)" }, 
 
 	# Tabs
 	{ on = [ "t" ], run = "tab_create --current", desc = "Create a new tab using the current path" },
@@ -300,3 +300,8 @@ keymap = [
 	# Filtering
 	{ on = [ "/" ], run = "filter", desc = "Apply a filter for the help items" },
 ]
+
+[[manager.prepend_keymap]]
+on   = [ "c", "a" ]
+run  = "plugin compress"
+desc = "Archive selected files"

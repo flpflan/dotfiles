@@ -13,8 +13,10 @@ image/png=imv.desktop
 image/jpeg=imv.desktop
 x-scheme-handler/bilipc=bilibili.desktop
 x-scheme-handler/postman=Postman.desktop
+x-scheme-handler/tonsite=org.telegram.desktop.desktop
 
 [Added Associations]
 text/plain=neovide.desktop;
 inode/directory=code.desktop;neovide.desktop;
 image/png=imv-dir.desktop;
+x-scheme-handler/tonsite=org.telegram.desktop.desktop;
