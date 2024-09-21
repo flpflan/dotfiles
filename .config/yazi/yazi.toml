@@ -52,7 +52,13 @@ play = [
 	{ run = '''mediainfo "$1"; echo "Press enter to exit"; read''', block = true, desc = "Show media info", for = "unix" },
 ]
 bottles = [
-	{run = 'bottles-cli run -b win64-default -e "$@"', for = "linux" },
+	{ run = 'bottles-cli run -b win64-default -e "$@"', desc = "Open in default wine", for = "linux" },
+]
+bottles-game = [
+	{ run = 'bottles-cli run -b win64-game-universal -e "$@"', desc = "Open in gaming wine", for = "linux" },
+]
+bottles-game-desktop = [
+	{ run = 'bottles-cli run -b win64-game-desktop -e "$@"', desc = "Open in gaming wine with desktop", for = "linux" },
 ]
 
 [open]
@@ -76,7 +82,7 @@ rules = [
 	# Fallback
 	{ name = "*", use = [ "open", "reveal" ] },
 	# Windows executable
-	{ mime = "application/vnd.microsoft.portable-executable", use = [ "bottles" ]},
+	{ mime = "application/vnd.microsoft.portable-executable", use = [ "bottles", "bottles-game", "bottles-game-desktop" ] },
 ]
 
 [tasks]

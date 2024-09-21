@@ -280,3 +280,7 @@ tun:
 ## 字体
 
 设置 -> 编辑器 -> 字体 -> 版式设置 -> 主要粗细，比如我的字体是 `FiraCode`，设置为 `Retina`，是比较合适的
+
+# Java 程序 UI 缩放
+
+设置环境变量 `GDK_SCALE`，例 `export GDK_SCALE=2`
