@@ -4,7 +4,7 @@ alias config="/usr/bin/git --git-dir $HOME/.dotfiles --work-tree=$HOME"
 
 config add ~/.config/gamemode.ini
 config add ~/snippets
-config add ~/profile/DE_PAKAGE
+config add ~/profile/DE_PAKAGE ~/profile/avatar.png
 config add ~/.zshrc ~/.zlogin ~/.p10k.zsh ~/.p10k-tty.zsh ~/.gdbinit
 config add ~/.npmrc ~/.ideavimrc ~/.gtkrc-2.0
 config add ~/Documents/"Obsidian Vault" ~/Documents/normal.mp3 ~/Documents/critical.wav ~/Documents/neovide_cursor.js
@@ -17,7 +17,7 @@ config add ~/.config/fuzzel ~/.config/go-musicfox/go-musicfox.ini ~/.config/go-m
 config add ~/.config/htop ~/.config/hypr ~/.config/kitty
 config add ~/.config/mpv ~/.config/neofetch
 config add ~/.config/nvim ~/.config/qt5ct ~/.config/qt6ct
-config add ~/.config/swaylock ~/.config/waybar ~/.config/wlogout ~/.config/waylyrics
+config add ~/.config/swaylock ~/.config/waybar ~/.config/wlogout ~/.config/waylyrics ~/.config/ags
 config add ~/.config/xsettingsd ~/.config/yazi
 config add ~/.config/zathura
 config add ~/.config/mimeapps.list
