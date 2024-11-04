@@ -2,11 +2,10 @@
 hyprland hyprpicker waybar \
 nwg-look wlogout hyprpicker \
 fcitx5 fcitx5-rime rime-ice-git fcitx5-pinyin-moegirl-rime pamixer \
-kitty hypridle htop wev polkit-kde-agent \
-catppuccin-gtk-theme brightnessctl hyprshot \
+kitty hypridle htop wev \
+brightnessctl hyprshot \
 udiskie fontconfig hyprpaper \
 wps-office-cn wps-office-mui-zh-cn ttf-wps-fonts otf-noto-sans-cjk freetype2-wps \ # wps
-papirus-icon-theme-git papirus-folders-catppuccin-git catppuccin-fcitx5-git \
 pavucontrol fuzzel alacritty zsh ttf-apple-emoji ttf-jetbrains-mono-nerd \
 adobe-source-code-pro-fonts \
 ttf-firacode-nerd ttf-yrsa ttf-merriweather-sans ttf-merriweather ttf-lxgw-neo-xihei \
@@ -16,12 +15,19 @@ bibata-cursor-theme
 
 -- ags --
 aylurs-gtk-shell dart-sass swww gnome-bluetooth-3.0 matugen-bin \
-gtksourceview3
+
+-- Hyprland-Dots --
+gtksourceview3 ddcutil bc cliphist adw-gtk-theme-git ttf-readex-pro ttf-material-symbols-variable-git \
+ttf-space-mono-nerd ttf-rubik-vf ttf-gabarito-git polkit-gnome gnome-keyring \
+gammastep webp-pixbuf-loader yad ydotool xdg-user-dirs-gtk tinyxml2 gtksourceviewmm python-materialyoucolor-git \
+gradience python-libsass python-material-color-utilities python-pywal python-setuptools-scm tesseract tesseract-data-eng \
+python-pywayland python-psutil anyrun-git foot fish starship (easyeffects calf lsp-plugins-lv2 mda.lv2 zam-plugins-lv2) \
+illogical-impulse-oneui4-icons-git
 
 ## Dependencies
 playerctl bulez bluetuith bluez-obex networkmanager tlp tlp-rdw \
 ttf-font-awesome alhp-keyring alhp-mirrorlist ttf-maple \
-ttf-icomoon-feather xdg-desktop-portal-hyprland xdg-desktop-portal-gtk \
+ttf-icomoon-feather xdg-desktop-portal-hyprland \
 qt5ct qt6ct \
 xorg-xwayland qt5-wayland qt6-wayland glfw \
 linux-zen clash-premium-bin batify-git ntfs-3g util-linux kea \
@@ -31,10 +37,10 @@ btrfs-progs
 visual-studio-code-bin google-chrome obs-studio v4l2loopback-dkms linuxqq baidunetdisk-bin prismlauncher \
 intellij-idea-ultimate-edition intellij-idea-ultimate-edition-jre neovim neovide unityhub gconf icu70 libicu50 libappindicator-gtk3 \
 neokoray obsidian rider godot blender hip-runtime-amd zathura zathur-pdf-mupdf krita \
-bilibili wemeet-bin android-studio telegram-desktop discord wireshark-qt
+bilibili wemeet-bin android-studio telegram-desktop vesktop-bin wireshark-qt
 xorg-xhost gparted 
 thunar catfish gvfs thunar-archive-plugin thunar-media-tags-plugin thunar-volman tumbler mathematica-light \
-aliyunpan-gaozhangmin-bin vlc netpad-bin
+vlc oculante pot-translation zed
 
 ## Game
 shattered-pixel-dungeon pince-git yuzu-early-access shadps4-git
@@ -46,8 +52,9 @@ cmake clang lldb lld webkit2gtk dotnet-sdk python maturin rust-analyzer zig xz b
 ## cli tools
 yazi ffmpegthumbnailer p7zip jq poppler fd ripgrep fzf zoxide imagemagick chafa \
 swappy mpv rar lazygit imv figlet go-musicfox dooit \
-zellij atuin eza bat duf ncdu aria2 wget imhex git valgrind bottom dnslookup nmap scrcpy asar tcpdump \
-protonhax binwalk foremost gef trippy android-apktool memfetch unzip wf-recorder
+zellij atuin eza bat duf ncdu aria2 wget imhex git valgrind bottom btop dnslookup nmap scrcpy asar tcpdump \
+protonhax binwalk foremost gef trippy android-apktool memfetch unzip wf-recorder axel \
+trash-cli perl-image-exiftool cmatrix
 
 ## graphic driver
 sudo pacman -S mesa xf86-video-amdgpu vulkan-radeon lib32-vulkan-radeon
@@ -61,7 +68,7 @@ gamemode lib32-gamemode gamescope
 
 ## Media
 libva-mesa-driver mesa-vdpau 
-gstreamer-vaapi gst-{libav,plugin-openh264,plugins-{base,bad,good,ugly}}
+gstreamer-vaapi gst-{libav,plugin-openh264,plugins-{base,bad,good,ugly,pipewire}}
 
 ## Waydroid
 waydroid waydroid-image-gapps python-pyclip

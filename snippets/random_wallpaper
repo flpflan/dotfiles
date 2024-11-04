@@ -1,0 +1,6 @@
+#!/bin/bash
+wallpaper=$(find $HOME/Pictures -type f | shuf -n 1)
+if [ -z $wallpaper ]; then
+  return
+fi
+$HOME/.config/ags/scripts/color_generation/switchwall.sh $wallpaper

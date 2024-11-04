@@ -1,0 +1,22 @@
+#!/bin/bash
+read -p "Target folder (default ./moved): " target_folder
+if [ -z "$target_folder" ]; then
+    target_folder="./moved"
+fi
+read -p "Target ratio (default 1.5): " target_ratio
+if [ -z "$target_ratio" ]; then
+    target_ratio=1.5
+fi
+
+mkdir -p ./moved
+
+for img in *.jpg *.jpeg *.png; do
+    if [[ -f "$img" ]]; then
+        ratio=$(identify -format "%[fx:w/h]" "$img")
+
+        if (($(echo "$ratio > $target_ratio" | bc -l))); then
+            echo "Moving $img with aspect ratio $ratio to $target_folder"
+            mv "./$img" "$target_folder"
+        fi
+    fi
+done

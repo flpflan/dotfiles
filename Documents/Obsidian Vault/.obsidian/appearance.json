@@ -2,8 +2,8 @@
   "accentColor": "",
   "baseFontSize": 16,
   "cssTheme": "Catppuccin",
-  "textFontFamily": "LXGW WenKai Screen",
-  "interfaceFontFamily": "Merriweather,LXGW WenKai Screen",
-  "monospaceFontFamily": "JetBrainsMono Nerd Font",
+  "textFontFamily": "Merriweather,LXGW WenKai Screen",
+  "interfaceFontFamily": "Microsoft YaHei,LXGW Neo XiHei Screen Full,Merriweather,LXGW WenKai Screen",
+  "monospaceFontFamily": "FiraCode Nerd Font,JetBrainsMono Nerd Font",
   "nativeMenus": false
 }

@@ -16,9 +16,14 @@ return {
         lsp_trouble = true,
         rainbow_delimiters = true,
       },
+      transparent_background = true,
     },
   },
   { import = "astrocommunity.colorscheme.tokyonight-nvim" },
+  { import = "astrocommunity.colorscheme.aurora" },
+
+  { import = "astrocommunity.color.transparent-nvim" },
+
 
   { import = "astrocommunity.pack.typescript-all-in-one" },
   { import = "astrocommunity.pack.python-ruff" },
