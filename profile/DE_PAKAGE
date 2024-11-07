@@ -54,7 +54,7 @@ yazi ffmpegthumbnailer p7zip jq poppler fd ripgrep fzf zoxide imagemagick chafa 
 swappy mpv rar lazygit imv figlet go-musicfox dooit \
 zellij atuin eza bat duf ncdu aria2 wget imhex git valgrind bottom btop dnslookup nmap scrcpy asar tcpdump \
 protonhax binwalk foremost gef trippy android-apktool memfetch unzip wf-recorder axel \
-trash-cli perl-image-exiftool cmatrix
+trash-cli perl-image-exiftool cmatrix bobibo bear
 
 ## graphic driver
 sudo pacman -S mesa xf86-video-amdgpu vulkan-radeon lib32-vulkan-radeon
@@ -68,7 +68,7 @@ gamemode lib32-gamemode gamescope
 
 ## Media
 libva-mesa-driver mesa-vdpau 
-gstreamer-vaapi gst-{libav,plugin-openh264,plugins-{base,bad,good,ugly,pipewire}}
+gstreamer-vaapi gst-{libav,plugins-{base,bad,good,ugly,pipewire}}
 
 ## Waydroid
 waydroid waydroid-image-gapps python-pyclip

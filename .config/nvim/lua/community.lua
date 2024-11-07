@@ -1,29 +1,11 @@
 return {
   "AstroNvim/astrocommunity",
 
-  {
-    import = "astrocommunity.colorscheme.catppuccin",
-    opts = {
-      integrations = {
-        sandwich = false,
-        noice = true,
-        mini = true,
-        leap = true,
-        markdown = true,
-        neotest = true,
-        cmp = true,
-        overseer = true,
-        lsp_trouble = true,
-        rainbow_delimiters = true,
-      },
-      transparent_background = true,
-    },
-  },
-  { import = "astrocommunity.colorscheme.tokyonight-nvim" },
-  { import = "astrocommunity.colorscheme.aurora" },
+  { import = "astrocommunity.colorscheme.catppuccin" },
+  -- { import = "astrocommunity.colorscheme.tokyonight-nvim" },
+  -- { import = "astrocommunity.colorscheme.aurora" },
 
   { import = "astrocommunity.color.transparent-nvim" },
-
 
   { import = "astrocommunity.pack.typescript-all-in-one" },
   { import = "astrocommunity.pack.python-ruff" },
@@ -51,8 +33,7 @@ return {
 
   { import = "astrocommunity.bars-and-lines.lualine-nvim" },
 
-  { import = "astrocommunity.markdown-and-latex.peek-nvim" },
-  -- { import = "astrocommunity.markdown-and-latex.markdown-preview-nvim" },
+  { import = "astrocommunity.markdown-and-latex.markview-nvim", lazy = false },
 
   -- { import = "astrocommunity.editing-support.todo-comments-nvim" }, -- Now it's part of AstroNvim
   { import = "astrocommunity.editing-support.nvim-treesitter-endwise" },

@@ -37,5 +37,5 @@ return {
         show_help = '<f1>',
       },
     },
-  }
+  },
 }

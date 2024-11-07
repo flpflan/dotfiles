@@ -17,6 +17,7 @@ x-scheme-handler/postman=Postman.desktop
 x-scheme-handler/tonsite=org.telegram.desktop.desktop
 x-scheme-handler/discord-712465656758665259=discord-712465656758665259.desktop
 x-scheme-handler/discord-1221314350216646828=discord-1221314350216646828.desktop
+x-scheme-handler/discord-586883052379308062=moebius.desktop
 
 [Added Associations]
 text/plain=neovide.desktop;
