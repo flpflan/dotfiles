@@ -1,5 +1,5 @@
 #!/bin/bash
-wallpaper=$(find $HOME/Pictures -type f | shuf -n 1)
+wallpaper=$(find $HOME/Pictures/wallpapers -type f | shuf -n 1)
 if [ -z $wallpaper ]; then
   return
 fi

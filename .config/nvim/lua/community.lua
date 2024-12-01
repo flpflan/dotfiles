@@ -7,13 +7,16 @@ return {
 
   { import = "astrocommunity.color.transparent-nvim" },
 
+  -- { import = "astrocommunity.completion.blink-cmp" },
+
   { import = "astrocommunity.pack.typescript-all-in-one" },
   { import = "astrocommunity.pack.python-ruff" },
+  -- { import = "astrocommunity.pack.tailwindcss" },
   { import = "astrocommunity.pack.toml" },
   { import = "astrocommunity.pack.rust" },
   { import = "astrocommunity.pack.bash" },
   { import = "astrocommunity.pack.lua" },
-  { import = "astrocommunity.pack.go" },
+  -- { import = "astrocommunity.pack.go" },
   { import = "astrocommunity.pack.html-css" },
   { import = "astrocommunity.pack.markdown" },
   { import = "astrocommunity.pack.vue" },
@@ -28,6 +31,8 @@ return {
   { import = "astrocommunity.debugging.nvim-dap-repl-highlights" },
   { import = "astrocommunity.debugging.telescope-dap-nvim" },
   { import = "astrocommunity.debugging.persistent-breakpoints-nvim" },
+
+  -- { import = "astrocommunity.indent.indent-blankline-nvim" },
 
   { import = "astrocommunity.lsp.garbage-day-nvim" },
 

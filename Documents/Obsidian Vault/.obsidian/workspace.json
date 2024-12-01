@@ -34,18 +34,6 @@
               "icon": "lucide-file",
               "title": "Arch 优化杂记"
             }
-          },
-          {
-            "id": "07c89666dbe76a11",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.7.4"
-              },
-              "icon": "lucide-file",
-              "title": "Release Notes 1.7.4"
-            }
           }
         ]
       }

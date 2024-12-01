@@ -5,9 +5,10 @@
 
 const userConfigOptions = {
   'apps': {
+    'terminal': "foot",
     'imageViewer': 'oculante',
-    'network': "foot nmtui",
-    "bluetooth": "foot bluetuith",
+    'network': "foot -e fish -c nmtui",
+    "bluetooth": "foot -e fish -c bluetuith",
     "taskManager": "foot -e fish -c htop"
   },
   'appearance': {
