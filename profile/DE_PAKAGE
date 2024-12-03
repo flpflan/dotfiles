@@ -34,7 +34,7 @@ btrfs-progs
 
 ## Apps
 visual-studio-code-bin google-chrome obs-studio v4l2loopback-dkms linuxqq baidunetdisk-bin prismlauncher \
-intellij-idea-ultimate-edition intellij-idea-ultimate-edition-jre neovim neovide unityhub gconf icu70 libicu50 libappindicator-gtk3 \
+intellij-idea-ultimate-edition jre-jetbrains neovim neovide unityhub gconf icu70 libicu50 libappindicator-gtk3 \
 neokoray obsidian rider godot blender hip-runtime-amd zathura zathur-pdf-mupdf krita \
 wemeet-bin android-studio telegram-desktop vesktop-bin wireshark-qt
 xorg-xhost gparted 
@@ -43,7 +43,7 @@ vlc oculante pot-translation wechat libreoffice-fresh libreoffice-fresh-zh-cn wi
 antimicrox 
 
 ## Game
-shattered-pixel-dungeon pince-git yuzu-early-access shadps4-git
+shattered-pixel-dungeon pince-git yuzu-early-access 
 
 ## Toolchains
 rustup nodejs npm pnpm deno typescript go jdk-openjdk \
@@ -52,10 +52,10 @@ python-pdm
 
 ## cli tools
 yazi ffmpegthumbnailer p7zip jq poppler fd ripgrep fzf zoxide imagemagick chafa \
-swappy mpv rar lazygit imv figlet go-musicfox dooit \
+swappy mpv rar lazygit imv go-musicfox dooit \
 atuin eza bat duf ncdu aria2 wget imhex git valgrind bottom btop dnslookup nmap scrcpy asar tcpdump \
 protonhax binwalk foremost gef trippy android-apktool memfetch unzip wf-recorder axel \
-trash-cli perl-image-exiftool cmatrix bobibo bear less
+trash-cli perl-image-exiftool cmatrix bobibo bear less fastfetch
 
 ## graphic driver
 sudo pacman -S mesa xf86-video-amdgpu vulkan-radeon lib32-vulkan-radeon

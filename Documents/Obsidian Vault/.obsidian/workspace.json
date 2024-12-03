@@ -22,6 +22,18 @@
             }
           },
           {
+            "id": "1f4e196eb9834c68",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.7.7"
+              },
+              "icon": "lucide-file",
+              "title": "Release Notes 1.7.7"
+            }
+          },
+          {
             "id": "1f89fefc8466e545",
             "type": "leaf",
             "state": {
@@ -35,7 +47,8 @@
               "title": "Arch 优化杂记"
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -177,15 +190,15 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "f4dcf788bbd45426",
+  "active": "1f89fefc8466e545",
   "lastOpenFiles": [
     "Arch 优化杂记.md",
+    "C & C++ 笔记.md",
     "waydroid笔记.md",
     "Rust 笔记.md",
     "javascript 笔记.md",
     "临时修改语言环境.md",
     "常用文件头信息.md",
-    "C & C++ 笔记.md",
     "Code Thoughts.md",
     "2024-05-23.md",
     "未命名",
