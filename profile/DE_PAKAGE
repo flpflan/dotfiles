@@ -1,7 +1,7 @@
 ## Hyprland Stuff
 hyprland meson glm(for hyprgrass plugin) hyprpicker waybar \
 nwg-look wlogout hyprpicker \
-fcitx5 fcitx5-rime rime-ice-git fcitx5-pinyin-moegirl-rime pamixer \
+fcitx5 fcitx5-rime rime-ice-git rime-pinyin-moegirl pamixer \
 kitty hypridle htop wev \
 brightnessctl hyprshot \
 udiskie fontconfig hyprpaper \
@@ -10,14 +10,14 @@ adobe-source-code-pro-fonts \
 ttf-firacode-nerd ttf-yrsa ttf-merriweather-sans ttf-merriweather ttf-lxgw-neo-xihei \
 ttf-recursive dunst waylyrics hyprlock \
 liteloader-qqnt-bin linux-wifi-hotspot dnsmasq \
-bibata-cursor-theme ttf-unifont hyprgui hyprsunset wallust
+bibata-cursor-theme ttf-unifont hyprgui hyprsunset wallust hyprland-qtutils hyprpolkitagent
 
 -- ags --
 aylurs-gtk-shell dart-sass swww gnome-bluetooth-3.0 matugen-bin \
 
 -- Hyprland-Dots --
 gtksourceview3 ddcutil bc cliphist adw-gtk-theme-git ttf-readex-pro ttf-material-symbols-variable-git \
-ttf-space-mono-nerd ttf-rubik-vf ttf-gabarito-git polkit-gnome gnome-keyring \
+ttf-space-mono-nerd ttf-rubik-vf ttf-gabarito-git gnome-keyring \
 gammastep webp-pixbuf-loader yad ydotool xdg-user-dirs-gtk tinyxml2 gtksourceviewmm python-materialyoucolor-git \
 gradience python-material-color-utilities python-pywal python-setuptools-scm tesseract tesseract-data-eng \
 python-pywayland python-psutil anyrun-git foot fish starship (easyeffects calf lsp-plugins-lv2 mda.lv2 zam-plugins-lv2) \
@@ -33,9 +33,9 @@ linux-zen clash-premium-bin batify-git ntfs-3g util-linux kea \
 btrfs-progs
 
 ## Apps
-visual-studio-code-bin google-chrome obs-studio v4l2loopback-dkms linuxqq baidunetdisk-bin prismlauncher \
+google-chrome obs-studio v4l2loopback-dkms linuxqq baidunetdisk-bin prismlauncher \
 intellij-idea-ultimate-edition jre-jetbrains neovim neovide unityhub gconf icu70 libicu50 libappindicator-gtk3 \
-neokoray obsidian rider godot blender hip-runtime-amd zathura zathur-pdf-mupdf krita \
+neokoray obsidian rider godot blender hip-runtime-amd zathura zathur-pdf-mupdf \
 wemeet-bin android-studio telegram-desktop vesktop-bin wireshark-qt
 xorg-xhost gparted 
 thunar catfish gvfs thunar-archive-plugin thunar-media-tags-plugin thunar-volman tumbler mathematica-light \
@@ -43,19 +43,19 @@ vlc oculante pot-translation wechat libreoffice-fresh libreoffice-fresh-zh-cn wi
 antimicrox 
 
 ## Game
-shattered-pixel-dungeon pince-git yuzu-early-access 
+pince-git yuzu-early-access 
 
 ## Toolchains
-rustup nodejs npm pnpm deno typescript go jdk-openjdk \
-cmake clang lldb lld webkit2gtk dotnet-sdk python maturin rust-analyzer zig xz bun-bin \
+rustup nodejs npm go jdk-openjdk \
+cmake clang lld webkit2gtk dotnet-sdk python rust-analyzer zig xz bun-bin \
 python-pdm 
 
 ## cli tools
-yazi ffmpegthumbnailer p7zip jq poppler fd ripgrep fzf zoxide imagemagick chafa \
+yazi ffmpegthumbnailer 7-zip jq poppler fd ripgrep fzf zoxide imagemagick chafa \
 swappy mpv rar lazygit imv go-musicfox dooit \
-atuin eza bat duf ncdu aria2 wget imhex git valgrind bottom btop dnslookup nmap scrcpy asar tcpdump \
+atuin eza bat bat-extras duf ncdu aria2 wget imhex git valgrind bottom btop dnslookup nmap scrcpy asar tcpdump \
 protonhax binwalk foremost gef trippy android-apktool memfetch unzip wf-recorder axel \
-trash-cli perl-image-exiftool cmatrix bobibo bear less fastfetch
+trash-cli perl-image-exiftool cmatrix bobibo bear less fastfetch fumosay catimg minicom \
 
 ## graphic driver
 sudo pacman -S mesa xf86-video-amdgpu vulkan-radeon lib32-vulkan-radeon
@@ -75,7 +75,7 @@ waydroid waydroid-image-gapps python-pyclip
 
 ## Development
 redis redis-insight-bin beekeeper-studio-appimage docker docker-compose \
-minicom postman-bin
+postman-bin python-poetry
 
 ## Audio
 pipewire-pulse pipewire-alsa pipewire-jack 

@@ -1,7 +1,7 @@
 [Default Applications]
-text/html=google-chrome.desktop
-x-scheme-handler/http=google-chrome.desktop
-x-scheme-handler/https=google-chrome.desktop
+text/html=firefox.desktop
+x-scheme-handler/http=firefox.desktop
+x-scheme-handler/https=firefox.desktop
 x-scheme-handler/about=google-chrome.desktop
 x-scheme-handler/unknown=google-chrome.desktop
 x-scheme-handler/baiduyunguanjia=baidunetdisk.desktop
@@ -18,6 +18,13 @@ x-scheme-handler/tonsite=org.telegram.desktop.desktop
 x-scheme-handler/discord-712465656758665259=discord-712465656758665259.desktop
 x-scheme-handler/discord-1221314350216646828=discord-1221314350216646828.desktop
 x-scheme-handler/discord-586883052379308062=moebius.desktop
+x-scheme-handler/chrome=firefox.desktop
+application/x-extension-htm=firefox.desktop
+application/x-extension-html=firefox.desktop
+application/x-extension-shtml=firefox.desktop
+application/xhtml+xml=firefox.desktop
+application/x-extension-xhtml=firefox.desktop
+application/x-extension-xht=firefox.desktop
 
 [Added Associations]
 text/plain=neovide.desktop;
@@ -25,4 +32,13 @@ inode/directory=code.desktop;neovide.desktop;
 image/png=imv-dir.desktop;
 x-scheme-handler/tonsite=org.telegram.desktop.desktop;
 image/webp=imv-dir.desktop;
-text/html=code.desktop;
+text/html=code.desktop;firefox.desktop;
+x-scheme-handler/http=firefox.desktop;
+x-scheme-handler/https=firefox.desktop;
+x-scheme-handler/chrome=firefox.desktop;
+application/x-extension-htm=firefox.desktop;
+application/x-extension-html=firefox.desktop;
+application/x-extension-shtml=firefox.desktop;
+application/xhtml+xml=firefox.desktop;
+application/x-extension-xhtml=firefox.desktop;
+application/x-extension-xht=firefox.desktop;

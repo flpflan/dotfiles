@@ -14,10 +14,10 @@ config add ~/.config/alacritty ~/.config/atuin
 config add ~/.config/bat ~/.config/dooit ~/.config/dunst ~/.config/fcitx5
 config add ~/.config/feh ~/.config/fontconfig ~/.config/fsh
 config add ~/.config/fuzzel ~/.config/go-musicfox/go-musicfox.ini ~/.config/go-musicfox/logo.png
-config add ~/.config/htop ~/.config/hypr ~/.config/kitty
-config add ~/.config/mpv ~/.config/neofetch ~/.config/imv
+config add ~/.config/htop ~/.config/hypr ~/.config/kitty ~/.config/matugen
+config add ~/.config/mpv ~/.config/fastfetch ~/.config/imv
 config add ~/.config/nvim ~/.config/qt5ct ~/.config/qt6ct
-config add ~/.config/swaylock ~/.config/waybar ~/.config/wlogout ~/.config/waylyrics ~/.config/ags
+config add ~/.config/waybar ~/.config/wlogout ~/.config/waylyrics ~/.config/ags
 config add ~/.config/xsettingsd ~/.config/yazi
 config add ~/.config/zathura
 config add ~/.config/mimeapps.list
