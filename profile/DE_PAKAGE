@@ -1,7 +1,7 @@
 ## Hyprland Stuff
 hyprland meson glm(for hyprgrass plugin) hyprpicker waybar \
 nwg-look wlogout hyprpicker \
-fcitx5 fcitx5-rime rime-ice-git rime-pinyin-moegirl pamixer \
+fcitx5 fcitx5-rime rime-ice-git rime-pinyin-moegirl fcitx5-mozc pamixer \
 kitty hypridle htop wev \
 brightnessctl hyprshot \
 udiskie fontconfig hyprpaper \
@@ -10,21 +10,22 @@ adobe-source-code-pro-fonts \
 ttf-firacode-nerd ttf-yrsa ttf-merriweather-sans ttf-merriweather ttf-lxgw-neo-xihei \
 ttf-recursive dunst waylyrics hyprlock \
 liteloader-qqnt-bin linux-wifi-hotspot dnsmasq \
-bibata-cursor-theme ttf-unifont hyprgui hyprsunset wallust hyprland-qtutils hyprpolkitagent
+bibata-cursor-theme ttf-unifont hyprsunset wallust hyprland-qtutils hyprpolkitagent
 
 -- ags --
 aylurs-gtk-shell dart-sass swww gnome-bluetooth-3.0 matugen-bin \
+ags-hyprpanel-git gpu-screen-recorder grimblast-git pacman-contrib
 
 -- Hyprland-Dots --
 gtksourceview3 ddcutil bc cliphist adw-gtk-theme-git ttf-readex-pro ttf-material-symbols-variable-git \
 ttf-space-mono-nerd ttf-rubik-vf ttf-gabarito-git gnome-keyring \
-gammastep webp-pixbuf-loader yad ydotool xdg-user-dirs-gtk tinyxml2 gtksourceviewmm python-materialyoucolor-git \
+gammastep webp-pixbuf-loader yad ydotool tinyxml2 python-materialyoucolor-git \
 gradience python-material-color-utilities python-pywal python-setuptools-scm tesseract tesseract-data-eng \
 python-pywayland python-psutil anyrun-git foot fish starship (easyeffects calf lsp-plugins-lv2 mda.lv2 zam-plugins-lv2) \
 illogical-impulse-oneui4-icons-git
 
 ## Dependencies
-playerctl bulez bluetuith bluez-obex networkmanager tlp tlp-rdw \
+playerctl bulez bluetuith bluez-obex networkmanager tlp tlp-rdw tlpui \
 ttf-font-awesome alhp-keyring alhp-mirrorlist ttf-maple \
 ttf-icomoon-feather xdg-desktop-portal-hyprland \
 qt5ct qt6ct \
@@ -38,9 +39,9 @@ intellij-idea-ultimate-edition jre-jetbrains neovim neovide unityhub gconf icu70
 neokoray obsidian rider godot blender hip-runtime-amd zathura zathur-pdf-mupdf \
 wemeet-bin android-studio telegram-desktop vesktop-bin wireshark-qt
 xorg-xhost gparted 
-thunar catfish gvfs thunar-archive-plugin thunar-media-tags-plugin thunar-volman tumbler mathematica-light \
-vlc oculante pot-translation wechat libreoffice-fresh libreoffice-fresh-zh-cn wiliwili-wayland \
-antimicrox 
+nemo nemo-fileroller cinnamon-translations gvfs mathematica-light \
+oculante pot-translation wechat libreoffice-fresh libreoffice-fresh-zh-cn \
+
 
 ## Game
 pince-git yuzu-early-access 
@@ -53,7 +54,7 @@ python-pdm
 ## cli tools
 yazi ffmpegthumbnailer 7-zip jq poppler fd ripgrep fzf zoxide imagemagick chafa \
 swappy mpv rar lazygit imv go-musicfox dooit \
-atuin eza bat bat-extras duf ncdu aria2 wget imhex git valgrind bottom btop dnslookup nmap scrcpy asar tcpdump \
+atuin eza bat bat-extras duf ncdu aria2 wget imhex git valgrind bottom btop(rocm-smi-lib) dnslookup nmap scrcpy asar tcpdump \
 protonhax binwalk foremost gef trippy android-apktool memfetch unzip wf-recorder axel \
 trash-cli perl-image-exiftool cmatrix bobibo bear less fastfetch fumosay catimg minicom \
 
@@ -61,7 +62,7 @@ trash-cli perl-image-exiftool cmatrix bobibo bear less fastfetch fumosay catimg 
 sudo pacman -S mesa xf86-video-amdgpu vulkan-radeon lib32-vulkan-radeon
 
 ## Wine
-bottles wine-mono lib32-mesa zenity 
+bottles lib32-mesa zenity 
 
 ## Steam
 steam ttf-libration adobe-source-han-sans-jp-fonts
@@ -74,8 +75,8 @@ gstreamer-vaapi gst-{libav,plugins-{base,bad,good,ugly,pipewire}}
 waydroid waydroid-image-gapps python-pyclip
 
 ## Development
-redis redis-insight-bin beekeeper-studio-appimage docker docker-compose \
-postman-bin python-poetry
+redis tiny-rdm-bin beekeeper-studio-appimage docker docker-compose \
+postman-bin python-poetry yaak-bin
 
 ## Audio
 pipewire-pulse pipewire-alsa pipewire-jack 

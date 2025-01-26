@@ -152,8 +152,8 @@ keymap = [
 	# Drop to Shell
 	{ on = [ "<C-t>" ], run = '''shell "$SHELL" --block''', desc = "Open shell here" },
 
-	# Open thunar
-	{ on = [ "<C-Space>" ], run = '''shell thunar --block''', desc = "Open thunar here" },
+	# Open gui file manager
+	{ on = [ "<C-Space>" ], run = '''shell nemo --block''', desc = "Open nemo here" },
 ]
 
 [tasks]

@@ -19,6 +19,8 @@
 -- vim.cmd.colorscheme "aurora"
 -- require("catppuccin").setup { transparent_background = true }
 -- vim.cmd.colorscheme "catppuccin"
+vim.g.neovide_transparency = 0.8
+vim.g.neovide_normal_opacity = 0.8
 
 require("markview").setup {
   opts = function(_, opts) opts.mappings.n["<c-m>"] = { "<Cmd>Markview splitToggle<CR>", desc = "Toggle markview" } end,

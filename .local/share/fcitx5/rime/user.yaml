@@ -1,5 +1,5 @@
 var:
-  last_build_time: 1735590902
+  last_build_time: 1737815115
   option:
     ascii_punct: true
   previously_selected_schema: rime_ice
@@ -7,4 +7,4 @@ var:
     clover: 1722757246
     double_pinyin_flypy: 1722760144
     double_pinyin_ziguang: 1733393155
-    rime_ice: 1735576140
+    rime_ice: 1737817172

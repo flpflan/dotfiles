@@ -1,0 +1,5 @@
+pactl load-module module-null-sink sink_name=virtual1 sink_properties=device.description="virtual1-hearshare"
+pactl load-module module-null-sink sink_name=virtual2 sink_properties=device.description="virtual2-share"
+pactl load-module module-loopback source=virtual1.monitor latency_msec=1
+pactl load-module module-loopback source=virtual1.monitor sink=virtual2 latency_msec=1
+pactl load-module module-loopback sink=virtual2 latency_msec=1
