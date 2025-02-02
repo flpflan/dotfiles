@@ -31,7 +31,7 @@ ttf-icomoon-feather xdg-desktop-portal-hyprland \
 qt5ct qt6ct \
 xorg-xwayland qt5-wayland qt6-wayland glfw \
 linux-zen clash-premium-bin batify-git ntfs-3g util-linux kea \
-btrfs-progs
+btrfs-progs vsftpd
 
 ## Apps
 google-chrome obs-studio v4l2loopback-dkms linuxqq baidunetdisk-bin prismlauncher \
