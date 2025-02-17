@@ -19,10 +19,10 @@ ags-hyprpanel-git gpu-screen-recorder grimblast-git pacman-contrib
 -- Hyprland-Dots --
 gtksourceview3 ddcutil bc cliphist adw-gtk-theme-git ttf-readex-pro ttf-material-symbols-variable-git \
 ttf-space-mono-nerd ttf-rubik-vf ttf-gabarito-git gnome-keyring \
-gammastep webp-pixbuf-loader yad ydotool tinyxml2 python-materialyoucolor-git \
-gradience python-material-color-utilities python-pywal python-setuptools-scm tesseract tesseract-data-eng \
-python-pywayland python-psutil anyrun-git foot fish starship (easyeffects calf lsp-plugins-lv2 mda.lv2 zam-plugins-lv2) \
-illogical-impulse-oneui4-icons-git
+gammastep webp-pixbuf-loader yad ydotool tinyxml2 \
+gradience tesseract tesseract-data-eng \
+anyrun-git foot fish starship (easyeffects calf lsp-plugins-lv2 mda.lv2 zam-plugins-lv2) \
+illogical-impulse-oneui4-icons-git sassc kvantum kvantum-qt5
 
 ## Dependencies
 playerctl bulez bluetuith bluez-obex networkmanager tlp tlp-rdw tlpui \
@@ -49,7 +49,7 @@ pince-git yuzu-early-access
 ## Toolchains
 rustup nodejs npm go jdk-openjdk \
 cmake clang lld webkit2gtk dotnet-sdk python rust-analyzer zig xz bun-bin \
-python-pdm 
+python-poetry python-pdm uv
 
 ## cli tools
 yazi ffmpegthumbnailer 7-zip jq poppler fd ripgrep fzf zoxide imagemagick chafa \
@@ -76,7 +76,7 @@ waydroid waydroid-image-gapps python-pyclip
 
 ## Development
 redis tiny-rdm-bin beekeeper-studio-appimage docker docker-compose \
-postman-bin python-poetry yaak-bin
+postman-bin yaak-bin
 
 ## Audio
 pipewire-pulse pipewire-alsa pipewire-jack 

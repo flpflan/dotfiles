@@ -6,10 +6,10 @@
 const userConfigOptions = {
   'apps': {
     'terminal': "foot",
-    'imageViewer': 'oculante',
+    'imageViewer': 'imv',
     'network': "foot -e fish -c nmtui",
     "bluetooth": "foot -e fish -c bluetuith",
-    "taskManager": "foot -e fish -c htop"
+    "taskManager": "foot -e btop"
   },
   'appearance': {
     'autoDarkMode': {

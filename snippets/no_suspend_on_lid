@@ -6,7 +6,7 @@ while [ "$(cat /proc/acpi/button/lid/LID/state)" == "state:      open" ]; do
 done
 
 while [ "$(cat /proc/acpi/button/lid/LID/state)" == "state:      closed" ]; do
-  sleep 1
+  sleep 2
 done
 
 sudo systemctl unmask sleep.target suspend.target hibernate.target hybrid-sleep.target

@@ -2,38 +2,61 @@
 
 toggle() {
 	if pidof clash >/dev/null; then
-		sudo systemctl stop clash.service
-		echo clash closed
+		close
 	else
+		start
+	fi
+}
+
+close() {
+	if [ "$PERSIST" ]; then
+		sudo systemctl disable --now clash.service
+		sudo systemctl enable --now systemd-resolved.service
+		echo clash closed\(persist\)
+	else
+		sudo systemctl stop clash.service
+		sudo systemctl start systemd-resolved.service
+		echo clash closed
+	fi
+}
+
+start() {
+	if [ "$PERSIST" ]; then
+		sudo systemctl disable --now systemd-resolved.service
+		sudo systemctl enable --now clash.service
+		echo start\(persist\) clash "(pid: $(pidof clash))"
+	else
+		sudo systemctl stop systemd-resolved.service
 		sudo systemctl start clash.service
 		echo start clash "(pid: $(pidof clash))"
 	fi
 }
 
-close() {
-	sudo systemctl stop clash.service
-	echo clash closed
-}
-
-start() {
-	sudo systemctl start clash.service
-	echo start clash "(pid: $(pidof clash))"
-}
-
 query() {
+	CLASH_PERSIST_STATUS="$(systemctl is-enabled clash.service)"
 	if pidof clash >/dev/null; then
-		echo "clash status: On"
+		echo "clash status: On (preset: $CLASH_PERSIST_STATUS)"
 	else
-		echo "clash status: Off"
+		echo "clash status: Off (preset: $CLASH_PERSIST_STATUS)"
 	fi
 }
 
-if [ -z "$1" ] || [ "$1" == "toggle" ]; then
+# while getopts 'p' OPTS; do
+# 	case $OPTS in
+# 	p) PERSIST=true ;;
+# 	*) ;;
+# 	esac
+# done
+if [[ "$1" == *"-p" ]]; then
+	PERSIST=true
+fi
+
+if [ -z "$1" ] || [[ "$1" == "toggle"* ]]; then
 	toggle
-elif [ "$1" == "close" ]; then
+elif [[ "$1" == "close"* ]]; then
 	close
-elif [ "$1" == "start" ]; then
+elif [[ "$1" == "start"* ]]; then
 	start
-elif [ "$1" == "query" ]; then
+elif [[ "$1" == "query"* ]]; then
 	query
 fi
