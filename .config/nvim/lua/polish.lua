@@ -22,9 +22,6 @@
 vim.g.neovide_transparency = 0.8
 vim.g.neovide_normal_opacity = 0.8
 
-require("markview").setup {
-  opts = function(_, opts) opts.mappings.n["<c-m>"] = { "<Cmd>Markview splitToggle<CR>", desc = "Toggle markview" } end,
-}
 vim.cmd [[
 set encoding=utf-8
 set termencoding=utf-8

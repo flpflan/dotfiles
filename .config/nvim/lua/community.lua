@@ -8,6 +8,7 @@ return {
   { import = "astrocommunity.color.transparent-nvim" },
 
   -- { import = "astrocommunity.completion.blink-cmp" },
+  { import = "astrocommunity.completion.avante-nvim" },
 
   { import = "astrocommunity.pack.typescript-all-in-one" },
   { import = "astrocommunity.pack.python-ruff" },
@@ -26,6 +27,7 @@ return {
   { import = "astrocommunity.pack.json" },
   { import = "astrocommunity.pack.zig" },
   { import = "astrocommunity.pack.hyprlang" },
+  { import = "astrocommunity.pack.haskell" },
 
   { import = "astrocommunity.debugging.nvim-dap-virtual-text" },
   { import = "astrocommunity.debugging.nvim-dap-repl-highlights" },
@@ -38,7 +40,7 @@ return {
 
   { import = "astrocommunity.bars-and-lines.lualine-nvim" },
 
-  { import = "astrocommunity.markdown-and-latex.markview-nvim", lazy = false },
+  -- { import = "astrocommunity.markdown-and-latex.markview-nvim", lazy = false },
 
   -- { import = "astrocommunity.editing-support.todo-comments-nvim" }, -- Now it's part of AstroNvim
   { import = "astrocommunity.editing-support.nvim-treesitter-endwise" },

@@ -68,14 +68,4 @@ return {
     "catppuccin",
     opts = { transparent_background = true },
   },
-  {
-    "OXY2DEV/markview.nvim",
-    opts = {
-      mappings = {
-        n = {
-          ["<Leader>m"] = { "<Cmd>Markview splitToggle<CR>", desc = "Toggle markview" },
-        },
-      },
-    },
-  },
 }

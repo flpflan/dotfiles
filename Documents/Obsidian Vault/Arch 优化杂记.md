@@ -284,3 +284,6 @@ tun:
 # Java 程序 UI 缩放
 
 设置环境变量 `GDK_SCALE`，例 `export GDK_SCALE=2`
+
+# 显卡欺骗
+添加内核参数 `video=HDMI-A-1:1920x1080@60e`， 参见 https://wiki.archlinuxcn.org/wiki/内核级显示模式设置#强制设置显示模式与_EDID
