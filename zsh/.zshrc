@@ -40,7 +40,7 @@ export VISUAL="neovide"
 
 #]===============[ Local envirenment variable ]===============[#
 
-HISTFILE=$XDG_CACHE_HOME/zsh/history
+HISTFILE=$XDG_DATA_HOME/zsh/zsh_history
 HISTSIZE=1000
 SAVEHIST=1000
 ZSH_AUTOSUGGEST_STRATEGY=(completion history)

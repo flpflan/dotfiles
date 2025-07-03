@@ -6,21 +6,13 @@ in
 {
   programs.foot = {
     enable = true;
-    # settings = {
-    #   main = {
-    #     term = "xterm-256color";
-    #
-    #     font = "Fira Code:size=11";
-    #     dpi-aware = "yes";
-    #   };
-    #
-    #   mouse = {
-    #     hide-when-typing = "yes";
-    #   };
-    # };
-  };
-  xdg.configFile."foot" = {
-    source = outOfStore "${fl-dots}/foot";
-    recursive = true;
+    settings = {
+      "" = {
+        include = "${outOfStore "${fl-dots}/foot"}";
+      };
+      # main = {
+        # include = ["${outOfStore "${fl-dots}/foot"}"];
+      # };
+    };
   };
 }

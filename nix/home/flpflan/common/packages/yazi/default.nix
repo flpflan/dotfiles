@@ -24,5 +24,8 @@ in
     # initLua = "${fl-dots}/yazi/init.lua";
     inherit plugins;
   };
-  xdg.configFile."yazi".source = outOfStore "${fl-dots}/yazi";
+  xdg.configFile."yazi" = {
+    source = outOfStore "${fl-dots}/yazi";
+    recursive = true;
+  };
 }
