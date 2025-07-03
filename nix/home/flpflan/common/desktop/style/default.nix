@@ -10,6 +10,4 @@ in
 
   stylix.enable = enable_stylix;
   stylix.image = ./background.png;
-
-  stylix.targets.gnome.enable = false;
 }
