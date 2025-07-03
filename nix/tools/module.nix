@@ -18,6 +18,6 @@ else if name == "<srvos-server>" then
 else if name == "<stylix-nixos>" then
     inputs.stylix.nixosModules.stylix
 else if name == "<stylix-home-manager>" then
-    inputs.stylix.homeManagerModules.stylix
+    inputs.stylix.homeModules.stylix
 else
     abort
