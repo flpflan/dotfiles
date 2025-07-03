@@ -1,13 +1,13 @@
 let
-  enable_stylix = true;
+  use_stylix = true;
 in 
 {
   imports =
-    if enable_stylix then
+    if use_stylix then
       [./fonts.nix ./theme.nix]
     else
       [./fonts-legacy.nix ./theme-legacy.nix];
 
-  stylix.enable = enable_stylix;
+  stylix.enable = use_stylix;
   stylix.image = ./background.png;
 }

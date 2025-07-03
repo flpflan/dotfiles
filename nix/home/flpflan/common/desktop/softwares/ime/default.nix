@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ lib, pkgs, ... }:
 
 {
   i18n.inputMethod = {
@@ -24,8 +24,8 @@
       ];
       settings = {
         addons = {
-          classicui.globalSection.Theme = "Material-Color-deepPurple";
-          classicui.globalSection.DarkTheme = "Material-Color-deepPurple";
+          classicui.globalSection.Theme = lib.mkDefault "Material-Color-deepPurple";
+          classicui.globalSection.DarkTheme = lib.mkDefault "Material-Color-deepPurple";
           # pinyin.globalSection = {
           #   PageSize = 9;
           #   CloudPinyinEnabled = "True";

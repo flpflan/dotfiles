@@ -4,6 +4,7 @@
     "home/flpflan/common/desktop"
     "home/flpflan/common/headless"
     "home/flpflan/common/agenix.nix"
+    "<stylix-home-manager>"
   ];
   nix.gc = {
     automatic = true;

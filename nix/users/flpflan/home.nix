@@ -8,7 +8,6 @@ in
 {
   imports = [
     (relative "<home-manager>")
-	  (relative "<stylix-home-manager>")
   ];
   users.users.flpflan = {
     isNormalUser = true;

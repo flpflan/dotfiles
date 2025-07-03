@@ -31,12 +31,12 @@
   };
 
   # GTK
-  stylix.gtk = {
+  stylix.targets.gtk = {
     enable = true;
   };
 
   # QT
-  stylix.qt = {
+  stylix.targets.qt = {
     enable = true;
   };
 }
