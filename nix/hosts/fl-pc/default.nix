@@ -18,7 +18,6 @@ in
     (relative "hosts/common/chaotic.nix")
 	  (relative "hosts/common/agenix.nix")
 	  (relative "hosts/common/facter.nix")
-	  (relative "<stylix>")
 	  (relative "users/flpflan")
   ];
 }

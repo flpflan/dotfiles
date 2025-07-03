@@ -15,7 +15,9 @@ else if name == "<disko>" then
     inputs.disko.nixosModules.disko
 else if name == "<srvos-server>" then
     inputs.srvos.nixosModules.server
-else if name == "<stylix>" then
+else if name == "<stylix-nixos>" then
     inputs.stylix.nixosModules.stylix
+else if name == "<stylix-home-manager>" then
+    inputs.stylix.homeManagerModules.stylix
 else
     abort
