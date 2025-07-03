@@ -1,0 +1,3 @@
+{
+  console.enable = false;
+}

@@ -1,0 +1,12 @@
+patch:
+  # key_binder/bindings/+:
+    # [ 或 ] 翻页
+  #   - { when: paging, accept: bracketleft, send: Page_Up }
+  #   - { when: has_menu, accept: bracketright, send: Page_Down }
+  # key_binder/select_first_character: comma
+  # key_binder/select_last_character: period
+
+  # Default to ascii mode
+  "switches/@0/reset": 1
+  # Default to chinese symbols
+  "switches/@1/reset": 0

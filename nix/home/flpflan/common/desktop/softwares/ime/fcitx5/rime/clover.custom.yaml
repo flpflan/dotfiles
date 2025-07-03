@@ -1,0 +1,3 @@
+patch:
+  # Default to ascii mode
+  "switches/@5/reset": 1
