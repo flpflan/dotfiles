@@ -1,12 +1,13 @@
-{ config, ... }:
-
+let
+  enable_stylix = true;
+in 
 {
   imports =
-    if config.stylix.enable then
+    if enable_stylix then
       [./fonts.nix ./theme.nix]
     else
       [./fonts-legacy.nix ./theme-legacy.nix];
 
-  stylix.enable = true;
+  stylix.enable = enable_stylix;
   stylix.image = ./background.png;
 }
