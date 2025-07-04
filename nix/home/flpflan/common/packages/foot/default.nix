@@ -9,7 +9,7 @@ let
   '';
 
   foot = pkgs.writeShellScriptBin "foot" ''
-    exec ${pkgs.foot}/bin/foot --config ${wrapedConfig}
+    exec ${pkgs.foot}/bin/foot --config ${wrapedConfig} "$@"
   '';
 in 
 {
