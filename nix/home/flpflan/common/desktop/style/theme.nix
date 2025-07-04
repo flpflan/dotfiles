@@ -6,14 +6,6 @@
   specialisation.light-scheme.configuration = {
     stylix.polarity = lib.mkForce "light";
   };
-  # dconf = {
-  #   settings = {
-  #     "org/gnome/desktop/interface" = {
-  #  gtk-theme = "Adwaita-dark";
-  #  color-scheme = "prefer-dark";
-  #     };
-  #   };
-  # };
 
   # Cursor
   stylix.cursor = {
