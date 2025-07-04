@@ -1,8 +1,10 @@
+{ config, ... }:
+
 {
   boot.loader.grub = {
-    efiSupport = false;
+    enable = !config.boot.isContainer;
+    default = "saved";
     # efiInstallAsRemovable = true;
-    device = "/dev/vda";
-    forceInstall = true;
+    devices = [ "/dev/vda" ];
   };
 }

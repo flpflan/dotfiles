@@ -6,7 +6,7 @@
   #   trusted-public-keys = [ "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs=" ];
   # };
 
-  outputs = inputs @ { nixpkgs, ... }:
+  outputs = inputs @ { self, nixpkgs, ... }:
     let
       tools = import ./tools (with nixpkgs; { inherit inputs lib; });
       fl-dots = ../.;
@@ -16,6 +16,10 @@
       fl-pc = nixpkgs.lib.nixosSystem (import ./hosts/fl-pc { inherit inputs tools fl-dots; });
       opiz3 = nixpkgs.lib.nixosSystem (import ./hosts/opiz3 { inherit inputs tools fl-dots; });
       fl-vps = nixpkgs.lib.nixosSystem (import ./hosts/fl-vps { inherit inputs tools fl-dots; });
+    };
+
+    packages.x86_64-linux = {
+      fl-vps-image = self.nixosConfigurations.fl-vps.config.system.build.diskoImages;
     };
   };
 
