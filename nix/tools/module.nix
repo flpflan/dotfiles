@@ -19,5 +19,7 @@ else if name == "<stylix-nixos>" then
     inputs.stylix.nixosModules.stylix
 else if name == "<stylix-home-manager>" then
     inputs.stylix.homeModules.stylix
+else if name == "<illogical-impulse>" then
+    inputs.illogical-impulse.homeManagerModules.default
 else
     abort

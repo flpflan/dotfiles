@@ -1,6 +1,7 @@
 {
   imports = [
-    ./quickshell
-    ./compositor
+    # ./quickshell
+    # ./compositor
+    ./illogical-impulse
   ];
 }

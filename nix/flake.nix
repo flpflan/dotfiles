@@ -86,5 +86,10 @@
       url = "github:danth/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    illogical-impulse = {
+      url = "github:xBLACKICEx/end-4-dots-hyprland-nixos";
+      inputs.nixpkgs.follows = "nixpkgs";
+      # inputs.illogical-impulse-dotfiles.follows = "";
+    };
   };
 }
