@@ -10,5 +10,5 @@
     ./kernel.nix
     ./disk.nix
   ];
-  facter.reportPath = ./facter.json;
+  # facter.reportPath = ./facter.json;
 }

@@ -2,7 +2,7 @@
   disko.enableConfig = false;
 
   disko.devices.disk.main = {
-    imageSize = "2G";
+    imageSize = "5G";
     type = "disk";
     device = "/dev/vda";
     content = {

@@ -3,7 +3,7 @@
 {
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  boot.initrd.includeDefaultModules = false;
+  # boot.initrd.includeDefaultModules = false;
   boot.initrd.availableKernelModules = [
     "virtio_net"
     "virtio_pci"
@@ -42,7 +42,7 @@
     "net.core.default_qdisc" = "fq";
   };
   boot.kernelParams = [
-    "quiet"
+    # "quiet"
     # 关闭内核的操作审计功能
     "audit=0"
     # 不要根据 PCIe 地址生成网卡名（例如 enp1s0，对 VPS 没用），而是直接根据顺序生成（例如 eth0）
