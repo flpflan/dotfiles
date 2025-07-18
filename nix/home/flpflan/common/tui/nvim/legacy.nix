@@ -16,7 +16,7 @@ in
   #   ];
   # };
   xdg.configFile."nvim" = {
-    source = outOfStore "${fl-dots}/nvim-legacy";
+    source = outOfStore "${fl-dots}/nvim/legacy";
     recursive = true;
   };
 }
