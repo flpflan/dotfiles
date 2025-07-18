@@ -1,4 +1,4 @@
-{ pkgs, config, inputs, tools, fl-dots, ... }:
+{ pkgs, config, specialArgs, tools, ... }:
 
 let
   inherit (tools) relative;
@@ -22,7 +22,7 @@ in
   };
 	home-manager.useGlobalPkgs = true;
 	home-manager.useUserPackages = true;
-	home-manager.extraSpecialArgs = inputs // { inherit tools fl-dots; };
+	home-manager.extraSpecialArgs = specialArgs;
 	home-manager.backupFileExtension = "hm-bak"; # Backup existing files rather than exiting with an error
 	home-manager.users.flpflan = relative "home/flpflan/${hostName}";
 }

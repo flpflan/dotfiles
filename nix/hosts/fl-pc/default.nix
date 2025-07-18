@@ -1,11 +1,12 @@
 {
   inputs,
   tools,
-  fl-dots,
   ...
 }:
 let
   inherit (tools) relative;
+
+  fl-dots = "/home/flpflan";
 in 
 
 {

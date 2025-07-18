@@ -9,13 +9,12 @@
   outputs = inputs @ { self, nixpkgs, ... }:
     let
       tools = import ./tools (with nixpkgs; { inherit inputs lib; });
-      fl-dots = ../.;
     in 
   {
     nixosConfigurations = {
-      fl-pc = nixpkgs.lib.nixosSystem (import ./hosts/fl-pc { inherit inputs tools fl-dots; });
-      opiz3 = nixpkgs.lib.nixosSystem (import ./hosts/opiz3 { inherit inputs tools fl-dots; });
-      fl-vps = nixpkgs.lib.nixosSystem (import ./hosts/fl-vps { inherit inputs tools fl-dots; });
+      fl-pc = nixpkgs.lib.nixosSystem (import ./hosts/fl-pc { inherit inputs tools; });
+      opiz3 = nixpkgs.lib.nixosSystem (import ./hosts/opiz3 { inherit inputs tools; });
+      fl-vps = nixpkgs.lib.nixosSystem (import ./hosts/fl-vps { inherit inputs tools; });
     };
 
     packages.x86_64-linux = {
