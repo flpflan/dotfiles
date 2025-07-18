@@ -2,7 +2,7 @@
 
 {
   imports = [
-    (tools.relative "home/flpflan/common/packages/nvim")
+    (tools.relative "home/flpflan/common/tui/nvim")
   ];
   home.sessionVariables.VISUAL = "nvim";
 }

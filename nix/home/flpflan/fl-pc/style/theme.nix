@@ -17,9 +17,9 @@
   # Icon
   stylix.iconTheme = {
     enable = true;
-    package = pkgs.adwaita-icon-theme;
-    light = "Adwaita";
-    dark = "Adwaita-dark";
+    package = pkgs.papirus-icon-theme;
+    light = "Papirus-Light";
+    dark = "Papirus-Dark";
   };
 
   # GTK
@@ -30,5 +30,7 @@
   # QT
   stylix.targets.qt = {
     enable = true;
+    # platform = "qtct";
   };
+  # qt.platformTheme = "gnome";
 }

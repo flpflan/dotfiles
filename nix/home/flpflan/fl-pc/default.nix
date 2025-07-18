@@ -1,11 +1,11 @@
 { tools, lib, ... }:
 {
   imports = map tools.relative [
-    "home/flpflan/common/desktop"
-    "home/flpflan/common/headless"
-    "home/flpflan/common/agenix.nix"
     "<stylix-home-manager>"
-  ];
+    "home/flpflan/common/agenix.nix"
+  ]
+  ++ tools.scan ./.;
+
   nix.gc = {
     automatic = true;
     frequency = "weekly";

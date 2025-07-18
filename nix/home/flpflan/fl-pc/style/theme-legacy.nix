@@ -1,3 +1,5 @@
+{ pkgs, ... }:
+
 {
   home.pointerCursor = {
     gtk.enable = true;
