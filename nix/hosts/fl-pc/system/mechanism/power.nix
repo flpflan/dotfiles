@@ -5,7 +5,7 @@
     cpuFreqGovernor = lib.mkDefault "ondemand";
   };
 
-  services.thermald.enable = true;
+  # services.thermald.enable = true; # Thermald is for intel CPUs
 
   #NOTE: Auto-cpufreq is good for laptop
   services.auto-cpufreq = {
@@ -31,8 +31,13 @@
   services.scx = {
     enable = true;
     scheduler = "scx_lavd";
-    # extraArgs = [ "--performance" "--autopower" ];
+    extraArgs = [
+      # "--performance"
+      "--autopower"
+    ];
   };
 
   services.upower.enable = true;
+
+  # programs.gamemode.enable = true;
 }
