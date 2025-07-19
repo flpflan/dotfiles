@@ -1,36 +1,61 @@
-{ pkgs, lib, ... }:
+{ pkgs, ... }:
 
 {
-  # Color Scheme
-  stylix.polarity = "dark";
-  specialisation.light-scheme.configuration = {
-    stylix.polarity = lib.mkForce "light";
-  };
-
-  # Cursor
-  stylix.cursor = {
-    name = "Bibata-Modern-Classic";
+  home.pointerCursor = {
     package = pkgs.bibata-cursors;
+    name = "Bibata-Modern-Classic";
     size = 16;
+    gtk.enable = true;
+    # x11.enable = true;
+    hyprcursor.enable = true;
+    dotIcons = false;
   };
 
-  # Icon
-  stylix.iconTheme = {
+  gtk = {
     enable = true;
-    package = pkgs.papirus-icon-theme;
-    light = "Papirus-Light";
-    dark = "Papirus-Dark";
-  };
+    #
+    # theme = {
+    #   package = pkgs.flat-remix-gtk;
+    #   name = "Flat-Remix-GTK-Grey-Darkest";
+    # };
 
-  # GTK
-  stylix.targets.gtk = {
-    enable = true;
-  };
+    iconTheme = {
+      package = pkgs.papirus-icon-theme.override { color = "black"; };
+      name = "Papirus-Dark";
+    };
 
-  # QT
-  stylix.targets.qt = {
-    enable = true;
-    # platform = "qtct";
+    font = {
+      name = "Sans";
+      size = 11;
+    };
   };
-  # qt.platformTheme = "gnome";
+  # gtk = {
+  #   # enable = true;
+  #   theme = {
+  #     name = "Adwaita-dark";
+  #     package = pkgs.tokyonight-gtk-theme;
+  #   };
+  #   iconTheme = {
+  #     name = "Papirus-Dark";
+  #     package = pkgs.papirus-icon-theme;
+  #   };
+  #   cursorTheme = {
+  #     name = "Adwaita";
+  #     package = pkgs.adwaita-icon-theme;
+  #     size = 24;
+  #   };
+  #   font = {
+  #     name = "Iosevka Nerd Font";
+  #   };
+  #   gtk3.extraConfig = {
+  #     Settings = ''
+  #       gtk-application-prefer-dark-theme=1
+  #     '';
+  #   };
+  #   gtk4.extraConfig = {
+  #     Settings = ''
+  #       gtk-application-prefer-dark-theme=1
+  #     '';
+  #   };
+  # };
 }

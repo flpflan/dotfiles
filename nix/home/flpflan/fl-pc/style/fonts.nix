@@ -1,29 +1,41 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
-  stylix.fonts = {
-    emoji = {
-      package = pkgs.noto-fonts-color-emoji;
-      name = "Noto Color Emoji";
+  home.packages = with pkgs; [
+      lxgw-wenkai-screen
+      lxgw-neoxihei
+      fira
+      nerd-fonts.fira-code
+      merriweather-sans
+      merriweather
+      source-han-sans-japanese
+      source-han-serif-japanese
+      # noto-fonts-cjk-sans
+      # noto-fonts-cjk-serif
+      # source-sans-pro
+      # hack-font
+      noto-fonts-color-emoji
+  ];
+  fonts.fontconfig = {
+    enable = true;
+    defaultFonts = {
+      emoji = [
+        "Noto Color Emoji"
+      ];
+      monospace = [
+        "FiraCode Nerd Font"
+        "LXGW Neo XiHei Screen Full"
+      ];
+      sansSerif = [
+        "Merriweather Sans"
+        "LXGW Neo XiHei Screen Full"
+        "Source Han Sans JP"
+      ];
+      serif = [
+        "Merriweather"
+        "LXGW Neo XiHei Screen Full"
+        "Source Han Serif JP"
+      ];
     };
-    monospace = {
-      package = pkgs.nerd-fonts.fira-code;
-      name = "FiraCode Nerd Font";
-    };
-    sansSerif = {
-      package = pkgs.merriweather-sans;
-      name = "Merriweather Sans";
-    };
-    serif = {
-      package = pkgs.merriweather;
-      name = "Merriweather";
-    };
-  };
-
-  stylix.fonts.sizes = {
-    applications = 12;
-    desktop = 10;
-    popups = config.stylix.fonts.sizes.desktop;
-    terminal = config.stylix.fonts.sizes.applications;
   };
 }

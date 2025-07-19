@@ -1,14 +1,16 @@
 let
-  use_stylix = true;
+  scheme = "manual";
 in 
 {
   # FIXME: Conflict with illogical-impulse
   imports =
-    if use_stylix then
-      [./fonts.nix ./theme.nix]
+    if scheme == "stylix" then
+      [./fonts-stylix.nix ./theme-stylix.nix]
+    # else if scheme == "legacy" then
+    #   [./fonts.nix ./theme.nix]
     else
-      [./fonts-legacy.nix ./theme-legacy.nix];
+      [./fonts.nix];
   #
-  stylix.enable = use_stylix;
+  stylix.enable = (scheme == "stylix");
   stylix.image = ./background.png;
 }
