@@ -8,7 +8,7 @@ let
     "include = ${outOfStore "${fl-dots}/foot/foot.ini"}"
     (pkgs.lib.optionalString
       (isEmpty config.programs.foot.settings)
-      "include = ${config.xdg.configHome}/foot/foot.ini"
+      # "include = ${config.xdg.configHome}/foot/foot.ini"
     )
   ]);
 
