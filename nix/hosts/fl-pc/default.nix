@@ -6,7 +6,7 @@
 let
   inherit (tools) relative;
 
-  fl-dots = "/home/flpflan";
+  fl-dots = "/home/flpflan/.dotfiles";
 in 
 
 {

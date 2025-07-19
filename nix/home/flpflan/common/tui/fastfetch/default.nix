@@ -27,6 +27,6 @@ in
   ];
   xdg.configFile."fastfetch" = {
     source = outOfStore "${fl-dots}/fastfetch";
-    recursive = true;
+    recursive = false;
   };
 }

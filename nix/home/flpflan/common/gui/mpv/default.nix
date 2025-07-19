@@ -22,6 +22,6 @@ in
   home.packages = [ pkgs.mpv ];
   xdg.configFile."mpv" = {
     source = outOfStore "${fl-dots}/mpv";
-    recursive = true;
+    recursive = false;
   };
 }
