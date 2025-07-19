@@ -24,8 +24,8 @@ in
   '';
 
   xdg.configFile = {
-    "hypr/hyprland".source = outOfStore "${fl-dots/hypr/hyprland}";
-    "hypr/scripts".source = outOfStore "${fl-dots/hypr/scripts}";
-    "hypr/scheme".source = outOfStore "${fl-dots/hypr/scheme}";
+    "hypr/hyprland".source = outOfStore "${fl-dots}/hypr/hyprland";
+    "hypr/scripts".source = outOfStore "${fl-dots}/hypr/scripts";
+    "hypr/scheme".source = outOfStore "${fl-dots}/hypr/scheme";
   };
 }
