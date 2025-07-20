@@ -1,8 +1,0 @@
-{
-  "custom/arch": {
-    "format": "",
-    "tooltip": false,
-    "on-click": "pkill fuzzel||fuzzel",
-    "on-click-right": "wlogout"
-  }
-}

@@ -19,7 +19,7 @@ return {
       {
         -- NOTE: this requires a version of yazi that includes
         -- https://github.com/sxyazi/yazi/pull/1305 from 2024-07-18
-        '<c-y>t',
+        "<c-y>t",
         "<cmd>Yazi toggle<cr>",
         desc = "Resume the last yazi session",
       },
@@ -34,7 +34,7 @@ return {
       use_yazi_client_id_flag = true,
 
       keymaps = {
-        show_help = '<f1>',
+        show_help = "<f1>",
       },
     },
   },

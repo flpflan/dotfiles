@@ -2,6 +2,9 @@ if not vim.g.neovide then
   return {} -- do nothing if not in a Neovide session
 end
 
+vim.g.neovide_transparency = 0.8
+vim.g.neovide_normal_opacity = 0.8
+
 return {
   "AstroNvim/astrocore",
   ---@type AstroCoreOpts

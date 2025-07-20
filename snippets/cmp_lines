@@ -1,0 +1,32 @@
+#!/bin/bash
+
+if [ "$#" -ne 2 ]; then
+    echo "Usage: $0 file1 file2"
+    exit 1
+fi
+
+file1="$1"
+file2="$2"
+
+if [ ! -f "$file1" ] || [ ! -f "$file2" ]; then
+    echo "Both files must exist."
+    exit 1
+fi
+
+# 使用 comm 命令比较两个文件
+# 需要先排序文件，否则 comm 可能无法正确比较
+sorted_file1=$(mktemp)
+sorted_file2=$(mktemp)
+sort "$file1" > "$sorted_file1"
+sort "$file2" > "$sorted_file2"
+
+# 输出 file1 独有的行
+echo "Lines unique to $file1:" 
+comm -23 "$sorted_file1" "$sorted_file2"
+
+echo ""
+echo "Lines unique to $file2:" 
+comm -13 "$sorted_file1" "$sorted_file2"
+
+# 清理临时文件
+rm "$sorted_file1" "$sorted_file2"

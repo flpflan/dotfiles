@@ -1,7 +1,7 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 toggle() {
-	if pidof clash >/dev/null; then
+	if pidof mihomo >/dev/null; then
 		close
 	else
 		start
@@ -10,34 +10,34 @@ toggle() {
 
 close() {
 	if [ "$PERSIST" ]; then
-		sudo systemctl disable --now clash.service
+		sudo systemctl disable --now mihomo.service
 		sudo systemctl enable --now systemd-resolved.service
-		echo clash closed\(persist\)
+		echo mihomo closed\(persist\)
 	else
-		sudo systemctl stop clash.service
+		sudo systemctl stop mihomo.service
 		sudo systemctl start systemd-resolved.service
-		echo clash closed
+		echo mihomo closed
 	fi
 }
 
 start() {
 	if [ "$PERSIST" ]; then
 		sudo systemctl disable --now systemd-resolved.service
-		sudo systemctl enable --now clash.service
-		echo start\(persist\) clash "(pid: $(pidof clash))"
+		sudo systemctl enable --now mihomo.service
+		echo start\(persist\) mihomo "(pid: $(pidof mihomo))"
 	else
 		sudo systemctl stop systemd-resolved.service
-		sudo systemctl start clash.service
-		echo start clash "(pid: $(pidof clash))"
+		sudo systemctl start mihomo.service
+		echo start mihomo "(pid: $(pidof mihomo))"
 	fi
 }
 
 query() {
-	CLASH_PERSIST_STATUS="$(systemctl is-enabled clash.service)"
-	if pidof clash >/dev/null; then
-		echo "clash status: On (preset: $CLASH_PERSIST_STATUS)"
+	MIHOMO_PERSIST_STATUS="$(systemctl is-enabled mihomo.service)"
+	if pidof mihomo >/dev/null; then
+		echo "mihomo status: On (preset: $MIHOMO_PERSIST_STATUS)"
 	else
-		echo "clash status: Off (preset: $CLASH_PERSIST_STATUS)"
+		echo "mihomo status: Off (preset: $MIHOMO_PERSIST_STATUS)"
 	fi
 }
 

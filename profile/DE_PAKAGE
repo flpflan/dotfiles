@@ -1,64 +1,59 @@
 ## Hyprland Stuff
-hyprland meson glm(for hyprgrass plugin) hyprpicker waybar \
-nwg-look wlogout hyprpicker \
-fcitx5 fcitx5-rime rime-ice-git rime-pinyin-moegirl fcitx5-mozc pamixer \
-kitty hypridle htop wev \
-brightnessctl hyprshot \
-udiskie fontconfig hyprpaper \
-pavucontrol fuzzel alacritty zsh ttf-apple-emoji ttf-jetbrains-mono-nerd \
+hyprland glm(for hyprgrass plugin) \
+nwg-look \
+fcitx5 fcitx5-configtool fcitx5-rime rime-ice-git rime-pinyin-moegirl fcitx5-mozc wpctl \
+htop wev \
+brightnessctl \
+udiskie fontconfig \
+zsh ttf-apple-emoji ttf-jetbrains-mono-nerd \
 adobe-source-code-pro-fonts \
 ttf-fira-{sans,mono} ttf-firacode-nerd ttf-yrsa ttf-merriweather-sans ttf-merriweather ttf-lxgw-neo-xihei \
-ttf-recursive dunst waylyrics hyprlock \
+ttf-recursive waylyrics \
 linux-wifi-hotspot dnsmasq \
-bibata-cursor-theme ttf-unifont hyprsunset wallust hyprland-qtutils hyprpolkitagent \
-archdroid-icon-theme
+bibata-cursor-theme ttf-unifont hyprsunset wallust hyprland-qtutils \
+archdroid-icon-theme starship foot
+# (easyeffects calf lsp-plugins-lv2 mda.lv2 zam-plugins-lv2)
+niri
 
--- ags --
-aylurs-gtk-shell dart-sass swww gnome-bluetooth-3.0 matugen-bin \
-ags-hyprpanel-git gpu-screen-recorder grimblast-git pacman-contrib
-
--- Hyprland-Dots --
-gtksourceview3 ddcutil bc cliphist adw-gtk-theme-git ttf-readex-pro ttf-material-symbols-variable-git \
-ttf-space-mono-nerd ttf-rubik-vf ttf-gabarito-git gnome-keyring \
-gammastep webp-pixbuf-loader yad ydotool tinyxml2 \
-gradience tesseract tesseract-data-eng \
-anyrun-git foot fish starship (easyeffects calf lsp-plugins-lv2 mda.lv2 zam-plugins-lv2) \
-illogical-impulse-oneui4-icons-git sassc kvantum kvantum-qt5
+## Illogical-impulse
+Illogical-impulse-{audio,backlight,basic,fonts-themes,hyprland,miscrotex-git,oneui4-icons-git,python,screencapture,toolkit,widgets} \
+gnome-keyring xdg-desktop-portal-gtk polkit-gnome
 
 ## Dependencies
-playerctl bulez bluetuith bluez-obex networkmanager tlp tlp-rdw tlpui \
+playerctl bulez bluez-utils bluetuith bluez-obex networkmanager tlp tlp-rdw tlpui \
 ttf-font-awesome alhp-keyring alhp-mirrorlist ttf-maple \
 ttf-icomoon-feather xdg-desktop-portal-hyprland \
 qt5ct qt6ct \
 xorg-xwayland qt5-wayland qt6-wayland glfw \
-linux-zen clash-premium-bin batify-git ntfs-3g util-linux kea \
-btrfs-progs vsftpd
+linux-zen mihomo-bin batify-git ntfs-3g util-linux kea \
+btrfs-progs vsftpd 
 
 ## Apps
-google-chrome obs-studio v4l2loopback-dkms linuxqq baidunetdisk-bin prismlauncher \
+google-chrome zen-browser zen-browser-i18n-zh-cn obs-studio v4l2loopback-dkms linuxqq baidunetdisk-bin prismlauncher \
 intellij-idea-ultimate-edition jre-jetbrains neovim neovide unityhub gconf icu70 libicu50 libappindicator-gtk3 \
-neokoray obsidian rider godot blender hip-runtime-amd zathura zathur-pdf-mupdf \
-wemeet-bin android-studio telegram-desktop vesktop-bin wireshark-qt
+obsidian rider godot blender hip-runtime-amd zathura zathur-pdf-mupdf \
+wemeet-bin telegram-desktop vesktop-bin wireshark-qt
 xorg-xhost gparted 
 nemo nemo-fileroller cinnamon-translations gvfs mathematica-light \
-oculante pot-translation wechat libreoffice-fresh libreoffice-fresh-zh-cn \
-cursor-bin reqable-bin
+oculante wechat libreoffice-fresh libreoffice-fresh-zh-cn \
+
 
 
 ## Game
-pince-git yuzu-early-access 
+yuzu-early-access 
 
 ## Toolchains
-rustup nodejs npm go jdk-openjdk \
+rustup nodejs npm go jre21-openjdk jre17-openjdk jre8-openjdk \
 cmake clang lld webkit2gtk dotnet-sdk python rust-analyzer zig xz bun-bin \
-python-poetry python-pdm uv ghcup-hs-bin
+python-poetry python-pdm uv ghcup-hs-bin tree-sitter-cli
 
 ## cli tools
 yazi ffmpegthumbnailer 7zip jq poppler fd ripgrep fzf zoxide imagemagick chafa \
-swappy mpv rar lazygit imv go-musicfox dooit \
-atuin eza bat bat-extras duf ncdu aria2 wget imhex git valgrind bottom btop(rocm-smi-lib) dnslookup nmap scrcpy asar tcpdump \
-protonhax binwalk foremost gef trippy android-apktool memfetch unzip wf-recorder axel \
+swappy mpv rar lazygit imv swayimg go-musicfox dooit \
+atuin eza bat bat-extras duf ncdu aria2 wget imhex git valgrind bottom btop(rocm-smi-lib) dnslookup nmap asar tcpdump \
+protonhax binwalk foremost gef trippy android-apktool android-tools memfetch unzip wf-recorder axel \
 trash-cli perl-image-exiftool cmatrix bobibo bear less fastfetch fumosay catimg minicom \
+rsync gowall
 
 ## graphic driver
 sudo pacman -S mesa xf86-video-amdgpu vulkan-radeon lib32-vulkan-radeon
@@ -74,11 +69,11 @@ gamemode lib32-gamemode gamescope
 gstreamer-vaapi gst-{libav,plugins-{base,bad,good,ugly,pipewire}}
 
 ## Waydroid
-waydroid waydroid-image-gapps python-pyclip
+#waydroid waydroid-image-gapps python-pyclip
 
 ## Development
-redis tiny-rdm-bin beekeeper-studio-appimage docker docker-compose \
-postman-bin yaak-bin adbfs-rootless-git
+redis tiny-rdm-bin beekeeper-studio-appimage \
+yaak-bin reqable-bin
 
 ## Audio
 pipewire-pulse pipewire-alsa pipewire-jack 

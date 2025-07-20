@@ -106,7 +106,7 @@ input {
 谷歌开发的BBR 拥塞控制算法，可以实现更高的带宽和更低的延迟，想要优化网速，可以尝试开启这个功能，首先加载内核模块 `tcp_bbr`，`sudo modprobe tcp_bbr`，之后编辑 `/etc/sysctl.d/30-bbr.conf`：
 
 ```
-net.core.default_qdisc = cake
+net.core.default_qdisc = fq
 net.ipv4.tcp_congestion_control = bbr
 ```
 
@@ -287,3 +287,8 @@ tun:
 
 # 显卡欺骗
 添加内核参数 `video=HDMI-A-1:1920x1080@60e`， 参见 https://wiki.archlinuxcn.org/wiki/内核级显示模式设置#强制设置显示模式与_EDID
+
+## `amd_pstate` 内核参数
+
+# ArchStrike 仓库
+参见 [ArchStrike Wiki](https://archstrike.org/wiki/setup)

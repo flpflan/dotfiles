@@ -19,12 +19,12 @@
 -- vim.cmd.colorscheme "aurora"
 -- require("catppuccin").setup { transparent_background = true }
 -- vim.cmd.colorscheme "catppuccin"
-vim.g.neovide_transparency = 0.8
-vim.g.neovide_normal_opacity = 0.8
+
+vim.opt.exrc = true
 
 vim.cmd [[
 set encoding=utf-8
-set termencoding=utf-8
+"set termencoding=utf-8
 set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr
 set fileencoding=utf-8
 ]]
