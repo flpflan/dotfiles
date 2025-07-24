@@ -1,6 +1,4 @@
 { 
-  config,
-  lib,
   pkgs,
   caelestia-cli,
   ...
@@ -14,7 +12,7 @@ in
   home.packages = [
     caelestia
   ];
-  wayland.windowManager.hyprland.settings.exec-once = lib.mkIf config.wayland.windowManager.hyprland.enable [
-    "caelestia shell"
-  ];
+  # wayland.windowManager.hyprland.settings.exec-once = lib.mkIf config.wayland.windowManager.hyprland.enable [
+  #   "caelestia shell"
+  # ];
 }

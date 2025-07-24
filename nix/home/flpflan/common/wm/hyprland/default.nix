@@ -1,4 +1,4 @@
-{ config, fl-dots, caelestia-dots, ... }:
+{ config, fl-dots, ... }:
 
 let
   outOfStore = config.lib.file.mkOutOfStoreSymlink;
@@ -18,13 +18,12 @@ in
     ];
   } // animations // decoration // keybinds // execs;
   wayland.windowManager.hyprland.extraConfig = ''
-    source = ${caelestia-dots}/hypr/hyprland.conf
     source = ${fl-dots}/hypr/hyprland.conf
   '';
 
   xdg.configFile = {
-    "hypr/hyprland".source = outOfStore "${caelestia-dots}/hypr/hyprland";
-    "hypr/scripts".source = outOfStore "${caelestia-dots}/hypr/scripts";
-    "hypr/scheme".source = outOfStore "${caelestia-dots}/hypr/scheme";
+    "hypr/hyprland".source = outOfStore "${fl-dots}/hypr/hyprland";
+    "hypr/scripts".source = outOfStore "${fl-dots}/hypr/scripts";
+    "hypr/scheme".source = outOfStore "${fl-dots}/hypr/scheme";
   };
 }
