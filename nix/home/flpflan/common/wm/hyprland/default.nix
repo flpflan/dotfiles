@@ -18,6 +18,7 @@ in
     ];
   } // animations // decoration // keybinds // execs;
   wayland.windowManager.hyprland.extraConfig = ''
+    source = ${caelestia-dots}/hypr/hyprland.conf
     source = ${fl-dots}/hypr/hyprland.conf
   '';
 
