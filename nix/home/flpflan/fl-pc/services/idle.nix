@@ -6,6 +6,7 @@ in
 {
   services.hypridle = {
     enable = true;
-    importantPrefixes = outOfStore "${fl-dots}/hypr/hypridle.conf";
   };
+
+  xdg.configFile."hypr/hypridle.conf".source = outOfStore "${fl-dots}/hypr/hypridle.conf";
 }
