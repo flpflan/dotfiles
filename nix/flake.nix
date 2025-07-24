@@ -90,8 +90,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
       # inputs.illogical-impulse-dotfiles.follows = "";
     };
-    caelestia-shell = {
-      url = "github:caelestia-dots/shell";
+    caelestia-cli = {
+      url = "github:caelestia-dots/cli";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };

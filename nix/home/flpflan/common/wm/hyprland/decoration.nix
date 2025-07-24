@@ -1,19 +1,19 @@
 {
-  decoration = {
-    rounding = 10;
-
-    blur = {
-        enabled = true;
-        xray = false;
-        special = false;
-        ignore_opacity = true;  # Allows opacity blurring
-        new_optimizations = true;
-        popups = true;
-        input_methods = true;
-    };
-
-    shadow = {
-        enabled = true;
-    };
-  };
+  # decoration = {
+  #   rounding = 10;
+  #
+  #   blur = {
+  #       enabled = true;
+  #       xray = false;
+  #       special = false;
+  #       ignore_opacity = true;  # Allows opacity blurring
+  #       new_optimizations = true;
+  #       popups = true;
+  #       input_methods = true;
+  #   };
+  #
+  #   shadow = {
+  #       enabled = true;
+  #   };
+  # };
 }

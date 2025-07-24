@@ -2,19 +2,19 @@
   config,
   lib,
   pkgs,
-  caelestia-shell,
+  caelestia-cli,
   ...
 }:
 
 let
   # qs-caelestia = pkgs.callPackage ./package.nix { inherit quickshell; };
-  qs-caelestia = caelestia-shell.packages."${pkgs.system}".default.override { withCli = true; };
+  caelestia = caelestia-cli.packages."${pkgs.system}".default.override { withShell = true; };
 in
 {
   home.packages = [
-    qs-caelestia
+    caelestia
   ];
   wayland.windowManager.hyprland.settings.exec-once = lib.mkIf config.wayland.windowManager.hyprland.enable [
-    "${qs-caelestia}/bin/caelestia-shell"
+    "caelestia shell"
   ];
 }
