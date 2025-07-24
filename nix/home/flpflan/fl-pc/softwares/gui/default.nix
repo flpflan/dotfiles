@@ -4,6 +4,6 @@
   imports = tools.scan ./.;
 
   home.packages = with pkgs; [
-    playerctl brightnessctl
+    playerctl brightnessctl app2unit
   ];
 }
