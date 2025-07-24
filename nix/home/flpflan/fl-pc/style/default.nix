@@ -8,5 +8,5 @@ in
     else if scheme == "legacy" then
       [ ./fonts.nix ./legacy ]
     else
-      [ ./fonts.nix ];
+      [ ./fonts.nix ./manual ];
 }

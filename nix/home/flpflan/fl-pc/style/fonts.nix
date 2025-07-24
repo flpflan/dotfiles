@@ -6,6 +6,7 @@
       lxgw-neoxihei
       fira
       nerd-fonts.fira-code
+      nerd-fonts.jetbrains-mono
       merriweather-sans
       merriweather
       source-han-sans-japanese
