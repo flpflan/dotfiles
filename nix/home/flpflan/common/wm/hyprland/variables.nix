@@ -1,4 +1,4 @@
 {
-  "$TERM" = "foot";
-  "$webBrowser" = "google-chrome-stable";
+  # "$TERM" = "foot";
+  # "$webBrowser" = "google-chrome-stable";
 }

@@ -14,9 +14,9 @@
     # "Super, mouse_down, workspace, -1"
     # "Super, Q, killactive"
     # "Super+Shift+Alt, Q, exec, hyprctl kill" # Pick and kill a window
-    "Super, W, exec, $webBrowser"
+    # "Super, W, exec, $webBrowser"
     # "Super, T, exec, $TERM"
-    "Super, E, exec, $TERM -e yazi"
+    # "Super, E, exec, $TERM -e yazi"
   ];
   bindm = [
     # "Super, mouse:272, movewindow"
