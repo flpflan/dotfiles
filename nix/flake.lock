@@ -362,7 +362,7 @@
     "flake-parts_3": {
       "inputs": {
         "nixpkgs-lib": [
-          "nur",
+          "nixpkgs-nur",
           "nixpkgs"
         ]
       },
@@ -945,6 +945,27 @@
         "type": "github"
       }
     },
+    "nixpkgs-nur": {
+      "inputs": {
+        "flake-parts": "flake-parts_3",
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1753433881,
+        "narHash": "sha256-HCX7Teona9QNfimHwDYUsUH6rPKFFw7tCR1fw7eP4cc=",
+        "owner": "nix-community",
+        "repo": "NUR",
+        "rev": "9f502600f91add8cb24f9a70c4849d0e7bf11f0c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "NUR",
+        "type": "github"
+      }
+    },
     "nixpkgs_2": {
       "locked": {
         "lastModified": 1749794982,
@@ -1001,27 +1022,6 @@
       }
     },
     "nur_2": {
-      "inputs": {
-        "flake-parts": "flake-parts_3",
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1753423048,
-        "narHash": "sha256-mbcUnDh5B/Mbl4vKIGJ89Dh5siM3T3xOIrItYcXpMjQ=",
-        "owner": "nix-community",
-        "repo": "NUR",
-        "rev": "39f88cdba97e0384a2c69262ac4e29dd9e0c5faf",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nix-community",
-        "repo": "NUR",
-        "type": "github"
-      }
-    },
-    "nur_3": {
       "inputs": {
         "flake-parts": [
           "stylix",
@@ -1165,7 +1165,7 @@
         "illogical-impulse": "illogical-impulse",
         "nixos-facter-modules": "nixos-facter-modules",
         "nixpkgs": "nixpkgs_3",
-        "nur": "nur_2",
+        "nixpkgs-nur": "nixpkgs-nur",
         "opiz3": "opiz3",
         "quickshell": "quickshell_3",
         "srvos": "srvos",
@@ -1227,7 +1227,7 @@
         "nixpkgs": [
           "nixpkgs"
         ],
-        "nur": "nur_3",
+        "nur": "nur_2",
         "systems": "systems_5",
         "tinted-foot": "tinted-foot",
         "tinted-kitty": "tinted-kitty",

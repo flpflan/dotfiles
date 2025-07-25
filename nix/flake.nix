@@ -14,10 +14,10 @@
   {
     inherit overlays;
 
-    nixosConfigurations = {
-      fl-pc = nixpkgs.lib.nixosSystem (import ./hosts/fl-pc { inherit inputs tools; });
-      opiz3 = nixpkgs.lib.nixosSystem (import ./hosts/opiz3 { inherit inputs tools; });
-      fl-vps = nixpkgs.lib.nixosSystem (import ./hosts/fl-vps { inherit inputs tools; });
+    nixosConfigurations = with self; {
+      fl-pc = nixpkgs.lib.nixosSystem (import ./hosts/fl-pc { inherit inputs outputs tools; });
+      opiz3 = nixpkgs.lib.nixosSystem (import ./hosts/opiz3 { inherit inputs outputs tools; });
+      fl-vps = nixpkgs.lib.nixosSystem (import ./hosts/fl-vps { inherit inputs outputs tools; });
     };
 
     packages.x86_64-linux = {

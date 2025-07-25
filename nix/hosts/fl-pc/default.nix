@@ -2,7 +2,7 @@
   inputs,
   tools,
   ...
-}:
+}@args:
 let
   inherit (tools) relative;
 
@@ -10,7 +10,7 @@ let
 in 
 
 {
-  specialArgs = inputs // { inherit inputs tools fl-dots; };
+  specialArgs = inputs // args // { inherit fl-dots; };
   system = "x86_64-linux";
   modules = [
     ./system
