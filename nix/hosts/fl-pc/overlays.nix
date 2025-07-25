@@ -1,8 +1,7 @@
-{ hyprpanel, nur, ... }:
+{ nur, ... }:
 
 {
   nixpkgs.overlays = [
-    hyprpanel.overlay
     nur.overlays.default
   ]; 
 }

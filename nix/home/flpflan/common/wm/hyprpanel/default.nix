@@ -1,8 +1,4 @@
-{ hyprpanel, ...}:
-
 {
-  imports = [ hyprpanel.homeManagerModules.hyprpanel ];
-
   programs.hyprpanel = {
     enable = true;
     hyprland.enable = true;
