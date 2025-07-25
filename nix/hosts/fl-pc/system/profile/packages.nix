@@ -25,6 +25,10 @@
     #   xwayland.enable = true;
     # };
 
+    fish = {
+	    enable = true;
+    };
+
     nano.enable = false;
 
     neovim = {
