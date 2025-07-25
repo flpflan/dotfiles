@@ -1,3 +1,5 @@
+{ pkgs, ... }:
+
 {
-  # TODO:
+  home.packages = [ pkgs.bibata-cursors ];
 }
