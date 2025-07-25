@@ -10,6 +10,10 @@ require("session"):setup {
 
 require("folder-rules"):setup()
 
+require("smart-enter"):setup {
+	open_multi = true,
+}
+
 -- if target_os() == "macos" then
 -- 	require("mactag"):setup {
 -- 		keys = {
