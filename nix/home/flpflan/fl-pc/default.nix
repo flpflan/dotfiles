@@ -1,4 +1,4 @@
-{ tools, lib, ... }:
+{ outputs, tools, lib, ... }:
 {
   imports = map tools.relative [
     "<stylix-home-manager>"
@@ -10,7 +10,10 @@
     automatic = true;
     frequency = "weekly";
     options = "--delete-older-than 7d";
+    persistent = true;
   };
+  nixpkgs.overlays = outputs.overlays;
+  nixpkgs.config.allowUnfree = true;
 
   programs.home-manager.enable = true;
   home.stateVersion = "24.11";

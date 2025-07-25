@@ -9,8 +9,11 @@
   outputs = inputs @ { self, nixpkgs, ... }:
     let
       tools = import ./tools (with nixpkgs; { inherit inputs lib; });
+      overlays = import ./overlays (with self; with nixpkgs; { inherit inputs outputs lib; });
     in 
   {
+    inherit overlays;
+
     nixosConfigurations = {
       fl-pc = nixpkgs.lib.nixosSystem (import ./hosts/fl-pc { inherit inputs tools; });
       opiz3 = nixpkgs.lib.nixosSystem (import ./hosts/opiz3 { inherit inputs tools; });
@@ -42,7 +45,7 @@
       url = "github:flpflan/orangepizero3-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nur = {
+    nixpkgs-nur = {
       url = "github:nix-community/NUR";
       inputs.nixpkgs.follows = "nixpkgs";
     };

@@ -20,7 +20,6 @@ in
     # home = "/home/flpflan";
     shell = pkgs.fish;
   };
-	home-manager.useGlobalPkgs = true;
 	home-manager.useUserPackages = true;
 	home-manager.extraSpecialArgs = specialArgs;
 	home-manager.backupFileExtension = "hm-bak"; # Backup existing files rather than exiting with an error
