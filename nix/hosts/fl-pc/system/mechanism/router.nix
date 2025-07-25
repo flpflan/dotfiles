@@ -18,7 +18,6 @@ in
   #   enable = true;
   # };
   services.mihomo = {
-    enable = false;
     tunMode = true;
     configFile = secrets."hosts/fl-pc/mihomo.yaml".path;
   };
