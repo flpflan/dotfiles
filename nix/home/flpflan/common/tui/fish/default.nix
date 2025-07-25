@@ -10,13 +10,14 @@ in
 
   programs.fish = {
     enable = true;
-    interactiveShellInit = ''
+    shellInit = ''
       source ${outOfStore "${fl-dots}/fish/config.fish"}
+    '';
+    interactiveShellInit = ''
       source ${outOfStore "${fl-dots}/fish/functions/fish_greeting.fish"}
 
       alias rgrep="$(which grep)"; alias grep="rg"
-      alias rfind=$"(which find)"; alias find="fd"
-      alias rnvim="$(which vim)"; alias vim="nvim"
+      alias rfind="$(which find)"; alias find="fd"
       alias rcat="$(which cat)"; alias cat="bat"
       alias rdf="$(which df)";   alias df="duf"
       alias rdu="$(which du)"; alias du="ncdu"
