@@ -25,10 +25,6 @@
     #   xwayland.enable = true;
     # };
 
-    zsh = {
-	    enable = true;
-    };
-
     nano.enable = false;
 
     neovim = {

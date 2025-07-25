@@ -18,7 +18,7 @@ in
     #  "ssh-ed25519 <> flpflan@fl-pc"
     #];
     # home = "/home/flpflan";
-    shell = pkgs.zsh;
+    shell = pkgs.fish;
   };
 	home-manager.useGlobalPkgs = true;
 	home-manager.useUserPackages = true;
