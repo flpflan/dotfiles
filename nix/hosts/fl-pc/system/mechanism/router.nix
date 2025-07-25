@@ -1,4 +1,4 @@
-{ pkgs, config, ... }:
+{ config, ... }:
 let
   inherit (config.age) secrets;
 in 
@@ -18,8 +18,11 @@ in
   #   enable = true;
   # };
   services.mihomo = {
-    enable = true;
+    enable = false;
     tunMode = true;
     configFile = secrets."hosts/fl-pc/mihomo.yaml".path;
+  };
+  specialisation.mihomo.configuration = {
+    services.mihomo.enable = true;
   };
 }
