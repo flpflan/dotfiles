@@ -2,6 +2,6 @@
 
 {
   imports = [
-    (tools.module "<chaotic>")
+    (tools.module "<chaotic-nixos>")
   ];
 }
