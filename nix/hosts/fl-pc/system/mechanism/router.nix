@@ -1,4 +1,4 @@
-{ config, ... }:
+{ config, lib, ... }:
 let
   inherit (config.age) secrets;
 in 
@@ -21,7 +21,5 @@ in
     tunMode = true;
     configFile = secrets."hosts/fl-pc/mihomo.yaml".path;
   };
-  specialisation.mihomo.configuration = {
-    services.mihomo.enable = true;
-  };
+  systemd.services."mihomo".wantedBy = lib.mkForce [ ];
 }
