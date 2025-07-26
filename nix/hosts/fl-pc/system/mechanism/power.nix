@@ -11,16 +11,16 @@
   services.auto-cpufreq = {
     enable = true;
     settings = {
-      battery = {
-        governor = "powersave";
-        turbo = "auto";
-        platform_profile = "balanced";
-      };
-      charger = {
-        governor = "performance";
-        turbo = "auto";
-        platform_profile = "balanced";
-      };
+      # battery = {
+      #   governor = "powersave";
+      #   turbo = "auto";
+      #   platform_profile = "balanced";
+      # };
+      # charger = {
+      #   governor = "performance";
+      #   turbo = "auto";
+      #   platform_profile = "balanced";
+      # };
       # BC mode
       # enable_thresholds = true;
       # start_threshold = 20;
@@ -32,8 +32,8 @@
     enable = true;
     scheduler = "scx_lavd";
     extraArgs = [
-      # "--performance"
-      "--autopower"
+      # "--autopilot" # Based on system's load
+      "--autopower" # Based on energy profile
     ];
   };
 
