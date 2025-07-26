@@ -1,5 +1,8 @@
-{ pkgs, ... }:
+{ config, pkgs, fl-dots, ... }:
 
+let
+  outOfStore = config.lib.file.mkOutOfStoreSymlink;
+in
 {
   i18n.inputMethod = {
     enable = true;
@@ -11,15 +14,14 @@
         # fcitx5-gtk # Needed in x11
         fcitx5-mozc
         # fcitx5-chinese-addons # We use rime instead of this
-        # fcitx5-rime.override {
-        #   rimeDataPkgs = [ nur.repos.xyenon.rime-ice ];
-        # }
-        fcitx5-rime
-
-        # 词库
-        rime-zhwiki
-        nur.repos.xyenon.rime-moegirl
-        nur.repos.xyenon.rime-ice
+        (fcitx5-rime.override {
+          rimeDataPkgs = [
+              # 词库
+              rime-ice
+              rime-zhwiki
+              rime-moegirl
+          ];
+        })
 
         # 主題
         fcitx5-fluent
@@ -27,29 +29,26 @@
       ];
       settings = {
         addons = {
-          classicui.globalSection.Theme = "FluentLight";
+          classicui.globalSection.Theme = "FluentDark";
           classicui.globalSection.DarkTheme = "FluentDark";
-          classicui.globalSection.UseDarkTheme = false; # 跟随系统浅色/深色设置 
-          # pinyin.globalSection = {
-          #   PageSize = 9;
-          #   CloudPinyinEnabled = "True";
-          #   CloudPinyinIndex = 2;
-          # };
-          # cloudpinyin.globalSection = {
-          #   Backend = "Baidu";
-          # };
+          classicui.globalSection.UseDarkTheme = true; # 跟随系统浅色/深色设置 
         };
         inputMethod = {
-          # "Groups/0" = {
-          #   Name = "Default";
-          #   "Default Layout" = "us";
-          #   DefaultIM = "keyboard-us";
-          # };
-          # "Groups/0/Items/0".Name = "keyboard-us";
-          # "Groups/0/Items/1".Name = "pinyin";
-          # GroupOrder."0" = "Default";
+          "Groups/0" = {
+            Name = "Default";
+            "Default Layout" = "us";
+            DefaultIM = "keyboard-us";
+          };
+          "Groups/0/Items/0".Name = "rime";
+          "Groups/0/Items/1".Name = "keyboard-us";
+          "Groups/0/Items/2".Name = "mozc";
+          GroupOrder."0" = "Default";
         };
       };
     };
   };
+
+  xdg.dataFile."fcitx5/rime/default.custom.yaml".source = outOfStore "${fl-dots}/fcitx5/rime/default.custom.yaml";
+  xdg.dataFile."fcitx5/rime/rime_ice.custom.yaml".source = outOfStore "${fl-dots}/fcitx5/rime/rime_ice.custom.yaml";
+  xdg.dataFile."fcitx5/rime/rime_ice.dict.yaml".source = outOfStore "${fl-dots}/fcitx5/rime/rime_ice.dict.yaml";
 }
