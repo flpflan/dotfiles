@@ -10,4 +10,10 @@
     };
     # polkit.enable = true;
   };
+
+
+  security.pki.certificates = [
+    (builtins.readFile ./.reqable-ca.pem)
+  ];
+
 }
