@@ -1,7 +1,7 @@
-{ pkgs, ... }:
+{ tools, ... }:
 
 {
-  home.packages = with pkgs; [
-    reqable
+  imports = [
+    (tools.relative "home/flpflan/common/apps/reqable")
   ];
 }
