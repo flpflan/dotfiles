@@ -93,5 +93,9 @@
       url = "github:caelestia-dots/cli";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nvim = {
+      url = "path:../nvim/fl-nvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 }

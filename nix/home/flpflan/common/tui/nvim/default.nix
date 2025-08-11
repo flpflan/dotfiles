@@ -1,5 +1,5 @@
 {
   imports = [
-    ./legacy.nix
+    ./fl-nvim.nix.nix
   ];
 }
