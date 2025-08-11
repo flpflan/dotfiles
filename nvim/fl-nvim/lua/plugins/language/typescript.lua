@@ -1,0 +1,21 @@
+if not nixCats "language.typescript" then return end
+---------------
+----- LSP -----
+---------------
+-- TODO:
+----------------
+---- Linter ----
+----------------
+-- TODO:
+-----------------
+--- Formatter ---
+-----------------
+-- TODO:
+-----------------
+--- Debugger ---
+-----------------
+-- TODO:
+-----------------
+---- Plugins ----
+-----------------
+plugin("ts-error-translator.nvim"):event_defer()

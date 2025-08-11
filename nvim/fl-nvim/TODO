@@ -1,0 +1,4 @@
+telescope
+file tree
+ui(tab/dashboard/status bar)
+home.sessionVariables.NIXD_FLAGS = "-log=error";
