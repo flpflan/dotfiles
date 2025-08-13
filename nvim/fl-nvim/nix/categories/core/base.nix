@@ -23,11 +23,11 @@
       snacks-nvim
       nui-nvim
       nvim-notify
+      oil-git-status-nvim
     ]
     ++ (with nvim_pkgs; [
       oil
       oil-vcs-status
-      oil-git-status
       oil-lsp-diagnostics
     ]);
   optionalPlugins = with vim_pkgs;
