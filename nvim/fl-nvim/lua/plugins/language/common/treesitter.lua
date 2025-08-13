@@ -4,6 +4,7 @@
 local ensured_languages = {
   "comment",
 }
+if require("nixCatsUtils").isNixCats then ensured_languages = nil end
 --------------------
 --- Config Logic ---
 --------------------

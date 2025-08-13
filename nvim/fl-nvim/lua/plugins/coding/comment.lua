@@ -1,4 +1,4 @@
-plugin("Comment.nvim"):keys {
+plugin("Comment.nvim"):event_defer():keys {
   kmap(
     "n",
     "<leader>/",

@@ -1,1 +1,1 @@
-plugin("better_escape.nvim"):event_defer()
+plugin("better-escape.nvim"):on_require("better_escape"):event_defer()

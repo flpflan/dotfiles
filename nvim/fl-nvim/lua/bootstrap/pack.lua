@@ -65,9 +65,11 @@ local plugins = {
   "SirZenith/oil-vcs-status",
   "goolord/alpha-nvim",
   "echasnovski/mini.pairs",
+  "karb94/neoscroll.nvim",
+  "mrjones2014/smart-splits.nvim",
 }
 
-if vim.version:ge("0.12") then
+if vim.version:ge "0.12" then
   -- TODO:
 else
   require("nixCatsUtils.catPacker").setup(plugins)

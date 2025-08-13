@@ -19,6 +19,10 @@
       # promise-async
       nvim-web-devicons
       which-key-nvim
+      alpha-nvim
+      snacks-nvim
+      nui-nvim
+      nvim-notify
     ]
     ++ (with nvim_pkgs; [
       oil
@@ -26,17 +30,13 @@
     ]);
   optionalPlugins = with vim_pkgs;
     [
-      alpha-nvim
-      # neoscroll-nvim
-      nui-nvim
+      neoscroll-nvim
       # vim-startuptime
-      nvim-notify
       noice-nvim
-      snacks-nvim
       # todo-comments-nvim
       # mini-indentscope
       # nvim-highlight-colors
-      # smart-splits-nvim
+      smart-splits-nvim
       # nvim-ts-autotag
       # mini-ai
       # mini-surround
