@@ -19,6 +19,10 @@
       url = "github:dmmulroy/ts-error-translator.nvim";
       flake = false;
     };
+    "plugins-oil-lsp-diagnostics" = {
+      url = "JezerM/oil-lsp-diagnostics.nvim";
+      flake = false;
+    };
     "plugins-oil-vcs-status" = {
       url = "github:SirZenith/oil-vcs-status";
       flake = false;

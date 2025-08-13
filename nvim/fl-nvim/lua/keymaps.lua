@@ -18,17 +18,17 @@ keymap.set("n", "<leader>q", "<cmd>confirm q<CR>", { desc = "Quit Window" })
 keymap.set("n", "<leader>Q", "<cmd>confirm qall<CR>", { desc = "Exit" })
 keymap.set("n", "<leader>c", "<cmd>confirm bd<CR>", { desc = "Close Buffer" })
 
--- Window navigation
-keymap.set('n', '<C-h>', '<C-w>h', opts)
-keymap.set('n', '<C-j>', '<C-w>j', opts)
-keymap.set('n', '<C-k>', '<C-w>k', opts)
-keymap.set('n', '<C-l>', '<C-w>l', opts)
+-- Window navigation -- INFO: This is done by plugin
+-- keymap.set('n', '<C-h>', '<C-w>h', opts)
+-- keymap.set('n', '<C-j>', '<C-w>j', opts)
+-- keymap.set('n', '<C-k>', '<C-w>k', opts)
+-- keymap.set('n', '<C-l>', '<C-w>l', opts)
 
--- Resize window
-keymap.set('n', '<C-Up>', ':resize +2<CR>', opts)
-keymap.set('n', '<C-Down>', ':resize -2<CR>', opts)
-keymap.set('n', '<C-Left>', ':vertical resize -2<CR>', opts)
-keymap.set('n', '<C-Right>', ':vertical resize +2<CR>', opts)
+-- Resize window -- INFO: This is done by plugin
+-- keymap.set('n', '<C-Up>', ':resize +2<CR>', opts)
+-- keymap.set('n', '<C-Down>', ':resize -2<CR>', opts)
+-- keymap.set('n', '<C-Left>', ':vertical resize -2<CR>', opts)
+-- keymap.set('n', '<C-Right>', ':vertical resize +2<CR>', opts)
 
 -- UI
 -- keymap.set("n", "<leader>ut", "<cmd><CR>", { desc = "Change colorscheme" })
