@@ -1,3 +1,5 @@
+plugin("better-escape.nvim"):on_require("better_escape"):event_defer()
+
 -- TODO: organise keymaps
 -- vim.keymap.set("n", "<leader>", "<cmd>WhichKey ,<cr>", { desc = "Buffer Local Keymaps (which-key)" })
 
