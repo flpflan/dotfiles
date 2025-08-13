@@ -63,6 +63,8 @@ local plugins = {
   "dmmulroy/ts-error-translator.nvim",
   "stevearc/oil.nvim",
   "SirZenith/oil-vcs-status",
+  "JezerM/oil-lsp-diagnostics.nvim",
+  "refractalize/oil-git-status.nvim",
   "goolord/alpha-nvim",
   "echasnovski/mini.pairs",
   "karb94/neoscroll.nvim",

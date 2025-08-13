@@ -20,7 +20,7 @@
       flake = false;
     };
     "plugins-oil-lsp-diagnostics" = {
-      url = "JezerM/oil-lsp-diagnostics.nvim";
+      url = "github:JezerM/oil-lsp-diagnostics.nvim";
       flake = false;
     };
     "plugins-oil-vcs-status" = {
