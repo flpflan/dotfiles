@@ -8,11 +8,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     "plugins-sweetie" = {
-      url = "NTBBloodbath/sweetie.nvim";
+      url = "github:NTBBloodbath/sweetie.nvim";
       flake = false;
     };
     "plugins-daylight" = {
-      url = "NTBBloodbath/daylight.nvim";
+      url = "github:NTBBloodbath/daylight.nvim";
       flake = false;
     };
     "plugins-ts-error-translator" = {
@@ -208,6 +208,8 @@
     };
     base_extra = {pkgs, ...} @ misc: {
       nixdExtras.nixpkgs = ''import ${pkgs.path} {}'';
+      nixdExtras.nixos_options = ''(builtins.getFlake ("git+file://" + toString ./.)).nixosConfigurations.fl-pc.options'';
+      nixdExtras.home_manager_options = ''(builtins.getFlake (builtins.toString ./.)).nixosConfigurations.fl-pc.options.home-manager.users.type.getSubOptions []'';
     };
 
     packageDefinitions = {
