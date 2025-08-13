@@ -18,8 +18,10 @@ in
   #   enable = true;
   # };
   services.mihomo = {
+    enable = true;
     tunMode = true;
     configFile = secrets."hosts/fl-pc/mihomo.yaml".path;
   };
+  # Disable the service by default
   systemd.services."mihomo".wantedBy = lib.mkForce [ ];
 }
