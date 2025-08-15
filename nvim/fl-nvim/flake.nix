@@ -23,6 +23,10 @@
       url = "github:JezerM/oil-lsp-diagnostics.nvim";
       flake = false;
     };
+    "plugins-oil-git" = {
+      url = "github:benomahony/oil-git.nvim";
+      flake = false;
+    };
     "plugins-oil-vcs-status" = {
       url = "github:SirZenith/oil-vcs-status";
       flake = false;

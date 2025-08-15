@@ -62,6 +62,7 @@ local plugins = {
   "antosha417/nvim-lsp-file-operations",
   "dmmulroy/ts-error-translator.nvim",
   "stevearc/oil.nvim",
+  "benomahony/oil-git.nvim",
   "SirZenith/oil-vcs-status",
   "JezerM/oil-lsp-diagnostics.nvim",
   "refractalize/oil-git-status.nvim",
@@ -69,6 +70,8 @@ local plugins = {
   "echasnovski/mini.pairs",
   "karb94/neoscroll.nvim",
   "mrjones2014/smart-splits.nvim",
+  "ThePrimeagen/harpoon?ref=harpoon2",
+  "folke/flash.nvim",
 }
 
 if vim.version:ge "0.12" then

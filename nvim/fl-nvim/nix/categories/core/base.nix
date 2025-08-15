@@ -27,6 +27,7 @@
     ]
     ++ (with nvim_pkgs; [
       oil
+      oil-git
       oil-vcs-status
       oil-lsp-diagnostics
     ]);
@@ -65,7 +66,7 @@
       # grug-far-nvim
       trouble-nvim
       # treesj
-      # flash-nvim
+      flash-nvim
       # yanky-nvim
       # neogen
       # vim-sleuth
@@ -73,7 +74,7 @@
     ++ (with nvim_pkgs; [
       lualine-nvim
       # lualine-lsp-progress
-      # harpoon
+      harpoon
       # esqueleto
       # easycolor
       # live-command
