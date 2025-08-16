@@ -1,4 +1,1 @@
--- TODO:
-plugin("snacks.nvim"):opts {
-  indent = { enabled = true },
-}
+plugin("guess-indent"):event_defer()

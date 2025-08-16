@@ -4,42 +4,45 @@ local colorscheme = "catppuccin"
 ----------------------
 ----- UI/UX Keys -----
 ----------------------
-kgroup(
-  "<leader>u",
-  "UI/UX",
-  {},
-  { kmap("n", "t", function() require("snacks").picker.colorschemes() end, "Change Colorscheme") }
-)
+kgroup("<leader>u", "UI/UX", {}, {
+  kmap("n", "t", function() require("snacks").picker.colorschemes() end, "Change Colorscheme"),
+  kmap("n", "T", kcmd "TransparentToggle", "Toggle Transparency"),
+})
 
 ------------------
 ----- Config -----
 ------------------
+local transparent = require "transparent"
+transparent.setup {
+  exclude_groups = {
+    "TelescopeSelection",
+    "TelescopePreviewLine",
+    "BlinkCmpMenuSelection",
+    "BlinkCmpScrollBarGutter",
+  },
+  extra_groups = {
+    "NormalFloat",
+    "NvimTreeNormal",
+  },
+}
+transparent.clear_prefix "BlinkCmp"
+transparent.clear_prefix "Telescope"
+transparent.clear_prefix "Trouble"
+transparent.clear_prefix "DiffviewFilePanel"
+transparent.clear_prefix "Notify"
+transparent.clear_prefix "OilVcsStatus"
+transparent.clear_prefix "WhichKey"
+transparent.clear_prefix "Float"
+transparent.clear_prefix "Flash"
+transparent.clear_prefix "NormalFloat"
+transparent.clear_prefix "LspInlayHint"
+
 require("catppuccin").setup {
   transparent_background = true,
+  auto_integrations = true,
   integrations = {
-    aerial = true,
-    alpha = true,
-    cmp = true,
-    dap = true,
-    dap_ui = true,
-    gitsigns = true,
-    illuminate = true,
-    indent_blankline = true,
-    markdown = true,
-    mason = true,
-    native_lsp = { enabled = true },
-    neotree = true,
-    notify = true,
-    semantic_tokens = true,
-    symbols_outline = true,
-    telescope = true,
-    treesitter = true,
-    ts_rainbow = true,
-    ufo = true,
-    which_key = true,
-    window_picker = true,
-    colorful_winsep = { enabled = true, color = "lavender" },
-    lsp_trouble = true,
+    colorful_winsep = { color = "lavender" },
+    snacks = { indent_scope_color = "lavender" },
   },
 }
 

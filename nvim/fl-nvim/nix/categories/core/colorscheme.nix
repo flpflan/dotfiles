@@ -5,7 +5,7 @@
 }: {
   startupPlugins = with vim_pkgs;
     [
-      # transparent-nvim
+      transparent-nvim
       catppuccin-nvim
     ]
     ++ (with nvim_pkgs; [

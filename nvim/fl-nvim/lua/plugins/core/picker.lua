@@ -1,8 +1,9 @@
 plugin("snacks.nvim")
-    :opts({
-      picker = { ui_select = false },
-    })
-    :keys(kgroup("<leader>f", "Find", {}, {
+  :opts({
+    picker = { ui_select = false },
+  })
+  :keys {
+    kgroup("<leader>f", "Find", {}, {
       kmap(
         "n",
         "f",
@@ -24,4 +25,8 @@ plugin("snacks.nvim")
         end,
         "Find All Files"
       ),
-    }))
+    }),
+    kgroup("<leader>b", "Buffer", {}, {
+      kmap("n", "e", function() require("snacks").picker.buffers() end, "Buffer Explorer"),
+    }),
+  }

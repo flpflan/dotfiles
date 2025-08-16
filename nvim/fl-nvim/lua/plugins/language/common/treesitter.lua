@@ -2,7 +2,7 @@
 --- Options ---
 ---------------
 local ensured_languages = {
-  "comment",
+  "comment", "dap_repl"
 }
 if require("nixCatsUtils").isNixCats then ensured_languages = nil end
 --------------------

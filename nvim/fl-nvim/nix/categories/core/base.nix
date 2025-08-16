@@ -14,7 +14,7 @@
     [
       lze
       lzextras
-      mini-pairs
+      # mini-pairs
       plenary-nvim
       # promise-async
       nvim-web-devicons
@@ -24,6 +24,7 @@
       nui-nvim
       nvim-notify
       oil-git-status-nvim
+      tabout-nvim
     ]
     ++ (with nvim_pkgs; [
       oil
@@ -33,6 +34,9 @@
     ]);
   optionalPlugins = with vim_pkgs;
     [
+      nvim-autopairs
+      nvim-surround
+      nvim-ts-autotag
       neoscroll-nvim
       # vim-startuptime
       noice-nvim
@@ -47,6 +51,7 @@
       # nvim-surround
       mini-icons
       comment-nvim
+      nvim-ts-context-commentstring
       better-escape-nvim
       blink-cmp
       neoconf-nvim
@@ -57,10 +62,9 @@
       # telescope-zf-native-nvim
       # telescope-fzf-native-nvim
       # telescope-dap-nvim
-      # hop-nvim
+      hop-nvim
       conform-nvim
-      # tabout-nvim
-      # nvim-ufo
+      nvim-ufo
       luasnip
       friendly-snippets # INFO: Auto sourced by luasnip
       # grug-far-nvim
@@ -72,6 +76,7 @@
       # vim-sleuth
     ]
     ++ (with nvim_pkgs; [
+      nvim-toggler
       lualine-nvim
       # lualine-lsp-progress
       harpoon
@@ -83,7 +88,7 @@
       # dir-telescope
       nvim-lint
       overseer
-      # guess-indent
+      guess-indent
       # search-replace
       # undotree
       # quicker

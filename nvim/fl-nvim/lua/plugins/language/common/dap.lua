@@ -90,4 +90,5 @@ if nixCats("core.debugging") then
 			end,
 		})
 		:on_plugin("nvim-dap")
+    plugin("nvim-dap-repl-highlights"):on_plugin("nvim-dap")
 end

@@ -7,6 +7,14 @@
       url = "github:nix-community/neovim-nightly-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    "plugins-nvim-dap-repl-highlights" = {
+      url = "github:LiadOz/nvim-dap-repl-highlights";
+      flake = false;
+    };
+    "plugins-nvim-toggler" = {
+      url = "github:nguyenvukhang/nvim-toggler";
+      flake = false;
+    };
     "plugins-sweetie" = {
       url = "github:NTBBloodbath/sweetie.nvim";
       flake = false;

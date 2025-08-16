@@ -4,7 +4,6 @@
 
 -- plugin("nvim-treesitter-endwise")
 
--- TODO:
 plugin("nvim-ts-autotag"):event({ "BufReadPre", "BufNewFile" }):opts {
   opts = {
     enable_close = true,
@@ -18,17 +17,13 @@ plugin("nvim-ts-autotag"):event({ "BufReadPre", "BufNewFile" }):opts {
   },
 }
 
-plugin("ultimate-autopair.nvim"):event_typing()
+plugin("nvim-autopairs"):event_typing():opts {
+  check_ts = true,
+}
 
-require("tabout").setup {
-  tabkey = "<Tab>",
-  backwards_tabkey = "<S-Tab>",
-  act_as_tab = true,
-  act_as_shift_tab = false,
-  default_tab = "<C-t>",
-  default_shift_tab = "<C-d>",
-  enable_backwards = true,
-  completion = false,
+-- TODO:
+plugin("tabout.nvim"):event_typing():on_require("tabout"):opts {
+  act_as_shift_tab = true,
   tabouts = {
     { open = "'", close = "'" },
     { open = '"', close = '"' },
@@ -36,22 +31,9 @@ require("tabout").setup {
     { open = "(", close = ")" },
     { open = "[", close = "]" },
     { open = "{", close = "}" },
+    { open = "<", close = ">" },
   },
-  ignore_beginning = true,
-  exclude = {},
 }
 
-plugin("tabout.nvim"):event_typing():on_require("tabout"):opts({
-	act_as_shift_tab = true,
-	tabouts = {
-		{ open = "'", close = "'" },
-		{ open = '"', close = '"' },
-		{ open = "`", close = "`" },
-		{ open = "(", close = ")" },
-		{ open = "[", close = "]" },
-		{ open = "{", close = "}" },
-		{ open = "<", close = ">" },
-	},
-})
-
+-- TODO:
 plugin("nvim-surround"):event_typing()

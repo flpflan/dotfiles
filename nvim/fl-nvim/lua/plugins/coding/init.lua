@@ -1,1 +1,1 @@
-internal.load_all { "plugins", "edition" }
+internal.load_all { "plugins", "coding" }
