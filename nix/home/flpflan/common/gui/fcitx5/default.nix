@@ -40,7 +40,9 @@ in {
           classicui.globalSection.DarkTheme = "FluentDark";
           classicui.globalSection.UseDarkTheme = true; # 跟随系统浅色/深色设置
 
-          clipboard.sections = {"TriggerKey" = "";};
+          clipboard.globalSection = {
+            TriggerKey = "";
+          };
         };
         inputMethod = {
           "Groups/0" = {
