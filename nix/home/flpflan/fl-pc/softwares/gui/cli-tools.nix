@@ -1,7 +1,9 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   home.packages = with pkgs; [
-    playerctl brightnessctl app2unit trash-cli
+    playerctl
+    brightnessctl
+    app2unit
+    trash-cli
+    hyprpicker
   ];
 }

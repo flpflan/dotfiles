@@ -1,3 +1,4 @@
+# TODO: home-manager module, and caelestia-dot integration
 { 
   pkgs,
   caelestia-cli,

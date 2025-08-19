@@ -1,6 +1,8 @@
-{ config, fl-dots, ... }:
-
-let
+{
+  config,
+  fl-dots,
+  ...
+}: let
   outOfStore = config.lib.file.mkOutOfStoreSymlink;
 
   variables = import ./variables.nix;
@@ -8,15 +10,17 @@ let
   decoration = import ./decoration.nix;
   keybinds = import ./keybinds.nix;
   execs = import ./execs.nix;
-in
-{
+in {
   wayland.windowManager.hyprland.enable = true;
   wayland.windowManager.hyprland.xwayland.enable = true;
-  wayland.windowManager.hyprland.settings = variables // {
-    monitor = [
-      ", preferred, auto, 1"
-    ];
-  } // animations // decoration // keybinds // execs;
+  wayland.windowManager.hyprland.settings =
+    variables
+    // {
+      monitor = [
+        ", preferred, auto, 1"
+      ];
+    }
+    // animations // decoration // keybinds // execs;
   wayland.windowManager.hyprland.extraConfig = ''
     source = ${fl-dots}/hypr/hyprland.conf
   '';
@@ -25,5 +29,6 @@ in
     "hypr/hyprland".source = outOfStore "${fl-dots}/hypr/hyprland";
     "hypr/scripts".source = outOfStore "${fl-dots}/hypr/scripts";
     "hypr/scheme".source = outOfStore "${fl-dots}/hypr/scheme";
+    "hypr/variables.conf".source = outOfStore "${fl-dots}/hypr/variables.conf";
   };
 }
