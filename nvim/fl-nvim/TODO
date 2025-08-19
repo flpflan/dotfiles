@@ -1,9 +1,11 @@
 file tree
 oil icon
-ui(tab/dashboard/blink.cmp/indent)
+ui(tab/dashboard(projects)/blink.cmp/indent)
 pair
 code scope(class/method/...)
 indent inconsistency between formatter and autoindent
-comment
 keymap
 git integration
+
+coding: highlight color/colorpicker
+icons

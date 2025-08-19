@@ -49,7 +49,7 @@ lsp("lua_ls")
 -- lint.linters.selene = {
 --   condition = function(ctx) return selene_configured(ctx.filename) end,
 -- }
-linter("lua", "selene")
+-- linter("lua", "selene")
 -----------------
 --- Formatter ---
 -----------------

@@ -27,12 +27,32 @@ local cmp_kinds = {
   Copilot = "",
 }
 
+-- local base_keymap = {
+--   ["<C-a>"] = { "select_and_accept", "fallback" },
+--   ["<C-j>"] = { "show", "select_next", "fallback" },
+--   ["<C-k>"] = { "show", "select_prev" },
+--   ["<Up>"] = { "select_prev", "fallback" },
+--   ["<Down>"] = { "select_next", "fallback" },
+--   ["<C-x>"] = { "cancel" },
+--   ["<C-h>"] = {
+--     function(cmp)
+--       if cmp.is_visible() then
+--         cmp.hide()
+--       else
+--         cmp.show()
+--       end
+--     end,
+--   },
+-- }
 local base_keymap = {
-  ["<M-a>"] = { "select_and_accept", "fallback" },
-  ["<M-j>"] = { "show", "select_next", "fallback" },
-  ["<M-k>"] = { "show", "select_prev" },
-  ["<M-x>"] = { "cancel" },
-  ["<M-h>"] = {
+  ["<CR>"] = { "select_and_accept", "fallback" },
+  ["<Tab>"] = { "select_next", "snippet_forward", "fallback" },
+  ["<C-j>"] = { "show", "select_next", "fallback" },
+  ["<C-k>"] = { "show", "select_prev" },
+  ["<Up>"] = { "select_prev", "fallback" },
+  ["<Down>"] = { "select_next", "fallback" },
+  ["<C-x>"] = { "cancel" },
+  ["<C-h>"] = {
     function(cmp)
       if cmp.is_visible() then
         cmp.hide()
@@ -45,6 +65,7 @@ local base_keymap = {
 
 plugin("blink-compat"):dep_of("blink.cmp"):on_require "blink.compat"
 
+local tmp_line = nil
 plugin("blink.cmp"):event_defer():event_typing():on_require("blink"):opts {
   appearance = { nerd_font_variant = "mono" },
   snippets = { preset = "luasnip" },
@@ -63,16 +84,16 @@ plugin("blink.cmp"):event_defer():event_typing():on_require("blink"):opts {
   },
   keymap = vim.tbl_deep_extend("keep", {
     preset = "none",
-    ["<M-d>"] = { "show_documentation", "hide_documentation" },
-    ["<M-s>"] = { "show_signature", "hide_signature" },
-    ["<M-l>"] = {
+    ["<C-d>"] = { "show_documentation", "hide_documentation" },
+    ["<C-s>"] = { "show_signature", "hide_signature" },
+    ["<C-l>"] = {
       function(cmp)
         if cmp.is_visible() then cmp.hide() end
         require("copilot.suggestion").next()
       end,
     },
-    ["<M-n>"] = { "snippet_forward", "fallback" },
-    ["<M-p>"] = { "snippet_backward" },
+    ["<C-n>"] = { "snippet_forward", "fallback" },
+    ["<C-p>"] = { "snippet_backward" },
   }, base_keymap),
   signature = {
     enabled = true,
@@ -113,8 +134,34 @@ plugin("blink.cmp"):event_defer():event_typing():on_require("blink"):opts {
     },
   },
   cmdline = {
+    completion = { menu = { auto_show = falre } },
     keymap = vim.tbl_deep_extend("force", base_keymap, {
-      ["<M-h>"] = {
+      preset = "none",
+      ["<Tab>"] = {
+        "show_and_insert",
+        function(cmp)
+          if cmp.is_active() and cmp.is_ghost_text_visible() then
+            local ctx = cmp.get_context()
+            if ctx.line == tmp_line then return false end
+
+            local list = require "blink.cmp.completion.list"
+            vim.schedule(function()
+              list.select(list.selected_item_idx, { auto_insert = true })
+              tmp_line = ctx.line
+            end)
+
+            return true
+          end
+        end,
+        "select_next",
+      },
+      ["<CR>"] = {
+        -- function(cmp)
+        --   if vim.fn.getcmdtype() == ":" then return cmp.select_and_accept() end
+        -- end,
+        "fallback",
+      },
+      ["<C-h>"] = {
         function(cmp)
           if cmp.is_ghost_text_visible() then
             cmp.show()

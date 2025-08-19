@@ -6,7 +6,7 @@
 }: {
   lspsAndRuntimeDeps = with pkgs; [
     lua-language-server
-    selene
+    # selene
     stylua
   ];
   optionalPlugins = with vim_pkgs;

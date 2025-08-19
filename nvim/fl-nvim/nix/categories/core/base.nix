@@ -5,7 +5,7 @@
   ...
 }: {
   lspsAndRuntimeDeps = with pkgs; [
-    # ripgrep
+    ripgrep
     # fd
     # ast-grep
     # jq
@@ -14,10 +14,10 @@
     [
       lze
       lzextras
-      # mini-pairs
       plenary-nvim
       # promise-async
       nvim-web-devicons
+      mini-icons
       which-key-nvim
       alpha-nvim
       snacks-nvim
@@ -25,6 +25,8 @@
       nvim-notify
       oil-git-status-nvim
       tabout-nvim
+      nvim-ts-context-commentstring
+      friendly-snippets # INFO: Auto sourced by luasnip
     ]
     ++ (with nvim_pkgs; [
       oil
@@ -40,18 +42,14 @@
       neoscroll-nvim
       # vim-startuptime
       noice-nvim
-      # todo-comments-nvim
+      todo-comments-nvim
       # mini-indentscope
       # nvim-highlight-colors
       smart-splits-nvim
-      # nvim-ts-autotag
       # mini-ai
       # mini-surround
       # mini-move
-      # nvim-surround
-      mini-icons
       comment-nvim
-      nvim-ts-context-commentstring
       better-escape-nvim
       blink-cmp
       neoconf-nvim
@@ -66,7 +64,6 @@
       conform-nvim
       nvim-ufo
       luasnip
-      friendly-snippets # INFO: Auto sourced by luasnip
       # grug-far-nvim
       trouble-nvim
       # treesj

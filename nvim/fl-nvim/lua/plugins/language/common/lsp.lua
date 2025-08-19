@@ -116,6 +116,7 @@ kgroup("<leader>l", "Language Tools", {}, {
 })
 plugin("neoconf.nvim"):on_require("neoconf"):opts {
   import = {
+    vscode = true,
     coc = false,
     nlsp = false,
   },

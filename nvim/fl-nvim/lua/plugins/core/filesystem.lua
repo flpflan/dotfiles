@@ -1,18 +1,3 @@
--- plugin("snacks.nvim")
---     :opts({
---       explorer = {
---         enable = true,
---         replace_netrw = true,
---       },
---       picker = {
---         enable = true,
---         sources = {
---           explorer = {},
---         },
---       },
---     })
---     :keys(kmap("n", "<leader>e", function() require("snacks").explorer() end, "Toogle Explorer"))
-
 plugin("nui.nvim"):config(false)
 plugin("plenary.nvim"):config(false)
 plugin("nvim-web-devicons"):config(false)

@@ -25,6 +25,19 @@ plugin("snacks.nvim")
         end,
         "Find All Files"
       ),
+      kmap(
+        "n",
+        "F",
+        function()
+          require("snacks").picker.grep {
+            hidden = true,
+            ignored = true,
+          }
+        end,
+        "Find All Words"
+      ),
+      kmap("n", "f", function() require("snacks").picker.grep() end, "Find Words"),
+      -- kmap("n", "t", function() require("snacks").picker.todo_comments() end, "Find TODOs"),
     }),
     kgroup("<leader>b", "Buffer", {}, {
       kmap("n", "e", function() require("snacks").picker.buffers() end, "Buffer Explorer"),

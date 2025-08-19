@@ -15,7 +15,7 @@ plugin("exrc")
     require("exrc.loader").on_vim_enter()
   end)
 
-require("project_nvim").setup {
-  patterns = { ".git", ".nvim.lua", ".svn", "Makefile", "package.json" },
-  ignore_lsp = {},
-}
+-- require("project_nvim").setup {
+--   patterns = { ".git", ".nvim.lua", ".svn", "Makefile", "package.json" },
+--   ignore_lsp = {},
+-- }

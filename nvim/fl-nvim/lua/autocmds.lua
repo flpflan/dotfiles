@@ -17,3 +17,14 @@ vim.api.nvim_create_autocmd("TextYankPost", {
   pattern = "*",
   callback = function() (vim.hl or vim.highlight).on_yank() end,
 })
+
+-- Auto Highlight Search
+local mid_mapping = false
+vim.on_key(function(char)
+  if vim.fn.mode() == "n" and not mid_mapping then
+    local new_hlsearch = vim.tbl_contains({ "<CR>", "n", "N", "*", "#", "?", "/" }, vim.fn.keytrans(char))
+    if vim.o.hlsearch ~= new_hlsearch then vim.opt.hlsearch = new_hlsearch end
+    mid_mapping = true
+    vim.schedule(function() mid_mapping = false end)
+  end
+end)

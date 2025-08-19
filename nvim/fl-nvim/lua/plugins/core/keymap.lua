@@ -4,10 +4,20 @@ plugin("better-escape.nvim"):on_require("better_escape"):event_defer()
 -- vim.keymap.set("n", "<leader>", "<cmd>WhichKey ,<cr>", { desc = "Buffer Local Keymaps (which-key)" })
 
 require("which-key").setup {
-  layout = {
-    align = "center",
-    spacing = 5,
+  --  layout = {
+  --    align = "center",
+  --    spacing = 5,
+  --   },
+  win = {
+    border = "rounded",
   },
+  icons = {
+    mappings = true,
+  },
+  defer = function(ctx)
+    if vim.list_contains({ "d", "y", "v" }, ctx.operator) then return true end
+    return vim.list_contains({ "<C-V>", "V" }, ctx.mode)
+  end,
 }
 
 -- local groups = {

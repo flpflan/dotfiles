@@ -36,4 +36,4 @@ plugin("tabout.nvim"):event_typing():on_require("tabout"):opts {
 }
 
 -- TODO:
-plugin("nvim-surround"):event_typing()
+plugin("nvim-surround"):event_defer()

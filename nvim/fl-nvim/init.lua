@@ -7,4 +7,4 @@ require("internal")
 require("keymaps")
 require("plugins")
 
-require("polish")
+require("autocmds")

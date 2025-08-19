@@ -32,6 +32,8 @@ keymap.set("n", "<leader>c", "<cmd>confirm bd<CR>", { desc = "Close Buffer" })
 
 -- UI
 -- keymap.set("n", "<leader>ut", "<cmd><CR>", { desc = "Change colorscheme" })
+keymap.set("n", "|", "<Cmd>vsplit<CR>", { desc = "Vertical Split" })
+keymap.set("n", "\\", "<Cmd>split<CR>", { desc = "Horizontal Split" })
 
 -----------------
 -- Visual mode --

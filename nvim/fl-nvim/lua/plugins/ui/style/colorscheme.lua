@@ -19,6 +19,7 @@ transparent.setup {
     "TelescopePreviewLine",
     "BlinkCmpMenuSelection",
     "BlinkCmpScrollBarGutter",
+    "BlinkCmpSignatureHelp",
   },
   extra_groups = {
     "NormalFloat",

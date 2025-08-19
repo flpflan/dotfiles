@@ -54,15 +54,6 @@ local BANNERS = {
   },
 }
 
--- plugin("snacks.nvim"):opts {
---   dashboard = {
---     enabled = true,
---     preset = {
---       header = table.concat(BANNERS[2], "\n"),
---     },
---   },
--- }
-
 local dashboard = require("alpha.themes.dashboard").config
 -- dashboard.section.val = BANNERS[2]
 plugin("alpha-nvim"):opts(dashboard)

@@ -2,6 +2,7 @@ if require("nixCatsUtils").isNixCats then return end
 
 local binary = {
   "tree-sitter",
+  "ripgrep",
 }
 local lsps = {
   "jsonls",
@@ -71,7 +72,7 @@ local plugins = {
   "goolord/alpha-nvim",
   "karb94/neoscroll.nvim",
   "mrjones2014/smart-splits.nvim",
-  "ThePrimeagen/harpoon?ref=harpoon2",
+  { "ThePrimeagen/harpoon", branch = "harpoon2" },
   "folke/flash.nvim",
   "smoka7/hop.nvim",
   "windwp/nvim-ts-autotag",
@@ -81,6 +82,10 @@ local plugins = {
   "NMAC427/guess-indent.nvim",
   "JoosepAlviste/nvim-ts-context-commentstring",
   "windwp/nvim-autopairs",
+  "folke/todo-comments.nvim",
+  "kevinhwang91/promise-async",
+  "kevinhwang91/nvim-ufo",
+  "ahmedkhalf/project.nvim",
 }
 
 if vim.version:ge "0.12" then
