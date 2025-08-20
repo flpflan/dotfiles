@@ -1,7 +1,6 @@
-{ tools, ... }:
-
-{
-  imports = [
-    (tools.relative "home/flpflan/common/gui/foot")
+{tools, ...}: {
+  imports = map tools.relative [
+    "home/flpflan/common/gui/foot"
+    "home/flpflan/common/gui/kitty"
   ];
 }
