@@ -134,11 +134,17 @@ plugin("blink.cmp"):event_defer():event_typing():on_require("blink"):opts {
     },
   },
   cmdline = {
-    completion = { menu = { auto_show = falre } },
+    completion = { menu = { auto_show = false } },
     keymap = vim.tbl_deep_extend("force", base_keymap, {
       preset = "none",
       ["<Tab>"] = {
-        "show_and_insert",
+        function(cmp)
+          if cmp.show_and_insert() then
+            local ctx = cmp.get_context()
+            tmp_line = ctx.line
+            return true
+          end
+        end,
         function(cmp)
           if cmp.is_active() and cmp.is_ghost_text_visible() then
             local ctx = cmp.get_context()

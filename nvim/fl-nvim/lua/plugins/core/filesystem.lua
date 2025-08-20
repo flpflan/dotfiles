@@ -9,22 +9,50 @@ plugin("neo-tree.nvim")
   :on_require("neo-tree")
   :cmd("Neotree")
   :keys(kmap("n", "<leader>e", kcmd "Neotree toggle", "Toogle Explorer"))
+  :opts {
+    close_if_last_window = true,
+    sources = { "filesystem", "buffers", "git_status" },
+    window = {
+      width = 30,
+    },
+    filesystem = {
+      follow_current_file = { enabled = true },
+      filtered_items = { hide_gitignored = true },
+      hijack_netrw_behavior = "open_current",
+      use_libuv_file_watcher = vim.fn.has "win32" ~= 1,
+    },
+  }
 
+-- TODO: yazi.nvim
 require("oil").setup {
   use_default_keymaps = false,
   experimental_watch_for_changes = true,
   skip_confirm_for_simple_edits = true,
   keymaps = {
     ["g?"] = "actions.show_help",
-    ["<CR>"] = "actions.select",
+    ["<C-t>"] = "actions.select_tab",
     ["|"] = "actions.select_vsplit",
     ["\\"] = "actions.select_split",
+    ["<CR>"] = "actions.select",
+    ["l"] = "actions.select",
+    ["<Right>"] = "actions.select",
     ["K"] = "actions.preview",
     ["-"] = "actions.parent",
+    ["h"] = "actions.parent",
+    ["<Left>"] = "actions.parent",
     ["<C-q>"] = "actions.close",
+    ["q"] = "actions.close",
+    ["<Esc>"] = "actions.close",
+    ["<leader>e"] = "actions.close",
     ["_"] = "actions.open_cwd",
     ["."] = "actions.cd",
+    ["`"] = "actions.cd",
+    ["~"] = "actions.tcd",
     ["H"] = "actions.toggle_hidden",
+    ["gr"] = "actions.refresh",
+    ["gs"] = "actions.change_sort",
+    ["gx"] = "actions.open_external",
+    ["g\\"] = "actions.toggle_trash",
   },
   view_options = {
     show_hidden = false,
@@ -65,6 +93,7 @@ require("oil-vcs-status").setup {
     [StatusType.UpstreamExternal] = "",
   },
 }
+require("oil-vcs-status").init()
 
 require("oil-lsp-diagnostics").setup()
 require("oil-git").setup {}

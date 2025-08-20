@@ -1,8 +1,12 @@
 {
+  pkgs,
   vim_pkgs,
   nvim_pkgs,
   ...
 }: {
+  lspsAndRuntimeDeps = with pkgs; [
+    gitMinimal
+  ];
   optionalPlugins = with vim_pkgs;
     [
       diffview-nvim

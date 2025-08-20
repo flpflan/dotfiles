@@ -16,7 +16,16 @@ in {
       nvim = _: {
         settings = {
           wrapRc = false;
+          language = {
+            toml = true;
+            yaml = true;
+            json = true;
+            python = true;
+            hyprlang = true;
+            markdown = true;
+          };
         };
+        ai = true;
       };
     };
   };

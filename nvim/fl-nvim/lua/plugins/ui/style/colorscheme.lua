@@ -39,7 +39,7 @@ transparent.clear_prefix "NormalFloat"
 transparent.clear_prefix "LspInlayHint"
 
 require("catppuccin").setup {
-  transparent_background = true,
+  transparent_background = vim.g.transparent_enabled,
   auto_integrations = true,
   integrations = {
     colorful_winsep = { color = "lavender" },
