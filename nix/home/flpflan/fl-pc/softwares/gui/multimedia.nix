@@ -1,8 +1,6 @@
-
-{ tools, ... }:
-
-{
-  imports = [
-    (tools.relative "home/flpflan/common/gui/mpv")
+{tools, ...}: {
+  imports = map tools.relative [
+    "home/flpflan/common/gui/mpv"
+    "home/flpflan/common/gui/imv"
   ];
 }
