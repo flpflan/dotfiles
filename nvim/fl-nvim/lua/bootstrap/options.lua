@@ -21,9 +21,9 @@ opt.fileencodings = "ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr"
 opt.fileencoding = "utf-8"
 
 -- Input
-opt.clipboard = 'unnamedplus' -- use system clipboard
-opt.completeopt = { 'menu', 'menuone', 'noselect' }
-opt.mouse = 'a'
+opt.clipboard = "unnamedplus" -- use system clipboard
+opt.completeopt = { "menu", "menuone", "noselect" }
+opt.mouse = "a"
 
 -- Tab
 opt.tabstop = 4
@@ -53,4 +53,16 @@ opt.smartcase = true
 -- Misc
 
 -- Neovide
-g.neovide_hide_mouse_when_typing = true
+if g.neovide then
+  vim.o.guifont = "JetBrainsMono Nerd Font:h12"
+  g.neovide_padding_top = 30
+  g.neovide_padding_bottom = 15
+  g.neovide_padding_left = 32
+  g.neovide_padding_right = 24
+  g.neovide_cursor_vfx_mode = "ripple"
+  g.neovide_cursor_animation_length = 0.03
+  g.neovide_cursor_trail_size = 0.9
+  g.neovide_hide_mouse_when_typing = true
+  g.neovide_opacity = 0.78
+  g.neovide_normal_opacity = 0.78
+end

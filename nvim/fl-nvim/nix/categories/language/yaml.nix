@@ -1,6 +1,7 @@
 {
   pkgs,
   vim_pkgs,
+  nvim_pkgs,
   ...
 }: {
   lspsAndRuntimeDeps = with pkgs; [
@@ -8,13 +9,19 @@
     yaml-language-server
     prettierd
   ];
-  optionalPlugins = with vim_pkgs; [
-    (nvim-treesitter.withPlugins (
-      plugins:
-        with plugins; [
-          yaml
-        ]
-    ))
+  startupPlugins = with vim_pkgs; [
     SchemaStore-nvim
   ];
+  optionalPlugins = with vim_pkgs;
+    [
+      (nvim-treesitter.withPlugins (
+        plugins:
+          with plugins; [
+            yaml
+          ]
+      ))
+    ]
+    ++ (with nvim_pkgs; [
+      yaml
+    ]);
 }

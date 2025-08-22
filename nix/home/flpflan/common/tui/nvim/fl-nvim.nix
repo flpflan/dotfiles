@@ -16,7 +16,12 @@ in {
       nvim = _: {
         settings = {
           wrapRc = false;
+        };
+        categories = {
+          core = true;
           language = {
+            nix = true;
+            lua = true;
             toml = true;
             yaml = true;
             json = true;
@@ -24,8 +29,8 @@ in {
             hyprlang = true;
             markdown = true;
           };
+          ai = true;
         };
-        ai = true;
       };
     };
   };

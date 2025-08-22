@@ -119,7 +119,7 @@ function component:update_status()
 
 	path_split[#path_split] = self.icon
 		.. modules.highlight.component_format_highlight(self.highlights.current)
-		.. path_split[#path_split]
+		.. (path_split[#path_split] or "")
 		.. status
 
 	return modules.highlight.component_format_highlight(self.highlights.leading)
