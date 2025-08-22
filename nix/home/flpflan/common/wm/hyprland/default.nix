@@ -10,6 +10,7 @@
   decoration = import ./decoration.nix;
   keybinds = import ./keybinds.nix;
   execs = import ./execs.nix;
+  envs = import ./envs.nix;
 in {
   wayland.windowManager.hyprland.enable = true;
   wayland.windowManager.hyprland.xwayland.enable = true;
@@ -20,7 +21,7 @@ in {
         ", preferred, auto, 1"
       ];
     }
-    // animations // decoration // keybinds // execs;
+    // animations // decoration // keybinds // execs // envs;
   wayland.windowManager.hyprland.extraConfig = ''
     source = ${fl-dots}/hypr/hyprland.conf
   '';
