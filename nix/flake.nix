@@ -6,18 +6,20 @@
   #   extra-trusted-public-keys = [ "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs=" ];
   # };
 
-  outputs = inputs @ { self, nixpkgs, ... }:
-    let
-      tools = import ./tools (with nixpkgs; { inherit inputs lib; });
-      overlays = import ./overlays (with self; with nixpkgs; { inherit inputs outputs lib; });
-    in 
-  {
+  outputs = inputs @ {
+    self,
+    nixpkgs,
+    ...
+  }: let
+    tools = import ./tools (with nixpkgs; {inherit inputs lib;});
+    overlays = import ./overlays (with self; with nixpkgs; {inherit inputs outputs lib;});
+  in {
     inherit overlays;
 
     nixosConfigurations = with self; {
-      fl-pc = nixpkgs.lib.nixosSystem (import ./hosts/fl-pc { inherit inputs outputs tools; });
-      opiz3 = nixpkgs.lib.nixosSystem (import ./hosts/opiz3 { inherit inputs outputs tools; });
-      fl-vps = nixpkgs.lib.nixosSystem (import ./hosts/fl-vps { inherit inputs outputs tools; });
+      fl-pc = nixpkgs.lib.nixosSystem (import ./hosts/fl-pc {inherit inputs outputs tools;});
+      opiz3 = nixpkgs.lib.nixosSystem (import ./hosts/opiz3 {inherit inputs outputs tools;});
+      fl-vps = nixpkgs.lib.nixosSystem (import ./hosts/fl-vps {inherit inputs outputs tools;});
     };
 
     packages.x86_64-linux = {
@@ -49,14 +51,6 @@
       url = "github:nix-community/NUR";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    quickshell = {
-      url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    # nixCats = {
-    #   url = "github:BirdeeHub/nixCats-nvim";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
     agenix = {
       url = "github:ryantm/agenix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -84,13 +78,13 @@
       url = "github:danth/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    illogical-impulse = {
-      url = "github:xBLACKICEx/end-4-dots-hyprland-nixos";
-      inputs.nixpkgs.follows = "nixpkgs";
-      # inputs.illogical-impulse-dotfiles.follows = "";
-    };
-    caelestia-cli = {
-      url = "github:caelestia-dots/cli";
+    # illogical-impulse = {
+    #   url = "github:xBLACKICEx/end-4-dots-hyprland-nixos";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    #   # inputs.illogical-impulse-dotfiles.follows = "";
+    # };
+    caelestia-shell = {
+      url = "github:caelestia-dots/shell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nvim = {

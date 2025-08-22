@@ -23,5 +23,7 @@ else if name == "<stylix-home-manager>" then
     inputs.stylix.homeModules.stylix
 else if name == "<illogical-impulse>" then
     inputs.illogical-impulse.homeManagerModules.default
+else if name == "<caelestia-shell>" then
+    inputs.caelestia-shell.homeManagerModules.default
 else
     abort

@@ -1,19 +1,14 @@
-# TODO: home-manager module, and caelestia-dot integration
-{ 
-  pkgs,
-  caelestia-cli,
-  ...
-}:
-
-let
-  # qs-caelestia = pkgs.callPackage ./package.nix { inherit quickshell; };
-  caelestia = caelestia-cli.packages."${pkgs.system}".default.override { withShell = true; };
-in
-{
-  home.packages = [
-    caelestia
+{tools, ...}: let
+  # caelestia-package = pkgs.callPackage ./package.nix { inherit quickshell; };
+in {
+  imports = [
+    (tools.relative "<caelestia-shell>")
   ];
-  # wayland.windowManager.hyprland.settings.exec-once = lib.mkIf config.wayland.windowManager.hyprland.enable [
-  #   "caelestia shell"
-  # ];
+
+  programs.caelestia = {
+    enable = true;
+    cli = {
+      enable = true;
+    };
+  };
 }
