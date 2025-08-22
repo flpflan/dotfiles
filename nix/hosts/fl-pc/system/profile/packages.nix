@@ -18,6 +18,8 @@
   environment.stub-ld.enable = false;
   environment.shellAliases = lib.mkForce {};
 
+  environment.pathsToLink = ["/share/xdg-desktop-portal" "/share/applications"]; # NOTE: This is required by xdg.portal.enable
+
   programs = {
 
     # hyprland = {

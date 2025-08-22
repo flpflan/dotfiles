@@ -1,25 +1,33 @@
 shell=fish
+term=xterm-256color
+
 title=foot
-font=JetBrains Mono Nerd Font:size=12
+
+# font=SpaceMono Nerd Font:size=11
 letter-spacing=0
-dpi-aware=no
-pad=25x25
+dpi-aware=yes
+
+pad=25x25                          # optionally append 'center'
+
 bold-text-in-bright=no
-gamma-correct-blending=no
 
 [scrollback]
 lines=10000
 
 [cursor]
 style=beam
+blink=no
 beam-thickness=1.5
+# underline-thickness=<font underline thickness>
 
 [mouse]
 hide-when-typing=yes
 # alternate-scroll-mode=yes
 
-[colors]
-alpha=0.78
+[bell]
+#urgent=yes
+#notify=yes
+#visual=yes
 
 [key-bindings]
 scrollback-up-page=Page_Up

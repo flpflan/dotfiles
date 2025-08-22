@@ -4,6 +4,7 @@
   ...
 }: {
   lspsAndRuntimeDeps = with pkgs; [
+    nodejs
     yaml-language-server
     prettierd
   ];
