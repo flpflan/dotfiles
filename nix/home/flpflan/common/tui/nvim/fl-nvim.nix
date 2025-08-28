@@ -22,6 +22,7 @@ in {
           language = {
             nix = true;
             lua = true;
+            cpp = true;
             toml = true;
             yaml = true;
             json = true;
