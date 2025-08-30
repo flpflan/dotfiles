@@ -29,6 +29,7 @@
       friendly-snippets # INFO: Auto sourced by luasnip
     ]
     ++ (with nvim_pkgs; [
+      lspconfig
       oil
       oil-git
       oil-vcs-status
@@ -71,6 +72,7 @@
       # yanky-nvim
       # neogen
       # vim-sleuth
+      statuscol-nvim
     ]
     ++ (with nvim_pkgs; [
       nvim-toggler

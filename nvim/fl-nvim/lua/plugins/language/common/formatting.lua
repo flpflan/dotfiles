@@ -14,14 +14,19 @@ plugin("conform.nvim")
   })
   :opts(function()
     return {
+      kulala = {
+        command = "kulala-fmt",
+        args = { "format", "$FILENAME" },
+        stdin = false,
+      },
       formatters_by_ft = vim.tbl_deep_extend("error", require("internal.formatter").formatter_by_ft, {
         -- ["_"] = { "trim_whitespace" },
       }),
     }
   end)
-  -- :setup(function()
-  --   vim.api.nvim_create_autocmd("BufWritePre", {
-  --     pattern = "*",
-  --     callback = function(args) require("conform").format { bufnr = args.buf } end,
-  --   })
-  -- end)
+-- :setup(function()
+--   vim.api.nvim_create_autocmd("BufWritePre", {
+--     pattern = "*",
+--     callback = function(args) require("conform").format { bufnr = args.buf } end,
+--   })
+-- end)

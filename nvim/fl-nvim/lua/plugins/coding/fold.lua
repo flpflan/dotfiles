@@ -1,9 +1,22 @@
 plugin("nvim-ufo"):event_defer():config(function()
-	vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
+	vim.o.foldlevel = 99
 	vim.o.foldlevelstart = 99
 	vim.o.foldenable = true
-	vim.o.foldcolumn = "0"
+	vim.o.foldcolumn = '1'
+	vim.wo.foldnestmax = 1
+	vim.wo.foldminlines = 1
+	vim.o.foldtext = [[substitute(getline(v:foldstart),'\\t',repeat('\ ',&tabstop),'g').' ... ' . '(' . (v:foldend - v:foldstart + 1) . ' lines)']]
+	vim.wo.foldmethod = "syntax"
+	vim.wo.foldexpr = "nvim_treesitter#foldexpr()"
 	vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
+	vim.cmd('highlight Folded ctermbg=NONE guibg=NONE')
+	vim.cmd('highlight FoldColumn ctermfg=NONE guifg=NONE')
+	-- vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
+	-- vim.o.foldlevelstart = 99
+	-- vim.o.foldenable = true
+	-- -- vim.o.foldcolumn = "auto:9"
+	-- vim.o.foldcolumn = "1"
+	-- vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
 	---@diagnostic disable-next-line: unused-local
 	require("ufo").setup({
 		provider_selector = function(bufnr, filetype, buftype)

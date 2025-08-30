@@ -1,7 +1,4 @@
 plugin("snacks.nvim")
-  :opts({
-    picker = { ui_select = false },
-  })
   :keys {
     kgroup("<leader>f", "Find", {}, {
       kmap(
@@ -27,7 +24,7 @@ plugin("snacks.nvim")
       ),
       kmap(
         "n",
-        "F",
+        "W",
         function()
           require("snacks").picker.grep {
             hidden = true,
@@ -36,7 +33,7 @@ plugin("snacks.nvim")
         end,
         "Find All Words"
       ),
-      kmap("n", "f", function() require("snacks").picker.grep() end, "Find Words"),
+      kmap("n", "w", function() require("snacks").picker.grep() end, "Find Words"),
       -- kmap("n", "t", function() require("snacks").picker.todo_comments() end, "Find TODOs"),
     }),
     kgroup("<leader>b", "Buffer", {}, {

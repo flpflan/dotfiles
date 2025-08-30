@@ -44,6 +44,10 @@ opt.showmatch = true
 opt.showcmd = true
 opt.cmdheight = 0
 
+vim.opt.numberwidth = 2
+vim.opt.signcolumn = "yes:1"
+vim.opt.statuscolumn = "%l%s"
+
 -- Searching
 opt.incsearch = true
 opt.hlsearch = true

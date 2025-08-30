@@ -43,7 +43,20 @@ require("catppuccin").setup {
   auto_integrations = true,
   integrations = {
     colorful_winsep = { color = "lavender" },
-    snacks = { indent_scope_color = "lavender" },
+    snacks = { enabled = true, indent_scope_color = "lavender" },
+    barbar = true,
+    diffview = true,
+    harpoon = true,
+    hop = true,
+    markview = true,
+    mason = true,
+    neotest = true,
+    noice = true,
+    notify = true,
+    nvim_surround = true,
+    overseer = true,
+    lsp_trouble = true,
+    which_key = true,
   },
 }
 
