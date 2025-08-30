@@ -36,9 +36,12 @@ in {
           };
         };
         addons = {
-          classicui.globalSection.Theme = "FluentDark";
-          classicui.globalSection.DarkTheme = "FluentDark";
-          classicui.globalSection.UseDarkTheme = true; # 跟随系统浅色/深色设置
+          classicui.globalSection = {
+            Theme = "FluentDark";
+            DarkTheme = "FluentDark";
+            UseDarkTheme = true; # 跟随系统浅色/深色设置
+            Font = "Sans Serif 12";
+          };
 
           clipboard.globalSection = {
             TriggerKey = "";
