@@ -7,6 +7,7 @@ in {
 
   programs.caelestia = {
     enable = true;
+    systemd.enable = false;
     settings = {
       services = {
         defaultPlayer = "musicfox";
