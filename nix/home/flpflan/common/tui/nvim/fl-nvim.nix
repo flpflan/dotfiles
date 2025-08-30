@@ -31,7 +31,7 @@ in {
             markdown = true;
           };
           ai = true;
-          request = true;
+          request = false;
         };
       };
     };
