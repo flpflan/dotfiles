@@ -3,12 +3,13 @@
   lib,
   ...
 }: let
+  tools = import ./tools.nix lib;
   base_path = ./categories;
   all_files = lib.filesystem.listFilesRecursive base_path;
   nix_files = builtins.filter (x: lib.hasSuffix ".nix" x) all_files;
   pathValue = path:
     import path {
-      inherit pkgs;
+      inherit pkgs tools;
       vim_pkgs = pkgs.vimPlugins;
       nvim_pkgs = pkgs.neovimPlugins;
     };

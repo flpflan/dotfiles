@@ -3,7 +3,7 @@ if not nixCats "language.cpp" then return end
 ----- LSP -----
 ---------------
 lsp "clangd"
-lsp "neocmakelsp"
+lsp "neocmake"
 -----------------
 --- Formatter ---
 -----------------

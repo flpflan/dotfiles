@@ -20,6 +20,9 @@ in {
         categories = {
           core = true;
           language = {
+            bundles = {
+              frontend = true;
+            };
             nix = true;
             lua = true;
             cpp = true;
