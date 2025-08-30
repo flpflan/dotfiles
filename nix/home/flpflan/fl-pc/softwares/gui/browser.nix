@@ -1,8 +1,5 @@
-{ pkgs, tools, zen-browser, ... }:
-
-{
+{tools, ...}: {
   imports = [
     (tools.relative "home/flpflan/common/apps/google-chrome")
   ];
-  home.packages = [ zen-browser.packages."${pkgs.system}".default ];
 }
