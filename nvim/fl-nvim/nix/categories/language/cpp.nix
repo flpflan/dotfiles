@@ -4,6 +4,7 @@
   ...
 }: {
   lspsAndRuntimeDeps = with pkgs; [
+    clice
     clang-tools
     neocmakelsp
   ];
