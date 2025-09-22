@@ -11,9 +11,9 @@ plugin("nvim-ts-autotag"):event({ "BufReadPre", "BufNewFile" }):opts {
     enable_close_on_slash = false,
   },
   per_filetype = {
-    ["html"] = {
-      enable_close = false,
-    },
+    -- ["html"] = {
+    --   enable_close = false,
+    -- },
   },
 }
 
@@ -24,6 +24,7 @@ plugin("nvim-autopairs"):event_typing():opts {
 -- TODO:
 plugin("tabout.nvim"):event_typing():on_require("tabout"):opts {
   act_as_shift_tab = true,
+  ignore_beginning = true,
   tabouts = {
     { open = "'", close = "'" },
     { open = '"', close = '"' },

@@ -5,11 +5,11 @@ function M.clear(ft)
 	require("dap").configurations[ft] = {}
 end
 
----@type table<string, dap.Adapter>
+---@type table<string, dap.Adapter|dap.AdapterFactory>
 local adapters = {}
 
 ---@param name string
----@param opts dap.Adapter
+---@param opts dap.Adapter|dap.AdapterFactory
 function M.adapter(name, opts)
 	adapters[name] = opts
 end

@@ -62,13 +62,15 @@ local libs = {
   vim.env.VIMRUNTIME,
   { path = "${3rd}/luv/library", words = { "vim%.uv" } },
   { path = (nixCats.nixCatsPath or "") .. "/lua", words = { "nixCats" } },
-  "nvim-dap-ui",
 }
 local s = vim.split(cwd(), "/", { trimempty = true })
 if s[#s] ~= "nvim" then table.insert(libs, (nixCats.configDir or "") .. "/lua/internal") end
 
 plugin("lazydev"):ft("lua"):cmd("LazyDev"):opts {
-  library = vim.list_extend(libs, {}),
+  library = vim.list_extend(libs, {
+    "nvim-dap",
+    "nvim-dap-ui",
+  }),
   integrations = {
     cmp = false,
   },

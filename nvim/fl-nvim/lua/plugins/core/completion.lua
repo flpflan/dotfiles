@@ -70,7 +70,7 @@ plugin("blink.cmp"):event_defer():event_typing():on_require("blink"):opts {
   appearance = { nerd_font_variant = "mono" },
   snippets = { preset = "luasnip" },
   sources = {
-    default = { "lsp", "path", "snippets", "buffer" },
+    default = { "lsp", "path", "snippets",  "buffer" },
     per_filetype = {
       lua = { inherit_defaults = true, "lazydev" },
       sql = { "dbee", "buffer" },

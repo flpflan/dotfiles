@@ -10,6 +10,9 @@ in {
     rustfmt
     codelldb
   ];
+  # startupPlugins = with vim_pkgs; [
+  # TODO:  rustaceanvim
+  # ];
   optionalPlugins = with vim_pkgs; [
     (nvim-treesitter.withPlugins (
       plugins:
@@ -17,5 +20,6 @@ in {
           rust
         ]
     ))
+    crates-nvim
   ];
 }

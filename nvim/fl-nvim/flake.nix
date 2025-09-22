@@ -7,6 +7,18 @@
       url = "github:nix-community/neovim-nightly-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    "plugins-garbage-day" = {
+      url = "github:zeioth/garbage-day.nvim";
+      flake = false;
+    };
+    "plugins-typescript-tools" = {
+      url = "github:pmizio/typescript-tools.nvim";
+      flake = false;
+    };
+    "plugins-lensline" = {
+      url = "github:oribarilan/lensline.nvim";
+      flake = false;
+    };
     "plugins-nvim-dap-repl-highlights" = {
       url = "github:LiadOz/nvim-dap-repl-highlights";
       flake = false;
@@ -116,7 +128,7 @@
       flake = false;
     };
     "plugins-venv-selector" = {
-      url = "github:linux-cultist/venv-selector.nvim?ref=regexp";
+      url = "github:linux-cultist/venv-selector.nvim";
       flake = false;
     };
     "plugins-lazydev" = {

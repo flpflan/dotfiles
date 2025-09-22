@@ -54,7 +54,7 @@ plugin("venv-selector")
   )
 
 plugin("nvim-dap-python"):dep_on("nvim-dap"):on_require("dap-python"):ft("python"):config(function()
-  require("dap-python").setup("uv", { include_configs = false })
+  require("dap-python").setup("uv", { include_configs = true })
   require("dap-python").resolve_python = function()
     local path = require("venv-selector").python()
     if path then return path end

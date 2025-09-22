@@ -98,6 +98,9 @@ local plugins = {
   { "github/copilot.vim", opt = true },
   { "olimorris/codecompanion.nvim", opt = true },
   { "luukvbaal/statuscol.nvim", opt = true },
+  -- { "pmizio/typescript-tools.nvim", opt = true },
+  { "zeioth/garbage-day.nvim", opt = true },
+  "RRethy/vim-illuminate",
 }
 
 if vim.version:ge "0.12" then

@@ -20,6 +20,9 @@ require("which-key").setup {
   end,
 }
 
+kmap("n", "]r", function() require("illuminate")["goto_next_reference"](false) end, "Next reference")
+kmap("n", "[r", function() require("illuminate")["goto_prev_reference"](false) end, "Previous reference")
+
 -- local groups = {
 --     { "<leader>b", group = "Buffers" },
 --     { "<leader>g", group = "Git" },

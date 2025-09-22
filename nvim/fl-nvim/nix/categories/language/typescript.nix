@@ -5,6 +5,7 @@
   ...
 }: {
   lspsAndRuntimeDeps = with pkgs; [
+    vscode-js-debug
     vtsls
     biome
   ];
@@ -27,5 +28,6 @@
     ]
     ++ (with nvim_pkgs; [
       ts-error-translator
+      # typescript-tools
     ]);
 }

@@ -11,7 +11,7 @@ plugin("hop.nvim")
     kmap({ "n", "x" }, "T", hop.hop_char_line(false, 1), "Hop After Char l-BC"),
     kmap("v", "<M-;>", kcmd "HopLine", "Hop Line"),
     kmap("n", "<M-;>", kcmd "HopLineStart", "Hop Line Start"),
-    kmap("n", "<leader>/", kcmd "HopPattern", "Hop at Pattern"),
+    kmap("n", "<leader>/", kcmd "HopPattern", "Hop Pattern"),
   })
   :setup(function()
     ---@diagnostic disable-next-line: deprecated

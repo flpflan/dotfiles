@@ -3,25 +3,25 @@ plugin("plenary.nvim"):config(false)
 plugin("nvim-web-devicons"):config(false)
 plugin("snacks.nvim"):config(false)
 -- plugin("image.nvim"):config(false)
-plugin("nvim-lsp-file-operations"):config(false)
-
-plugin("neo-tree.nvim")
-  :on_require("neo-tree")
-  :cmd("Neotree")
-  :keys(kmap("n", "<leader>e", kcmd "Neotree toggle", "Toogle Explorer"))
-  :opts {
-    close_if_last_window = true,
-    sources = { "filesystem", "buffers", "git_status" },
-    window = {
-      width = 30,
-    },
-    filesystem = {
-      follow_current_file = { enabled = true },
-      filtered_items = { hide_gitignored = true },
-      hijack_netrw_behavior = "open_current",
-      use_libuv_file_watcher = vim.fn.has "win32" ~= 1,
-    },
-  }
+-- plugin("nvim-lsp-file-operations"):dep_on("neo-tree.nvim")
+--
+-- plugin("neo-tree.nvim")
+--   :on_require("neo-tree")
+--   :cmd("Neotree")
+--   :keys(kmap("n", "<leader>e", kcmd "Neotree toggle", "Toogle Explorer"))
+--   :opts {
+--     close_if_last_window = true,
+--     sources = { "filesystem", "buffers", "git_status" },
+--     window = {
+--       width = 30,
+--     },
+--     filesystem = {
+--       follow_current_file = { enabled = true },
+--       filtered_items = { hide_gitignored = true },
+--       hijack_netrw_behavior = "open_current",
+--       use_libuv_file_watcher = vim.fn.has "win32" ~= 1,
+--     },
+--   }
 
 -- TODO: yazi.nvim
 require("oil").setup {
@@ -34,12 +34,12 @@ require("oil").setup {
     ["|"] = "actions.select_vsplit",
     ["\\"] = "actions.select_split",
     ["<CR>"] = "actions.select",
-    ["l"] = "actions.select",
-    ["<Right>"] = "actions.select",
+    -- ["l"] = "actions.select",
+    -- ["<Right>"] = "actions.select",
     ["K"] = "actions.preview",
     ["-"] = "actions.parent",
-    ["h"] = "actions.parent",
-    ["<Left>"] = "actions.parent",
+    -- ["h"] = "actions.parent",
+    -- ["<Left>"] = "actions.parent",
     ["<C-q>"] = "actions.close",
     ["q"] = "actions.close",
     ["<Esc>"] = "actions.close",

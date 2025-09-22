@@ -28,3 +28,35 @@ vim.on_key(function(char)
     vim.schedule(function() mid_mapping = false end)
   end
 end)
+
+-- LSP Document Highlight
+-- vim.cmd(
+--   [[
+--     augroup lsp_document_highlight
+--       autocmd! * <buffer>
+--       autocmd CursorHold,CursorHoldI  <buffer> lua vim.lsp.buf.document_highlight()
+--       autocmd CursorMoved,CursorMovedI,BufLeave   <buffer> lua vim.lsp.buf.clear_references()
+--       augroup END
+--     ]],
+--   false
+-- )
+
+-- Disable auto-comment for new lines
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "*",
+  callback = function()
+    -- Remove 'o' and 'r' from formatoptions for all file types
+    vim.opt.formatoptions:remove("o")
+    vim.opt.formatoptions:remove("r")
+  end,
+})
+
+-- Disable diagnostics for .env and .md files
+local group = vim.api.nvim_create_augroup("__nofilediagnostics", { clear = true })
+vim.api.nvim_create_autocmd("BufEnter", {
+  pattern = { ".env*", "*.md" },
+  group = group,
+  callback = function(args)
+    vim.diagnostic.enable(false, { bufnr = args.buf })
+  end,
+})

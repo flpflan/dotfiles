@@ -4,8 +4,9 @@
   ...
 }: {
   lspsAndRuntimeDeps = with pkgs; [
-    stylelint-lsp
-    biome
+    # stylelint-lsp
+    # biome
+    vscode-langservers-extracted
   ];
   optionalPlugins = with vim_pkgs; [
     (nvim-treesitter.withPlugins (

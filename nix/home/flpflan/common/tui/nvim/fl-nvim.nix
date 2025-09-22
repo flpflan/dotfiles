@@ -1,5 +1,6 @@
 {
   config,
+  pkgs,
   nvim,
   fl-dots,
   ...
@@ -16,6 +17,11 @@ in {
       nvim = _: {
         settings = {
           wrapRc = false;
+          hosts = {
+            python3.enable = false;
+            ruby.enable = false;
+            node.enable = false;
+          };
         };
         categories = {
           core = true;
@@ -26,6 +32,7 @@ in {
             nix = true;
             lua = true;
             cpp = true;
+            rust = true;
             toml = true;
             yaml = true;
             json = true;
@@ -35,6 +42,13 @@ in {
           };
           ai = true;
           request = false;
+        };
+        extra = {
+          nixdExtras = rec {
+            nixpkgs = ''import ${pkgs.path} {}'';
+            nixos_options = ''(builtins.getFlake "${fl-dots}/nix").nixosConfigurations.fl-pc.options'';
+            home_manager_options = nixos_options + ''.home-manager.users.type.getSubOptions []'';
+          };
         };
       };
     };

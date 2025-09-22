@@ -4,6 +4,11 @@ local opts = {
     silent = true,  -- do not show message
 }
 
+-- Paste without overwriting the default register
+vim.keymap.set("x", "p", '"_dP', { noremap = true, silent = true })
+-- Remove one character without yanking
+-- vim.keymap.set("n", "x", '"x')
+
 -----------------
 -- Insert mode --
 -----------------
@@ -12,8 +17,11 @@ local opts = {
 -----------------
 -- Normal mode --
 -----------------
+-- Visual Select
+keymap.set("n", "<M-v>", "<C-v>")
 -- Edit
 keymap.set("n", "<leader>w", "<cmd>w<CR>", { desc = "Save" })
+-- vim.keymap.set("n", "<leader>W", ":noautocmd w<CR>", { desc = "Save No Autocmd" })
 keymap.set("n", "<leader>q", "<cmd>confirm q<CR>", { desc = "Quit Window" })
 keymap.set("n", "<leader>Q", "<cmd>confirm qall<CR>", { desc = "Exit" })
 keymap.set("n", "<leader>c", "<cmd>confirm bd<CR>", { desc = "Close Buffer" })

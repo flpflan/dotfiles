@@ -21,7 +21,10 @@ plugin("noice.nvim"):event_defer():dep_on("nui.nvim", "nvim-notify"):on_require(
         enabled = false,
       },
     },
-    -- hover = { enabled = false },
+    hover = {
+      enabled = true,
+      silent = true,
+    },
   },
   views = {
     mini = {

@@ -4,8 +4,22 @@
 local function on_attach(client, buf)
   if client.name == "lua_ls" then
     require "neoconf"
-  else
-    if client.name == "ruff" then client.server_capabilities.hoverProvider = false end
+  elseif client.name == "ruff" then
+    client.server_capabilities.hoverProvider = false
+  elseif client.name == "vtsls" or client.name == "ts_ls" then
+    kmap(
+      "n",
+      "gs",
+      function() require("vtsls").commands.goto_source_definition() end,
+      "Goto Source Definition (vtsls)",
+      { cond = function() return client.name == "vtsls" end }
+    )
+    if vim.bo.filetype == "vue" then
+      client.server_capabilities.semanticTokensProvider.full = false
+      vim.api.nvim_set_hl(0, "@lsp.type.component", { link = "@type" })
+    else
+      client.server_capabilities.semanticTokensProvider.full = true
+    end
   end
   if client.server_capabilities.inlayHintProvider then vim.lsp.inlay_hint.enable(true, {
     bufnr = buf,
@@ -129,3 +143,4 @@ plugin("neoconf.nvim"):on_require("neoconf"):opts {
     },
   },
 }
+plugin("garbage-day"):on_require("garbage-day"):event_defer()

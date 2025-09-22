@@ -44,9 +44,11 @@ opt.showmatch = true
 opt.showcmd = true
 opt.cmdheight = 0
 
-vim.opt.numberwidth = 2
-vim.opt.signcolumn = "yes:1"
-vim.opt.statuscolumn = "%l%s"
+-- opt.guicursor = 'n-v-c-sm-i-ci-ve:block,r-cr-o:hor20,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor' -- Blink Cursor
+
+opt.numberwidth = 2
+opt.signcolumn = "yes:1"
+opt.statuscolumn = "%l%s"
 
 -- Searching
 opt.incsearch = true
@@ -54,7 +56,12 @@ opt.hlsearch = true
 opt.ignorecase = true
 opt.smartcase = true
 
+-- LOCALE
+-- opt.langmenu = "zh_CN.UTF-8"
+-- opt.helplang = "cn"
+
 -- Misc
+opt.updatetime = 300
 
 -- Neovide
 if g.neovide then

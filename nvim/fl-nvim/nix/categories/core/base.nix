@@ -27,6 +27,7 @@
       tabout-nvim
       nvim-ts-context-commentstring
       friendly-snippets # INFO: Auto sourced by luasnip
+      vim-illuminate
     ]
     ++ (with nvim_pkgs; [
       lspconfig
@@ -75,6 +76,7 @@
       statuscol-nvim
     ]
     ++ (with nvim_pkgs; [
+      garbage-day
       nvim-toggler
       lualine-nvim
       # lualine-lsp-progress
