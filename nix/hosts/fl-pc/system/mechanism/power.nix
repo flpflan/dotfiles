@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ lib, pkgs, ... }:
 {
   powerManagement = {
     enable = true;
@@ -30,6 +30,7 @@
 
   services.scx = {
     enable = true;
+    package = pkgs.scx.rustscheds;
     scheduler = "scx_lavd";
     extraArgs = [
       # "--autopilot" # Based on system's load
