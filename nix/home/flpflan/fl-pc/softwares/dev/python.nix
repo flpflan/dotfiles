@@ -1,5 +1,12 @@
 {pkgs, ...}: {
+  # programs.uv.enable = true;
+
   home.packages = with pkgs; [
-    python
+    uv
+    (python3Minimal.withPackages
+      (p:
+        with p; [
+          # debugpy
+        ]))
   ];
 }

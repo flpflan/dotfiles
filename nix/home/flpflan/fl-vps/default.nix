@@ -6,8 +6,9 @@
   ];
   nix.gc = {
     automatic = true;
-    frequency = "weekly";
+    dates = "weekly";
     options = "--delete-older-than 7d";
+    persistent = true;
   };
 
   programs.home-manager.enable = true;
