@@ -34,13 +34,17 @@ in {
           Hotkey = {
             TriggerKeys = "";
           };
+          Behavior = {
+            ShowInputMethodInformation = "False";
+          };
         };
         addons = {
           classicui.globalSection = {
-            Theme = "FluentDark";
-            DarkTheme = "FluentDark";
-            UseDarkTheme = true; # 跟随系统浅色/深色设置
-            Font = "Sans Serif 12";
+            Theme = "十六夜咲夜";
+            DarkTheme = "十六夜咲夜";
+            # DarkTheme = "FluentDark";
+            UseDarkTheme = "True"; # 跟随系统浅色/深色设置
+            Font = "Sans Serif 10";
           };
 
           clipboard.globalSection = {
@@ -62,7 +66,10 @@ in {
     };
   };
 
-  xdg.dataFile."fcitx5/rime/default.custom.yaml".source = outOfStore "${fl-dots}/fcitx5/rime/default.custom.yaml";
-  xdg.dataFile."fcitx5/rime/rime_ice.custom.yaml".source = outOfStore "${fl-dots}/fcitx5/rime/rime_ice.custom.yaml";
-  xdg.dataFile."fcitx5/rime/rime_ice.dict.yaml".source = outOfStore "${fl-dots}/fcitx5/rime/rime_ice.dict.yaml";
+  xdg.dataFile = {
+    "fcitx5/rime/default.custom.yaml".source = outOfStore "${fl-dots}/fcitx5/rime/default.custom.yaml";
+    "fcitx5/rime/rime_ice.custom.yaml".source = outOfStore "${fl-dots}/fcitx5/rime/rime_ice.custom.yaml";
+    "fcitx5/rime/rime_ice.dict.yaml".source = outOfStore "${fl-dots}/fcitx5/rime/rime_ice.dict.yaml";
+    "fcitx5/themes".source = outOfStore "${fl-dots}/fcitx5/themes";
+  };
 }
