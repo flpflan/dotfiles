@@ -52,7 +52,7 @@ local base_keymap = {
   ["<Up>"] = { "select_prev", "fallback" },
   ["<Down>"] = { "select_next", "fallback" },
   ["<C-x>"] = { "cancel" },
-  ["<C-h>"] = {
+  ["<C-Space>"] = {
     function(cmp)
       if cmp.is_visible() then
         cmp.hide()

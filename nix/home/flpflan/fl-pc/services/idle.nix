@@ -5,7 +5,7 @@ let
 in 
 {
   services.hypridle = {
-    enable = true;
+    enable = false;
   };
 
   xdg.configFile."hypr/hypridle.conf".source = outOfStore "${fl-dots}/hypr/hypridle.conf";

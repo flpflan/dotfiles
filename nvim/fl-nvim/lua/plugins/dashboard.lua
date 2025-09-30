@@ -54,6 +54,32 @@ local BANNERS = {
   },
 }
 
-local dashboard = require("alpha.themes.dashboard").config
+local config = require("alpha.themes.dashboard").config
+local button = require("alpha.themes.dashboard").button
+
+config.layout[2] = {
+  type = "text",
+  val = BANNERS[2],
+  opts = {
+    position = "center",
+    hl = "AlphaHeader",
+    -- wrap = "overflow";
+  },
+}
+config.layout[4] = {
+  type = "group",
+  val = {
+    button("n", "  New File", "<cmd>ene <CR>"),
+    button("f", "  Find File", '<cmd>lua require("snacks").picker.pick "files"<CR>'),
+    button("w", "   Find Text", '<cmd>lua require("snacks").picker.pick "live_grep"<CR>'),
+    button("h", "  Recently Opened Files", '<cmd>lua require("snacks").picker.pick "oldfiles"<CR>'),
+    button("m", "  Jump to Bookmarks", '<cmd>lua require("snacks").picker.pick "marks"<CR>'),
+    -- button("SPC f l", "  Open Last Session"),
+    button("q", "  Quit", "<cmd>qa<CR>"),
+  },
+  opts = {
+    spacing = 1,
+  },
+}
 -- dashboard.section.val = BANNERS[2]
-plugin("alpha-nvim"):opts(dashboard)
+plugin("alpha-nvim"):opts(config)

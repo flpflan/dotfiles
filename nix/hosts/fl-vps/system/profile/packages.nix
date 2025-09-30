@@ -1,6 +1,8 @@
-{ pkgs, lib, ... }:
-
 {
+  pkgs,
+  lib,
+  ...
+}: {
   documentation = {
     enable = false;
     doc.enable = false;
@@ -13,15 +15,22 @@
 
   environment.defaultPackages = lib.mkForce [];
   environment.systemPackages = with pkgs; [
-    wget curl gitMinimal foot.terminfo kitty.terminfo
+    wget
+    curl
+    gitMinimal
+    foot.terminfo
+    kitty.terminfo
   ];
   environment.stub-ld.enable = false;
   environment.shellAliases = lib.mkForce {};
 
   programs = {
+    fish = {
+      enable = true;
+    };
 
     zsh = {
-	    enable = true;
+      enable = false;
     };
 
     nano.enable = false;
@@ -35,6 +44,5 @@
       enable = true;
       lessopen = null;
     };
-
   };
 }

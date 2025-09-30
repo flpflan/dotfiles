@@ -21,7 +21,7 @@
     '';
     settings = {
       PermitRootLogin = lib.mkForce "prohibit-password";
-      PasswordAuthentication = false;
+      PasswordAuthentication = true;
     };
   };
 }

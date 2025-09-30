@@ -23,6 +23,25 @@ in {
       paths = {
         wallpaperDir = "~/Pictures/wallpaper";
       };
+      general = {
+        idle = {
+          timeouts = [
+            {
+              "timeout" = 600; # 10 minutes
+              "idleAction" = "lock";
+            }
+            {
+              "timeout" = 900; # 15 minutes
+              "idleAction" = "dpms off";
+              "returnAction" = "dpms on";
+            }
+            {
+              "timeout" = 1200; # 20 minutes
+              "idleAction" = ["systemctl" "suspend-then-hibernate"];
+            }
+          ];
+        };
+      };
     };
     cli = {
       enable = true;

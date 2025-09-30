@@ -1,1 +1,1 @@
-plugin("guess-indent"):event_defer()
+plugin("guess-indent"):opts()

@@ -49,7 +49,7 @@ plugin("nvim-treesitter")
       auto_install = vim.fn.executable "tree-sitter" == 1,
       highlight = { enable = true },
       incremental_selection = { enable = true },
-      indent = { enable = true, disable = { "nix" } },
+      indent = { enable = true, disable = { "cpp" } },
       textobjects = {
         select = {
           enable = true,
@@ -140,4 +140,5 @@ plugin("nvim-treesitter")
     vim.treesitter.language.register("bash", "dotenv")
     vim.treesitter.language.register("bash", "zsh")
     vim.treesitter.language.register("python", "bzl")
+    vim.treesitter.language.register("jinja", "j2")
   end)

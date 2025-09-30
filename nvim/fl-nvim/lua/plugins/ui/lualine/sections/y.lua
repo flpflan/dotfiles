@@ -11,4 +11,5 @@ return {
 			modified = " " .. Symbols.modified,
 		},
 	},
+    "location",
 }

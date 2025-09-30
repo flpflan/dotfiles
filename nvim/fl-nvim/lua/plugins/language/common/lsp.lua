@@ -30,6 +30,12 @@ end
 local function set_lsp_keymaps(buf)
   kopts({ buffer = buf }, {
     kmap({ "n" }, "K", vim.lsp.buf.hover, "Hover"),
+    kmap(
+      { "n" },
+      "<leader>ui",
+      function() vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { bufnr = vim.api.nvim_get_current_buf() }) end,
+      "Toggle Inlay Hint"
+    ),
     -- kmap({ "n" }, "gd", vim.lsp.buf.definition, "Goto Definition"),
     kmap({ "n" }, "gd", function() require("snacks").picker.lsp_definitions() end, "Goto Definition"),
     kmap({ "n" }, "gt", function() require("snacks").picker.lsp_type_definitions() end, "Goto Type Definition"),

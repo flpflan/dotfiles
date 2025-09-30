@@ -26,4 +26,5 @@ return {
 		sections = { "error", "warn", "hint" },
 		always_visible = true,
 	},
+	-- "filetype"
 }
