@@ -24,7 +24,7 @@ plugin("nvim-autopairs"):event_typing():opts {
 -- TODO:
 plugin("tabout.nvim"):event_typing():on_require("tabout"):opts {
   act_as_shift_tab = true,
-  ignore_beginning = true,
+  ignore_beginning = false,
   tabouts = {
     { open = "'", close = "'" },
     { open = '"', close = '"' },

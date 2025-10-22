@@ -24,7 +24,6 @@
       nui-nvim
       nvim-notify
       oil-git-status-nvim
-      tabout-nvim
       nvim-ts-context-commentstring
       friendly-snippets # INFO: Auto sourced by luasnip
       vim-illuminate
@@ -45,6 +44,7 @@
       # vim-startuptime
       noice-nvim
       todo-comments-nvim
+      tabout-nvim
       # mini-indentscope
       # nvim-highlight-colors
       smart-splits-nvim

@@ -40,15 +40,24 @@ require("oil").setup {
     ["-"] = "actions.parent",
     -- ["h"] = "actions.parent",
     -- ["<Left>"] = "actions.parent",
-    ["<C-q>"] = "actions.close",
-    ["q"] = "actions.close",
-    ["<Esc>"] = "actions.close",
+    ["<C-q>"] = function()
+      if vim.fn.len(vim.fn.getbufinfo { buflisted = 1 }) == 0 then return end
+      require("oil").close { exit_if_last_buf = true }
+    end,
+    ["q"] = function()
+      -- if vim.fn.len(vim.fn.getbufinfo { buflisted = 1 }) == 0 then return vim.cmd "normal! q" end -- Use cmdline instead
+      if vim.fn.len(vim.fn.getbufinfo { buflisted = 1 }) == 0 then return end
+      require("oil").close { exit_if_last_buf = true }
+    end,
+    ["<Esc>"] = function()
+      if vim.fn.len(vim.fn.getbufinfo { buflisted = 1 }) == 0 then return end
+      require("oil").close { exit_if_last_buf = true }
+    end,
     ["<leader>e"] = "actions.close",
     ["_"] = "actions.open_cwd",
-    ["."] = "actions.cd",
     ["`"] = "actions.cd",
     ["~"] = "actions.tcd",
-    ["H"] = "actions.toggle_hidden",
+    ["."] = "actions.toggle_hidden",
     ["gr"] = "actions.refresh",
     ["gs"] = "actions.change_sort",
     ["gx"] = "actions.open_external",

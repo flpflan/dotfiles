@@ -2,7 +2,7 @@ final: prev: let
   inherit (prev) stdenv fetchurl autoPatchelfHook;
   clice = stdenv.mkDerivation rec {
     pname = "clice";
-    version = "0.1.0-alpha.1";
+    version = "0.1.0-alpha.2";
 
     src = fetchurl {
       url = "https://github.com/clice-io/clice/releases/download/v${version}/clice-x86_64-linux-gnu.tar.xz";
