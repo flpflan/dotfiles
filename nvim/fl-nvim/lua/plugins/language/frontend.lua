@@ -57,6 +57,8 @@ lsp("vtsls")
 --**** Css ****--
 -- lsp "stylelint_lsp"
 lsp "cssls"
+--**** Scss ****--
+lsp "somesass_ls"
 --**** Html ****--
 lsp "html"
 --**** Vue ****--
