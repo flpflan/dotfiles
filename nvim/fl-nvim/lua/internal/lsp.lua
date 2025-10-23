@@ -86,4 +86,11 @@ function Lsp:init_options(opts)
 	return self
 end
 
+---@param fn fun(params: lsp.InitializeParams, config: vim.lsp.ClientConfig)? 
+---@return Lsp
+function Lsp:before_init(fn)
+	self.opts.before_init = fn
+	return self
+end
+
 return M

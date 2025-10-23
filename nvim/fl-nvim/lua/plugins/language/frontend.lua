@@ -17,6 +17,9 @@ lsp("vtsls")
   :ft(unpack(vim.list_extend(vtsls_default_ft, { "vue" })))
   :settings {
     typescript = {
+      -- preferences = {
+      --   importModuleSpecifier = "non-relative",
+      -- },
       updateImportsOnFileMove = { enabled = "always" },
       inlayHints = {
         enumMemberValues = { enabled = true },
@@ -56,38 +59,38 @@ lsp("vtsls")
   }
 --**** Css ****--
 -- lsp "stylelint_lsp"
-lsp "cssls"
+lsp("cssls"):ft("css", "less")
 --**** Scss ****--
 lsp "somesass_ls"
 --**** Html ****--
 lsp "html"
 --**** Vue ****--
-local function join_path(...)
-  local components = { ... }
-  local separator = package.config:sub(1, 1)
-  local result = {}
-  for _, comp in ipairs(components) do
-    if comp ~= "" then table.insert(result, comp) end
-  end
-  return "/" .. table.concat(result, separator)
-end
-vim.defer_fn(
-  function()
-    lsp("vue_ls"):settings {
-      typescript = {
-        tsdk = vim.fn.getcwd() .. join_path("node_modules", "typescript", "lib"),
+lsp("vue_ls")
+  :before_init(function(params, config)
+    if vim.tbl_get(config.settings, "typescript") and not config.settings.typescript.tsdk then
+      assert(type(config.settings.typescript) == "table")
+      local project_root = vim.fs.root(0, { "node_modules" })
+      if project_root then
+        config.settings.typescript.tsdk = vim.fs.joinpath(project_root, "/node_modules/typescript/lib")
+      end
+    end
+  end)
+  :settings {
+    typescript = {
+      -- tsdk = vim.fs.joinpath(vim.fn.getcwd(), "node_modules", "typescript", "lib"),
+    },
+    vue = {
+      codeLens = {
+        references = true,
+        pugReferences = true,
+        scriptSetupSupport = true,
       },
-      vue = {
-        codeLens = {
-          references = true,
-          pugReferences = true,
-          scriptSetupSupport = true,
-        },
+      suggest = {
+        componentNameCasing = "preferKebabCase",
+        propNameCasing = "preferKebabCase",
       },
-    }
-  end,
-  100
-)
+    },
+  }
 ----------------
 ---- Linter ----
 ----------------

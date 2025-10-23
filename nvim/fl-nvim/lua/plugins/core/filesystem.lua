@@ -71,6 +71,15 @@ require("oil").setup {
     signcolumn = "number",
     -- signcolumn = "yes:2",
   },
+  float = {
+    border = "rounded",
+  },
+  confirmation = {
+    border = "rounded",
+  },
+  keymaps_help = {
+    border = "rounded",
+  },
 }
 local status_const = require "oil-vcs-status.constant.status"
 
