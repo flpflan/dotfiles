@@ -1,0 +1,21 @@
+{
+  "toggles": {
+    "music": {
+      "musicfox": {
+        "command": [
+          "foot",
+          "-a",
+          "musicfox",
+          "-T",
+          "musicfox",
+          "fish",
+          "-C",
+          "exec musicfox"
+        ],
+        "enable": true,
+        "match": [{ "class": "musicfox" }],
+        "move": true
+      }
+    }
+  }
+}

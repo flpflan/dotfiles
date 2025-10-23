@@ -12,7 +12,7 @@
     ...
   }: let
     tools = import ./tools (with nixpkgs; {inherit inputs lib;});
-    overlays = import ./overlays (with self; with nixpkgs; {inherit inputs outputs lib;});
+    overlays = import ./overlays (with self; with nixpkgs; {inherit inputs outputs lib tools;});
   in {
     inherit overlays;
 

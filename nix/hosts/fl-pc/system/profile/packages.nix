@@ -14,6 +14,7 @@
   environment.defaultPackages = lib.mkForce [];
   environment.systemPackages = with pkgs; [
     wget comma
+    # glib
   ];
   environment.stub-ld.enable = false;
   environment.shellAliases = lib.mkForce {};

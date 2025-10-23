@@ -24,8 +24,12 @@
 
   programs.git = {
     enable = true;
-    userName = "flpflan";
-    userEmail = "flpflan@gmail.com";
+    settings = {
+      user = {
+        name = "flpflan";
+        email = "flpflan@gmail.com";
+      };
+    };
   };
 
   programs.direnv = {

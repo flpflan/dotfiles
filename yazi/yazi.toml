@@ -48,3 +48,16 @@ prepend_fetchers = [
 	# { id = "mactag", name = "*", run = "mactag" },
 	# { id = "mactag", name = "*/", run = "mactag" },
 ]
+# prepend_preloaders = [
+#   # Do not preload files in mounted locations:
+#   { name = "/run/user/1000/gvfs/**/*", run = "noop" },
+#   { name = "/run/media/flpflan/**/*", run = "noop" },
+# ]
+# prepend_previewers = [
+#   { name = "*/", run = "folder" },
+#   # Do not previewing files in mounted locations.
+#   # Uncomment the line below to allow previewing text files.
+#   # { mime = "{text/*,application/x-subrip}", run = "code" },
+#   { name = "/run/user/1000/gvfs/**/*", run = "noop" },
+#   { name = "/run/media/flpflan/**/*", run = "noop" },
+# ]

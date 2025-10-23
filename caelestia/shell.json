@@ -1,0 +1,17 @@
+{
+  "general": {
+    "idle": {
+      "timeouts": [
+        { "idleAction": "lock", "timeout": 600 },
+        { "idleAction": "dpms off", "returnAction": "dpms on", "timeout": 900 },
+        {
+          "idleAction": ["systemctl", "suspend-then-hibernate"],
+          "timeout": 1200
+        }
+      ]
+    }
+  },
+  "launcher": { "enableDangerousActions": true, "maxWallpapers": 9 },
+  "paths": { "wallpaperDir": "~/Pictures/wallpaper" },
+  "services": { "defaultPlayer": "musicfox" }
+}

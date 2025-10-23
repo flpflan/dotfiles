@@ -42,6 +42,10 @@ in {
           ];
         };
       };
+      launcher = {
+        maxWallpapers = 9;
+        enableDangerousActions = true;
+      };
     };
     cli = {
       enable = true;
@@ -51,7 +55,8 @@ in {
             musicfox = {
               enable = true;
               match = [{class = "musicfox";}];
-              command = ["kitty" "--class" "musicfox" "-e" "fish" "--interactive" "-c" "musicfox"];
+              # command = ["kitty" "--class" "musicfox" "-e" "fish" "--interactive" "-c" "musicfox"];
+              command = ["foot" "-a" "musicfox" "-T" "musicfox" "fish" "-C" "exec musicfox"];
               move = true;
             };
           };

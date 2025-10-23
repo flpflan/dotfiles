@@ -47,8 +47,7 @@ prepend_keymap = [
 	{ on = [ "<C-Space>", "f" ], run = '''shell nemo --block''', desc = "Open gui file manager" },
 
 	# Plugins
-	{ on = "M",          run = "plugin mount" },
-	{ on = [ "<C-Space>", "g", "d" ],      run = "plugin diff", desc = "git diff" },
+	{ on = [ "<C-Space>", "g", "d" ],      run = "plugin diff", desc = "Git diff" },
 	{ on = [ "c", "m" ], run = "plugin chmod" },
 	{ on = [ "b", "a" ], run = "plugin mactag add" },
 	{ on = [ "b", "r" ], run = "plugin mactag remove" },
@@ -56,6 +55,24 @@ prepend_keymap = [
 	{ on = [ "<C-Space>", "g", "g" ], run = "plugin lazygit" },
 	{ on   = [ "c", "a" ], run  = "plugin compress" },
 	{ on   = "l", run  = "plugin smart-enter", desc = "Enter the child directory, or open the file" },
+
+	{ on = "M", run = "plugin mount", desc = "Mount" },
+	# { on = [ "M", "M" ], run = "plugin mount", desc = "Mount" },
+	#
+ #    # { on = [ "M", "m" ], run = "plugin gvfs -- select-then-mount", desc = "Mount" },
+ #    { on = [ "M", "m" ], run = "plugin gvfs -- select-then-mount --jump", desc = "Mount(gvfs) && Jump" },
+	#
+ #    { on = [ "M", "R" ], run = "plugin gvfs -- remount-current-cwd-device", desc = "Remount cwd" },
+ #    { on = [ "M", "u" ], run = "plugin gvfs -- select-then-unmount --eject", desc = "Eject" },
+ #    { on = [ "M", "U" ], run = "plugin gvfs -- select-then-unmount --eject --force", desc = "Force eject/unmount" },
+	#
+ #    { on = [ "M", "a" ], run = "plugin gvfs -- add-mount", desc = "Add a GVFS mount URI" },
+ #    { on = [ "M", "e" ], run = "plugin gvfs -- edit-mount", desc = "Edit a GVFS mount URI" },
+ #    { on = [ "M", "r" ], run = "plugin gvfs -- remove-mount", desc = "Remove a GVFS mount URI" },
+	#
+ #    # Jump
+ #    { on = [ "g", "m" ], run = "plugin gvfs -- jump-to-device --automount", desc = "Automount && Jump" },
+ #    { on = [ "`", "`" ], run = "plugin gvfs -- jump-back-prev-cwd", desc = "Jump back" },
 ]
 
 # [tasks]
