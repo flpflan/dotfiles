@@ -2,25 +2,22 @@
   inputs,
   tools,
   ...
-}@args:
-let
+}: let
   inherit (tools) relative module;
-in 
-
-{
-  specialArgs = inputs // args;
+in {
+  specialArgs = inputs // {inherit tools;};
   system = "x86_64-linux";
   modules = [
     ./system
     ./server
-	  ./secrets.nix
+    ./secrets.nix
     ./overlays.nix
     (relative "hosts/common/chaotic.nix")
-	  (relative "hosts/common/agenix.nix")
-	  # (relative "hosts/common/facter.nix")
-	  (relative "users/flpflan")
-	  (relative "users/apps")
-	  # (module "<srvos-server>")
-	  (module "<disko>")
+    (relative "hosts/common/agenix.nix")
+    # (relative "hosts/common/facter.nix")
+    (relative "users/flpflan")
+    (relative "users/apps")
+    # (module "<srvos-server>")
+    (module "<disko>")
   ];
 }

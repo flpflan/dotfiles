@@ -9,8 +9,8 @@
       nerd-fonts.jetbrains-mono
       merriweather-sans
       merriweather
-      source-han-sans-japanese
-      source-han-serif-japanese
+      source-han-sans
+      source-han-serif
       # noto-fonts-cjk-sans
       # noto-fonts-cjk-serif
       # source-sans-pro

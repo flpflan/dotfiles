@@ -7,8 +7,8 @@
       nerd-fonts.fira-code
       merriweather-sans
       merriweather
-      source-han-sans-japanese
-      source-han-serif-japanese
+      source-han-sans
+      source-han-serif
       noto-fonts-color-emoji
     ];
     fontconfig = {

@@ -1,11 +1,15 @@
-{ outputs, tools, lib, ... }:
-{
-  imports = map tools.relative [
-    "<stylix-home-manager>"
-    "home/flpflan/common/agenix.nix"
-    "home/flpflan/common/chaotic.nix"
-  ]
-  ++ tools.scan ./.;
+self: {
+  tools,
+  lib,
+  ...
+}: {
+  imports =
+    map tools.relative [
+      "<stylix-home-manager>"
+      "home/flpflan/common/agenix.nix"
+      "home/flpflan/common/chaotic.nix"
+    ]
+    ++ tools.scan ./.;
 
   nix.gc = {
     automatic = true;
@@ -13,7 +17,7 @@
     options = "--delete-older-than 7d";
     persistent = true;
   };
-  nixpkgs.overlays = outputs.overlays;
+  nixpkgs.overlays = self.outputs.overlays;
   nixpkgs.config.allowUnfree = true;
 
   programs.home-manager.enable = true;
@@ -41,8 +45,8 @@
 
   home.activation = {
     rmSomeThing = lib.hm.dag.entryAfter ["writeBoundary"] ''
-    rm -rf $HOME/.nix-defexpr
-    rm -rf $HOME/.nix-profile
-  '';
+      rm -rf $HOME/.nix-defexpr
+      rm -rf $HOME/.nix-profile
+    '';
   };
 }

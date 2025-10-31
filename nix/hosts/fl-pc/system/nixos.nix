@@ -1,12 +1,14 @@
-{ outputs, lib, nixpkgs, ... }:
-
-{
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  nix.settings.substituters = [ "https://cache.nixos.org" ];
-  nix.settings.trusted-users = [ "@wheel" ];
+self: {
+  lib,
+  nixpkgs,
+  ...
+}: {
+  nix.settings.experimental-features = ["nix-command" "flakes"];
+  nix.settings.substituters = ["https://cache.nixos.org"];
+  nix.settings.trusted-users = ["@wheel"];
   # nix.settings.warn-dirty = false;
   nixpkgs.config.allowUnfree = true;
-  nixpkgs.overlays = outputs.overlays;
+  nixpkgs.overlays = self.outputs.overlays;
 
   nix.registry.nixpkgs.flake = nixpkgs;
   nix.channel.enable = false;

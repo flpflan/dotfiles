@@ -1,4 +1,5 @@
 {
+  "background": { "visualiser": { "blur": true, "enabled": true } },
   "general": {
     "idle": {
       "timeouts": [
