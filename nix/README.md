@@ -16,7 +16,7 @@
 
 ## Scope
 ```
-                                    [flake-wide] --> [host-wide] --> [home-manager-wide]
+                                   [flake-wide] --> [host-wide] --> [home-manager-wide]
                                   |              |               |                     |
 [home]                            |              |               |---------------------|
 [hosts]                           |              |---------------|---------------------|
