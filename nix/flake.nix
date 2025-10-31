@@ -11,15 +11,15 @@
     nixpkgs,
     ...
   }: let
-    tools = import ./tools (with nixpkgs; {inherit inputs lib;});
+    tools = import ./tools (with nixpkgs; {inherit inputs outputs lib tools;});
     overlays = import ./overlays (with self; with nixpkgs; {inherit inputs outputs lib tools;});
   in {
-    inherit overlays;
+    inherit overlays; # Glocal Overlays
 
     nixosConfigurations = with self; {
-      fl-pc = nixpkgs.lib.nixosSystem (import ./hosts/fl-pc {inherit inputs outputs tools;});
-      opiz3 = nixpkgs.lib.nixosSystem (import ./hosts/opiz3 {inherit inputs outputs tools;});
-      fl-vps = nixpkgs.lib.nixosSystem (import ./hosts/fl-vps {inherit inputs outputs tools;});
+      fl-pc = nixpkgs.lib.nixosSystem (import ./hosts/fl-pc {inherit inputs outputs lib tools;});
+      opiz3 = nixpkgs.lib.nixosSystem (import ./hosts/opiz3 {inherit inputs outputs lib tools;});
+      fl-vps = nixpkgs.lib.nixosSystem (import ./hosts/fl-vps {inherit inputs outputs lib tools;});
     };
 
     packages.x86_64-linux = {
@@ -84,7 +84,7 @@
     #   # inputs.illogical-impulse-dotfiles.follows = "";
     # };
     caelestia-shell = {
-      url = "github:caelestia-dots/shell";
+      url = "github:flpflan/shell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nvim = {
