@@ -11,7 +11,6 @@
       plugins:
         with plugins; [
           vue
-          graphql
         ]
     ))
     # TODO: vue-goto-definition.nvim

@@ -1,0 +1,184 @@
+if not nixCats "language.bundles.frontend" then return end
+
+---@param params lsp.InitializeParams
+---@param config vim.lsp.ClientConfig
+local function set_tsdk(params, config)
+  if vim.tbl_get(config.settings, "typescript") and not config.settings.typescript.tsdk then
+    assert(type(config.settings.typescript) == "table")
+    local project_root = vim.fs.root(0, { "node_modules" })
+    if project_root then
+      config.settings.typescript.tsdk = vim.fs.joinpath(project_root, "/node_modules/typescript/lib")
+    end
+  end
+end
+---------------
+----- LSP -----
+---------------
+-- lsp("biome"):cmd("biome", "lsp-proxy"):root_dir ""
+--***** Typescript *****--
+lsp "eslint"
+-- TODO:
+-- require("typescript-tools").setup {
+--   filetypes = {
+--     "javascript",
+--     "javascriptreact",
+--     "javascript.jsx",
+--     "typescript",
+--     "typescriptreact",
+--     "typescript.tsx",
+--     "vue",
+--   },
+--   settings = {
+--     tsserver_path = "/home/flpflan/myproject/frontend/node_modules/typescript/lib/tsserver.js",
+--     tsserver_plugins = {
+--       "@vue/typescript-plugin",
+--     },
+--     tsserver_file_preferences = {
+--       "javascript",
+--       "javascriptreact",
+--       "javascript.jsx",
+--       "typescript",
+--       "typescriptreact",
+--       "typescript.tsx",
+--       "vue",
+--       includeInlayParameterNameHints = "all",
+--       includeCompletionsForModuleExports = true,
+--       quotePreference = "auto",
+--     },
+--   },
+-- }
+-- local vtsls_default_ft = require("vtsls").lspconfig.default_config.filetypes
+-- lsp("vtsls")
+--   :root_dir(function(bufnr, on_dir)
+--     local root_markers = { "package-lock.json", "yarn.lock", "pnpm-lock.yaml", "bun.lockb", "bun.lock", "deno.lock" }
+--     root_markers = vim.fn.has "nvim-0.11.3" == 1 and { root_markers } or root_markers
+--     local project_root = vim.fs.root(bufnr, root_markers) or ""
+--     on_dir(project_root)
+--   end)
+--   :ft(unpack(vim.list_extend(vtsls_default_ft, { "vue" })))
+--   :before_init(set_tsdk)
+--   :settings {
+--     typescript = {
+--       -- preferences = {
+--       --   importModuleSpecifier = "non-relative",
+--       -- },
+--       updateImportsOnFileMove = { enabled = "always" },
+--       inlayHints = {
+--         enumMemberValues = { enabled = true },
+--         functionLikeReturnTypes = { enabled = true },
+--         parameterNames = { enabled = "literals" },
+--         parameterTypes = { enabled = true },
+--         propertyDeclarationTypes = { enabled = true },
+--         variableTypes = { enabled = true },
+--       },
+--     },
+--     javascript = {
+--       updateImportsOnFileMove = { enabled = "always" },
+--       inlayHints = {
+--         enumMemberValues = { enabled = true },
+--         functionLikeReturnTypes = { enabled = true },
+--         parameterNames = { enabled = "literals" },
+--         parameterTypes = { enabled = true },
+--         propertyDeclarationTypes = { enabled = true },
+--         variableTypes = { enabled = true },
+--       },
+--     },
+--     vtsls = {
+--       enableMoveToFileCodeAction = true,
+--       tsserver = {
+--         globalPlugins = {
+--           {
+--             name = "@vue/typescript-plugin",
+--             location = vim.fn.fnamemodify(vim.fn.fnamemodify(vim.fn.exepath "vue-language-server", ":h"), ":h")
+--               .. "/lib/language-tools/packages/language-server",
+--             languages = { "vue" },
+--             configNamespace = "typescript",
+--             enableForWorkspaceTypeScriptVersions = true,
+--           },
+--         },
+--       },
+--     },
+--   }
+--**** Css ****--
+-- lsp "stylelint_lsp"
+lsp("cssls"):ft("css", "less", "vue"):settings {
+  css = {
+    validate = true,
+    lint = {
+      unknownAtRules = "ignore",
+    },
+  },
+  scss = {
+    validate = true,
+    lint = {
+      unknownAtRules = "ignore",
+    },
+  },
+  less = {
+    validate = true,
+    lint = {
+      unknownAtRules = "ignore",
+    },
+  },
+}
+--**** Scss ****--
+lsp "somesass_ls"
+--**** Html ****--
+lsp("html"):ft("html", "vue")
+--**** Vue ****--
+lsp("vue_ls"):before_init(set_tsdk):settings {
+  typescript = {
+    -- tsdk = vim.fs.joinpath(vim.fn.getcwd(), "node_modules", "typescript", "lib"),
+  },
+  vue = {
+    codeLens = {
+      references = true,
+      pugReferences = true,
+      scriptSetupSupport = true,
+    },
+    suggest = {
+      componentNameCasing = "preferKebabCase",
+      propNameCasing = "preferKebabCase",
+    },
+  },
+}
+----------------
+---- Linter ----
+----------------
+-----------------
+--- Formatter ---
+-----------------
+-- formatter({ "css", "scss", "sass", "less", "graphql" }, "prettierd")
+-----------------
+--- Debugger ---
+-----------------
+for _, adapterType in ipairs { "node", "chrome", "msedge" } do
+  local pwaType = "pwa-" .. adapterType
+  local nativeAdapter = {
+    type = "server",
+    host = "localhost",
+    port = "${port}",
+    executable = {
+      command = "js-debug",
+      args = { "${port}" },
+    },
+  }
+
+  dap(pwaType, nativeAdapter)
+
+  dap(adapterType, function(cb, config)
+    config.type = pwaType
+    if type(nativeAdapter) == "function" then
+      nativeAdapter(cb, config)
+    else
+      cb(nativeAdapter)
+    end
+  end)
+end
+-----------------
+---- Plugins ----
+-----------------
+plugin("ts-error-translator"):event_defer()
+plugin("package-info.nvim"):event("BufRead package.json"):opts {
+  package_manager = "bun",
+}

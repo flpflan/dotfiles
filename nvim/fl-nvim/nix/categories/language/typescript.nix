@@ -6,12 +6,16 @@
 }: {
   lspsAndRuntimeDeps = with pkgs; [
     vscode-js-debug
-    vtsls
-    biome
+    # vtsls
+    # biome
   ];
-  startupPlugins = with vim_pkgs; [
-    nvim-vtsls
-  ];
+  startupPlugins = with vim_pkgs;
+    [
+      # nvim-vtsls
+    ]
+    ++ (with nvim_pkgs; [
+      typescript-tools
+    ]);
   optionalPlugins = with vim_pkgs;
     [
       (nvim-treesitter.withPlugins (
@@ -28,6 +32,5 @@
     ]
     ++ (with nvim_pkgs; [
       ts-error-translator
-      # typescript-tools
     ]);
 }

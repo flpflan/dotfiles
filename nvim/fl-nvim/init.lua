@@ -5,6 +5,7 @@ require("bootstrap.lze")
 
 require("internal")
 require("keymaps")
+require("language")
 require("plugins")
 
 require("autocmds")
