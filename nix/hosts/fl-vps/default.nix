@@ -1,11 +1,12 @@
 {
   inputs,
   tools,
+  flake,
   ...
 }: let
   inherit (tools) relative module;
 in {
-  specialArgs = inputs // {inherit tools;};
+  specialArgs = inputs // {inherit tools flake;};
   system = "x86_64-linux";
   modules = [
     ./system

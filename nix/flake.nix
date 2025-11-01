@@ -17,9 +17,18 @@
     inherit overlays; # Glocal Overlays
 
     nixosConfigurations = with self; {
-      fl-pc = nixpkgs.lib.nixosSystem (import ./hosts/fl-pc {inherit inputs outputs lib tools;});
-      opiz3 = nixpkgs.lib.nixosSystem (import ./hosts/opiz3 {inherit inputs outputs lib tools;});
-      fl-vps = nixpkgs.lib.nixosSystem (import ./hosts/fl-vps {inherit inputs outputs lib tools;});
+      fl-pc = nixpkgs.lib.nixosSystem (import ./hosts/fl-pc {
+        inherit inputs outputs lib tools;
+        flake = self;
+      });
+      opiz3 = nixpkgs.lib.nixosSystem (import ./hosts/opiz3 {
+        inherit inputs outputs lib tools;
+        flake = self;
+      });
+      fl-vps = nixpkgs.lib.nixosSystem (import ./hosts/fl-vps {
+        inherit inputs outputs lib tools;
+        flake = self;
+      });
     };
 
     packages.x86_64-linux = {
@@ -84,7 +93,7 @@
     #   # inputs.illogical-impulse-dotfiles.follows = "";
     # };
     caelestia-shell = {
-      url = "github:flpflan/shell";
+      url = "github:caelestia-dots/shell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nvim = {

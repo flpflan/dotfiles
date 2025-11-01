@@ -1,13 +1,14 @@
 {
   inputs,
   tools,
+  flake,
   ...
 }: let
   inherit (tools) relative;
 
   fl-dots = "/home/flpflan/.dotfiles";
 in {
-  specialArgs = inputs // {inherit tools fl-dots;};
+  specialArgs = inputs // {inherit tools fl-dots flake;};
   system = "x86_64-linux";
   modules = [
     ./system

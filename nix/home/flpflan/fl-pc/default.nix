@@ -1,4 +1,5 @@
-self: {
+{
+  flake,
   tools,
   lib,
   ...
@@ -17,7 +18,7 @@ self: {
     options = "--delete-older-than 7d";
     persistent = true;
   };
-  nixpkgs.overlays = self.outputs.overlays;
+  nixpkgs.overlays = flake.outputs.overlays;
   nixpkgs.config.allowUnfree = true;
 
   programs.home-manager.enable = true;

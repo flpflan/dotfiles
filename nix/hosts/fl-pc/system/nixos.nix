@@ -1,6 +1,7 @@
-self: {
+{
   lib,
   nixpkgs,
+  flake,
   ...
 }: {
   nix.settings.experimental-features = ["nix-command" "flakes"];
@@ -8,7 +9,7 @@ self: {
   nix.settings.trusted-users = ["@wheel"];
   # nix.settings.warn-dirty = false;
   nixpkgs.config.allowUnfree = true;
-  nixpkgs.overlays = self.outputs.overlays;
+  nixpkgs.overlays = flake.outputs.overlays;
 
   nix.registry.nixpkgs.flake = nixpkgs;
   nix.channel.enable = false;
