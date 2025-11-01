@@ -2,7 +2,7 @@ if not nixCats "language.cpp" then return end
 ---------------
 ----- LSP -----
 ---------------
--- TODO: lsp("clice"):cmd("clice", "--resource-dir", "/home/flpflan/Downloads/clice/lib/clang/20/include"):ft("cpp", "c")
+-- lsp("clice")
 lsp("clangd"):cmd("clangd", "--clang-tidy")
 lsp "neocmake"
 -----------------
