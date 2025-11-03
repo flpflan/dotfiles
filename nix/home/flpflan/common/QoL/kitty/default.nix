@@ -4,10 +4,11 @@
   fl-dots,
   ...
 }: let
+  dots = "${fl-dots}/dots";
   outOfStore = config.lib.file.mkOutOfStoreSymlink;
 
   wrapedConfig = pkgs.writeText "kitty.conf" (builtins.concatStringsSep "\n" [
-    "include ${outOfStore "${fl-dots}/kitty/kitty.conf"}"
+    "include ${outOfStore "${dots}/kitty/kitty.conf"}"
     (
       pkgs.lib.optionalString
       (config.programs.kitty.settings != {})

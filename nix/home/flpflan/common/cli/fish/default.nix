@@ -1,6 +1,7 @@
 { config, pkgs, fl-dots, ... }:
 
 let
+  dots = "${fl-dots}/dots";
   outOfStore = config.lib.file.mkOutOfStoreSymlink;
 in 
 {
@@ -11,8 +12,8 @@ in
   programs.fish = {
     enable = true;
     interactiveShellInit = ''
-      source ${outOfStore "${fl-dots}/fish/config.fish"}
-      source ${outOfStore "${fl-dots}/fish/functions/fish_greeting.fish"}
+      source ${outOfStore "${dots}/fish/config.fish"}
+      source ${outOfStore "${dots}/fish/functions/fish_greeting.fish"}
 
       alias rgrep="$(which grep)"; alias grep="rg"
       alias rfind="$(which find)"; alias find="fd"

@@ -1,6 +1,7 @@
 { config, pkgs, fl-dots, ... }:
 
 let 
+  dots = "${fl-dots}/dots";
   outOfStore = config.lib.file.mkOutOfStoreSymlink;
   # keymap = lib.importTOML "${fl-dots}/yazi/keymap.toml";
   # settings = lib.importTOML "${fl-dots}/yazi/keymap.toml";
@@ -22,7 +23,7 @@ in
   home.packages = [ pkgs.yazi ];
 
   xdg.configFile."yazi" = {
-    source = outOfStore "${fl-dots}/yazi";
+    source = outOfStore "${dots}/yazi";
     recursive = false;
   };
 

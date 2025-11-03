@@ -1,6 +1,7 @@
 { config, pkgs, fl-dots,  ...}:
 
 let
+  dots = "${fl-dots}/dots";
   outOfStore = config.lib.file.mkOutOfStoreSymlink;
   fastfetch = pkgs.fastfetch.override {
     audioSupport = false;
@@ -26,7 +27,7 @@ in
     fastfetch
   ];
   xdg.configFile."fastfetch" = {
-    source = outOfStore "${fl-dots}/fastfetch";
+    source = outOfStore "${dots}/fastfetch";
     recursive = false;
   };
 }

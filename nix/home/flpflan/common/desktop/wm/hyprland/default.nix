@@ -3,6 +3,7 @@
   fl-dots,
   ...
 }: let
+  dots = "${fl-dots}/dots";
   outOfStore = config.lib.file.mkOutOfStoreSymlink;
 
   variables = import ./variables.nix;
@@ -23,13 +24,13 @@ in {
     }
     // animations // decoration // keybinds // execs // envs;
   wayland.windowManager.hyprland.extraConfig = ''
-    source = ${fl-dots}/hypr/hyprland.conf
+    source = ${dots}/hypr/hyprland.conf
   '';
 
   xdg.configFile = {
-    "hypr/hyprland".source = outOfStore "${fl-dots}/hypr/hyprland";
-    "hypr/scripts".source = outOfStore "${fl-dots}/hypr/scripts";
-    "hypr/scheme".source = outOfStore "${fl-dots}/hypr/scheme";
-    "hypr/variables.conf".source = outOfStore "${fl-dots}/hypr/variables.conf";
+    "hypr/hyprland".source = outOfStore "${dots}/hypr/hyprland";
+    "hypr/scripts".source = outOfStore "${dots}/hypr/scripts";
+    "hypr/scheme".source = outOfStore "${dots}/hypr/scheme";
+    "hypr/variables.conf".source = outOfStore "${dots}/hypr/variables.conf";
   };
 }

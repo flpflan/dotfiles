@@ -4,6 +4,7 @@
   fl-dots,
   ...
 }: let
+  dots = "${fl-dots}/dots";
   outOfStore = config.lib.file.mkOutOfStoreSymlink;
 in {
   i18n.inputMethod = {
@@ -67,9 +68,9 @@ in {
   };
 
   xdg.dataFile = {
-    "fcitx5/rime/default.custom.yaml".source = outOfStore "${fl-dots}/fcitx5/rime/default.custom.yaml";
-    "fcitx5/rime/rime_ice.custom.yaml".source = outOfStore "${fl-dots}/fcitx5/rime/rime_ice.custom.yaml";
-    "fcitx5/rime/rime_ice.dict.yaml".source = outOfStore "${fl-dots}/fcitx5/rime/rime_ice.dict.yaml";
-    "fcitx5/themes".source = outOfStore "${fl-dots}/fcitx5/themes";
+    "fcitx5/rime/default.custom.yaml".source = outOfStore "${dots}/fcitx5/rime/default.custom.yaml";
+    "fcitx5/rime/rime_ice.custom.yaml".source = outOfStore "${dots}/fcitx5/rime/rime_ice.custom.yaml";
+    "fcitx5/rime/rime_ice.dict.yaml".source = outOfStore "${dots}/fcitx5/rime/rime_ice.dict.yaml";
+    "fcitx5/themes".source = outOfStore "${dots}/fcitx5/themes";
   };
 }

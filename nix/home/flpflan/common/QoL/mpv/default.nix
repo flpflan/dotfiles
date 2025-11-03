@@ -1,6 +1,7 @@
 { config, pkgs, fl-dots, ... }:
 
 let
+  dots = "${fl-dots}/dots";
   outOfStore = config.lib.file.mkOutOfStoreSymlink;
 in 
 {
@@ -21,7 +22,7 @@ in
   # };
   home.packages = [ pkgs.mpv ];
   xdg.configFile."mpv" = {
-    source = outOfStore "${fl-dots}/mpv";
+    source = outOfStore "${dots}/mpv";
     recursive = false;
   };
 }

@@ -4,6 +4,8 @@
   fl-dots,
   ...
 }: let
+  assets = "${fl-dots}/assets";
+  dots = "${fl-dots}/dots";
   # caelestia-package = pkgs.callPackage ./package.nix { inherit quickshell; };
   outOfStore = config.lib.file.mkOutOfStoreSymlink;
 in {
@@ -17,8 +19,8 @@ in {
     cli.enable = true;
   };
 
-  home.file.".face".source = outOfStore "${fl-dots}/assets/face";
-  xdg.configFile."caelestia/shell.json".source = outOfStore "${fl-dots}/caelestia/shell.json";
-  xdg.configFile."caelestia/cli.json".source = outOfStore "${fl-dots}/caelestia/cli.json";
+  home.file.".face".source = outOfStore "${assets}/face";
+  xdg.configFile."caelestia/shell.json".source = outOfStore "${dots}/caelestia/shell.json";
+  xdg.configFile."caelestia/cli.json".source = outOfStore "${dots}/caelestia/cli.json";
 
 }

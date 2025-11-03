@@ -1,6 +1,7 @@
 { config, fl-dots, ... }:
 
 let
+  dots = "${fl-dots}/dots";
   outOfStore = config.lib.file.mkOutOfStoreSymlink;
 in 
 {
@@ -8,5 +9,5 @@ in
     enable = false;
   };
 
-  xdg.configFile."hypr/hypridle.conf".source = outOfStore "${fl-dots}/hypr/hypridle.conf";
+  xdg.configFile."hypr/hypridle.conf".source = outOfStore "${dots}/hypr/hypridle.conf";
 }
