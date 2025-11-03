@@ -2,6 +2,6 @@
 
 {
   imports = [
-    (tools.relative "home/flpflan/common/gui/fcitx5")
+    (tools.relative "home/flpflan/common/QoL/fcitx5")
   ];
 }

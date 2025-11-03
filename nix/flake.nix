@@ -83,10 +83,10 @@
       url = "git+ssh@github.com:flpflan/thb-proxy.git";
       flake = false;
     };
-    stylix = {
-      url = "github:danth/stylix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # stylix = {
+    #   url = "github:danth/stylix";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
     # illogical-impulse = {
     #   url = "github:xBLACKICEx/end-4-dots-hyprland-nixos";
     #   inputs.nixpkgs.follows = "nixpkgs";
@@ -94,6 +94,10 @@
     # };
     caelestia-shell = {
       url = "github:caelestia-dots/shell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    noctalia-shell = {
+      url = "github:noctalia-dev/noctalia-shell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nvim = {

@@ -4,8 +4,8 @@
   ...
 }: {
   imports = map tools.relative [
-    "home/flpflan/common/wm/hyprland"
-    "home/flpflan/common/wm/quickshell/caelestia"
+    "home/flpflan/common/desktop/wm/hyprland"
+    "home/flpflan/common/desktop/rice/caelestia"
   ];
 
   xdg.portal = {

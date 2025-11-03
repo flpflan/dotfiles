@@ -2,7 +2,7 @@
 {
   imports = map tools.relative [
     # "home/flpflan/common/headless"
-    "home/flpflan/common/agenix.nix"
+    "home/flpflan/common/global/agenix.nix"
   ];
   nix.gc = {
     automatic = true;

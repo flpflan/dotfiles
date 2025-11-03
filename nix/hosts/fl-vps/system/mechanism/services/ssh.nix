@@ -20,7 +20,7 @@
       ⡝⡵⡕⡀⠑⠳⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠛⢉⡠⡲⡫⡪⡪⡣ 
     '';
     settings = {
-      PermitRootLogin = lib.mkForce "prohibit-password";
+      # PermitRootLogin = lib.mkForce "prohibit-password";
       PasswordAuthentication = true;
     };
   };

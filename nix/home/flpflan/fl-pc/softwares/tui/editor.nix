@@ -2,8 +2,8 @@
 
 {
   imports = map tools.relative[
-    "home/flpflan/common/tui/nvim"
-    "home/flpflan/common/tui/micro"
+    "home/flpflan/common/cli/nvim"
+    "home/flpflan/common/cli/micro"
   ];
   home.sessionVariables.EDITOR = "nvim";
 }

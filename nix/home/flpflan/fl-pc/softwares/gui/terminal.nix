@@ -1,6 +1,6 @@
 {tools, ...}: {
   imports = map tools.relative [
-    "home/flpflan/common/gui/foot"
-    "home/flpflan/common/gui/kitty"
+    "home/flpflan/common/QoL/foot"
+    "home/flpflan/common/QoL/kitty"
   ];
 }

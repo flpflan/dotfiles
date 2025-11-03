@@ -17,13 +17,17 @@ else if name == "<disko>" then
     inputs.disko.nixosModules.disko
 else if name == "<srvos-server>" then
     inputs.srvos.nixosModules.server
-else if name == "<stylix-nixos>" then
-    inputs.stylix.nixosModules.stylix
-else if name == "<stylix-home-manager>" then
-    inputs.stylix.homeModules.stylix
+# else if name == "<stylix-nixos>" then
+#     inputs.stylix.nixosModules.stylix
+# else if name == "<stylix-home-manager>" then
+#     inputs.stylix.homeModules.stylix
 else if name == "<illogical-impulse>" then
     inputs.illogical-impulse.homeManagerModules.default
 else if name == "<caelestia-shell>" then
     inputs.caelestia-shell.homeManagerModules.default
+else if name == "<noctalia-shell>" then
+    inputs.noctalia-shell.homeModules.default
+else if name == "<noctalia-shell-nixos>" then
+    inputs.noctalia-shell.nixosModules.default
 else
     abort

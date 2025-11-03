@@ -1,6 +1,10 @@
-{pkgs, ...}: let
+{pkgs, config, ...}:
+
+let
+  inherit (config.home) homeDirectory;
   # toolchain = pkgs.rustPlatform;
-in {
+in 
+{
   home.packages = with pkgs; [
     cargo
     # clippy
@@ -12,6 +16,6 @@ in {
   # home.sessionVariables.RUST_SRC_PATH = "${toolchain.rustLibSrc}";
 
   home.sessionPath = [
-    "$HOME/.cargo/bin"
+    "${homeDirectory}/.cargo/bin"
   ];
 }

@@ -16,6 +16,7 @@ in {
     (relative "hosts/common/chaotic.nix")
     (relative "hosts/common/agenix.nix")
     # (relative "hosts/common/facter.nix")
+    (relative "hosts/common/keys.nix")
     (relative "users/flpflan")
     (relative "users/apps")
     # (module "<srvos-server>")

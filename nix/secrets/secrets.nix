@@ -14,10 +14,10 @@ in
  "hosts/fl-vps/sb.json.age".publicKeys = hosts.fl-vps ++ users.flpflan;
 
   # User - flpflan
-  "users/flpflan/passwd.age".publicKeys = keys.all;
-  # "users/flpflan/id_ed25519.age".publicKeys = users.flpflan;
-  # "users/flpflan/id_ed25519.pub.age".publicKeys = keys.all;
-  # "users/flpflan/id_rsa.age".publicKeys = users.flpflan;
-  # "users/flpflan/id_rsa.pub.age".publicKeys = keys.all;
+  "users/flpflan/passwd.age".publicKeys = keys.all; # Hashed password
+  "users/flpflan/id_ed25519.age".publicKeys = users.flpflan;
+  "users/flpflan/id_ed25519.pub.age".publicKeys = keys.all;
+  "users/flpflan/id_rsa.age".publicKeys = users.flpflan;
+  "users/flpflan/id_rsa.pub.age".publicKeys = keys.all;
   # "users/flpflan/ssh_config.age".publicKeys = keys.all;
 }

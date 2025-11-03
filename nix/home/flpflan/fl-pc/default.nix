@@ -6,9 +6,9 @@
 }: {
   imports =
     map tools.relative [
-      "<stylix-home-manager>"
-      "home/flpflan/common/agenix.nix"
-      "home/flpflan/common/chaotic.nix"
+      # "<stylix-home-manager>"
+      "home/flpflan/common/global/agenix.nix"
+      "home/flpflan/common/global/chaotic.nix"
     ]
     ++ tools.scan ./.;
 

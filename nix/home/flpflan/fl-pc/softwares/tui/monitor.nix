@@ -2,6 +2,6 @@
 
 {
   imports = [
-    (tools.relative "home/flpflan/common/tui/btop")
+    (tools.relative "home/flpflan/common/cli/btop")
   ];
 }

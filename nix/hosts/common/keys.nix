@@ -8,9 +8,9 @@ in
 {
   age.secrets = {
     "hosts/${hostName}/ssh_host_ed25519_key".file =
-      relative "secrets/hosts/fl-pc/ssh_host_ed25519_key.age";
+      relative "secrets/hosts/${hostName}/ssh_host_ed25519_key.age";
     "hosts/${hostName}/ssh_host_ed25519_key.pub".file =
-      relative "secrets/hosts/fl-pc/ssh_host_ed25519_key.pub.age";
+      relative "secrets/hosts/${hostName}/ssh_host_ed25519_key.pub.age";
   };
   environment.etc = {
     "ssh/ssh_host_ed25519_key" = {
