@@ -1,5 +1,8 @@
 {
-  "background": { "visualiser": { "blur": true, "enabled": true } },
+  "background": {
+    "visualiser": { "blur": true, "enabled": true },
+    "desktopClock": { "enabled": false }
+  },
   "general": {
     "idle": {
       "timeouts": [
