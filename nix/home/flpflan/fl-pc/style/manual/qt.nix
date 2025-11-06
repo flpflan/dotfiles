@@ -2,6 +2,8 @@
 
 {
   home.packages = with pkgs; [
-    qt6Packages.qt6ct libsForQt5.qt5ct
+    # qt6Packages.qt6ct
+    qt6ct-kde
+    libsForQt5.qt5ct
   ];
 }

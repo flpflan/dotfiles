@@ -1,0 +1,132 @@
+/*
+ * Copyright (c) 2020-2025, Ilya Kotov <forkotov02@ya.ru>
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions are
+ * met:
+ *
+ * 1. Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ *
+ * 2. Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in
+ *    the documentation and/or other materials provided with the
+ *    distribution.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+ * A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+ * HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+ * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+ * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+ * DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+ * THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+ * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ */
+
+#include <QMessageBox>
+#include <QSettings>
+#include <QApplication>
+#include <QFontDatabase>
+#include <QFontDialog>
+#include <QDir>
+#include <QFile>
+#include "qt6ct.h"
+#include "fontspage.h"
+#include "fontconfigdialog.h"
+#include "ui_fontspage.h"
+
+FontsPage::FontsPage(QWidget *parent) :
+    TabPage(parent),
+    m_ui(new Ui::FontsPage)
+{
+    m_ui->setupUi(this);
+
+    connect(m_ui->changeGeneralFontButton, &QToolButton::clicked, this, [=] { onFontChangeRequested(m_ui->generalFontLabel); } );
+    connect(m_ui->changeFixedWidthFontButton, &QToolButton::clicked, this, [=] { onFontChangeRequested(m_ui->fixedFontLabel); } );
+
+    readSettings();
+
+    //icons
+    m_ui->createFontsConfButton->setIcon(QIcon::fromTheme(u"document-new"_s));
+    m_ui->removeFontsConfButton->setIcon(QIcon::fromTheme(u"edit-delete"_s));
+}
+
+FontsPage::~FontsPage()
+{
+    delete m_ui;
+}
+
+void FontsPage::writeSettings(QSettings *settings)
+{
+    settings->beginGroup(u"Fonts"_s);
+    settings->setValue(u"general"_s, m_ui->generalFontLabel->property("value"));
+    settings->setValue(u"fixed"_s, m_ui->fixedFontLabel->property("value"));
+    settings->endGroup();
+}
+
+void FontsPage::onFontChangeRequested(QWidget *widget)
+{
+    bool ok = false;
+    QFont font = QFontDialog::getFont (&ok, widget->font(), this);
+    if(!ok)
+        return;
+
+    if(font.weight() == QFont::Normal
+        && (font.styleName() == "Regular"_L1
+            || font.styleName() == "Normal"_L1
+            || font.styleName() == "Book"_L1
+            || font.styleName() == "Roman"_L1))
+        font.setStyleName(QString());
+
+    widget->setProperty("value", font.toString());
+    widget->setFont(font);
+    qobject_cast<QLabel*>(widget)->setText(font.family () + QChar::Space + QString::number(font.pointSize ()));
+}
+
+void FontsPage::readSettings()
+{
+    QSettings settings(Qt6CT::configFile(), QSettings::IniFormat);
+    settings.beginGroup("Fonts"_L1);
+    loadFont(&settings, m_ui->generalFontLabel, u"general"_s);
+    loadFont(&settings, m_ui->fixedFontLabel, u"fixed"_s);
+    settings.endGroup();
+}
+
+void FontsPage::loadFont(QSettings *settings, QLabel *label, const QString &key)
+{
+    QFont font = settings->value(key, key == "fixed"_L1
+        ? QFontDatabase::systemFont(QFontDatabase::FixedFont)
+        : QFontDatabase::systemFont(QFontDatabase::GeneralFont)).value<QFont>();
+    label->setText(font.family() + QChar::Space + QString::number(font.pointSize()));
+    label->setFont(font);
+    label->setProperty("value", font.toString());
+}
+
+void FontsPage::on_createFontsConfButton_clicked()
+{
+    FontConfigDialog d(this);
+    d.exec();
+}
+
+void FontsPage::on_removeFontsConfButton_clicked()
+{
+    QString path = QDir::homePath() + u"/.config/fontconfig/fonts.conf"_s;
+
+
+    if(QFile::exists(path))
+    {
+        if(QMessageBox::question(this, tr("Remove Font Configuration"),
+                                 tr("Are you sure you want to delete <i>%1</i>?").arg(path),
+                                 QMessageBox::Yes | QMessageBox::No) == QMessageBox::No)
+        {
+            return;
+        }
+
+        QFile::remove(path + u".back"_s);
+        QFile::copy(path, path + u".back"_s);
+        QFile::remove(path);
+    }
+}
