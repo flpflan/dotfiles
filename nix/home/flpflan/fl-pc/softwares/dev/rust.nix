@@ -7,7 +7,7 @@ in
 {
   home.packages = with pkgs; [
     cargo
-    # clippy
+    clippy
     rustc
     # (with toolchain; [
     #   rustLibSrc

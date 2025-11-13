@@ -33,6 +33,7 @@
 
     packages.x86_64-linux = {
       fl-vps-image = self.nixosConfigurations.fl-vps.config.system.build.diskoImages;
+      opiz3-image = self.nixosConfigurations.opiz3.config.system.build.sdImage;
     };
   };
 
@@ -52,7 +53,7 @@
     #   url = "github:JustAdumbPrsn/Nebula-A-Minimal-Theme-for-Zen-Browser";
     #   inputs.nixpkgs.follows = "nixpkgs";
     # };
-    opiz3 = {
+    opiz3-nix = {
       url = "github:flpflan/orangepizero3-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };

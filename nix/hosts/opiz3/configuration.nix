@@ -1,5 +1,8 @@
 { pkgs, nixpkgs, opiz3-nix, ... }:
 
+let
+  inherit (opiz3-nix.packages.aarch64-linux) ubootOrangePiZero3 firmwareOrangePiZero3 linuxOrangePiZero3;
+in 
 {
   imports = [
     "${nixpkgs}/nixos/modules/installer/sd-card/sd-image-aarch64.nix"
@@ -9,6 +12,7 @@
 
   # dodge "module <x> not found" error for socs.
   hardware.enableRedistributableFirmware = false;
+  hardware.firmware = [firmwareOrangePiZero3];
   nixpkgs.overlays = [
       (final: super: {
       makeModulesClosure = x:
@@ -26,10 +30,10 @@
   boot.initrd.supportedFilesystems = pkgs.lib.mkForce ["vfat" "ext4"];
 
   # your shiny custom kernel.
-  boot.kernelPackages = pkgs.orangePiZero3; # however you get the package here is up to you - overlay or directly from the flake.
+  boot.kernelPackages = pkgs.linuxPackagesFor (pkgs.callPackage linuxOrangePiZero3 {}); # however you get the package here is up to you - overlay or directly from the flake.
 
   # opi needs the uboot image written to a specific part of the firmware.
-  sdImage.postBuildCommands = ''dd if=${opiz3-nix.packages.aarch64-linux.ubootOrangePiZero3}/u-boot-sunxi-with-spl.bin of=$img bs=8 seek=1024 conv=notrunc'';
+  sdImage.postBuildCommands = ''dd if=${ubootOrangePiZero3}/u-boot-sunxi-with-spl.bin of=$img bs=8 seek=1024 conv=notrunc'';
 
   # this gets burned straight onto an sd. no point in zstd.
   sdImage.compressImage = false;

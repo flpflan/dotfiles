@@ -1,7 +1,8 @@
 {kdePackages, ...}:
 kdePackages.qt6ct.overrideAttrs (oldAttrs: {
-  postPatch = ''
-    echo "Patching source files..."
+  pname = "qt6ct-kde";
+  preBuild = ''
+    echo "Replacing source files..."
     cp ${./patch/CMakeLists.txt} .
     cp -r ${./patch/src} .
   '';
