@@ -1,12 +1,12 @@
 {pkgs, ...}: let
   general-fhs-env = let
-    base = pkgs.appimagetools.defaultfhsenvargs;
+    base = pkgs.appimageTools.defaultFhsEnvArgs;
   in
-    pkgs.buildfhsenv (base
+    pkgs.buildFHSEnv (base
       // {
         name = "fhs";
-        targetpkgs = pkgs:
-          (base.targetpkgs pkgs)
+        targetPkgs = pkgs:
+          (base.targetPkgs pkgs)
           ++ (
             with pkgs; [
               pkg-config
@@ -14,9 +14,9 @@
               # Other dependencies
             ]
           );
-        profile = "export fhs=1";
-        runscript = "bash";
-        extraoutputstoinstall = ["dev"];
+        profile = "export FHS=1";
+        runScript = "bash";
+        extraOutputsToInstall = ["dev"];
       });
 in {
   home.packages = with pkgs; [
