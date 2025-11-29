@@ -20,7 +20,17 @@ in
   #     gpu-context = "wayland";
   #   };
   # };
-  home.packages = [ pkgs.mpv ];
+  home.packages = [
+    (pkgs.mpv.override {
+      mpv = pkgs.mpv-unwrapped.override {
+        x11Support = false;
+        alsaSupport = false;
+        pulseSupport = false;
+        pipewireSupport = true;
+        javascriptSupport = false;
+      };
+    })
+  ];
   xdg.configFile."mpv" = {
     source = outOfStore "${dots}/mpv";
     recursive = false;
