@@ -19,8 +19,10 @@ e = exec swappy -f "$imv_current_file" &
 # Image navigation
 <Left> = prev
 <bracketleft> = prev
+<Prior> = prev
 <Right> = next
 <bracketright> = next
+<Next> = next
 gg = goto 1
 <Shift+G> = goto -1
 
@@ -33,7 +35,7 @@ l = pan -50 0
 
 # Zooming
 <Up> = zoom 1
-<Shift+plus> = zoom 1
+<plus> = zoom 1
 i = zoom 1
 <Down> = zoom -1
 <minus> = zoom -1
