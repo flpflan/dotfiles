@@ -7,6 +7,10 @@
       url = "github:nix-community/neovim-nightly-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    "plugins-neotab" = {
+      url = "github:kawre/neotab.nvim";
+      flake = false;
+    };
     "plugins-garbage-day" = {
       url = "github:zeioth/garbage-day.nvim";
       flake = false;
@@ -210,7 +214,7 @@
       ...
     } @ packageDef: let
       cats = import ./nix/categories.nix {
-        inherit pkgs;
+        inherit pkgs inputs;
         lib = pkgs.lib;
       };
       attrOrEmpty = attr:

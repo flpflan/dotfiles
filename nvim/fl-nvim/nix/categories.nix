@@ -1,6 +1,7 @@
 {
   pkgs,
   lib,
+  inputs,
   ...
 }: let
   base_path = ./categories;
@@ -8,7 +9,7 @@
   nix_files = builtins.filter (x: lib.hasSuffix ".nix" x) all_files;
   pathValue = path:
     import path {
-      inherit pkgs;
+      inherit pkgs inputs;
       vim_pkgs = pkgs.vimPlugins;
       nvim_pkgs = pkgs.neovimPlugins;
       tools = import ./tools.nix {inherit lib;};

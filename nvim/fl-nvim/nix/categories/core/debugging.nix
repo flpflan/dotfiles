@@ -1,6 +1,8 @@
 {
+  pkgs,
   vim_pkgs,
   nvim_pkgs,
+  inputs,
   ...
 }: {
   startupPlugins = with vim_pkgs;
@@ -8,7 +10,7 @@
       nvim-nio
     ]
     ++ (with nvim_pkgs; [
-      # nvim-dap-repl-highlights
+      nvim-dap-repl-highlights
     ]);
 
   optionalPlugins = with vim_pkgs; [
@@ -16,10 +18,13 @@
     nvim-dap-ui
     nvim-dap-virtual-text
     (nvim-treesitter.withPlugins (
-      plugins:
-        with plugins; [
-          # dap_repl # BUG: This not possible on nixos
-        ]
+      _: [
+        (pkgs.tree-sitter.buildGrammar rec {
+          language = "dap_repl";
+          src = inputs.plugins-nvim-dap-repl-highlights;
+          version = toString (src.lastModified or "master");
+        })
+      ]
     ))
   ];
 }
