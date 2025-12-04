@@ -47,7 +47,7 @@ opt.cmdheight = 0
 -- opt.guicursor = 'n-v-c-sm-i-ci-ve:block,r-cr-o:hor20,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor' -- Blink Cursor
 
 opt.numberwidth = 2
-opt.signcolumn = "yes:1"
+opt.signcolumn = "number"
 opt.statuscolumn = "%l%s"
 
 -- Searching

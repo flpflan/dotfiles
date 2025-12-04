@@ -4,7 +4,7 @@
 local ensured_languages = {
   "comment", "dap_repl"
 }
-if require("nixCatsUtils").isNixCats then ensured_languages = nil end
+if require("nixCatsUtils").isNixCats then ensured_languages = {} end
 --------------------
 --- Config Logic ---
 --------------------
@@ -51,6 +51,7 @@ plugin("nvim-treesitter")
       incremental_selection = { enable = true },
       indent = { enable = true, disable = { "cpp" } },
       textobjects = {
+        -- TODO:
         select = {
           enable = true,
           lookahead = true,
@@ -96,18 +97,26 @@ plugin("nvim-treesitter")
             ["[A"] = { query = "@parameter.inner", desc = "Previous argument end" },
             ["[C"] = { query = "@class.outer", desc = "Previous class end" },
           },
+          goto_next = {
+            ["]?"] = "@conditional.outer",
+            ["]o"] = "@loop.*",
+          },
+          goto_previous = {
+            ["[?"] = "@conditional.outer",
+            ["[o"] = "@loop.*",
+          },
         },
         swap = {
           enable = true,
           swap_next = {
-            [">K"] = { query = "@block.outer", desc = "Swap next block" },
-            [">F"] = { query = "@function.outer", desc = "Swap next function" },
-            [">A"] = { query = "@parameter.inner", desc = "Swap next argument" },
+            [">k"] = { query = "@block.outer", desc = "Swap next block" },
+            [">f"] = { query = "@function.outer", desc = "Swap next function" },
+            [">a"] = { query = "@parameter.inner", desc = "Swap next argument" },
           },
           swap_previous = {
-            ["<K"] = { query = "@block.outer", desc = "Swap previous block" },
-            ["<F"] = { query = "@function.outer", desc = "Swap previous function" },
-            ["<A"] = { query = "@parameter.inner", desc = "Swap previous argument" },
+            ["<k"] = { query = "@block.outer", desc = "Swap previous block" },
+            ["<f"] = { query = "@function.outer", desc = "Swap previous function" },
+            ["<a"] = { query = "@parameter.inner", desc = "Swap previous argument" },
           },
         },
       },

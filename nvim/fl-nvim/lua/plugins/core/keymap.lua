@@ -1,4 +1,26 @@
-plugin("better-escape.nvim"):on_require("better_escape"):event_defer()
+plugin("better-escape.nvim"):on_require("better_escape"):event_defer():opts {
+  default_mappings = true,
+  mappings = {
+    i = {
+      [";"] = {
+        [";"] = "<Esc>A;<Esc>",
+      },
+      [" "] = {
+        ["<tab>"] = function()
+          -- Defer execution to avoid side-effects
+          vim.defer_fn(function()
+            -- set undo point
+            vim.o.ul = vim.o.ul
+            require("luasnip").expand_or_jump()
+          end, 1)
+        end,
+      },
+    },
+  },
+}
+
+-- TODO: :vsplit term://bash or :terminal
+-- TODO: move line
 
 -- TODO: organise keymaps
 -- vim.keymap.set("n", "<leader>", "<cmd>WhichKey ,<cr>", { desc = "Buffer Local Keymaps (which-key)" })
@@ -32,6 +54,8 @@ kmap("n", "[r", function() require("illuminate")["goto_prev_reference"](false) e
 --     { "<leader>s", group = "Sessions" },
 --     { "<leader>t", group = "Toggle" },
 --     { "<leader>w", group = "Windows" },
+--     { ">", group = "Move Next" },
+--     { "<", group = "Move Before" },
 -- }
 --
 -- local g_lsp = {

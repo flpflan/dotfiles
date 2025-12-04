@@ -44,9 +44,9 @@
       # vim-startuptime
       noice-nvim
       todo-comments-nvim
-      tabout-nvim
+      neotab
       # mini-indentscope
-      # nvim-highlight-colors
+      nvim-highlight-colors
       smart-splits-nvim
       # mini-ai
       # mini-surround
@@ -68,10 +68,10 @@
       luasnip
       # grug-far-nvim
       trouble-nvim
-      # treesj
+      treesj
       flash-nvim
       # yanky-nvim
-      # neogen
+      neogen
       # vim-sleuth
       statuscol-nvim
     ]

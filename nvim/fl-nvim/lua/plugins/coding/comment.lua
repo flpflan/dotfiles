@@ -23,3 +23,11 @@ plugin("comment.nvim")
   --     "Toggle Comment"
   --   ),
   -- }
+
+plugin("neogen")
+	:event_typing()
+	:on_require("neogen")
+	:opts({
+		snippet_engine = "luasnip",
+	})
+	:keys({ kmap("n", "gca", klazy("neogen").generate(), "annotate") })

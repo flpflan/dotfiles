@@ -15,7 +15,7 @@ vim.api.nvim_create_autocmd("BufReadPost", {
 -- Highlight Yanked Text
 vim.api.nvim_create_autocmd("TextYankPost", {
   pattern = "*",
-  callback = function() (vim.hl or vim.highlight).on_yank() end,
+  callback = function() (vim.hl or vim.highlight).on_yank({ timeout = 100 }) end,
 })
 
 -- Auto Highlight Search

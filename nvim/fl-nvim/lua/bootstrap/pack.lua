@@ -77,7 +77,8 @@ local plugins = {
   { "smoka7/hop.nvim", opt = true },
   { "windwp/nvim-ts-autotag", opt = true },
   { "nguyenvukhang/nvim-toggler", opt = true },
-  { "abecodes/tabout.nvim", opt = true },
+  -- { "abecodes/tabout.nvim", opt = true },
+  { "kawre/neotab.nvim", opt = true },
   { "kylechui/nvim-surround", opt = true },
   { "NMAC427/guess-indent.nvim", opt = true },
   "JoosepAlviste/nvim-ts-context-commentstring",
@@ -104,6 +105,9 @@ local plugins = {
   { "oribarilan/lensline.nvim", opt = true },
   -- "nvim-java/nvim-java",
   { "saecki/crates.nvim", opt = true },
+  { "Wansmer/treesj", opt = true },
+  { "brenoprata10/nvim-highlight-colors", opt = true },
+  { "danymat/neogen", opt = true },
 }
 
 if vim.version:ge "0.12" then

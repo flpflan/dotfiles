@@ -21,18 +21,51 @@ plugin("nvim-autopairs"):event_typing():opts {
   check_ts = true,
 }
 
--- TODO:
-plugin("tabout.nvim"):event_typing():on_require("tabout"):opts {
-  act_as_shift_tab = true,
-  ignore_beginning = false,
-  tabouts = {
-    { open = "'", close = "'" },
-    { open = '"', close = '"' },
-    { open = "`", close = "`" },
+plugin("neotab.nvim"):event_typing():opts {
+  behavior = "nested", ---@type ntab.behavior
+  pairs = {
     { open = "(", close = ")" },
     { open = "[", close = "]" },
     { open = "{", close = "}" },
+    { open = "'", close = "'" },
+    { open = '"', close = '"' },
+    { open = "`", close = "`" },
     { open = "<", close = ">" },
+  },
+  exclude = {},
+  smart_punctuators = {
+    enabled = true,
+    semicolon = {
+      enabled = true,
+      ft = { "cs", "c", "cpp", "java" },
+    },
+    escape = {
+      enabled = true,
+      triggers = {
+        ["+"] = {
+          pairs = {
+            { open = '"', close = '"' },
+          },
+          format = " %s ", -- " + "
+          ft = { "java" },
+        },
+        [","] = {
+          pairs = {
+            { open = "'", close = "'" },
+            { open = '"', close = '"' },
+          },
+          format = "%s ", -- ", "
+        },
+        ["="] = {
+          pairs = {
+            { open = "(", close = ")" },
+          },
+          ft = { "javascript", "typescript" },
+          format = " %s> ", -- ` => `
+          cond = "^$",
+        },
+      },
+    },
   },
 }
 
