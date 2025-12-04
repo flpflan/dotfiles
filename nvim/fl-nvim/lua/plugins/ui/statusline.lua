@@ -36,7 +36,7 @@ plugin("statuscol.nvim"):config(function()
           builtin.lnumfunc,
           " ",
         },
-        sign = { auto = true },
+        sign = { name = { ".*" }, maxwidth = 1, colwidth = 1, auto = true },
         condition = { function() return not_ft "alpha" end, builtin.not_empty },
         click = "v:lua.ScLa",
       },
@@ -44,10 +44,10 @@ plugin("statuscol.nvim"):config(function()
         sign = { text = { "[┃_‾~┆]" }, maxwidth = 1, colwidth = 1, auto = true },
         click = "v:lua.ScSa",
       },
-      {
-        sign = { name = { ".*" }, maxwidth = 2, colwidth = 2, auto = true },
-        click = "v:lua.ScSa",
-      },
+      -- {
+      --   sign = { name = { ".*" }, maxwidth = 2, colwidth = 2, auto = true },
+      --   click = "v:lua.ScSa",
+      -- },
     },
     clickhandlers = {
       FoldOther = false,
