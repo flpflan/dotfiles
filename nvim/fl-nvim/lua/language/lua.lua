@@ -61,6 +61,7 @@ formatter("lua", "stylua")
 local libs = {
   vim.env.VIMRUNTIME,
   { path = "${3rd}/luv/library", words = { "vim%.uv" } },
+  -- TODO: plugin pathes on non-nixos system
   { path = (nixCats.nixCatsPath or "") .. "/lua", words = { "nixCats" } },
 }
 local s = vim.split(cwd(), "/", { trimempty = true })

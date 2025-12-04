@@ -3,7 +3,17 @@ if not nixCats "language.cpp" then return end
 ----- LSP -----
 ---------------
 -- lsp("clice")
-lsp("clangd"):cmd("clangd", "--clang-tidy")
+lsp("clangd"):cmd(
+  "clangd",
+  "--clang-tidy",
+  -- "--clang-tidy-check=performance-*,bugprone-*",
+  "--background-index",
+  "-j=16",
+  "--completion-style=bundled",
+  "--all-scopes-completion",
+  "--header-insertion=iwyu",
+  "--header-insertion-decorators"
+)
 lsp "neocmake"
 -----------------
 --- Formatter ---
