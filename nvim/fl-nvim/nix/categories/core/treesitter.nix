@@ -16,6 +16,12 @@
             vim
             vimdoc
             comment
+            diff
+            git_config
+            git_rebase
+            gitattributes
+            gitcommit
+            gitignore
           ]
       ))
     ]
