@@ -12,6 +12,7 @@ title_format   = "yazi: {cwd}"
 wrap       = "yes"
 max_width  = 1500
 max_height = 1500
+image_delay = 0
 
 [input]
 cursor_blink = false
@@ -34,10 +35,14 @@ subtitle = [
 	{ run = ''' echo sub-add "'$0'" | socat - /tmp/mpv.sock ''', desc = "Add sub to MPV" },
 	{ run = ''' opencc -c tw2sp -i "$1" -o "$1" ''', desc = "TW to SC" },
 ]
+view = [
+	{ run = '''imv-dir "$@"''', orphan = true }
+]
 
 [open]
 prepend_rules = [
 	{ name = "*.{ass,srt,ssa,sty,sup,vtt}", use = [ "subtitle", "edit" ] },
+	{ mime = "image/*", use = [ "view" ] },
 ]
 
 [plugin]
