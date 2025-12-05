@@ -21,11 +21,26 @@ formatter("yaml", "prettierd")
 plugin("yaml"):ft("yaml", "json", "helm"):on_require("yaml_nvim"):opts({
 	ft = { "yaml", "helm" },
 })
-vim.api.nvim_create_autocmd("BufEnter", {
-	pattern = { "*.yaml", "*.yml", "*.json", "*.helm" },
-	callback = function(args)
-		kopts({ buffer = args.buf }, {
-			kmap("n", "<leader>fk", kcmd("YAMLTelescope"), "key"),
-		})
-	end,
-})
+
+-- INFO: This is done by KeyTrailJump
+-- vim.api.nvim_create_autocmd("BufEnter", {
+-- 	pattern = { "*.yaml", "*.yml", "*.json", "*.helm" },
+-- 	callback = function(args)
+-- 		kopts({ buffer = args.buf }, {
+-- 			kmap("n", "<leader>fk", kcmd("YAMLSnacks"), "Keys"),
+-- 		})
+-- 	end,
+-- })
+
+plugin("keytrail")
+  :event_defer()
+  :keys(kgroup("<leader>f", "Find", {}, {
+    --TODO: yik for KeyTrailYank for yaml/json buffers
+    kmap("n", "k", kcmd "KeyTrailJump", "Key"),
+  }))
+  :opts {
+    key_mapping = "fk",
+    filetypes = { yaml = true, json = true },
+    popup = { enabled = false },
+  }
+

@@ -11,6 +11,8 @@
         plugins:
           with plugins; [
             bash
+            zsh
+            fish
             make
             regex
             vim
@@ -22,6 +24,9 @@
             gitattributes
             gitcommit
             gitignore
+            ssh_config
+            desktop
+            zathurarc
           ]
       ))
     ]

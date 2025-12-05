@@ -23,5 +23,6 @@
     ]
     ++ (with nvim_pkgs; [
       yaml
+      keytrail
     ]);
 }

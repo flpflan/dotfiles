@@ -7,6 +7,10 @@
       url = "github:nix-community/neovim-nightly-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    "plugins-keytrail" = {
+      url = "github:JFryy/keytrail.nvim";
+      flake = false;
+    };
     "plugins-neotab" = {
       url = "github:kawre/neotab.nvim";
       flake = false;
@@ -169,10 +173,6 @@
     };
     "plugins-quicker" = {
       url = "github:stevearc/quicker.nvim";
-      flake = false;
-    };
-    "plugins-codecompanion" = {
-      url = "github:olimorris/codecompanion.nvim";
       flake = false;
     };
     "plugins-gotmpl" = {

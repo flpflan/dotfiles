@@ -37,10 +37,10 @@ local function set_lsp_keymaps(buf)
       "Toggle Inlay Hint"
     ),
     -- kmap({ "n" }, "gd", vim.lsp.buf.definition, "Goto Definition"),
-    kmap({ "n" }, "gd", function() require("snacks").picker.lsp_definitions() end, "Goto Definition"),
-    kmap({ "n" }, "gt", function() require("snacks").picker.lsp_type_definitions() end, "Goto Type Definition"),
-    kmap({ "n" }, "gI", function() require("snacks").picker.lsp_implementations() end, "Goto Implementation"),
-    kmap({ "n" }, "gr", function() require("snacks").picker.lsp_references() end, "Goto Reference"),
+    kmap({ "n" }, "gd", klazy("snacks.picker").lsp_definitions(), "Goto Definition"),
+    kmap({ "n" }, "gt", klazy("snacks.picker").lsp_type_definitions(), "Goto Type Definition"),
+    kmap({ "n" }, "gI", klazy("snacks.picker").lsp_implementations(), "Goto Implementation"),
+    kmap({ "n" }, "gr", klazy("snacks.picker").lsp_references(), "Goto Reference"),
     kgroup("<leader>l", "Language Tools", {}, {
       kmap({ "n", "v" }, "a", vim.lsp.buf.code_action, "Code Actions"),
       kmap("n", "r", vim.lsp.buf.rename, "Rename"),
@@ -113,6 +113,8 @@ vim.api.nvim_set_hl(0, "DiagnosticUnderlineWarn", { fg = "#e0af68", undercurl = 
 vim.api.nvim_set_hl(0, "DiagnosticDeprecated", { fg = "#e0af68" })
 vim.api.nvim_set_hl(0, "DiagnosticUnderlineInfo", { fg = "#0db9d7", undercurl = true })
 vim.api.nvim_set_hl(0, "DiagnosticInfo", { fg = "#0db9d7" })
+
+-- vim.lsp.log.set_level(env.get("NVIM_LSP_LOG_LEVEL") or "OFF")
 
 kgroup("<leader>l", "Language Tools", {}, {
   kmap("n", "i", kcmd "LspInfo", "Lsp Info"),

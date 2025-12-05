@@ -1,7 +1,7 @@
 plugin("nui.nvim"):config(false)
 plugin("plenary.nvim"):config(false)
 plugin("nvim-web-devicons"):config(false)
-plugin("snacks.nvim"):config(false)
+-- plugin("snacks.nvim"):config(false)
 -- plugin("image.nvim"):config(false)
 -- plugin("nvim-lsp-file-operations"):dep_on("neo-tree.nvim")
 --

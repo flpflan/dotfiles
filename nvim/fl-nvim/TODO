@@ -2,14 +2,13 @@ file tree
 oil icon
 ui(tab/dashboard(projects)/blink.cmp/indent)
 pair
-code scope(class/method/...)
 indent inconsistency between formatter and autoindent
 keymap
 git integration
 
-coding: highlight color/colorpicker
 icons
 BUG: notifier on startup
 noice message picker
 lensline
 sass
+plugin declaration

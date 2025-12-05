@@ -26,6 +26,8 @@
             tsx
             jsdoc
             graphql
+            http
+            sql
           ]
       ))
       package-info-nvim

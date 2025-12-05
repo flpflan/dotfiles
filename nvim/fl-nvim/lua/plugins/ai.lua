@@ -1,75 +1,54 @@
 if not nixCats "ai" then return end
 
-plugin("copilot")
-  :event_defer()
-  :on_require("copilot")
-  :opts({
-    suggestion = {
-      enabled = true,
-      auto_trigger = false,
-      keymap = {
-        accept = "<C-a>",
-        dismiss = "<C-d>",
-        next = false,
-      },
+plugin("copilot"):event_defer():on_require("copilot"):opts {
+  filetypes = {
+    markdown = true,
+    yaml = true,
+  },
+  suggestion = {
+    enabled = true,
+    auto_trigger = false,
+    keymap = {
+      accept = "<C-a>",
+      dismiss = "<C-d>",
+      next = false,
     },
-    panel = { enabled = false },
-  })
-  :on_plugin "codecompanion"
-local code_adapter = "copilot"
-if os.getenv "GEMINI_API_KEY" ~= nil then code_adapter = "gemini" end
-plugin("codecompanion")
+  },
+  panel = { enabled = false },
+}
+
+plugin("opencode")
+  :dep_on("snacks")
+  :on_require("opencode")
   :event_defer()
-  :dep_on("mini.diff")
-  :on_require("codecompanion")
   :opts({
-    display = {
-      diff = {
-        provider = "mini_diff",
-      },
-      chat = {
-        window = {
-          layout = "float",
-          border = "rounded",
-          height = 0.8,
-          width = 0.8,
+    preferred_picker = "snacks",
+    preferred_completion = "blink",
+    default_global_keymaps = false,
+    keymap = {
+      input_window = {
+        ["<M-a>"] = {
+          function() require("opencode.api").select_agent() end,
+          mode = { "n" },
         },
-      },
-    },
-    strategies = {
-      chat = {
-        adapter = code_adapter,
-        keymaps = {
-          close = {
-            modes = { i = "<C-q>" },
-          },
+        ["<M-s>"] = {
+          function() require("opencode.api").select_session() end,
+          mode = { "n" },
         },
-      },
-      inline = {
-        adapter = code_adapter,
-        inline = {
-          keymaps = {
-            accept_change = {
-              modes = { n = "ga" },
-            },
-            reject_change = {
-              modes = { n = "gx" },
-            },
-          },
+        ["<M-m>"] = {
+          function() require("opencode.api").configure_provider() end,
+          mode = { "n" },
         },
       },
     },
   })
-  :keys {
-    kgroup("<leader>a", "AI", {}, {
-      kmap("n", "p", kcmd "CodeCompanion", "Prompt"),
-      kmap("v", "p", function()
-        vim.ui.input({ prompt = "Prompt" }, function(input) vim.cmd("'<,'>CodeCompanion " .. input) end)
-      end, "Prompt"),
-      kmap("v", "e", kcmd "CodeCompanion /explain", "Explain"),
-      kmap("v", "f", kcmd "CodeCompanion @editor /fix", "Fix"),
-      kmap("v", "t", kcmd "CodeCompanion @editor /tests", "Generate Tests"),
-      kmap("n", "c", kcmd "CodeCompanionChat Toggle", "Toggle Chat"),
-      kmap("n", "a", kcmd "CodeCompanionActions", "Actions"),
-    }),
-  }
+  :keys(kgroup("<leader>a", "AI", {}, {
+    kmap("n", "a", klazy("opencode.api").open_input(), "Open Input"),
+    kmap("n", "A", klazy("opencode.api").open_input_new_session(), "Open Input (New Session)"),
+    kmap(
+      "n",
+      "p",
+      klazy("snacks").input({ prompt = "AI Prompt" }, function(prompt) require("opencode.api").run(prompt) end),
+      "Prompt"
+    ),
+  }))

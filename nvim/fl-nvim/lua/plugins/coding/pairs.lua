@@ -21,7 +21,7 @@ plugin("nvim-autopairs"):event_typing():opts {
   check_ts = true,
 }
 
-plugin("neotab.nvim"):event_typing():opts {
+plugin("neotab"):event_typing():opts {
   behavior = "nested", ---@type ntab.behavior
   pairs = {
     { open = "(", close = ")" },

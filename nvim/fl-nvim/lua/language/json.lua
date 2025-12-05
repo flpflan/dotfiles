@@ -12,3 +12,18 @@ lsp("jsonls"):settings {
 --- Formatter ---
 -----------------
 formatter("json", "prettierd")
+
+-----------------
+---- Plugins ----
+-----------------
+plugin("keytrail")
+  :event_defer()
+  :keys(kgroup("<leader>f", "Find", {}, {
+    --TODO: yik for KeyTrailYank for yaml/json buffers
+    kmap("n", "k", kcmd "KeyTrailJump", "Key"),
+  }))
+  :opts {
+    key_mapping = "fk",
+    filetypes = { yaml = true, json = true, jsonc = true, json5 = true },
+    popup = { enabled = false },
+  }

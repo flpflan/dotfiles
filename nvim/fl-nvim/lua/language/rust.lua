@@ -2,23 +2,24 @@ if not nixCats "language.rust" then return end
 ---------------
 ----- LSP -----
 ---------------
-lsp("rust_analyzer"):settings {
-  ["rust-analyzer"] = {
-    files = {
-      excludeDirs = {
-        ".direnv",
-        ".git",
-        "target",
-      },
-    },
-    check = {
-      command = "clippy",
-      extraArgs = {
-        "--no-deps",
-      },
-    },
-  },
-}
+-- INFO: Automatically done by rustaceanvim
+-- lsp("rust_analyzer"):settings {
+--   ["rust-analyzer"] = {
+--     files = {
+--       excludeDirs = {
+--         ".direnv",
+--         ".git",
+--         "target",
+--       },
+--     },
+--     check = {
+--       command = "clippy",
+--       extraArgs = {
+--         "--no-deps",
+--       },
+--     },
+--   },
+-- }
 ----------------
 ---- Linter ----
 ----------------
@@ -31,12 +32,8 @@ formatter("rust", "rustfmt")
 --- Debugger ---
 -----------------
 dap("rust", {
-  type = "server",
-  port = "${port}",
-  executable = {
-    command = "codelldb",
-    args = { "--port", "${port}" },
-  },
+  type = "executable",
+  command = "codelldb",
   enrich_config = require "internal.dap.enrich_config.cargo",
 })
 -----------------
@@ -53,3 +50,4 @@ plugin("crates.nvim"):event("BufRead Cargo.toml"):opts {
     hover = true,
   },
 }
+-- TODO: rustaceanvim

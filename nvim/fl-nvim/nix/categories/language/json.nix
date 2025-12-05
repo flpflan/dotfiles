@@ -1,6 +1,7 @@
 {
   pkgs,
   vim_pkgs,
+  nvim_pkgs,
   ...
 }: {
   lspsAndRuntimeDeps = with pkgs; [
@@ -11,13 +12,18 @@
   startupPlugins = with vim_pkgs; [
     SchemaStore-nvim
   ];
-  optionalPlugins = with vim_pkgs; [
-    (nvim-treesitter.withPlugins (
-      plugins:
-        with plugins; [
-          json
-          jsonc
-        ]
-    ))
-  ];
+  optionalPlugins = with vim_pkgs;
+    [
+      (nvim-treesitter.withPlugins (
+        plugins:
+          with plugins; [
+            json
+            jsonc
+            json5
+          ]
+      ))
+    ]
+    ++ (with nvim_pkgs; [
+      keytrail
+    ]);
 }

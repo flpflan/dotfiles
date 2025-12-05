@@ -5,7 +5,7 @@ local colorscheme = "catppuccin"
 ----- UI/UX Keys -----
 ----------------------
 kgroup("<leader>u", "UI/UX", {}, {
-  kmap("n", "t", function() require("snacks").picker.colorschemes() end, "Change Colorscheme"),
+  kmap("n", "t", klazy("snacks.picker").colorschemes(), "Change Colorscheme"),
   kmap("n", "T", kcmd "TransparentToggle", "Toggle Transparency"),
 })
 

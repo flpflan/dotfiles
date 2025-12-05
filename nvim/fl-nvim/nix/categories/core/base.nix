@@ -20,7 +20,6 @@
       mini-icons
       which-key-nvim
       alpha-nvim
-      snacks-nvim
       nui-nvim
       nvim-notify
       oil-git-status-nvim
@@ -37,6 +36,7 @@
     ]);
   optionalPlugins = with vim_pkgs;
     [
+      snacks-nvim
       nvim-autopairs
       nvim-surround
       nvim-ts-autotag
@@ -44,7 +44,6 @@
       # vim-startuptime
       noice-nvim
       todo-comments-nvim
-      neotab
       # mini-indentscope
       nvim-highlight-colors
       smart-splits-nvim
@@ -94,5 +93,6 @@
       # quicker
       # gotmpl
       # yaml
+      neotab
     ]);
 }

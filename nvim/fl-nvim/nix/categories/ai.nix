@@ -9,10 +9,10 @@
   ];
   optionalPlugins = with vim_pkgs;
     [
+      opencode-nvim
     ]
     ++ (with nvim_pkgs; [
       copilot
-      codecompanion
       copilot-lualine
     ]);
 }

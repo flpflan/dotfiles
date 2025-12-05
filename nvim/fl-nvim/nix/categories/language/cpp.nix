@@ -18,10 +18,13 @@
         with plugins; [
           asm
           nasm
+          disassembly
+          udev
           c
           cpp
           make
           cmake
+          printf
         ]
     ))
   ];

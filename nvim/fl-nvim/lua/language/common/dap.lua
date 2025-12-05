@@ -106,4 +106,5 @@ plugin("nvim-dap-virtual-text")
     end,
   })
   :on_plugin "nvim-dap"
+-- FIXME: No effect
 plugin("nvim-dap-repl-highlights"):on_plugin("nvim-dap")

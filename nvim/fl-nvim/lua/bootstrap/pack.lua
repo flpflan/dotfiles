@@ -39,7 +39,7 @@ local plugins = {
   { "mfussenegger/nvim-dap", opt = true },
   { "rcarriga/nvim-dap-ui", opt = true },
   { "theHamsta/nvim-dap-virtual-text", opt = true },
-  "LiadOz/nvim-dap-repl-highlights",
+  { "LiadOz/nvim-dap-repl-highlights", opt = true },
   { "stevearc/overseer.nvim", opt = true },
   { "folke/lazydev.nvim", opt = true },
   "NTBBloodbath/daylight.nvim",
@@ -47,7 +47,7 @@ local plugins = {
   { "folke/noice.nvim", opt = true },
   "MunifTanjim/nui.nvim",
   "rcarriga/nvim-notify",
-  "folke/snacks.nvim",
+  { "folke/snacks.nvim", opt = true },
   "folke/which-key.nvim",
   "catppuccin/nvim",
   "xiyaowong/transparent.nvim",
@@ -97,7 +97,6 @@ local plugins = {
   { "lewis6991/gitsigns.nvim", opt = true },
   { "ojroques/nvim-osc52", opt = true },
   { "github/copilot.vim", opt = true },
-  { "olimorris/codecompanion.nvim", opt = true },
   { "luukvbaal/statuscol.nvim", opt = true },
   -- { "pmizio/typescript-tools.nvim", opt = true },
   { "zeioth/garbage-day.nvim", opt = true },
@@ -108,6 +107,8 @@ local plugins = {
   { "Wansmer/treesj", opt = true },
   { "brenoprata10/nvim-highlight-colors", opt = true },
   { "danymat/neogen", opt = true },
+  "mrcjkb/rustaceanvim",
+  { "JFryy/keytrail.nvim", opt = true },
 }
 
 if vim.version:ge "0.12" then

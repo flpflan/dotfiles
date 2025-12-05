@@ -61,7 +61,6 @@ formatter("lua", "stylua")
 local libs = {
   vim.env.VIMRUNTIME,
   { path = "${3rd}/luv/library", words = { "vim%.uv" } },
-  -- TODO: plugin pathes on non-nixos system
   { path = (nixCats.nixCatsPath or "") .. "/lua", words = { "nixCats" } },
 }
 local s = vim.split(cwd(), "/", { trimempty = true })
@@ -69,8 +68,10 @@ if s[#s] ~= "nvim" then table.insert(libs, (nixCats.configDir or "") .. "/lua/in
 
 plugin("lazydev"):ft("lua"):cmd("LazyDev"):opts {
   library = vim.list_extend(libs, {
+    -- TODO: Donnot add these libs in non-nvim projects
     "nvim-dap",
     "nvim-dap-ui",
+    "neotab",
   }),
   integrations = {
     cmp = false,
