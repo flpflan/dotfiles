@@ -13,7 +13,7 @@ in {
     ./server
     ./secrets.nix
     ./overlays.nix
-    (relative "hosts/common/chaotic.nix")
+    # (relative "hosts/common/chaotic.nix")
     (relative "hosts/common/agenix.nix")
     # (relative "hosts/common/facter.nix")
     (relative "hosts/common/keys.nix")

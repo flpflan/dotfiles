@@ -1,8 +1,7 @@
 { pkgs, ... }:
 
 {
-  # boot.kernelPackages = pkgs.linuxPackages_cachyos-lto;
-  boot.kernelPackages = pkgs.linuxPackages_cachyos;
+  boot.kernelPackages = pkgs.cachyosKernels.linux-cachyos-latest-lto;
 
   boot.initrd.includeDefaultModules = false;
   boot.initrd.availableKernelModules = [
@@ -31,8 +30,13 @@
     "net.ipv4.ip_forward" = "1";
   };
   boot.kernelParams = [
-    # "amd_pstate=active"
+    # AMD CPU scaling
+    # "amd_pstate=guided"
+    # "initcall_blacklist=amd_pstate_init" "amd_pstate.enable=0" # Disable amd_pstate for auto-cpufreq
+    "amdgpu"
+
     "mitigations=off" "nowatchdog" "nmi_watchdog=0" "resume=UUID=7faaccfe-1ef9-40d3-9238-c63565854bd3" "quiet"
+
     # For theming tty
     "vt.default_red=30,243,166,249,137,245,148,186,88,243,166,249,137,245,148,166"
     "vt.default_grn=30,139,227,226,180,194,226,194,91,139,227,226,180,194,226,173"
