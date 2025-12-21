@@ -20,7 +20,7 @@ in {
   };
 
   home.file.".face".source = outOfStore "${assets}/face";
-  xdg.configFile."caelestia/shell.json".source = outOfStore "${dots}/caelestia/shell.json";
-  xdg.configFile."caelestia/cli.json".source = outOfStore "${dots}/caelestia/cli.json";
+  xdg.configFile."caelestia/shell.json".source = outOfStore "${dots}/caelestia/shell.jsonc";
+  xdg.configFile."caelestia/cli.json".source = outOfStore "${dots}/caelestia/cli.jsonc";
 
 }
