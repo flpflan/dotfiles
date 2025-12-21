@@ -17,5 +17,6 @@
   },
   "launcher": { "enableDangerousActions": true, "maxWallpapers": 9 },
   "paths": { "wallpaperDir": "~/Pictures/wallpaper" },
-  "services": { "defaultPlayer": "musicfox" }
+  "services": { "defaultPlayer": "musicfox" },
+  "notifs": { "actionOnClick": true, "openExpanded": true }
 }
