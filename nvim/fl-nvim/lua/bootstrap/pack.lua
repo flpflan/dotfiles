@@ -109,6 +109,7 @@ local plugins = {
   { "danymat/neogen", opt = true },
   "mrcjkb/rustaceanvim",
   { "JFryy/keytrail.nvim", opt = true },
+  { "vuki656/package-info.nvim", opt = true },
 }
 
 if vim.version:ge "0.12" then

@@ -15,7 +15,7 @@
             ]
           );
         profile = "export FHS=1";
-        runScript = "bash";
+        # runScript = "fish";
         extraOutputsToInstall = ["dev"];
       });
 in {
