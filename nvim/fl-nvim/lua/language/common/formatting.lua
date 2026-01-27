@@ -7,7 +7,7 @@ plugin("conform.nvim")
         conform.format {
           lsp_format = "fallback",
           async = false,
-          timeout_ms = 1000,
+          timeout_ms = 3000, -- larger value for larger files
         }
       end, "Format Buffer"),
     }),
