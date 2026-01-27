@@ -61,7 +61,7 @@ prepend_keymap = [
     # Toggle panel
     # { on = "T", run = "plugin toggle-pane min-preview", desc = "Show or hide the preview pane" },
     { on = "T", run = "plugin toggle-pane max-preview", desc = "Maximize or restore the preview pane" },
-    { on = "<C-S-t>", run = "plugin toggle-pane min-preview", desc = "Minimize or restore the preview pane" },
+    { on = "<C-t>", run = "plugin toggle-pane min-preview", desc = "Minimize or restore the preview pane" },
 
     # Bookmark
     # { on = [ "b", "a" ], run = "plugin mactag add" },
