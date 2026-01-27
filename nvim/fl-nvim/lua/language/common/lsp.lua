@@ -38,6 +38,7 @@ local function set_lsp_keymaps(buf)
     ),
     -- kmap({ "n" }, "gd", vim.lsp.buf.definition, "Goto Definition"),
     kmap({ "n" }, "gd", klazy("snacks.picker").lsp_definitions(), "Goto Definition"),
+    kmap({ "n" }, "gD", klazy( "snacks.picker").lsp_declarations(), "Goto Declarations"),
     kmap({ "n" }, "gt", klazy("snacks.picker").lsp_type_definitions(), "Goto Type Definition"),
     kmap({ "n" }, "gI", klazy("snacks.picker").lsp_implementations(), "Goto Implementation"),
     kmap({ "n" }, "gr", klazy("snacks.picker").lsp_references(), "Goto Reference"),

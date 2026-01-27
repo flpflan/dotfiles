@@ -43,6 +43,8 @@ opt.showmode = false
 opt.showmatch = true
 opt.showcmd = true
 opt.cmdheight = 0
+opt.wrap = false
+opt.fillchars = { eob = " " }
 
 -- opt.guicursor = 'n-v-c-sm-i-ci-ve:block,r-cr-o:hor20,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor' -- Blink Cursor
 

@@ -16,6 +16,7 @@ plugin("statuscol.nvim"):config(function()
         sign = { name = { "Diagnostic" }, maxwidth = 2, auto = true },
         click = "v:lua.ScSa",
       },
+      -- TODO:
       {
         text = { builtin.foldfunc, " " },
         click = "v:lua.ScFa",

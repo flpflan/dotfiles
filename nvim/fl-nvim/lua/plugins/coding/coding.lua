@@ -5,6 +5,8 @@ plugin("nvim-toggler"):event_defer():opts {
     ["Disable"] = "Enable",
     ["Disabled"] = "Enabled",
     ["disabled"] = "enabled",
+    ["ON"] = "OFF",
+    ["on"] = "off",
   },
 }
 

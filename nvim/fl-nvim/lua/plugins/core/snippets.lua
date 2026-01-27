@@ -5,6 +5,7 @@ plugin("luasnip")
     updateevents = "TextChangedI, TextChangedI", -- BUG: nvim-cmp breaks with this setting
   })
   :setup(function()
+    -- FIXME:
     require("luasnip.loaders.from_vscode").load()
     require("luasnip.loaders.from_lua").load { paths = { joinpath(LUA_PATH, "snippets") } }
   end)

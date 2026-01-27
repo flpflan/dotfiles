@@ -1,6 +1,6 @@
 if not nixCats "language.markdown" then return end
 
-local ft = { "markdown", "codecompanion" }
+local ft = { "markdown", "codecompanion", "opencode", "opencode_output" }
 ---------------
 ----- LSP -----
 ---------------

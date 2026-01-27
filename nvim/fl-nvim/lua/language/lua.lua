@@ -69,9 +69,9 @@ if s[#s] ~= "nvim" then table.insert(libs, (nixCats.configDir or "") .. "/lua/in
 plugin("lazydev"):ft("lua"):cmd("LazyDev"):opts {
   library = vim.list_extend(libs, {
     -- TODO: Donnot add these libs in non-nvim projects
-    "nvim-dap",
-    "nvim-dap-ui",
-    "neotab",
+    -- "nvim-dap",
+    -- "nvim-dap-ui",
+    -- "neotab",
   }),
   integrations = {
     cmp = false,
