@@ -1,12 +1,15 @@
-{ config, pkgs, fl-dots, ... }:
-
-let
+{
+  config,
+  pkgs,
+  fl-dots,
+  ...
+}: let
   dots = "${fl-dots}/dots";
   outOfStore = config.lib.file.mkOutOfStoreSymlink;
-in 
-{
+in {
   home.packages = with pkgs; [
-    ncdu duf 
+    ncdu
+    duf
   ];
 
   programs.fish = {
@@ -50,6 +53,23 @@ in
 
   programs.fzf.enable = true;
   programs.fzf.enableFishIntegration = true;
+  programs.fzf.defaultOptions = ["--style=full"];
+  programs.fzf.colors = {
+    "bg+" = "#313244";
+    spinner = "#F5E0DC";
+    hl = "#F38BA8";
+    fg = "#CDD6F4";
+    header = "#F38BA8";
+    info = "#93F1E5";
+    pointer = "#F5E0DC";
+    marker = "#A7F3EA";
+    "fg+" = "#CDD6F4";
+    prompt = "#7EEEE1";
+    "hl+" = "#F38BA8";
+    selected-bg = "#45475A";
+    border = "#6C7086";
+    label = "#CDD6F4";
+  };
 
   programs.eza.enable = true;
   programs.eza.enableFishIntegration = true;
@@ -63,4 +83,3 @@ in
   programs.nix-index.enable = true;
   programs.nix-index.enableFishIntegration = true;
 }
-
