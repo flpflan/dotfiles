@@ -36,11 +36,11 @@
             "text": "free -m | awk 'NR==2{printf \"%.2f GiB / %.2f GiB\",$3/1024,$2/1024}'",
             "format": "{$3}{>22}{$1} │"
         },
-        {
-            "type": "packages",
-            "key": "│   pkgs  ",
-            "format": "{all>22} │"
-        },
+        // {
+        //     "type": "packages",
+        //     "key": "│   pkgs  ",
+        //     "format": "{all>22} │"
+        // },
         {
             "type": "command",
             "key": "│ {$2}{$1}  user  ",
@@ -55,7 +55,8 @@
         },
         {
             "type": "os",
-            "key": "│ {$4}󰻀{$1}  distro",
+            // "key": "│ {$4}󰻀{$1}  distro",
+            "key": "│ {$4}{$1}  distro",
             "format": "{$4}{pretty-name>22}{$1} │"
         },
         {
