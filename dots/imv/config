@@ -5,6 +5,10 @@
 # Suppress built-in key bindings, and specify them explicitly in this
 # config file.
 suppress_default_binds = true
+fullscreen = true
+overlay_font = Monospace:16
+# upscaling_method = nearest_neighbour
+# background = checks
 
 [aliases]
 # Define aliases here. Any arguments passed to an alias are appended to the
@@ -20,9 +24,11 @@ e = exec swappy -f "$imv_current_file" &
 <Left> = prev
 <bracketleft> = prev
 <Prior> = prev
+<XF86Back> = prev
 <Right> = next
 <bracketright> = next
 <Next> = next
+<XF86Forward> = prev
 gg = goto 1
 <Shift+G> = goto -1
 
@@ -35,7 +41,7 @@ l = pan -50 0
 
 # Zooming
 <Up> = zoom 1
-<plus> = zoom 1
+<equal> = zoom 1
 i = zoom 1
 <Down> = zoom -1
 <minus> = zoom -1
@@ -70,3 +76,7 @@ p = exec echo $imv_current_file
 # Slideshow control
 t = slideshow +1
 <Shift+T> = slideshow -1
+
+# Background
+b = background 000000
+<Ctrl+b> = background checks
