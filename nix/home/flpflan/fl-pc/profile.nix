@@ -7,5 +7,6 @@
 in {
   home.file = {
     "Pictures/wallpaper".source = outOfStore "${fl-dots}/wallpaper";
+    "profile/snippets".source = outOfStore "${fl-dots}/snippets";
   };
 }
