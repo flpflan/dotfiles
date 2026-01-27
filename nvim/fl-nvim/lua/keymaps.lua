@@ -6,6 +6,7 @@ local opts = {
 
 -- Paste without overwriting the default register
 vim.keymap.set("x", "p", '"_dP', { noremap = true, silent = true })
+vim.keymap.set("x", "P", '"_dp', { noremap = true, silent = true })
 -- Remove one character without yanking
 -- vim.keymap.set("n", "x", '"x')
 
@@ -40,6 +41,7 @@ keymap.set("n", "<leader>c", "<cmd>confirm bd<CR>", { desc = "Close Buffer" })
 
 -- UI
 -- keymap.set("n", "<leader>ut", "<cmd><CR>", { desc = "Change colorscheme" })
+keymap.set("n", "<leader>uw", "<Cmd>set wrap!<CR>", { desc = "Toggle Visual Wrap" })
 keymap.set("n", "|", "<Cmd>vsplit<CR>", { desc = "Vertical Split" })
 keymap.set("n", "\\", "<Cmd>split<CR>", { desc = "Horizontal Split" })
 
