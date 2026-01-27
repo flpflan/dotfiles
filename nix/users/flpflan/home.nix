@@ -7,6 +7,7 @@
   inherit (tools) relative;
   inherit (config.networking) hostName;
 in {
+  # TODO: Move to host scope
   imports = [
     (relative "<home-manager>")
   ];
