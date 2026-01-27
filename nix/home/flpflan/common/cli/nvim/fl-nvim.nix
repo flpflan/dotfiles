@@ -40,7 +40,7 @@ in {
             hyprlang = true;
             markdown = true;
           };
-          ai = true;
+          ai = false;
           request = false;
         };
         extra = {
