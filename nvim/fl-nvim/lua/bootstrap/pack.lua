@@ -72,7 +72,7 @@ local plugins = {
   "goolord/alpha-nvim",
   { "karb94/neoscroll.nvim", opt = true },
   { "mrjones2014/smart-splits.nvim", opt = true },
-  { "ThePrimeagen/harpoon", branch = "harpoon2", opt = true },
+  -- { "ThePrimeagen/harpoon", branch = "harpoon2", opt = true },
   { "folke/flash.nvim", opt = true },
   { "smoka7/hop.nvim", opt = true },
   { "windwp/nvim-ts-autotag", opt = true },

@@ -63,10 +63,10 @@
       url = "github:folke/tokyonight.nvim";
       flake = false;
     };
-    "plugins-harpoon" = {
-      url = "github:ThePrimeagen/harpoon?ref=harpoon2";
-      flake = false;
-    };
+    # "plugins-harpoon" = {
+    #   url = "github:ThePrimeagen/harpoon?ref=harpoon2";
+    #   flake = false;
+    # };
     "plugins-copilot" = {
       url = "github:zbirenbaum/copilot.lua";
       flake = false;

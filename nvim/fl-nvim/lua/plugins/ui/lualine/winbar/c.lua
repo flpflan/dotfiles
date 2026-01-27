@@ -9,7 +9,8 @@ return {
 		exclude_filetypes = { "NeogitStatus", "DiffviewFiles" },
 	},
 	{
-		"harpoon",
+		-- "harpoon",
+		"arrow",
 		padding = { left = 0, right = 0 },
 		color = { bg = "None" },
 	},

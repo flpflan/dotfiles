@@ -22,6 +22,8 @@
       alpha-nvim
       nui-nvim
       nvim-notify
+      arrow-nvim
+      # marks-nvim
       oil-git-status-nvim
       nvim-ts-context-commentstring
       friendly-snippets # INFO: Auto sourced by luasnip
@@ -79,7 +81,7 @@
       nvim-toggler
       lualine-nvim
       # lualine-lsp-progress
-      harpoon
+      # harpoon
       # esqueleto
       # easycolor
       # live-command
