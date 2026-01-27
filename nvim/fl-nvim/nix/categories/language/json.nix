@@ -18,7 +18,7 @@
         plugins:
           with plugins; [
             json
-            jsonc
+            # jsonc
             json5
           ]
       ))
