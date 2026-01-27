@@ -1,151 +1,82 @@
 "$schema" = "https://yazi-rs.github.io/schemas/keymap.json"
 
 [mgr]
-
 prepend_keymap = [
-	# Hopping
-	{ on = "j", run = "arrow 1" },
-	{ on = "k", run = "arrow -1" },
-	{ on = "<Down>", run = "arrow 1" },
-	{ on = "<Up>", run = "arrow -1" },
-	{ on = "u", run = "arrow prev" },
-	{ on = "e", run = "arrow next" },
+    # { on = "q", run = "plugin confirm-quit", desc = "Close the current tab, or quit if it's last" },
+    { on = "<C-w>", run = "close", desc = "Close the current tab, or quit if it's last" },
+    # Hopping
+    { on = "j", run = "arrow 1", desc = "Next file" },
+    { on = "k", run = "arrow -1", desc = "Previous file" },
+    { on = "<Down>", run = "arrow 1", desc = "Next file" },
+    { on = "<Up>", run = "arrow -1", desc = "Previous file" },
+    # { on = "K", run = "arrow -5" },
+    # { on = "J", run = "arrow 5" },
 
-	{ on = "U", run = "arrow -5" },
-	{ on = "E", run = "arrow 5" },
+    # Goto
+    { on = [ "g", "r" ], run = 'shell -- ya emit cd "$(git rev-parse --show-toplevel)"' },
+    { on = [ 'g', 't' ], run = 'shell -- ya emit cd "$(zoxide query tmp)"', desc = "Go tmp" },
+    # { on = [ "g", "c" ], run = "plugin vcs-files" },
 
-	# Navigation
-	# { on = "n", run = "leave" },
+    # Drop to Shell
+    { on = [ "$" ], run = 'shell $SHELL --block', desc = "Open shell here" },
 
-	# { on = "N", run = "back" },
-	# { on = "I", run = "forward" },
+    # # Open gui file manager
+    # { on = [ "<C-Space>", "f" ], run = '''shell nemo --block''', desc = "Open gui file manager" },
 
-	# Seeking
-	{ on = "K", run = "seek -5" },
-	{ on = "J", run = "seek 5" },
+    # Yank to clipboard
+    { on = [ "c", "y" ], run = 'shell -- for path in %s; do echo "file://$path"; done | wl-copy -t text/uri-list', desc = "Yank to clipboard" },
 
-	# Operation
-	# { on = "l", run = "link" },
-	# { on = "L", run = "link --relative" },
+    # Drag & Drop
+    # { on = "<C-n>", run = 'shell -- dragon-drop -x -i -T %h' },
 
-	# Find
-	# { on = "-", run = "find_arrow" },
-	# { on = "=", run = "find_arrow --previous" },
+    # Plugins
+    { on = [ "<C-Space>", "d" ], run = "plugin diff", desc = "Diff" },
+    { on = [ "<C-Space>", "g" ], run = "plugin lazygit", desc = "Lazygit" },
+    { on = [ "c", "p" ], run = "plugin save-clipboard-to-file", desc = "Paste from clipboard and hover" },
+    { on = [ "c", "m" ], run = "plugin chmod" },
+    { on = [ "c", "a" ], run = "plugin ouch", desc = "compress" },
+    { on = "l", run = "plugin smart-enter", desc = "Enter the child directory, or open the file" },
 
-	# Goto
-	{ on = [ "g", "r" ], run = 'shell -- ya emit cd "$(git rev-parse --show-toplevel)"' },
-	{ on = [ 'g', 't' ], run = 'shell -- ya emit cd "$(zoxide query tmp)"', desc = "Go tmp" },
-	# { on = [ "g", "c" ], run = "plugin vcs-files" },
+    { on = "M", run = "plugin mount", desc = "Mount" },
+    # { on = [ "M", "M" ], run = "plugin mount", desc = "Mount" },
+    #
+    #    # { on = [ "M", "m" ], run = "plugin gvfs -- select-then-mount", desc = "Mount" },
+    #    { on = [ "M", "m" ], run = "plugin gvfs -- select-then-mount --jump", desc = "Mount(gvfs) && Jump" },
+    #
+    #    { on = [ "M", "R" ], run = "plugin gvfs -- remount-current-cwd-device", desc = "Remount cwd" },
+    #    { on = [ "M", "u" ], run = "plugin gvfs -- select-then-unmount --eject", desc = "Eject" },
+    #    { on = [ "M", "U" ], run = "plugin gvfs -- select-then-unmount --eject --force", desc = "Force eject/unmount" },
+    #
+    #    { on = [ "M", "a" ], run = "plugin gvfs -- add-mount", desc = "Add a GVFS mount URI" },
+    #    { on = [ "M", "e" ], run = "plugin gvfs -- edit-mount", desc = "Edit a GVFS mount URI" },
+    #    { on = [ "M", "r" ], run = "plugin gvfs -- remove-mount", desc = "Remove a GVFS mount URI" },
+    #
+    #    # Jump
+    #    { on = [ "g", "m" ], run = "plugin gvfs -- jump-to-device --automount", desc = "Automount && Jump" },
+    #    { on = [ "`", "`" ], run = "plugin gvfs -- jump-back-prev-cwd", desc = "Jump back" },
 
-	# Shell
-	{ on = "$", run = 'shell --block $SHELL' },
+    # Smart switch
+    { on = "2", run = "plugin smart-switch 1", desc = "Switch or create tab 2" },
 
-	# Drop to Shell
-	{ on = [ "<C-t>" ], run = 'shell $SHELL --block', desc = "Open shell here" },
+    # Toggle panel
+    # { on = "T", run = "plugin toggle-pane min-preview", desc = "Show or hide the preview pane" },
+    { on = "T", run = "plugin toggle-pane max-preview", desc = "Maximize or restore the preview pane" },
+    { on = "<C-S-t>", run = "plugin toggle-pane min-preview", desc = "Minimize or restore the preview pane" },
 
-	# Open gui file manager
-	{ on = [ "<C-Space>", "f" ], run = '''shell nemo --block''', desc = "Open gui file manager" },
-
-	# Plugins
-	{ on = [ "<C-Space>", "g", "d" ],      run = "plugin diff", desc = "Git diff" },
-	{ on = [ "c", "m" ], run = "plugin chmod" },
-	{ on = [ "b", "a" ], run = "plugin mactag add" },
-	{ on = [ "b", "r" ], run = "plugin mactag remove" },
-	# { on = "i", run = "plugin smart-enter" },
-	{ on = [ "<C-Space>", "g", "g" ], run = "plugin lazygit" },
-	{ on   = [ "c", "a" ], run  = "plugin compress" },
-	{ on   = "l", run  = "plugin smart-enter", desc = "Enter the child directory, or open the file" },
-
-	{ on = "M", run = "plugin mount", desc = "Mount" },
-	# { on = [ "M", "M" ], run = "plugin mount", desc = "Mount" },
-	#
- #    # { on = [ "M", "m" ], run = "plugin gvfs -- select-then-mount", desc = "Mount" },
- #    { on = [ "M", "m" ], run = "plugin gvfs -- select-then-mount --jump", desc = "Mount(gvfs) && Jump" },
-	#
- #    { on = [ "M", "R" ], run = "plugin gvfs -- remount-current-cwd-device", desc = "Remount cwd" },
- #    { on = [ "M", "u" ], run = "plugin gvfs -- select-then-unmount --eject", desc = "Eject" },
- #    { on = [ "M", "U" ], run = "plugin gvfs -- select-then-unmount --eject --force", desc = "Force eject/unmount" },
-	#
- #    { on = [ "M", "a" ], run = "plugin gvfs -- add-mount", desc = "Add a GVFS mount URI" },
- #    { on = [ "M", "e" ], run = "plugin gvfs -- edit-mount", desc = "Edit a GVFS mount URI" },
- #    { on = [ "M", "r" ], run = "plugin gvfs -- remove-mount", desc = "Remove a GVFS mount URI" },
-	#
- #    # Jump
- #    { on = [ "g", "m" ], run = "plugin gvfs -- jump-to-device --automount", desc = "Automount && Jump" },
- #    { on = [ "`", "`" ], run = "plugin gvfs -- jump-back-prev-cwd", desc = "Jump back" },
+    # Bookmark
+    # { on = [ "b", "a" ], run = "plugin mactag add" },
+    # { on = [ "b", "r" ], run = "plugin mactag remove" },
+    { on = [ "b", "b" ], run = "plugin whoosh jump_by_key", desc = "Jump bookmark by key" },
+    { on = [ "B" ], run = "plugin whoosh jump_by_fzf", desc = "Fuzzy search for bookmarks" },
+    { on = [ "b", "a" ], run = "plugin whoosh save", desc = "Add bookmark (hovered)" },
+    { on = [ "b", "A" ], run = "plugin whoosh save_cwd", desc = "Add bookmark (cwd)" },
+    { on = [ "b", "t" ], run = "plugin whoosh save_temp", desc = "Add temp bookmark (hovered)" },
+    { on = [ "b", "T" ], run = "plugin whoosh save_cwd_temp", desc = "Add temp bookmark (cwd)" },
+    { on = [ "b", "k" ], run = "plugin whoosh jump_key_k", desc = "Jump bookmark with key k" },
+    { on = [ "b", "f" ], run = "plugin whoosh jump_by_fzf", desc = "Jump bookmark by fzf" },
+    { on = [ "b", "d" ], run = "plugin whoosh delete_by_key", desc = "Delete bookmark by key" },
+    { on = [ "b", "D" ], run = "plugin whoosh delete_by_fzf", desc = "Delete bookmark by fzf" },
+    { on = [ "b", "C" ], run = "plugin whoosh delete_all", desc = "Delete all bookmarks" },
+    { on = [ "b", "r" ], run = "plugin whoosh rename_by_key", desc = "Rename bookmark by key" },
+    { on = [ "b", "R" ], run = "plugin whoosh rename_by_fzf", desc = "Rename bookmark by fzf" },
 ]
-
-# [tasks]
-#
-# prepend_keymap = [
-# 	{ on = "u", run = "arrow -1" },
-# 	{ on = "e", run = "arrow 1" },
-# ]
-#
-# [spot]
-#
-# prepend_keymap = [
-# 	{ on = "u", run = "arrow -1" },
-# 	{ on = "e", run = "arrow 1" },
-# 	{ on = "n", run = "swipe -1" },
-# 	{ on = "i", run = "swipe 1" },
-# ]
-#
-# [pick]
-#
-# prepend_keymap = [
-# 	{ on = "u", run = "arrow -1" },
-# 	{ on = "e", run = "arrow 1" },
-# ]
-#
-# [input]
-#
-# prepend_keymap = [
-# 	# Mode
-# 	{ on = "k",     run = "insert" },
-# 	{ on = "<C-n>", run = [ "move bol", "insert" ] },
-# 	{ on = "<C-i>", run = [ "move eol", "insert --append" ] },
-#
-# 	# Character-wise movement
-# 	{ on = "n", run = "move -1" },
-# 	{ on = "i", run = "move 1" },
-#
-# 	# Word-wise movement
-# 	{ on = "h", run = "forward --end-of-word" },
-#
-# 	# Line-wise movement
-# 	{ on = "N", run = "move bol" },
-# 	{ on = "I", run = "move eol" },
-#
-# 	# Cut/Yank/Paste
-# 	{ on = "x", run = [ "delete", "move 1 --in-operating" ] },
-#
-# 	# Undo/Redo
-# 	{ on = "l", run = "undo" },
-# 	{ on = "L", run = "redo" },
-# ]
-#
-# [confirm]
-#
-# prepend_keymap = [
-# 	{ on = "u", run = "arrow -1" },
-# 	{ on = "e", run = "arrow 1" },
-# ]
-#
-# [cmp]
-#
-# prepend_keymap = [
-# 	{ on = "<C-u>", run = "arrow -1" },
-# 	{ on = "<C-e>", run = "arrow 1" },
-# ]
-#
-# [help]
-#
-# prepend_keymap = [
-# 	# Navigation
-# 	{ on = "u", run = "arrow -1" },
-# 	{ on = "e", run = "arrow 1" },
-#
-# 	{ on = "U", run = "arrow -5" },
-# 	{ on = "E", run = "arrow 5" },
-# ]

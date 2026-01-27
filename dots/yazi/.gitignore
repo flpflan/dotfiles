@@ -2,3 +2,5 @@ flavors/*
 plugins/*
 
 !plugins/folder-rules.yazi
+!plugins/smart-switch.yazi
+!plugins/confirm-quit.yazi

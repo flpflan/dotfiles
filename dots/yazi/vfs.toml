@@ -1,0 +1,6 @@
+[services.fl-pad]
+type = "sftp"
+host = "192.168.12.170"
+user = "root"
+port = 22
+key_file = "~/.ssh/id_ed25519"
