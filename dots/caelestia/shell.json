@@ -1,0 +1,48 @@
+{
+  "appearance": {
+    "transparency": { "enabled": false },
+    "font": { "size": { "scale": 1 } }
+  },
+  "background": {
+    "visualiser": { "blur": true, "enabled": false },
+    "desktopClock": { "enabled": true }
+  },
+  "general": {
+    "apps": {
+      "terminal": ["foot"],
+      "audio": ["pavucontrol"],
+      "playback": ["mpv"],
+      "explorer": [
+        "foot",
+        "-a yazi",
+        "-T yazi",
+        "/home/flpflan/profile/snippets/wrap_term_launch.sh",
+        "yazi"
+      ]
+    },
+    "idle": {
+      "timeouts": [
+        { "idleAction": "lock", "timeout": 600 },
+        { "idleAction": "dpms off", "returnAction": "dpms on", "timeout": 900 },
+        {
+          "idleAction": ["systemctl", "suspend-then-hibernate"],
+          "timeout": 1200
+        }
+      ]
+    }
+  },
+  "bar": {
+    "persistent": true,
+    "scrollActions": { "brightness": true, "volume": true },
+    "status": { "showAudio": true, "showLockStatus": false },
+    "tray": { "compact": false, "recolour": false }
+  },
+  "osd": { "enableMicrophone": false },
+  "launcher": { "enableDangerousActions": true, "maxWallpapers": 9 },
+  "paths": { "wallpaperDir": "~/Pictures/wallpaper" },
+  "services": { "defaultPlayer": "musicfox" },
+  "notifs": { "actionOnClick": false, "openExpanded": false },
+  "utilities": {
+    "toasts": { "numLockChanged": false, "capsLockChanged": false }
+  }
+}
