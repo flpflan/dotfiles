@@ -1,5 +1,6 @@
-vim.filetype.add({
+vim.filetype.add {
   extension = {
     j2 = "jinja",
+    tpp = "cpp",
   },
-})
+}

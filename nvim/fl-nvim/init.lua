@@ -4,6 +4,7 @@ require("bootstrap.nixcats")
 require("bootstrap.lze")
 
 require("internal")
+require("filetypes")
 require("keymaps")
 require("language")
 require("plugins")
