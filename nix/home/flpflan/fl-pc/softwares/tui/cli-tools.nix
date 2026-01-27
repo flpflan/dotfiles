@@ -1,7 +1,11 @@
-{ pkgs, ... }:
+{pkgs, tools, ...}: {
 
-{
+  imports = map tools.relative [
+    "home/flpflan/common/cli/lazygit"
+  ];
+
   home.packages = with pkgs; [
-    lazygit jq
+    jq
+    (ouch.override {enableUnfree = true;})
   ];
 }
