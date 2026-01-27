@@ -60,3 +60,55 @@ vim.api.nvim_create_autocmd("BufEnter", {
     vim.diagnostic.enable(false, { bufnr = args.buf })
   end,
 })
+
+-- Automatic rooter
+local ROOT_MARKERS = { ".git", ".nvim.lua" }
+local EXRCS = { ".nvim.lua", ".nvimrc", ".exrc" }
+
+local read_exrc = function(path)
+  if vim.o.exrc == false then return end
+
+  local exrc = vim.fs.find(EXRCS, {
+    path = path,
+    type = "file",
+  })[1] -- string|nil
+  if not exrc then return end
+
+  if vim.secure.read(exrc) then vim.cmd.source(exrc) end
+end
+
+vim.api.nvim_create_autocmd("BufEnter", {
+  group = vim.api.nvim_create_augroup("Rooter", {}),
+  desc = "Find project root on BufEnter. cd there and try reading any exrc there.",
+  callback = function()
+    local cwd = vim.fn.getcwd()
+
+    local root_marker = vim.fs.find(ROOT_MARKERS, {
+      path = cwd,
+      upward = true,
+    })[1]
+
+    if not root_marker then return end
+
+    local root_dir = vim.fs.dirname(root_marker)
+
+    vim.fn.chdir(root_dir)
+    read_exrc(root_dir)
+  end,
+})
+vim.api.nvim_create_autocmd("LspAttach", {
+  group = vim.api.nvim_create_augroup("LspRooter", {}),
+  desc = "Adopt lsp root_dir. cd there and try reading any exrc there.",
+  callback = function()
+    local root_dir
+    for _, client in pairs(vim.lsp.get_clients { bufnr = vim.api.nvim_get_current_buf() }) do
+      root_dir = client.config.root_dir
+      if root_dir then break end
+    end
+
+    if not root_dir then return end
+
+    vim.fn.chdir(root_dir)
+    read_exrc(root_dir)
+  end,
+})
