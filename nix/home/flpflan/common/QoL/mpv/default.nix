@@ -22,7 +22,7 @@ in
   # };
   home.packages = [
     (pkgs.mpv.override {
-      mpv = pkgs.mpv-unwrapped.override {
+      mpv-unwrapped = pkgs.mpv-unwrapped.override {
         x11Support = false;
         alsaSupport = false;
         pulseSupport = false;
