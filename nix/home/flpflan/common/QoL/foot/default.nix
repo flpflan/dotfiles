@@ -3,22 +3,8 @@
 let
   dots = "${fl-dots}/dots";
   outOfStore = config.lib.file.mkOutOfStoreSymlink;
-
-  wrapedConfig = pkgs.writeText "foot.ini" (builtins.concatStringsSep "\n" [
-    "include = ${outOfStore "${dots}/foot/foot.ini"}"
-    (pkgs.lib.optionalString
-      (config.programs.foot.settings != {})
-      "include = ${config.xdg.configHome}/foot/foot.ini"
-    )
-  ]);
-
-  foot = pkgs.writeShellScriptBin "foot" ''
-    exec ${pkgs.foot}/bin/foot --config ${wrapedConfig} "$@"
-  '';
 in 
 {
-  programs.foot = {
-    enable = true;
-    package = foot;
-  };
+  home.packages = [ pkgs.foot ];
+  xdg.configFile."foot".source = outOfStore "${dots}/foot";
 }

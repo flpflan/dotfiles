@@ -18,8 +18,6 @@
     wget
     curl
     gitMinimal
-    foot.terminfo
-    kitty.terminfo
   ];
   environment.stub-ld.enable = false;
   environment.shellAliases = lib.mkForce {};
