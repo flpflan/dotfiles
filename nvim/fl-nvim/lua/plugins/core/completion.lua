@@ -70,7 +70,7 @@ plugin("blink.cmp"):event_defer():event_typing():on_require("blink"):opts {
   appearance = { nerd_font_variant = "mono" },
   snippets = { preset = "luasnip" },
   sources = {
-    default = { "lsp", "path", "snippets",  "buffer" },
+    default = { "lsp", "path", "snippets", "buffer" },
     per_filetype = {
       lua = { inherit_defaults = true, "lazydev" },
       sql = { "dbee", "buffer" },
@@ -80,6 +80,7 @@ plugin("blink.cmp"):event_defer():event_typing():on_require("blink"):opts {
       -- lsp = { fallbacks = { "lazydev" } },
       lazydev = { name = "LazyDev", module = "lazydev.integrations.blink", score_offset = 100 },
       dbee = { name = "cmp-dbee", module = "blink.compat.source" },
+      -- path = { opts = { get_cwd = function(_) return vim.fn.getcwd() end } },
     },
   },
   keymap = vim.tbl_deep_extend("keep", {
@@ -141,7 +142,7 @@ plugin("blink.cmp"):event_defer():event_typing():on_require("blink"):opts {
         function(cmp)
           if cmp.show_and_insert() then
             local ctx = cmp.get_context()
-            tmp_line = ctx.line
+            tmp_line = (ctx and ctx.line) or ""
             return true
           end
         end,
