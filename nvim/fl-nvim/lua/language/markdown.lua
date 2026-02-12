@@ -5,6 +5,7 @@ local ft = { "markdown", "codecompanion", "opencode", "opencode_output" }
 ----- LSP -----
 ---------------
 lsp("marksman"):cmd("marksman", "server"):ft(unpack(ft))
+lsp "mpls"
 -----------------
 --- Formatter ---
 -----------------
@@ -12,10 +13,10 @@ formatter(ft, "prettierd")
 -----------------
 ---- Plugins ----
 -----------------
-plugin("render-markdown"):dep_on("nvim-treesitter"):ft(unpack(ft)):opts {
-  completions = { blink = { enabled = true } },
-  file_types = ft,
-  code = {
-    border = "thick",
-  },
-}
+-- plugin("render-markdown"):dep_on("nvim-treesitter"):ft(unpack(ft)):opts {
+--   completions = { blink = { enabled = true } },
+--   file_types = ft,
+--   code = {
+--     border = "thick",
+--   },
+-- }
