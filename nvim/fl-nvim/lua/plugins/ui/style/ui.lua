@@ -15,6 +15,7 @@ plugin("noice.nvim"):event_defer():dep_on("nui.nvim", "nvim-notify"):on_require(
     },
     progress = {
       enabled = true,
+      view = "mini"
     },
     signature = {
       auto_open = {
@@ -28,9 +29,8 @@ plugin("noice.nvim"):event_defer():dep_on("nui.nvim", "nvim-notify"):on_require(
   },
   views = {
     mini = {
-      win_options = {
-        winblend = 0,
-      },
+      win_options = { winblend = 0 },
+      border = { style = "rounded" }
     },
   },
   presets = {
