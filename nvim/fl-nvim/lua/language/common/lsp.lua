@@ -20,6 +20,14 @@ local function on_attach(client, buf)
     else
       client.server_capabilities.semanticTokensProvider.full = true
     end
+  elseif client.name == "clangd" then
+    kmap(
+      "n",
+      "gs",
+      kcmd "LspClangdSwitchSourceHeader",
+      "Goto Source/Header",
+      { cond = function() return client.name == "clangd" end }
+    )
   end
   if client.server_capabilities.inlayHintProvider then vim.lsp.inlay_hint.enable(true, {
     bufnr = buf,
