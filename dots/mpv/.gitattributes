@@ -4,3 +4,5 @@
 shaders/*.glsl linguist-vendored
 shaders/*.hook linguist-vendored
 scripts/* linguist-vendored
+
+scripts/pause_replay.lua linguist-vendored=false
