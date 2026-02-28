@@ -1,0 +1,39 @@
+// =====================================
+// = INPUT DEVICE CONFIGURATION.
+// =====================================
+input {
+    // ----- Keyboard -----
+    keyboard {
+        xkb { }
+        numlock
+        repeat-delay 180
+        repeat-rate 50
+    }
+
+    // ----- Touchpad -----
+    touchpad {
+        tap
+        natural-scroll
+        dwt
+        // disabled-on-external-mouse
+        // click-method "clickfinger"
+    }
+
+    // ----- Mouse -----
+    mouse { }
+
+    // ----- Trackpoint -----
+    trackpoint { }
+
+    // ----- Mouse Focus Behavior -----
+    focus-follows-mouse max-scroll-amount="10%"
+    // warp-mouse-to-focus
+    // warp-mouse-to-focus mode="center-xy"
+
+}
+
+cursor {
+    hide-when-typing
+    // hide-after-inactive-ms 5000
+}
+

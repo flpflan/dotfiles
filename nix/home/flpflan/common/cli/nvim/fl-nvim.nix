@@ -29,6 +29,7 @@ in {
             bundles = {
               frontend = true;
             };
+            kdl = true;
             nix = true;
             lua = true;
             cpp = true;

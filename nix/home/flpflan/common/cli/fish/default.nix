@@ -42,6 +42,8 @@ in {
     binds = {
       "ctrl-q".command = "exit";
       "ctrl-q".silent = true;
+      "ctrl-enter".command = "exit";
+      "ctrl-enter".silent = true;
 
       "ctrl-t".command = "yy";
       "ctrl-t".silent = true;

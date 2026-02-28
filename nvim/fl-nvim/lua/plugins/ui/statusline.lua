@@ -17,11 +17,11 @@ plugin("statuscol.nvim"):config(function()
         click = "v:lua.ScSa",
       },
       -- TODO:
-      {
-        text = { builtin.foldfunc, " " },
-        click = "v:lua.ScFa",
-        condition = { function() return not_ft "alpha" end, builtin.not_empty },
-      },
+      -- {
+      --   text = { builtin.foldfunc, " " },
+      --   click = "v:lua.ScFa",
+      --   condition = { function() return not_ft "alpha" end, builtin.not_empty },
+      -- },
       -- { text = { "%s" }, click = "v:lua.ScSa" },
       {
         sign = { text = { ".*" }, maxwidth = 1, colwidth = 2, auto = true },

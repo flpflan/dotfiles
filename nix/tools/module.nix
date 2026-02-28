@@ -25,9 +25,15 @@ else if name == "<illogical-impulse>" then
     inputs.illogical-impulse.homeManagerModules.default
 else if name == "<caelestia-shell>" then
     inputs.caelestia-shell.homeManagerModules.default
-else if name == "<noctalia-shell>" then
-    inputs.noctalia-shell.homeModules.default
-else if name == "<noctalia-shell-nixos>" then
-    inputs.noctalia-shell.nixosModules.default
+else if name == "<noctalia-home-manager>" then
+    inputs.noctalia.homeModules.default
+else if name == "<noctalia-nixos>" then
+    inputs.noctalia.nixosModules.default
+else if name == "<niri-home-manager>" then
+    inputs.niri-flake.homeModules.niri
+else if name == "<niri-nixos>" then
+    inputs.niri-flake.nixosModules.niri
+else if name == "<zen-browser-home-manager>" then
+    inputs.zen-browser.homeModules.beta
 else
     abort

@@ -1,0 +1,83 @@
+// =====================================
+// = WINDOW LAYOUT & DISPLAY SETTINGS
+// =====================================
+prefer-no-csd
+
+layout {
+    gaps 10
+    center-focused-column "on-overflow"
+
+    // ----- Preset Width Options -----
+    preset-column-widths {
+        proportion 0.33333
+        proportion 0.5
+        proportion 0.66667
+    }
+
+    // ----- Default Window Width -----
+    default-column-width {
+        proportion 0.7
+    }
+
+    // ----- Focus Ring -----
+    focus-ring {
+        // off
+        width 2
+        active-gradient from="#9f8e72" to="#9f8e72" angle=45
+        inactive-color "#505050"
+    }
+
+    // ----- Window Border -----
+    border {
+        off
+        // width 2
+        // active-color "#ff7fc8ff"
+        // urgent-color "#9b0000"
+        // active-gradient from="#9f8e72" to="#9f8e72" angle=45
+        // active-color "#ffc87f"
+        inactive-color "#505050"
+        // inactive-gradient from="#505050" to="#606060" angle=45
+    }
+
+    // ----- Shadow Settings -----
+    shadow {
+        softness 30
+        spread 5
+        offset x=0 y=5
+        color "#0007"
+    }
+
+    // ----- Struts (Reserved Areas) -----
+    struts {
+        // left 64
+        // right 64
+        // top 64
+        // bottom 64
+    }
+
+    // ----- Tab Indicator -----
+    tab-indicator {
+        // off
+        on
+        hide-when-single-tab
+        // place-within-column
+        gap 5
+        width 8
+        length total-proportion=1.0
+        // position "top"
+        gaps-between-tabs 20
+        corner-radius 8
+        // active-color "red"
+        // inactive-color "gray"
+        // urgent-color "blue"
+        // active-gradient from="#80c8ff" to="#bbddff" angle=45
+        // inactive-gradient from="#505050" to="#808080" angle=45 relative-to="workspace-view"
+        // urgent-gradient from="#800" to="#a33" angle=45
+    }
+
+    // insert-hint {
+    //     // off
+    //     color "#ffc87f80"
+    //     gradient from="#ffbb6680" to="#ffc88080" angle=45 relative-to="workspace-view"
+    // }
+}

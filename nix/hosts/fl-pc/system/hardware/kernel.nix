@@ -2,7 +2,7 @@
 
 {
   # boot.kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-bore-lto;
-  boot.kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest-lto;
+  boot.kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest-lto-x86_64-v3;
 
   boot.initrd = {
     compressor = "zstd";

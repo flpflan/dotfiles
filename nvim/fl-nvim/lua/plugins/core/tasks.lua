@@ -57,10 +57,11 @@ plugin("overseer")
   })
   :cmd({ "OverseerRun", "OverseerToggle", "OverseerQuickAction", "OverseerRunCmd" })
   :keys {
+    -- TODO: migrate
     kgroup("<leader>t", "Tasks", {}, {
       kmap("n", "e", kcmd "OverseerToggle", "Toggle Explorer"),
       kmap("n", "t", kcmd "OverseerRun", "Task Run"),
-      kmap("n", "s", kcmd "OverseerRun shell", "Execute Shell Command"),
+      kmap("n", "s", kcmd "OverseerShell", "Execute Shell Command"),
       kmap("n", "r", function()
         local overseer = require "overseer"
         local tasks = overseer.list_tasks { recent_first = true }

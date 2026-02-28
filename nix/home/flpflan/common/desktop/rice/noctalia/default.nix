@@ -1,19 +1,18 @@
+{ config, tools, fl-dots, ... }:
+
+let
+  dots = "${fl-dots}/dots";
+  outOfStore = config.lib.file.mkOutOfStoreSymlink;
+in 
 {
-  config,
-  tools,
-  ...
-}: {
   imports = [
-    (tools.relative "<noctalia-shell>")
-    (tools.relative "<noctalia-nixos>")
+    (tools.relative "<noctalia-home-manager>")
   ];
 
   programs.noctalia-shell = {
     enable = true;
-    settings = {};
+    systemd.enable = false;
   };
-  services.noctalia-shell = {
-    enable = true;
-    target = config.wayland.systemd.target;
-  };
+
+  xdg.configFile."noctalia".source = outOfStore "${dots}/noctalia";
 }

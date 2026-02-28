@@ -1,6 +1,11 @@
-local function copy(lines, _) require("osc52").copy(table.concat(lines, "\n")) end
+local function copy(lines, _)
+  require("osc52").copy(table.concat(lines, "\n"))
+end
 
-local function paste() return { vim.fn.split(vim.fn.getreg "", "\n"), vim.fn.getregtype "" } end
+local function paste()
+  return { vim.fn.split(vim.fn.getreg "", "\n"), vim.fn.getregtype "" }
+end
+
 plugin("nvim-osc52")
   :on_require("osc52")
   :for_cat("remote")
@@ -21,3 +26,5 @@ plugin("nvim-osc52")
     silent = true,
     trim = true,
   }
+
+plugin("smart-paste"):event_defer()

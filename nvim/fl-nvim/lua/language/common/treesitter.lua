@@ -2,14 +2,17 @@
 --- Options ---
 ---------------
 local ensured_languages = {
-  "comment", "dap_repl"
+  "comment",
+  "dap_repl",
 }
-if require("nixCatsUtils").isNixCats then ensured_languages = {} end
+if require("nixCatsUtils").isNixCats then
+  ensured_languages = {}
+end
 --------------------
 --- Config Logic ---
 --------------------
 plugin("nvim-treesitter-endwise"):on_plugin("nvim-treesitter"):config(false)
-plugin("nvim-treesitter-textobjects"):on_plugin("nvim-treesitter"):config(false)
+-- plugin("nvim-treesitter-textobjects"):on_plugin("nvim-treesitter"):config(false)
 
 plugin("treesitter-context"):event_defer():for_cat("core"):opts {
   mode = "topline",
@@ -127,30 +130,89 @@ plugin("nvim-treesitter")
   --     },
   --   }
   -- end)
-  :keys({
-    kmap(
-      "n",
-      ";",
-      function() require("nvim-treesitter.textobjects.repeatable_move").repeat_last_move() end,
-      "repeat last move"
-    ),
-    kmap(
-      "n",
-      ",",
-      function() require("nvim-treesitter.textobjects.repeatable_move").repeat_last_move_opposite() end,
-      "repeat last move previous"
-    ),
-    kmap(
-      "i",
-      "<M-n>",
-      function() require("nvim-treesitter.textobjects.repeatable_move").repeat_last_move() end,
-      "repeat last move"
-    ),
+  -- :keys({
+  --   kmap("n", ";", function()
+  --     require("nvim-treesitter.textobjects.repeatable_move").repeat_last_move()
+  --   end, "repeat last move"),
+  --   kmap("n", ",", function()
+  --     require("nvim-treesitter.textobjects.repeatable_move").repeat_last_move_opposite()
+  --   end, "repeat last move previous"),
+  --   kmap("i", "<M-n>", function()
+  --     require("nvim-treesitter.textobjects.repeatable_move").repeat_last_move()
+  --   end, "repeat last move"),
+  -- })
+  :setup(
+    function()
+      vim.treesitter.language.register("bash", "dotenv")
+      vim.treesitter.language.register("bash", "zsh")
+      vim.treesitter.language.register("python", "bzl")
+      vim.treesitter.language.register("jinja", "j2")
+      vim.treesitter.language.register("tpp", "cpp")
+    end
+  )
+
+-- TODO:
+plugin("nvim-treesitter-textobjects")
+  :opts({
+    select = { lookahead = true },
   })
-  :setup(function()
-    vim.treesitter.language.register("bash", "dotenv")
-    vim.treesitter.language.register("bash", "zsh")
-    vim.treesitter.language.register("python", "bzl")
-    vim.treesitter.language.register("jinja", "j2")
-    vim.treesitter.language.register("tpp", "cpp")
-  end)
+  :keys({
+    kmap({ "x", "o" }, "ak", function()
+      require("nvim-treesitter-textobjects.select").select_textobject("@block.outer", "textobjects")
+    end, "around block"),
+    kmap({ "x", "o" }, "ik", function()
+      require("nvim-treesitter-textobjects.select").select_textobject("@block.inner", "textobjects")
+    end, "inside block"),
+  })
+  :keys({
+    kmap("n", ">a", function()
+      require("nvim-treesitter-textobjects.swap").swap_next "@parameter.inner"
+    end, "Swap next argument"),
+    kmap("n", "<a", function()
+      require("nvim-treesitter-textobjects.swap").swap_previous "@parameter.inner"
+    end, "Swap previous argument"),
+    kmap("n", ">f", function()
+      require("nvim-treesitter-textobjects.swap").swap_next "@function.outer"
+    end, "Swap next function"),
+    kmap("n", "<f", function()
+      require("nvim-treesitter-textobjects.swap").swap_previous "@function.outer"
+    end, "Swap previous function"),
+    kmap("n", ">k", function()
+      require("nvim-treesitter-textobjects.swap").swap_next "@block.outer"
+    end, "Swap next block"),
+    kmap("n", "<k", function()
+      require("nvim-treesitter-textobjects.swap").swap_previous "@block.outer"
+    end, "Swap previous block"),
+  })
+  :keys {
+    kmap({ "n", "x", "o" }, "]k", function()
+      require("nvim-treesitter-textobjects.move").goto_next_start("@block.outer", "textobjects")
+    end, "Next block start"),
+    kmap({ "n", "x", "o" }, "]K", function()
+      require("nvim-treesitter-textobjects.move").goto_next_end("@block.outer", "textobjects")
+    end, "Next block end"),
+    kmap({ "n", "x", "o" }, "[k", function()
+      require("nvim-treesitter-textobjects.move").goto_previous_start("@block.outer", "textobjects")
+    end, "Previous block start"),
+    kmap({ "n", "x", "o" }, "[K", function()
+      require("nvim-treesitter-textobjects.move").goto_previous_end("@block.outer", "textobjects")
+    end, "Previous block end"),
+    kmap({ "n", "x", "o" }, ";", function()
+      require("nvim-treesitter-textobjects.repeatable_move").repeat_last_move()
+    end, "Repeat last move next"),
+    kmap({ "n", "x", "o" }, ",", function()
+      require("nvim-treesitter-textobjects.repeatable_move").repeat_last_move_opposite()
+    end, "Repeat last move previous"),
+    kmap({ "n", "x", "o" }, "f", function()
+      require("nvim-treesitter-textobjects.repeatable_move").builtin_f_expr()
+    end, "", { expr = true }),
+    kmap({ "n", "x", "o" }, "F", function()
+      require("nvim-treesitter-textobjects.repeatable_move").builtin_F_expr()
+    end, "", { expr = true }),
+    kmap({ "n", "x", "o" }, "t", function()
+      require("nvim-treesitter-textobjects.repeatable_move").builtin_t_expr()
+    end, "", { expr = true }),
+    kmap({ "n", "x", "o" }, "T", function()
+      require("nvim-treesitter-textobjects.repeatable_move").builtin_T_expr()
+    end, "", { expr = true }),
+  }

@@ -69,7 +69,7 @@ dynamicMenuRows = false
 # 界面所有内容居中
 centerEverything = false
 # 主题颜色
-primaryColor = "#ea403f"
+primaryColor = "#aec6ff"
 
 # 进度条字符样式配置
 [theme.progress]

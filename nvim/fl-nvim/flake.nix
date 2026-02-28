@@ -3,9 +3,17 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     nixCats.url = "github:BirdeeHub/nixCats-nvim";
-    neovim-nightly-overlay = {
-      url = "github:nix-community/neovim-nightly-overlay";
-      inputs.nixpkgs.follows = "nixpkgs";
+    # neovim-nightly-overlay = {
+    #   url = "github:nix-community/neovim-nightly-overlay";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
+    "plugins-smart-paste" = {
+      url = "github:nemanjamalesija/smart-paste.nvim";
+      flake = false;
+    };
+    "plugins-smart-motion" = {
+      url = "github:FluxxField/smart-motion.nvim";
+      flake = false;
     };
     "plugins-keytrail" = {
       url = "github:JFryy/keytrail.nvim";
@@ -103,10 +111,10 @@
       url = "github:vi013t/easycolor.nvim";
       flake = false;
     };
-    "plugins-render-markdown" = {
-      url = "github:MeanderingProgrammer/render-markdown.nvim";
-      flake = false;
-    };
+    # "plugins-render-markdown" = {
+    #   url = "github:MeanderingProgrammer/render-markdown.nvim";
+    #   flake = false;
+    # };
     "plugins-git-conflict" = {
       url = "github:akinsho/git-conflict.nvim";
       flake = false;
@@ -123,10 +131,10 @@
       url = "github:MattiasMTS/cmp-dbee";
       flake = false;
     };
-    "plugins-dir-telescope" = {
-      url = "github:princejoogie/dir-telescope.nvim";
-      flake = false;
-    };
+    # "plugins-dir-telescope" = {
+    #   url = "github:princejoogie/dir-telescope.nvim";
+    #   flake = false;
+    # };
     "plugins-nvim-lint" = {
       url = "github:mfussenegger/nvim-lint";
       flake = false;

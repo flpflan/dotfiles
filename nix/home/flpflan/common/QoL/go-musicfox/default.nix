@@ -7,8 +7,8 @@ in
 {
   home.packages = with pkgs; [go-musicfox];
 
-  xdg.configFile."go-musicfox/go-musicfox.ini" = {
-    source = outOfStore "${dots}/go-musicfox/go-musicfox.ini";
+  xdg.configFile."go-musicfox/config.toml" = {
+    source = outOfStore "${dots}/go-musicfox/config.toml";
     recursive = false;
   };
 }

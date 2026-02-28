@@ -77,6 +77,8 @@
       statuscol-nvim
     ]
     ++ (with nvim_pkgs; [
+      smart-paste
+      smart-motion
       garbage-day
       nvim-toggler
       lualine-nvim

@@ -9,9 +9,9 @@ plugin("hop.nvim")
     kmap({ "n", "x" }, "F", hop.hop_char_line(false), "Hop Char l-BC"),
     kmap({ "n", "x" }, "t", hop.hop_char_line(true, -1), "Hop Before Char l-AC"),
     kmap({ "n", "x" }, "T", hop.hop_char_line(false, 1), "Hop After Char l-BC"),
-    kmap("v", "<M-;>", kcmd "HopLine", "Hop Line"),
-    kmap("n", "<M-;>", kcmd "HopLineStart", "Hop Line Start"),
-    kmap("n", "<leader>/", kcmd "HopPattern", "Hop Pattern"),
+    kmap("v", "z;", kcmd "HopLine", "Hop Line"),
+    kmap("n", "z;", kcmd "HopLineStart", "Hop Line Start"),
+    kmap("n", "z/", kcmd "HopPattern", "Hop Pattern"),
   })
   :setup(function()
     ---@diagnostic disable-next-line: deprecated
@@ -44,6 +44,25 @@ plugin("flash.nvim")
     local fg = vim.api.nvim_get_hl_by_name("Constant", true).foreground
     vim.api.nvim_set_hl(0, "FlashLabel", { fg = fg, bold = true, underline = true })
   end)
+
+-- TODO:
+-- plugin("smart-motion"):opts {
+--   presets = {
+--     words = true, -- w, b, e, ge
+--     lines = true, -- j, k
+--     search = true, -- s, f, F, t, T, ;, ,, gs
+--     delete = true, -- d, dt, dT, rdw, rdl
+--     yank = true, -- y, yt, yT, ryw, ryl
+--     change = true, -- c, ct, cT
+--     paste = true, -- p, P
+--     treesitter = true, -- ]], [[, ]c, [c, ]b, [b, daa, caa, yaa, dfn, cfn, yfn, saa
+--     diagnostics = true, -- ]d, [d, ]e, [e
+--     git = true, -- ]g, [g
+--     quickfix = true, -- ]q, [q, ]l, [l
+--     marks = true, -- g', gm
+--     misc = true, -- . g. g0 g1-g9 gp gP gA-gZ gmd gmy (repeat, history, pins, global pins)
+--   },
+-- }
 
 -- plugin("harpoon"):event_defer():config(false):keys {
 --   kmap("n", "<M-m>", function() require("harpoon"):list():add() end, "Mark"),

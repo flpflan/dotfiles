@@ -5,5 +5,6 @@
     app2unit
     trash-cli
     hyprpicker
+    swappy
   ];
 }

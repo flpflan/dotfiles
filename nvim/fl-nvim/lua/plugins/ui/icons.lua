@@ -1,6 +1,6 @@
 local devicons = require "nvim-web-devicons"
 devicons.setup {
-  default = true,
+  default = false,
   strict = false,
   override_by_filename = require "icons.filename",
   override_by_extension = require "icons.extension",

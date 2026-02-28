@@ -1,3 +1,5 @@
+require("zoxide"):setup({ update_db = true })
+
 require("git"):setup({ order = 0 })
 
 require("full-border"):setup()
