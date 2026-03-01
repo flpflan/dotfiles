@@ -11,5 +11,5 @@ in
 
   # xdg.configFile."hypr/hypridle.conf".source = outOfStore "${dots}/hypr/hypridle.conf";
 
-  home.packages = with pkgs; [swayidle];
+  # home.packages = with pkgs; [swayidle];
 }

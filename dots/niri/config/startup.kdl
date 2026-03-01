@@ -2,15 +2,15 @@
 spawn-at-startup "noctalia-shell"
 
 // Idle service
-spawn-at-startup r#"
-    swayidle -w \
-        timeout 600 'noctalia-shell ipc call sessionMenu lock' \
-        // timeout 900 'niri msg output eDP-1 off' \
-        //     resume 'niri msg output eDP-1 on' \
-        timeout 900 'niri msg action power-off-monitors' \
-        timeout 1200 'noctalia-shell ipc call sessionMenu lockAndSuspend'
-        // before-sleep 'noctalia-shell ipc call lockScreen lock'
-"#
+// spawn-at-startup r#"
+//     swayidle -w \
+//         timeout 600 'noctalia-shell ipc call sessionMenu lock' \
+//         // timeout 900 'niri msg output eDP-1 off' \
+//         //     resume 'niri msg output eDP-1 on' \
+//         timeout 900 'niri msg action power-off-monitors' \
+//         timeout 1200 'noctalia-shell ipc call sessionMenu lockAndSuspend'
+//         // before-sleep 'noctalia-shell ipc call lockScreen lock'
+// "#
 
 // Clipboard history
 // spawn-at-startup "wl-paste --type text --watch cliphist store"
