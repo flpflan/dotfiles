@@ -44,6 +44,8 @@
     nix-direnv.enable = true;
   };
 
+  programs.man.generateCaches = false; # Speed up building
+
   home.activation = {
     rmSomeThing = lib.hm.dag.entryAfter ["writeBoundary"] ''
       rm -rf $HOME/.nix-defexpr
