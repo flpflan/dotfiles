@@ -25,3 +25,9 @@ overview {
 //   match namespace="^noctalia-overview*"
 //   place-within-backdrop true
 // }
+
+gestures {
+  hot-corners {
+      off
+  }
+}

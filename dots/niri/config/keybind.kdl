@@ -18,6 +18,9 @@ binds {
     Mod+Alt+M hotkey-overlay-title="Music Player" {
         spawn-sh "foot -a musicfox -T musicfox ~/profile/snippets/wrap_term_launch musicfox"
     }
+    Mod+Alt+C hotkey-overlay-title="Editor" {
+        spawn-sh "$VISUAL"
+    }
     Mod+V hotkey-overlay-title="Clipboard History" {
         spawn-sh "noctalia-shell ipc call launcher clipboard"
     }

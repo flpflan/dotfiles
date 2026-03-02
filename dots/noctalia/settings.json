@@ -23,7 +23,7 @@
         "showIconBackground": false,
         "sortByMostUsed": true,
         "terminalCommand": "foot -e",
-        "useApp2Unit": false,
+        "useApp2Unit": true,
         "viewMode": "list"
     },
     "audio": {
@@ -56,8 +56,11 @@
         "marginVertical": 4,
         "monitors": [
         ],
+        "mouseWheelAction": "none",
+        "mouseWheelWrap": true,
         "outerCorners": true,
         "position": "top",
+        "reverseScroll": false,
         "screenOverrides": [
         ],
         "showCapsule": true,
@@ -158,14 +161,11 @@
                 },
                 {
                     "compactMode": false,
-                    "compactShowAlbumArt": true,
-                    "compactShowVisualizer": false,
                     "hideMode": "hidden",
                     "hideWhenIdle": false,
                     "id": "MediaMini",
                     "maxWidth": 145,
                     "panelShowAlbumArt": true,
-                    "panelShowVisualizer": true,
                     "scrollingMode": "hover",
                     "showAlbumArt": true,
                     "showArtistFirst": true,
@@ -292,6 +292,7 @@
             }
         ],
         "diskPath": "/",
+        "openAtMouseOnBarRightClick": true,
         "position": "close_to_bar_button",
         "shortcuts": {
             "left": [
@@ -350,6 +351,9 @@
         "groupContextMenuMode": "extended",
         "groupIndicatorStyle": "dots",
         "inactiveIndicators": false,
+        "indicatorColor": "primary",
+        "indicatorOpacity": 0.6,
+        "indicatorThickness": 3,
         "launcherIconColor": "none",
         "launcherPosition": "end",
         "monitors": [
@@ -359,7 +363,7 @@
         ],
         "pinnedStatic": false,
         "position": "bottom",
-        "showFrameIndicator": true,
+        "showDockIndicator": false,
         "showLauncherIcon": false,
         "sitOnFrame": false,
         "size": 1
@@ -386,7 +390,8 @@
                 "Down"
             ],
             "keyEnter": [
-                "Return"
+                "Return",
+                "Enter"
             ],
             "keyEscape": [
                 "Esc"
@@ -438,11 +443,17 @@
         "wallpaperChange": ""
     },
     "idle": {
-        "customCommands": "[{\"timeout\":60,\"command\":\"\"}]",
+        "customCommands": "[]",
         "enabled": true,
         "fadeDuration": 5,
+        "lockCommand": "",
         "lockTimeout": 660,
+        "resumeLockCommand": "",
+        "resumeScreenOffCommand": "",
+        "resumeSuspendCommand": "",
+        "screenOffCommand": "",
         "screenOffTimeout": 600,
+        "suspendCommand": "",
         "suspendTimeout": 1800
     },
     "location": {
@@ -588,7 +599,7 @@
         "showHeader": true,
         "showKeybinds": true
     },
-    "settingsVersion": 53,
+    "settingsVersion": 54,
     "systemMonitor": {
         "batteryCriticalThreshold": 5,
         "batteryWarningThreshold": 20,

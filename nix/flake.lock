@@ -119,11 +119,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1772330611,
-        "narHash": "sha256-UZjPc/d5XRxvjDbk4veAO4XFdvx6BUum2l40V688Xq8=",
+        "lastModified": 1772380461,
+        "narHash": "sha256-O3ukj3Bb3V0Tiy/4LUfLlBpWypJ9P0JeUgsKl2nmZZY=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "58fd7ff0eec2cda43e705c4c0585729ec471d400",
+        "rev": "f140aa04d7d14f8a50ab27f3691b5766b17ae961",
         "type": "github"
       },
       "original": {
@@ -224,11 +224,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1772341576,
-        "narHash": "sha256-9JfTb1J3F47Azgj7oVerMl6MW2cs0vXHpa40zJureCc=",
+        "lastModified": 1772438716,
+        "narHash": "sha256-3gu2x1t4/QNr/+ILGW5Ozbltv83If2J7qJC2y3onXpQ=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "166e257669692201efa270b1d0e217a14a2f60a9",
+        "rev": "3d881b4ae8c803de748fb8b7a474b2f1a811f0ff",
         "type": "github"
       },
       "original": {
@@ -261,11 +261,11 @@
         "noctalia-qs": "noctalia-qs"
       },
       "locked": {
-        "lastModified": 1772319635,
-        "narHash": "sha256-ZVrtz08Fyp6knPEAbcD2+OYvs0T4pTII/xMElHpi31M=",
+        "lastModified": 1772434878,
+        "narHash": "sha256-nJtHZ6uwOaztMYKejn/tLfK1MnEXh5zgniZsmaOygr8=",
         "owner": "noctalia-dev",
         "repo": "noctalia-shell",
-        "rev": "5d03c56f4c8d7243e6ae97c045afa44aaac2bf0e",
+        "rev": "2a692ba942dade06e74cf15426e4af26a90c03fe",
         "type": "github"
       },
       "original": {
@@ -322,6 +322,7 @@
         "plugins-lualine-nvim": "plugins-lualine-nvim",
         "plugins-neogit": "plugins-neogit",
         "plugins-neotab": "plugins-neotab",
+        "plugins-nvim-better-n": "plugins-nvim-better-n",
         "plugins-nvim-dap-repl-highlights": "plugins-nvim-dap-repl-highlights",
         "plugins-nvim-dbee": "plugins-nvim-dbee",
         "plugins-nvim-lint": "plugins-nvim-lint",
@@ -689,6 +690,22 @@
       "original": {
         "owner": "kawre",
         "repo": "neotab.nvim",
+        "type": "github"
+      }
+    },
+    "plugins-nvim-better-n": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1767883445,
+        "narHash": "sha256-XMzC6CJ/Ku5gyBXccrvtE6dUt8aCgkZDhsg4YX/H7AA=",
+        "owner": "jonatan-branting",
+        "repo": "nvim-better-n",
+        "rev": "76fc575beafcf747d72ec33368d4034c9466328a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "jonatan-branting",
+        "repo": "nvim-better-n",
         "type": "github"
       }
     },
@@ -1098,11 +1115,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1772332855,
-        "narHash": "sha256-LPNnG/TXua9dSal3Ka+Rj0s34gbkJ4/AhxWBzn87j0E=",
+        "lastModified": 1772426935,
+        "narHash": "sha256-fLxV/FzP06eaoMFzwrnKk9x0b+kaNNjbFfp6+rsRKGs=",
         "owner": "0xc000022070",
         "repo": "zen-browser-flake",
-        "rev": "04e0729057ea01c3336f4751290a20f4ec564727",
+        "rev": "6caef0bf5e38a793fd269333f000b7299b160900",
         "type": "github"
       },
       "original": {
