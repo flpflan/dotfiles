@@ -9,15 +9,17 @@
     ruff
     fd
   ];
+  startupPlugins = with vim_pkgs; [
+    (nvim-treesitter.withPlugins (
+      plugins:
+        with plugins; [
+          python
+        ]
+    ))
+  ];
   optionalPlugins = with vim_pkgs;
     [
       nvim-dap-python
-      (nvim-treesitter.withPlugins (
-        plugins:
-          with plugins; [
-            python
-          ]
-      ))
     ]
     ++ (with nvim_pkgs; [
       venv-selector

@@ -23,98 +23,131 @@ plugin("nvim-web-devicons"):config(false)
 --     },
 --   }
 
--- TODO: yazi.nvim
-require("oil").setup {
-  use_default_keymaps = false,
-  experimental_watch_for_changes = true,
-  skip_confirm_for_simple_edits = true,
-  keymaps = {
-    ["g?"] = "actions.show_help",
-    ["<C-t>"] = "actions.select_tab",
-    ["|"] = "actions.select_vsplit",
-    ["\\"] = "actions.select_split",
-    ["<CR>"] = "actions.select",
-    -- ["l"] = "actions.select",
-    -- ["<Right>"] = "actions.select",
-    ["K"] = "actions.preview",
-    ["-"] = "actions.parent",
-    -- ["h"] = "actions.parent",
-    -- ["<Left>"] = "actions.parent",
-    ["<C-q>"] = function()
-      if vim.fn.len(vim.fn.getbufinfo { buflisted = 1 }) == 0 then return end
-      require("oil").close { exit_if_last_buf = true }
-    end,
-    ["q"] = function()
-      -- if vim.fn.len(vim.fn.getbufinfo { buflisted = 1 }) == 0 then return vim.cmd "normal! q" end -- Use cmdline instead
-      if vim.fn.len(vim.fn.getbufinfo { buflisted = 1 }) == 0 then return end
-      require("oil").close { exit_if_last_buf = true }
-    end,
-    ["<Esc>"] = function()
-      if vim.fn.len(vim.fn.getbufinfo { buflisted = 1 }) == 0 then return end
-      require("oil").close { exit_if_last_buf = true }
-    end,
-    ["<leader>e"] = "actions.close",
-    ["_"] = "actions.open_cwd",
-    ["~"] = "actions.cd",
-    ["`"] = "actions.tcd",
-    ["."] = "actions.toggle_hidden",
-    ["gr"] = "actions.refresh",
-    ["gs"] = "actions.change_sort",
-    ["gx"] = "actions.open_external",
-    ["g\\"] = "actions.toggle_trash",
-  },
-  view_options = {
-    show_hidden = false,
-    natural_order = false,
-  },
-  win_options = {
-    signcolumn = "number",
-    -- signcolumn = "yes:2",
-  },
-  float = {
-    border = "rounded",
-  },
-  confirmation = {
-    border = "rounded",
-  },
-  keymaps_help = {
-    border = "rounded",
-  },
-}
-local status_const = require "oil-vcs-status.constant.status"
+local function is_launch_open_directory()
+  local args = vim.fn.argv()
+  if #args == 0 then
+    return false
+  else
+    local path = args[1]
+    return vim.fn.isdirectory(path) == 1
+  end
+end
 
-local StatusType = status_const.StatusType
-require("oil-vcs-status").setup {
-  status_symbol = {
-    [StatusType.Added] = "",
-    [StatusType.Copied] = "󰆏",
-    [StatusType.Deleted] = "",
-    [StatusType.Ignored] = "",
-    [StatusType.Modified] = "",
-    [StatusType.Renamed] = "",
-    [StatusType.TypeChanged] = "󰉺",
-    [StatusType.Unmodified] = " ",
-    [StatusType.Unmerged] = "",
-    [StatusType.Untracked] = "",
-    [StatusType.External] = "",
+vim.g.loaded_netrwPlugin = 1
 
-    [StatusType.UpstreamAdded] = "󰈞",
-    [StatusType.UpstreamCopied] = "󰈢",
-    [StatusType.UpstreamDeleted] = "",
-    [StatusType.UpstreamIgnored] = " ",
-    [StatusType.UpstreamModified] = "󰏫",
-    [StatusType.UpstreamRenamed] = "",
-    [StatusType.UpstreamTypeChanged] = "󱧶",
-    [StatusType.UpstreamUnmodified] = " ",
-    [StatusType.UpstreamUnmerged] = "",
-    [StatusType.UpstreamUntracked] = " ",
-    [StatusType.UpstreamExternal] = "",
-  },
-}
-require("oil-vcs-status").init()
+-- TODO:
+plugin("yazi.nvim")
+  :lazy(not is_launch_open_directory())
+  :event_defer():keys({
+    kmap("n", "<leader>e",kcmd("Yazi"))
+  })
+  :opts {
+    open_for_directories = false,
+    keymaps = {
+      open_file_in_vertical_split = "|",
+      open_file_in_horizontal_split = "\\",
+      change_working_directory = "`",
+    },
+    integrations = {
+      picker_add_copy_relative_path_actio = "snacks.picker"
+    },
+  }
 
-require("oil-lsp-diagnostics").setup()
-require("oil-git").setup {}
+plugin("oil")
+  :lazy(not is_launch_open_directory())
+  :event_defer()
+  :opts {
+    use_default_keymaps = false,
+    experimental_watch_for_changes = true,
+    skip_confirm_for_simple_edits = true,
+    keymaps = {
+      ["g?"] = "actions.show_help",
+      ["<C-t>"] = "actions.select_tab",
+      ["|"] = "actions.select_vsplit",
+      ["\\"] = "actions.select_split",
+      ["<CR>"] = "actions.select",
+      -- ["l"] = "actions.select",
+      -- ["<Right>"] = "actions.select",
+      ["K"] = "actions.preview",
+      ["-"] = "actions.parent",
+      -- ["h"] = "actions.parent",
+      -- ["<Left>"] = "actions.parent",
+      ["<C-q>"] = function()
+        if vim.fn.len(vim.fn.getbufinfo { buflisted = 1 }) == 0 then return end
+        require("oil").close { exit_if_last_buf = true }
+      end,
+      ["q"] = function()
+        -- if vim.fn.len(vim.fn.getbufinfo { buflisted = 1 }) == 0 then return vim.cmd "normal! q" end -- Use cmdline instead
+        if vim.fn.len(vim.fn.getbufinfo { buflisted = 1 }) == 0 then return end
+        require("oil").close { exit_if_last_buf = true }
+      end,
+      ["<Esc>"] = function()
+        if vim.fn.len(vim.fn.getbufinfo { buflisted = 1 }) == 0 then return end
+        require("oil").close { exit_if_last_buf = true }
+      end,
+      ["<leader>e"] = "actions.close",
+      ["_"] = "actions.open_cwd",
+      ["~"] = "actions.cd",
+      ["`"] = "actions.tcd",
+      ["."] = "actions.toggle_hidden",
+      ["gr"] = "actions.refresh",
+      ["gs"] = "actions.change_sort",
+      ["gx"] = "actions.open_external",
+      ["g\\"] = "actions.toggle_trash",
+    },
+    view_options = {
+      show_hidden = false,
+      natural_order = false,
+    },
+    win_options = {
+      signcolumn = "number",
+      -- signcolumn = "yes:2",
+    },
+    float = {
+      border = "rounded",
+    },
+    confirmation = {
+      border = "rounded",
+    },
+    keymaps_help = {
+      border = "rounded",
+    },
+  }
+plugin("oil-vcs-status"):on_plugin("oil"):config(function()
+  local status_const = require "oil-vcs-status.constant.status"
+
+  local StatusType = status_const.StatusType
+  require("oil-vcs-status").setup({
+    status_symbol = {
+      [StatusType.Added] = "",
+      [StatusType.Copied] = "󰆏",
+      [StatusType.Deleted] = "",
+      [StatusType.Ignored] = "",
+      [StatusType.Modified] = "",
+      [StatusType.Renamed] = "",
+      [StatusType.TypeChanged] = "󰉺",
+      [StatusType.Unmodified] = " ",
+      [StatusType.Unmerged] = "",
+      [StatusType.Untracked] = "",
+      [StatusType.External] = "",
+
+      [StatusType.UpstreamAdded] = "󰈞",
+      [StatusType.UpstreamCopied] = "󰈢",
+      [StatusType.UpstreamDeleted] = "",
+      [StatusType.UpstreamIgnored] = " ",
+      [StatusType.UpstreamModified] = "󰏫",
+      [StatusType.UpstreamRenamed] = "",
+      [StatusType.UpstreamTypeChanged] = "󱧶",
+      [StatusType.UpstreamUnmodified] = " ",
+      [StatusType.UpstreamUnmerged] = "",
+      [StatusType.UpstreamUntracked] = " ",
+      [StatusType.UpstreamExternal] = "",
+    },
+  })
+end)
+
+plugin("oil-lsp-diagnostics"):on_plugin("oil")
+plugin("oil-git"):on_plugin("oil")
 -- require("oil-git-status").setup {
 --   show_ignored = true,
 --   symbols = {

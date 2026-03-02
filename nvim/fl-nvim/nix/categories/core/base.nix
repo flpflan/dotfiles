@@ -28,17 +28,15 @@
       nvim-ts-context-commentstring
       friendly-snippets # INFO: Auto sourced by luasnip
       vim-illuminate
+      vim-startuptime
+      snacks-nvim
     ]
     ++ (with nvim_pkgs; [
       lspconfig
-      oil
-      oil-git
-      oil-vcs-status
-      oil-lsp-diagnostics
     ]);
   optionalPlugins = with vim_pkgs;
     [
-      snacks-nvim
+      substitute-nvim
       nvim-autopairs
       nvim-surround
       nvim-ts-autotag
@@ -52,11 +50,11 @@
       # mini-ai
       # mini-surround
       # mini-move
-      comment-nvim
+      # comment-nvim
       better-escape-nvim
       blink-cmp
       neoconf-nvim
-      neo-tree-nvim
+      # neo-tree-nvim
       nvim-lsp-file-operations
       # fidget-nvim
       # telescope-nvim
@@ -77,10 +75,16 @@
       statuscol-nvim
     ]
     ++ (with nvim_pkgs; [
+      oil
+      oil-git
+      oil-vcs-status
+      oil-lsp-diagnostics
+      yazi-nvim
       smart-paste
       smart-motion
       garbage-day
       nvim-toggler
+      nvim-better-n
       lualine-nvim
       # lualine-lsp-progress
       # harpoon
@@ -98,5 +102,6 @@
       # gotmpl
       # yaml
       neotab
+      toggleterm-nvim
     ]);
 }

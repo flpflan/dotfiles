@@ -1,5 +1,4 @@
--- INFO: Even if not lazyloaded, we don't save any time on the bar display
-plugin("lualine-nvim"):dep_on("overseer"):config(function()
+plugin("lualine-nvim"):event_buffer_enter():dep_on("overseer"):config(function()
 	require("lualine").setup({
 		options = {
 			theme = "auto",
@@ -9,6 +8,7 @@ plugin("lualine-nvim"):dep_on("overseer"):config(function()
 				statusline = {},
 				winbar = { "kulala_ui", "dbee", "dap-repl" },
 			},
+			-- section_separators = { left = ' ' },
 		},
 		sections = require("plugins.ui.lualine.sections"),
 		winbar = require("plugins.ui.lualine.winbar"),
@@ -21,4 +21,9 @@ plugin("lualine-nvim"):dep_on("overseer"):config(function()
 			},
 		},
 	})
+	-- HACK: Makes the bar display immediately on enter buffer
+	-- require('lualine').refresh({
+	-- 	place = { 'statusline' },
+	-- 	force = true
+	-- })
 end)

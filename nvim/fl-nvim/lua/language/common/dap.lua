@@ -31,6 +31,7 @@ plugin("nvim-dap")
       kmap("n", "e", dap_func "eval", "Evaluate Expression"),
     }),
   }
+
 plugin("nvim-dap-ui")
   :on_require("dapui")
   :on_plugin("nvim-dap")
@@ -84,6 +85,7 @@ plugin("nvim-dap-ui")
       ),
     }),
   }
+
 local virtual_max_char = 20
 plugin("nvim-dap-virtual-text")
   :opts({
@@ -106,5 +108,11 @@ plugin("nvim-dap-virtual-text")
     end,
   })
   :on_plugin "nvim-dap"
+
 -- FIXME: No effect
-plugin("nvim-dap-repl-highlights"):on_plugin("nvim-dap")
+-- plugin("nvim-dap-repl-highlights")
+--   :dep_on("nvim-treesitter", "nvim-dap")
+--   :event_defer()
+--   :config(function()
+--     require('nvim-dap-repl-highlights').setup()
+--   end)

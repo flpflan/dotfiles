@@ -8,7 +8,7 @@
     prettierd
     mpls
   ];
-  optionalPlugins = with vim_pkgs; [
+  startupPlugins = with vim_pkgs; [
     (nvim-treesitter.withPlugins (
       plugins:
         with plugins; [

@@ -84,9 +84,12 @@ plugin("flash.nvim")
 --   kmap("n", "<M-9>", function() require("harpoon"):list():select(9) end, "Goto Harpoon Mark(9)"),
 -- }
 
+-- FIXME: conflict with hop & illuminate
+-- plugin("nvim-better-n"):event_defer()
+
 plugin("arrow.nvim"):opts {
   show_icons = true,
-  leader_key = "<C-m>",
+  leader_key = "<C-m>", -- Equivalent to 'Enter'
   buffer_leader_key = "m",
   hide_handbook = false,
   hide_buffer_handbook = true,

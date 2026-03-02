@@ -7,6 +7,10 @@
     #   url = "github:nix-community/neovim-nightly-overlay";
     #   inputs.nixpkgs.follows = "nixpkgs";
     # };
+    "plugins-nvim-better-n" = {
+      url = "github:jonatan-branting/nvim-better-n";
+      flake = false;
+    };
     "plugins-smart-paste" = {
       url = "github:nemanjamalesija/smart-paste.nvim";
       flake = false;

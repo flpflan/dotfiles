@@ -12,19 +12,18 @@
     websocat
     kulala-fmt
   ];
-  optionalPlugins = with vim_pkgs;
-    [
-      (nvim-treesitter.withPlugins (
-        plugins:
-          with plugins; [
-            http
-            html
-            javascript
-            typescript
-          ]
-      ))
-    ]
-    ++ (with nvim_pkgs; [
-      kulala
-    ]);
+  startupPlugins = with vim_pkgs; [
+    (nvim-treesitter.withPlugins (
+      plugins:
+        with plugins; [
+          http
+          html
+          javascript
+          typescript
+        ]
+    ))
+  ];
+  optionalPlugins = with nvim_pkgs; [
+    kulala
+  ];
 }

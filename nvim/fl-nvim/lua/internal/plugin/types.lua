@@ -99,7 +99,11 @@ end
 function Plugin:set_g_options(options)
 	self.plugin_opts.set_options_g = function()
 		for k, v in pairs(options) do
-			vim.g[k] = vim.tbl_deep_extend("force", vim.g[k] or {}, v)
+			if type(v) == "table" then
+				vim.g[k] = vim.tbl_deep_extend("force", vim.g[k] or {}, v)
+			else
+				vim.g[k] = v
+			end
 		end
 	end
 	return self
@@ -109,7 +113,11 @@ end
 function Plugin:set_o_options(options)
 	self.plugin_opts.set_options_o = function()
 		for k, v in pairs(options) do
-			vim.o[k] = vim.tbl_deep_extend("force", vim.o[k] or {}, v)
+			if type(v) == "table" then
+				vim.o[k] = vim.tbl_deep_extend("force", vim.o[k] or {}, v)
+			else
+				vim.o[k] = v
+			end
 		end
 	end
 	return self

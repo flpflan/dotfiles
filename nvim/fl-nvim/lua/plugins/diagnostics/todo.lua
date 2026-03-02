@@ -1,4 +1,4 @@
-plugin("todo-comments.nvim"):on_require("todo-comments"):event_defer():opts({
+plugin("todo-comments.nvim"):event_defer():opts({
 	highlight = {
 		multiline = false,
 		-- vimgrep regex, supporting the pattern TODO(name):

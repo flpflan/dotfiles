@@ -2,7 +2,7 @@ plugin("nui.nvim"):config(false)
 
 plugin("nvim-notify"):opts { render = "wrapped-compact", background_colour = "#000000", stage = "slide" }
 
-plugin("noice.nvim"):event_defer():dep_on("nui.nvim", "nvim-notify"):on_require("noice"):opts {
+plugin("noice.nvim"):event_ui():dep_on("nui.nvim", "nvim-notify"):on_require("noice"):opts {
   --  cmdline = {
   --    view = "cmdline",
   --  },

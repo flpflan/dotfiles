@@ -9,19 +9,18 @@
     # selene
     stylua
   ];
-  optionalPlugins = with vim_pkgs;
-    [
-      (nvim-treesitter.withPlugins (
-        plugins:
-          with plugins; [
-            lua
-            luadoc
-            luap
-            luau
-          ]
-      ))
-    ]
-    ++ (with nvim_pkgs; [
-      lazydev
-    ]);
+  startupPlugins = with vim_pkgs; [
+    (nvim-treesitter.withPlugins (
+      plugins:
+        with plugins; [
+          lua
+          luadoc
+          luap
+          luau
+        ]
+    ))
+  ];
+  optionalPlugins = with nvim_pkgs; [
+    lazydev
+  ];
 }

@@ -367,6 +367,22 @@
         "type": "github"
       }
     },
+    "plugins-nvim-better-n": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1767883445,
+        "narHash": "sha256-XMzC6CJ/Ku5gyBXccrvtE6dUt8aCgkZDhsg4YX/H7AA=",
+        "owner": "jonatan-branting",
+        "repo": "nvim-better-n",
+        "rev": "76fc575beafcf747d72ec33368d4034c9466328a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "jonatan-branting",
+        "repo": "nvim-better-n",
+        "type": "github"
+      }
+    },
     "plugins-nvim-dap-repl-highlights": {
       "flake": false,
       "locked": {
@@ -760,6 +776,7 @@
         "plugins-lualine-nvim": "plugins-lualine-nvim",
         "plugins-neogit": "plugins-neogit",
         "plugins-neotab": "plugins-neotab",
+        "plugins-nvim-better-n": "plugins-nvim-better-n",
         "plugins-nvim-dap-repl-highlights": "plugins-nvim-dap-repl-highlights",
         "plugins-nvim-dbee": "plugins-nvim-dbee",
         "plugins-nvim-lint": "plugins-nvim-lint",

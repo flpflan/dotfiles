@@ -10,7 +10,7 @@ local function on_attach(client, buf)
     kmap(
       "n",
       "gs",
-      function() require("vtsls").commands.goto_source_definition() end,
+      klazy ("vtsls.commands").goto_source_definition(),
       "Goto Source Definition (vtsls)",
       { cond = function() return client.name == "vtsls" end }
     )

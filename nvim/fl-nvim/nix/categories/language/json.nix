@@ -11,19 +11,16 @@
   ];
   startupPlugins = with vim_pkgs; [
     SchemaStore-nvim
+    (nvim-treesitter.withPlugins (
+      plugins:
+        with plugins; [
+          json
+          # jsonc
+          json5
+        ]
+    ))
   ];
-  optionalPlugins = with vim_pkgs;
-    [
-      (nvim-treesitter.withPlugins (
-        plugins:
-          with plugins; [
-            json
-            # jsonc
-            json5
-          ]
-      ))
-    ]
-    ++ (with nvim_pkgs; [
-      keytrail
-    ]);
+  optionalPlugins = with nvim_pkgs; [
+    keytrail
+  ];
 }

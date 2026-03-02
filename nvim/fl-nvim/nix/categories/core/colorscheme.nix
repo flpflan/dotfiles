@@ -9,7 +9,7 @@
       catppuccin-nvim
     ]
     ++ (with nvim_pkgs; [
-      sweetie
-      daylight
+      # sweetie
+      # daylight
     ]);
 }

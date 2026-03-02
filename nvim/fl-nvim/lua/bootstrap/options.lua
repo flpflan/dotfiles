@@ -67,7 +67,7 @@ opt.updatetime = 300
 
 -- Neovide
 if g.neovide then
-  vim.o.guifont = "JetBrainsMono Nerd Font:h12"
+  vim.o.guifont = "FiraCode Nerd Font:h13"
   g.neovide_padding_top = 30
   g.neovide_padding_bottom = 15
   g.neovide_padding_left = 32

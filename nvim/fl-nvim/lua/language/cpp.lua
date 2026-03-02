@@ -23,5 +23,5 @@ formatter({ "c", "cpp" }, "clangd-format")
 -----------------
 ---- Plugins ----
 -----------------
--- require("clangd_extensions").setup() -- Lazyloaded by itself
--- require("cmake-tools").setup() -- Lazyloaded by itself
+plugin("clangd_extensions"):event_defer()
+plugin("cmake-tools.nvim"):event_defer():dep_on("overseer", "toggleterm")

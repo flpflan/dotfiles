@@ -44,7 +44,7 @@ end
 ---@param mode string | string[]
 ---@param keys string
 ---@param action string | function
----@param desc string
+---@param desc? string
 ---@param opts? KeymapOpts
 ---@return Keymap
 function M.keymap(mode, keys, action, desc, opts)

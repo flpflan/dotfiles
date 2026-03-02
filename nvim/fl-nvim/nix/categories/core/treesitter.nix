@@ -3,9 +3,8 @@
   nvim_pkgs,
   ...
 }: {
-  optionalPlugins = with vim_pkgs;
+  startupPlugins = with vim_pkgs;
     [
-      nvim-treesitter-textobjects
       nvim-treesitter-endwise
       (nvim-treesitter.withPlugins (
         plugins:
@@ -29,6 +28,10 @@
             zathurarc
           ]
       ))
+    ];
+  optionalPlugins = with vim_pkgs;
+    [
+      nvim-treesitter-textobjects
     ]
     ++ (with nvim_pkgs; [
       treesitter-context

@@ -39,4 +39,4 @@ linter("nix", { "statix", "deadnix" })
 -----------------
 --- Formatter ---
 -----------------
-formatter("nix", "alejandra")
+formatter("nix", "nixfmt")

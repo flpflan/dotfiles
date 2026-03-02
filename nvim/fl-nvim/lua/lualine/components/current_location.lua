@@ -63,6 +63,7 @@ function component:init(options)
 			end
 			require("lualine").refresh({
 				place = { "winbar" },
+				-- force = true
 			})
 		end,
 	})

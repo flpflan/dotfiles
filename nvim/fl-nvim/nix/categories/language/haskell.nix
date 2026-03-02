@@ -6,7 +6,7 @@
   lspsAndRuntimeDeps = with pkgs; [
     haskell-language-server
   ];
-  optionalPlugins = with vim_pkgs; [
+  startupPlugins = with vim_pkgs; [
     (nvim-treesitter.withPlugins (
       plugins:
         with plugins; [

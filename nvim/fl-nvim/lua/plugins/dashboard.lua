@@ -1,3 +1,5 @@
+if vim.fn.argc(-1) ~= 0 then return end -- Don't load when opening a file from the cmdline
+
 local BANNERS = {
   {
     [[ ⠀⢀⣴⣦⠀⠀⠀⠀⢰⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ]],

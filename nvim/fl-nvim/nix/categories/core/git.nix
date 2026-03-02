@@ -12,7 +12,7 @@
       diffview-nvim
       gitsigns-nvim
       mini-diff
-      telescope-git-conflicts-nvim
+      # telescope-git-conflicts-nvim
     ]
     ++ (with nvim_pkgs; [
       git-conflict

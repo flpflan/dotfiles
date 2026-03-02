@@ -37,9 +37,12 @@ transparent.clear_prefix "Float"
 transparent.clear_prefix "Flash"
 transparent.clear_prefix "NormalFloat"
 transparent.clear_prefix "LspInlayHint"
+-- transparent.clear_prefix('lualine')
 
 require("catppuccin").setup {
   transparent_background = vim.g.transparent_enabled,
+  float = { transparent = vim.g.transparent_enabled },
+  -- term_colors = true,
   auto_integrations = true,
   integrations = {
     colorful_winsep = { color = "lavender" },
@@ -57,10 +60,12 @@ require("catppuccin").setup {
     overseer = true,
     lsp_trouble = true,
     which_key = true,
+    treesitter_context = true,
+    neogit = true,
   },
 }
 
-plugin("sweeties.nvim"):on_require("sweeties"):config(function() vim.g.sweetie = {} end)
+-- plugin("sweeties.nvim"):on_require("sweeties"):config(function() vim.g.sweetie = {} end)
 
 -----------------
 ----- Setup -----

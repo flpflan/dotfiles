@@ -11,18 +11,15 @@
   ];
   startupPlugins = with vim_pkgs; [
     SchemaStore-nvim
+    (nvim-treesitter.withPlugins (
+      plugins:
+        with plugins; [
+          yaml
+        ]
+    ))
   ];
-  optionalPlugins = with vim_pkgs;
-    [
-      (nvim-treesitter.withPlugins (
-        plugins:
-          with plugins; [
-            yaml
-          ]
-      ))
-    ]
-    ++ (with nvim_pkgs; [
-      yaml
-      keytrail
-    ]);
+  optionalPlugins = with nvim_pkgs; [
+    yaml
+    keytrail
+  ];
 }

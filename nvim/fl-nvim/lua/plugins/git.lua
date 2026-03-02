@@ -99,7 +99,8 @@ plugin("neogit")
   :opts({
     disable_hint = true,
     integrations = {
-      telescope = true,
+      snacks = true,
+      -- telescope = true,
       diffview = true,
     },
     graph_style = "unicode",
@@ -117,7 +118,7 @@ plugin("neogit")
   :setup(function() end)
 plugin("gitsigns.nvim")
   :for_cat("core.git")
-  :event_buffer_enter()
+  :event_defer()
   :on_require("gitsigns")
   :opts({
     current_line_blame_opts = {

@@ -21,6 +21,7 @@ in {
             python3.enable = false;
             ruby.enable = false;
             node.enable = false;
+            perl.enable = false;
           };
         };
         categories = {
