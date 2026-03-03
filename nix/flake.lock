@@ -94,7 +94,7 @@
     "flake-parts_2": {
       "inputs": {
         "nixpkgs-lib": [
-          "nixpkgs-nur",
+          "nur",
           "nixpkgs"
         ]
       },
@@ -216,27 +216,6 @@
         "type": "github"
       }
     },
-    "nixpkgs-nur": {
-      "inputs": {
-        "flake-parts": "flake-parts_2",
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1772438716,
-        "narHash": "sha256-3gu2x1t4/QNr/+ILGW5Ozbltv83If2J7qJC2y3onXpQ=",
-        "owner": "nix-community",
-        "repo": "NUR",
-        "rev": "3d881b4ae8c803de748fb8b7a474b2f1a811f0ff",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nix-community",
-        "repo": "NUR",
-        "type": "github"
-      }
-    },
     "nixpkgs_2": {
       "locked": {
         "lastModified": 1772198003,
@@ -292,6 +271,27 @@
       "original": {
         "owner": "noctalia-dev",
         "repo": "noctalia-qs",
+        "type": "github"
+      }
+    },
+    "nur": {
+      "inputs": {
+        "flake-parts": "flake-parts_2",
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1772519729,
+        "narHash": "sha256-Xq7G9il40YSP1l6rzPW5t2fnmq9OsQu2+F/r/g8QvVk=",
+        "owner": "nix-community",
+        "repo": "NUR",
+        "rev": "47fff32fdd0c9eeea40204c16a69e4995a6809de",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "NUR",
         "type": "github"
       }
     },
@@ -1084,8 +1084,8 @@
         "nix-cachyos-kernel": "nix-cachyos-kernel",
         "nixos-facter-modules": "nixos-facter-modules",
         "nixpkgs": "nixpkgs_2",
-        "nixpkgs-nur": "nixpkgs-nur",
         "noctalia": "noctalia",
+        "nur": "nur",
         "nvim": "nvim",
         "zen-browser": "zen-browser"
       }

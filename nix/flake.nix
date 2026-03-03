@@ -54,7 +54,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    #nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
+    #nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-25.11";
     # chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     nix-cachyos-kernel = {
       url = "github:xddxdd/nix-cachyos-kernel/release";
@@ -77,7 +77,7 @@
     #   url = "github:flpflan/orangepizero3-nix";
     #   inputs.nixpkgs.follows = "nixpkgs";
     # };
-    nixpkgs-nur = {
+    nur = {
       url = "github:nix-community/NUR";
       inputs.nixpkgs.follows = "nixpkgs";
     };

@@ -1,1 +1,1 @@
-{ inputs, ... }: inputs.nixpkgs-nur.overlays.default
+{ inputs, ... }: inputs.nur.overlays.default
