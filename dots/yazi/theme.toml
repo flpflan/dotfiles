@@ -5,3 +5,8 @@ light = "noctalia"
 dark  = "noctalia"
 # dark  = "catppuccin-macchiato"
 # light = "catppuccin-latte"
+
+[icon]
+exts = [
+    { name = "age", text = "󰈡", fg = "#aec6ff" }
+]

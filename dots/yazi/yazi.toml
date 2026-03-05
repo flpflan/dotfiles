@@ -46,9 +46,15 @@ run  = "hyprctl hyprpaper reload ,%s1"
 for  = "linux"
 desc = "Set as wallpaper"
 
+[[opener.edit_age]]
+run  = 'cd ~/.dotfiles/nix/secrets; agenix -e $(realpath --relative-to=. "$@")'
+desc = "Edit age file"
+block = true
+
 [open]
 prepend_rules = [
     { url = "*.{ass,srt,ssa,sty,sup,vtt}", use = [ "subtitle", "edit" ] },
+    { url = "*.age", use = "edit_age" },
     { mime = "image/*", use = [ "view", "set-wallpaper" ] },
 ]
 
