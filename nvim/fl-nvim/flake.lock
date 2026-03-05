@@ -17,11 +17,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1772173633,
-        "narHash": "sha256-MOH58F4AIbCkh6qlQcwMycyk5SWvsqnS/TCfnqDlpj4=",
+        "lastModified": 1772674223,
+        "narHash": "sha256-/suKbHSaSmuC9UY7G0VRQ3aO+QKqxAQPQ19wG7QNkF8=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "c0f3d81a7ddbc2b1332be0d8481a672b4f6004d6",
+        "rev": "66d9241e3dc2296726dc522e62dbfe89c7b449f3",
         "type": "github"
       },
       "original": {
@@ -66,11 +66,11 @@
     "plugins-copilot": {
       "flake": false,
       "locked": {
-        "lastModified": 1772243620,
-        "narHash": "sha256-FL6OSeOtTTpswVBkMIun8tyoXchBQIOgofUBonlSVzQ=",
+        "lastModified": 1772655131,
+        "narHash": "sha256-tzb389SnibH2sbVzCzQX2MoPKXKtYjOUVXj36Bm+Zbo=",
         "owner": "zbirenbaum",
         "repo": "copilot.lua",
-        "rev": "00446a63cba4cc59bb24fc1e210a555a3e4acdfb",
+        "rev": "10c1c888412f6dcc808c6a12525079d7bf9575f9",
         "type": "github"
       },
       "original": {
@@ -338,11 +338,11 @@
     "plugins-neogit": {
       "flake": false,
       "locked": {
-        "lastModified": 1772174098,
-        "narHash": "sha256-R+UZ65Q34oO2awA7ins/y/d3n/cTEZYWcpRKd4KWYk0=",
+        "lastModified": 1772702310,
+        "narHash": "sha256-K6pMKXPOqndEAs0Pomokg+//Cf4RFAYuyLYPrnRwwMw=",
         "owner": "NeogitOrg",
         "repo": "neogit",
-        "rev": "515e8cb9c3430a064ec3d9affd499b94f71b3120",
+        "rev": "7073f3aafc9030d457838995106784a9d1873b3b",
         "type": "github"
       },
       "original": {
@@ -466,11 +466,11 @@
     "plugins-oil-git": {
       "flake": false,
       "locked": {
-        "lastModified": 1756863864,
-        "narHash": "sha256-QQj3ck+5GpA/htG0tZzniS5bbfRscvcfXjMUjY8F9A4=",
+        "lastModified": 1772457363,
+        "narHash": "sha256-5pC1ozSetRt+Jk9nWc8n9t0QSRi5Xn70YtCjADTzl5k=",
         "owner": "benomahony",
         "repo": "oil-git.nvim",
-        "rev": "d1f27a5982df35b70fb842aa6bbfac10735c7265",
+        "rev": "95b0d83f70e5e3e889f4d2f8b70eba5185ff67b6",
         "type": "github"
       },
       "original": {
@@ -578,11 +578,11 @@
     "plugins-smart-motion": {
       "flake": false,
       "locked": {
-        "lastModified": 1771705734,
-        "narHash": "sha256-mlE57k0YVNa3Nl5t4NTlBFq/PQLANL0eBGJUF+EihEI=",
+        "lastModified": 1772664756,
+        "narHash": "sha256-RmRKKsR5krWzvmp5yCrqeEUiCYvfZu4uHLEzTb4fHsk=",
         "owner": "FluxxField",
         "repo": "smart-motion.nvim",
-        "rev": "e4da0a8f020e5eea107970e4f21a35bfa8a854a5",
+        "rev": "4b5035d277bbc844effadbb99e2887c60a77d705",
         "type": "github"
       },
       "original": {
@@ -722,11 +722,11 @@
     "plugins-venv-selector": {
       "flake": false,
       "locked": {
-        "lastModified": 1771744307,
-        "narHash": "sha256-t6dYFe+w5S2rrEFJ4zLsFXhRvW2ut4l+ZcJhta9ObjE=",
+        "lastModified": 1772477351,
+        "narHash": "sha256-2+jbneudVXDejMBqaz6svJMsIUWqRKIyhRlbOr35K9s=",
         "owner": "linux-cultist",
         "repo": "venv-selector.nvim",
-        "rev": "59adce1481e2a182bc1e4d706869b069f19b32ba",
+        "rev": "42e8faadf9b819654f29eb1a785797a3a328f301",
         "type": "github"
       },
       "original": {
