@@ -8,7 +8,7 @@
     # interfaces.wlp5s0.useDHCP = true;
     networkmanager = {
       enable = true;
-      # wifi.backend = "iwd";
+      wifi.backend = "iwd";
     };
     # wireless.iwd = {
     #   enable = true;
