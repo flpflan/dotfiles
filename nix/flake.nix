@@ -34,15 +34,12 @@
     nixosConfigurations = with self; {
       fl-pc = nixpkgs.lib.nixosSystem (import ./hosts/fl-pc {
         inherit inputs outputs lib tools;
-        flake = self;
       });
       opiz3 = nixpkgs.lib.nixosSystem (import ./hosts/opiz3 {
         inherit inputs outputs lib tools;
-        flake = self;
       });
       fl-vps = nixpkgs.lib.nixosSystem (import ./hosts/fl-vps {
         inherit inputs outputs lib tools;
-        flake = self;
       });
     };
 

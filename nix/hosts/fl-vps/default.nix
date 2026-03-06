@@ -1,7 +1,7 @@
 {
   inputs,
+  outputs,
   tools,
-  flake,
   srvos,
   disko,
   ...
@@ -12,7 +12,7 @@ let
 in
 {
   specialArgs = inputs // {
-    inherit tools flake;
+    inherit tools outputs;
   };
   system = "x86_64-linux";
   modules = [

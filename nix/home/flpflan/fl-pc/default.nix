@@ -1,5 +1,5 @@
 {
-  flake,
+  outputs,
   tools,
   lib,
   ...
@@ -20,7 +20,7 @@
     options = "--delete-older-than 7d";
     persistent = true;
   };
-  nixpkgs.overlays = flake.outputs.overlays;
+  nixpkgs.overlays = outputs.overlays;
   nixpkgs.config.allowUnfree = true;
 
   programs.home-manager.enable = true;
