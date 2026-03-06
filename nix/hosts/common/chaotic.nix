@@ -1,7 +1,7 @@
-{ tools, ... }:
+{ chaotic, ... }:
 
 {
   imports = [
-    (tools.module "<chaotic-nixos>")
+    chaotic.nixosModules.default
   ];
 }

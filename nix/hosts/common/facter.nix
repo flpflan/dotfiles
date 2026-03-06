@@ -1,7 +1,7 @@
-{ tools, ... }:
+{ nixos-facter-modules, ... }:
 
 {
   imports = [
-    (tools.module "<nixos-facter-modules>")
+    nixos-facter-modules.nixosModules.facter
   ];
 }

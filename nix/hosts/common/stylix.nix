@@ -1,8 +1,8 @@
-{ tools, ... }:
+{ stylix, ... }:
 
 {
   imports = [
-    (tools.module "<stylix-nixos>")
+    stylix.nixosModules.stylix
   ];
   stylix.enable = true;
 }

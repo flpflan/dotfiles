@@ -1,7 +1,3 @@
-{ lib, ... }@inputs:
+{ lib, ... }:
 
-path:
-if (builtins.match "^<.+>$" path) != null then
-  (import ./module.nix inputs) path
-else
-  lib.path.append ../. path
+path: lib.path.append ../. path

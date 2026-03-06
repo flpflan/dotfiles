@@ -1,22 +1,21 @@
-{ tools, ... }:
-let
-  inherit (tools) module;
-in 
+{ illogical-impulse, ... }:
+
 {
   imports = [
-    (module "<illogical-impulse>")
+    illogical-impulse.homeManagerModules.default
   ];
+
   illogical-impulse = {
-      enable = true;
+    enable = true;
 
-      hyprland = {
-          ozoneWayland.enable = true;
-      };
+    hyprland = {
+      ozoneWayland.enable = true;
+    };
 
-      dotfiles = {
-          anyrun.enable = true;
-          fish.enable = true;
-          kitty.enable = false;
-      };
+    dotfiles = {
+      anyrun.enable = true;
+      fish.enable = true;
+      kitty.enable = false;
+    };
   };
 }

@@ -1,7 +1,7 @@
-{ tools, ... }:
+{ chaotic, ... }:
 
 {
   imports = [
-    (tools.module "<chaotic-home-manager>")
+    chaotic.homeManagerModules.default
   ];
 }

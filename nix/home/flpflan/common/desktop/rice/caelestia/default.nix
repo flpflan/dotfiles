@@ -1,15 +1,18 @@
 {
   config,
-  tools,
   fl-dots,
+  caelestia-shell,
   ...
-}: let
+}:
+
+let
   dots = "${fl-dots}/dots";
   # caelestia-package = pkgs.callPackage ./package.nix { inherit quickshell; };
   outOfStore = config.lib.file.mkOutOfStoreSymlink;
-in {
+in
+{
   imports = [
-    (tools.relative "<caelestia-shell>")
+    caelestia-shell.homeManagerModules.default
   ];
 
   programs.caelestia = {

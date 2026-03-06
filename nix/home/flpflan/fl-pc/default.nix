@@ -3,10 +3,12 @@
   tools,
   lib,
   ...
-}: {
+}:
+
+{
   imports =
     map tools.relative [
-      # "<stylix-home-manager>"
+      # stylix.homeModules.stylix
       "home/flpflan/common/global/agenix.nix"
       # "home/flpflan/common/global/chaotic.nix"
     ]
@@ -47,7 +49,7 @@
   programs.man.generateCaches = false; # Speed up building
 
   home.activation = {
-    rmSomeThing = lib.hm.dag.entryAfter ["writeBoundary"] ''
+    rmSomeThing = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
       rm -rf $HOME/.nix-defexpr
       rm -rf $HOME/.nix-profile
     '';

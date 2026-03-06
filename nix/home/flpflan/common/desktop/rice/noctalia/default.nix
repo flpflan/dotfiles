@@ -1,12 +1,17 @@
-{ config, tools, fl-dots, ... }:
+{
+  config,
+  noctalia,
+  fl-dots,
+  ...
+}:
 
 let
   dots = "${fl-dots}/dots";
   outOfStore = config.lib.file.mkOutOfStoreSymlink;
-in 
+in
 {
   imports = [
-    (tools.relative "<noctalia-home-manager>")
+    noctalia.homeModules.default
   ];
 
   programs.noctalia-shell = {

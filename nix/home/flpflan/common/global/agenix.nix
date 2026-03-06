@@ -1,11 +1,11 @@
-{ config, tools, ... }:
+{ config, agenix, ... }:
 
 let
   inherit (config.home) username homeDirectory;
-in 
+in
 {
   imports = [
-    (tools.module "<agenix-home-manager>")
+    agenix.homeManagerModules.default
   ];
 
   age.identityPaths = [

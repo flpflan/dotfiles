@@ -1,8 +1,8 @@
-{ tools, ... }:
+{ agenix, ... }:
 
 {
   imports = [
-    (tools.module "<agenix-nixos>")
+    agenix.nixosModules.default
   ];
 
   age.identityPaths = [

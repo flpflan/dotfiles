@@ -2,11 +2,18 @@
   inputs,
   tools,
   flake,
+  srvos,
+  disko,
   ...
-}: let
-  inherit (tools) relative module;
-in {
-  specialArgs = inputs // {inherit tools flake;};
+}:
+
+let
+  inherit (tools) relative;
+in
+{
+  specialArgs = inputs // {
+    inherit tools flake;
+  };
   system = "x86_64-linux";
   modules = [
     ./system
@@ -19,7 +26,7 @@ in {
     (relative "hosts/common/keys.nix")
     (relative "users/flpflan")
     (relative "users/apps")
-    # (module "<srvos-server>")
-    (module "<disko>")
+    srvos.nixosModules.server
+    disko.nixosModules.disko
   ];
 }

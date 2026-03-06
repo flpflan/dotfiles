@@ -1,4 +1,4 @@
-{ config, pkgs, tools, fl-dots, ... }:
+{ config, pkgs, niri-flake, fl-dots, ... }:
 
 let
   dots = "${fl-dots}/dots";
@@ -9,7 +9,7 @@ in
 
   xdg.configFile."niri".source = outOfStore "${dots}/niri";
 
-  # imports = [(tools.relative "<niri-home-manager>")];
+  # imports = [ niri-flake.homeModules.niri ];
   #
   # programs.niri = {
   #   enable = true;
