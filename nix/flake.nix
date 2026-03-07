@@ -38,9 +38,7 @@
   in
   {
     # FIXME:
-    overlays = {
-      default = import ./overlays {inherit inputs outputs lib tools;};
-    };
+    overlays = import ./overlays {inherit inputs outputs lib tools;};
 
     packages = eachSystem (system: import ./packages pkgsFor.${system});
   }
