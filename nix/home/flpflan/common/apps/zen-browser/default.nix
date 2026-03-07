@@ -7,7 +7,6 @@
 
   programs.zen-browser = {
     enable = true;
-    suppressXdgMigrationWarning = true;
     profiles."fl-priv" = {
       sine.enable = true;
       settings = {
