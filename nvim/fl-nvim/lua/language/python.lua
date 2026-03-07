@@ -31,7 +31,7 @@ formatter("python", "ruff_format")
 -----------------
 ---- Plugins ----
 -----------------
-plugin("venv-selector")
+plugin("venv-selector.nvim")
   :ft("python")
   :on_plugin("nvim-dap-python")
   :on_require("venv-selector")

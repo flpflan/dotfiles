@@ -63,7 +63,7 @@ local base_keymap = {
   },
 }
 
-plugin("blink-compat"):dep_of("blink.cmp"):on_require "blink.compat"
+plugin("blink.compat"):dep_of("blink.cmp"):on_require "blink.compat"
 
 local tmp_line = nil
 plugin("blink.cmp"):event_defer():event_typing():on_require("blink"):opts {

@@ -53,7 +53,7 @@ plugin("yazi.nvim")
     },
   }
 
-plugin("oil")
+plugin("oil.nvim")
   :lazy(not is_launch_open_directory())
   :event_defer()
   :opts {
@@ -146,8 +146,8 @@ plugin("oil-vcs-status"):on_plugin("oil"):config(function()
   })
 end)
 
-plugin("oil-lsp-diagnostics"):on_plugin("oil")
-plugin("oil-git"):on_plugin("oil")
+plugin("oil-lsp-diagnostics.nvim"):on_plugin("oil")
+plugin("oil-git.nvim"):on_plugin("oil")
 -- require("oil-git-status").setup {
 --   show_ignored = true,
 --   symbols = {

@@ -1,7 +1,7 @@
 if not nixCats "core.git" then return end
 
 plugin("mini.diff"):event_defer()
-plugin("lensline"):for_cat("core.git"):event_defer():opts {
+plugin("lensline.nvim"):for_cat("core.git"):event_defer():opts {
   profiles = {
     {
       name = "default",
@@ -12,7 +12,7 @@ plugin("lensline"):for_cat("core.git"):event_defer():opts {
     },
   },
 }
-plugin("git-conflict")
+plugin("git-conflict.nvim")
   :for_cat("core.git")
   :event_defer()
   :opts({

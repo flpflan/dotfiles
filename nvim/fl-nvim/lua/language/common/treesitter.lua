@@ -13,7 +13,7 @@ end
 --------------------
 plugin("nvim-treesitter-endwise"):config(false)
 
-plugin("treesitter-context")
+plugin("nvim-treesitter-context")
   :event_defer()
   :for_cat("core")
   :keys(kmap("n", "<leader>uc", kcmd("TSContext toggle"), "Toggle TSContext"))

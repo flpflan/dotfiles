@@ -7,7 +7,7 @@ vim.filetype.add {
 lsp("kulala_ls")
 formatter("http", "kulala")
 -- 󰏚
-plugin("kulala")
+plugin("kulala.nvim")
   :opts({
     vscode_rest_client_environmentvars = true,
     disable_script_print_output = true,

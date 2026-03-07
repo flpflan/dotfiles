@@ -1,4 +1,4 @@
-plugin("overseer")
+plugin("overseer.nvim")
   :on_require("overseer")
   :opts({
     dap = false,
