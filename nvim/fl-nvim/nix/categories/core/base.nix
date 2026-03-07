@@ -30,10 +30,8 @@
       vim-illuminate
       vim-startuptime
       snacks-nvim
-    ]
-    ++ (with nvim_pkgs; [
-      lspconfig
-    ]);
+      nvim-lspconfig
+    ];
   optionalPlugins = with vim_pkgs;
     [
       substitute-nvim
@@ -53,6 +51,7 @@
       # comment-nvim
       better-escape-nvim
       blink-cmp
+      blink-compat
       neoconf-nvim
       # neo-tree-nvim
       nvim-lsp-file-operations
@@ -73,32 +72,31 @@
       neogen
       # vim-sleuth
       statuscol-nvim
+      # quicker-nvim
+      # undotree
+      guess-indent-nvim
+      # live-command-nvim
+      # harpoon2
+      overseer-nvim
+      nvim-lint
+      lualine-nvim
+      oil-nvim
+      oil-git-nvim
+      oil-lsp-diagnostics-nvim
     ]
     ++ (with nvim_pkgs; [
-      oil
-      oil-git
       oil-vcs-status
-      oil-lsp-diagnostics
       yazi-nvim
       smart-paste
       smart-motion
       garbage-day
       nvim-toggler
       nvim-better-n
-      lualine-nvim
       # lualine-lsp-progress
-      # harpoon
       # esqueleto
       # easycolor
-      # live-command
-      blink-compat
       # dir-telescope
-      nvim-lint
-      overseer
-      guess-indent
       # search-replace
-      # undotree
-      # quicker
       # gotmpl
       # yaml
       neotab

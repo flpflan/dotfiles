@@ -12,6 +12,7 @@
   startupPlugins = with vim_pkgs;
     [
       # nvim-vtsls
+      typescript-tools-nvim
       (nvim-treesitter.withPlugins (
         plugins:
           with plugins; [
@@ -24,10 +25,7 @@
             sql
           ]
       ))
-    ]
-    ++ (with nvim_pkgs; [
-      typescript-tools
-    ]);
+    ];
   optionalPlugins = with vim_pkgs;
     [
       package-info-nvim

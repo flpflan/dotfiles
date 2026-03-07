@@ -15,9 +15,9 @@
   optionalPlugins = with vim_pkgs;
     [
       nui-nvim
+      nvim-dbee
     ]
     ++ (with nvim_pkgs; [
-      nvim-dbee
       cmp-dbee
     ]);
 }

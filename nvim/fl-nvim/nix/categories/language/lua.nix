@@ -1,7 +1,6 @@
 {
   pkgs,
   vim_pkgs,
-  nvim_pkgs,
   ...
 }: {
   lspsAndRuntimeDeps = with pkgs; [
@@ -20,7 +19,7 @@
         ]
     ))
   ];
-  optionalPlugins = with nvim_pkgs; [
-    lazydev
+  optionalPlugins = with vim_pkgs; [
+    lazydev-nvim
   ];
 }

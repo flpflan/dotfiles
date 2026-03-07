@@ -1,7 +1,6 @@
 {
   pkgs,
   vim_pkgs,
-  nvim_pkgs,
   ...
 }: {
   lspsAndRuntimeDeps = with pkgs; [
@@ -23,7 +22,7 @@
         ]
     ))
   ];
-  optionalPlugins = with nvim_pkgs; [
-    kulala
+  optionalPlugins = with vim_pkgs; [
+    kulala-nvim
   ];
 }

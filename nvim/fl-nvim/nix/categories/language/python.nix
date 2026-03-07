@@ -20,8 +20,6 @@
   optionalPlugins = with vim_pkgs;
     [
       nvim-dap-python
-    ]
-    ++ (with nvim_pkgs; [
-      venv-selector
-    ]);
+      venv-selector-nvim
+    ];
 }

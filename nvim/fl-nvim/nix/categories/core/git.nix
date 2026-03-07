@@ -1,7 +1,6 @@
 {
   pkgs,
   vim_pkgs,
-  nvim_pkgs,
   ...
 }: {
   lspsAndRuntimeDeps = with pkgs; [
@@ -12,11 +11,9 @@
       diffview-nvim
       gitsigns-nvim
       mini-diff
-      # telescope-git-conflicts-nvim
-    ]
-    ++ (with nvim_pkgs; [
-      git-conflict
       neogit
-      lensline
-    ]);
+      # telescope-git-conflicts-nvim
+      git-conflict-nvim
+      lensline-nvim
+    ];
 }

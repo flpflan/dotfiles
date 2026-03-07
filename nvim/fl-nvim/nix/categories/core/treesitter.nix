@@ -32,8 +32,6 @@
   optionalPlugins = with vim_pkgs;
     [
       nvim-treesitter-textobjects
-    ]
-    ++ (with nvim_pkgs; [
-      treesitter-context
-    ]);
+      nvim-treesitter-context
+    ];
 }

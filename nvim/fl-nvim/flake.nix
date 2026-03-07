@@ -31,106 +31,54 @@
       url = "github:zeioth/garbage-day.nvim";
       flake = false;
     };
-    "plugins-typescript-tools" = {
-      url = "github:pmizio/typescript-tools.nvim";
-      flake = false;
-    };
-    "plugins-lensline" = {
-      url = "github:oribarilan/lensline.nvim";
-      flake = false;
-    };
-    "plugins-nvim-dap-repl-highlights" = {
-      url = "github:LiadOz/nvim-dap-repl-highlights";
-      flake = false;
-    };
+    # "plugins-nvim-dap-repl-highlights" = {
+    #   url = "github:LiadOz/nvim-dap-repl-highlights";
+    #   flake = false;
+    # };
     "plugins-nvim-toggler" = {
       url = "github:nguyenvukhang/nvim-toggler";
       flake = false;
     };
-    "plugins-sweetie" = {
-      url = "github:NTBBloodbath/sweetie.nvim";
-      flake = false;
-    };
-    "plugins-daylight" = {
-      url = "github:NTBBloodbath/daylight.nvim";
-      flake = false;
-    };
-    "plugins-ts-error-translator" = {
-      url = "github:dmmulroy/ts-error-translator.nvim";
-      flake = false;
-    };
-    "plugins-oil-lsp-diagnostics" = {
-      url = "github:JezerM/oil-lsp-diagnostics.nvim";
-      flake = false;
-    };
-    "plugins-oil-git" = {
-      url = "github:benomahony/oil-git.nvim";
-      flake = false;
-    };
-    "plugins-oil-vcs-status" = {
-      url = "github:SirZenith/oil-vcs-status";
-      flake = false;
-    };
-    "plugins-tokyonight" = {
-      url = "github:folke/tokyonight.nvim";
-      flake = false;
-    };
-    # "plugins-harpoon" = {
-    #   url = "github:ThePrimeagen/harpoon?ref=harpoon2";
+    # "plugins-sweetie" = {
+    #   url = "github:NTBBloodbath/sweetie.nvim";
     #   flake = false;
     # };
-    "plugins-copilot" = {
-      url = "github:zbirenbaum/copilot.lua";
+    # "plugins-daylight" = {
+    #   url = "github:NTBBloodbath/daylight.nvim";
+    #   flake = false;
+    # };
+    # "plugins-ts-error-translator" = {
+    #   url = "github:dmmulroy/ts-error-translator.nvim";
+    #   flake = false;
+    # };
+    "plugins-oil-vcs-status" = {
+      url = "github:SirZenith/oil-vcs-status";
       flake = false;
     };
     "plugins-exrc" = {
       url = "github:jedrzejboczar/exrc.nvim";
       flake = false;
     };
-    "plugins-esqueleto" = {
-      url = "github:cvigilv/esqueleto.nvim";
-      flake = false;
-    };
-    "plugins-lualine-nvim" = {
-      url = "github:nvim-lualine/lualine.nvim";
-      flake = false;
-    };
-    "plugins-kulala" = {
-      url = "github:mistweaverco/kulala.nvim";
-      flake = false;
-    };
-    "plugins-tmux-navigation" = {
-      url = "github:christoomey/vim-tmux-navigator";
-      flake = false;
-    };
-    "plugins-ex-colors" = {
-      url = "github:aileot/ex-colors.nvim";
-      flake = false;
-    };
-    "plugins-profile" = {
-      url = "github:stevearc/profile.nvim";
-      flake = false;
-    };
-    "plugins-easycolor" = {
-      url = "github:vi013t/easycolor.nvim";
-      flake = false;
-    };
+    # "plugins-esqueleto" = {
+    #   url = "github:cvigilv/esqueleto.nvim";
+    #   flake = false;
+    # };
+    # "plugins-ex-colors" = {
+    #   url = "github:aileot/ex-colors.nvim";
+    #   flake = false;
+    # };
+    # "plugins-profile" = {
+    #   url = "github:stevearc/profile.nvim";
+    #   flake = false;
+    # };
+    # "plugins-easycolor" = {
+    #   url = "github:vi013t/easycolor.nvim";
+    #   flake = false;
+    # };
     # "plugins-render-markdown" = {
     #   url = "github:MeanderingProgrammer/render-markdown.nvim";
     #   flake = false;
     # };
-    "plugins-git-conflict" = {
-      url = "github:akinsho/git-conflict.nvim";
-      flake = false;
-    };
-    "plugins-blink-compat" = {
-      url = "github:Saghen/blink.compat";
-      flake = false;
-    };
-    "plugins-nvim-dbee" = {
-      url = "github:kndndrj/nvim-dbee";
-      flake = false;
-    };
     "plugins-cmp-dbee" = {
       url = "github:MattiasMTS/cmp-dbee";
       flake = false;
@@ -139,62 +87,14 @@
     #   url = "github:princejoogie/dir-telescope.nvim";
     #   flake = false;
     # };
-    "plugins-nvim-lint" = {
-      url = "github:mfussenegger/nvim-lint";
-      flake = false;
-    };
-    "plugins-lspconfig" = {
-      url = "github:neovim/nvim-lspconfig";
-      flake = false;
-    };
-    "plugins-venv-selector" = {
-      url = "github:linux-cultist/venv-selector.nvim";
-      flake = false;
-    };
-    "plugins-lazydev" = {
-      url = "github:folke/lazydev.nvim";
-      flake = false;
-    };
-    "plugins-overseer" = {
-      url = "github:stevearc/overseer.nvim";
-      flake = false;
-    };
-    "plugins-oil" = {
-      url = "github:stevearc/oil.nvim";
-      flake = false;
-    };
-    "plugins-treesitter-context" = {
-      url = "github:nvim-treesitter/nvim-treesitter-context";
-      flake = false;
-    };
-    "plugins-live-command" = {
-      url = "github:smjonas/live-command.nvim";
-      flake = false;
-    };
-    "plugins-guess-indent" = {
-      url = "github:nmac427/guess-indent.nvim";
-      flake = false;
-    };
-    "plugins-search-replace" = {
-      url = "github:roobert/search-replace.nvim";
-      flake = false;
-    };
-    "plugins-undotree" = {
-      url = "github:jiaoshijie/undotree";
-      flake = false;
-    };
-    "plugins-quicker" = {
-      url = "github:stevearc/quicker.nvim";
-      flake = false;
-    };
-    "plugins-gotmpl" = {
-      url = "github:ngynkvn/gotmpl.nvim";
-      flake = false;
-    };
-    "plugins-neogit" = {
-      url = "github:NeogitOrg/neogit";
-      flake = false;
-    };
+    # "plugins-search-replace" = {
+    #   url = "github:roobert/search-replace.nvim";
+    #   flake = false;
+    # };
+    # "plugins-gotmpl" = {
+    #   url = "github:ngynkvn/gotmpl.nvim";
+    #   flake = false;
+    # };
     "plugins-yaml" = {
       url = "github:cuducos/yaml.nvim";
       flake = false;
