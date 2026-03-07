@@ -1,3 +1,5 @@
 set selection-notification false
 # set font 'JetBrainsMono Nerd Font 12'
 set selection-clipboard clipboard
+
+include noctaliarc
