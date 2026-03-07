@@ -47,10 +47,10 @@
     #   url = "github:NTBBloodbath/daylight.nvim";
     #   flake = false;
     # };
-    # "plugins-ts-error-translator" = {
-    #   url = "github:dmmulroy/ts-error-translator.nvim";
-    #   flake = false;
-    # };
+    "plugins-ts-error-translator" = {
+      url = "github:dmmulroy/ts-error-translator.nvim";
+      flake = false;
+    };
     "plugins-oil-vcs-status" = {
       url = "github:SirZenith/oil-vcs-status";
       flake = false;

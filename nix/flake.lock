@@ -311,6 +311,7 @@
         "plugins-oil-vcs-status": "plugins-oil-vcs-status",
         "plugins-smart-motion": "plugins-smart-motion",
         "plugins-smart-paste": "plugins-smart-paste",
+        "plugins-ts-error-translator": "plugins-ts-error-translator",
         "plugins-yaml": "plugins-yaml"
       },
       "locked": {
@@ -480,6 +481,22 @@
       "original": {
         "owner": "nemanjamalesija",
         "repo": "smart-paste.nvim",
+        "type": "github"
+      }
+    },
+    "plugins-ts-error-translator": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1767484144,
+        "narHash": "sha256-kjZwfvb0B7GC4dBBSdgC/zRmCUCfCm4H5J+8SFzANJ4=",
+        "owner": "dmmulroy",
+        "repo": "ts-error-translator.nvim",
+        "rev": "558abff11b9e8f4cefc0de09df780c56841c7a4b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "dmmulroy",
+        "repo": "ts-error-translator.nvim",
         "type": "github"
       }
     },
