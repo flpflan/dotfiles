@@ -11,8 +11,6 @@
     nixos.enable = false;
   };
 
-  programs.command-not-found.enable = false;
-
   environment.defaultPackages = lib.mkForce [];
   environment.systemPackages = with pkgs; [
     wget
