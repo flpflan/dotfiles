@@ -15,6 +15,7 @@
   outputs = inputs @ {
     self,
     nixpkgs,
+    home-manager,
     ...
   }:
   let
@@ -27,23 +28,21 @@
     pkgsFor = eachSystem (system: nixpkgs.legacyPackages.${system}.appendOverlays [
       self.overlays.default
     ]);
-
-    makeNixosSystem = {
-      hostName,
-      system,
-      ...
-    } @ args: {
-      name = hostName;
-    };
   in
   {
-    # FIXME:
+    #
+    # Packages
+    #
     overlays = import ./overlays {inherit inputs outputs lib tools;};
-
+    #
+    # Overlays
+    #
     packages = eachSystem (system: import ./packages pkgsFor.${system});
   }
   // {
-
+    #
+    # NixOS Configurations
+    #
     nixosConfigurations = {
       fl-pc = nixpkgs.lib.nixosSystem (import ./hosts/fl-pc {
         inherit inputs outputs lib tools;
@@ -55,10 +54,22 @@
         inherit inputs outputs lib tools;
       });
     };
-
+    #
+    # OS Images
+    #
     packages.x86_64-linux = {
       fl-vps-image = self.nixosConfigurations.fl-vps.config.system.build.diskoImages;
       opiz3-image = self.nixosConfigurations.opiz3.config.system.build.sdImage;
+    };
+    #
+    # Home Manager Standalone Configrations
+    #
+    homeConfigurations = {
+      "flpflan@fl-pc" = home-manager.lib.homeManagerConfiguration {
+        pkgs = pkgsFor.x86_64-linux;
+        modules = [ ./home/flpflan/fl-pc ];
+        extraSpecialArgs = inputs // {inherit outputs tools;} // { fl-dots = "/home/flpflan/.dotfiles"; };
+      };
     };
   };
 
