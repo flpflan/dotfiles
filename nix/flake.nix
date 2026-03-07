@@ -16,11 +16,18 @@
     self,
     nixpkgs,
     ...
-  }: let
-    tools = import ./tools (with nixpkgs; {inherit inputs outputs lib tools;});
-    # TODO:
-    overlays = import ./overlays (with self; with nixpkgs; {inherit inputs outputs lib tools;});
-  in let
+  }:
+  let
+    inherit (nixpkgs) lib;
+    inherit (self) outputs;
+
+    tools = import ./tools {inherit inputs outputs lib tools;};
+
+    eachSystem = nixpkgs.lib.genAttrs nixpkgs.lib.platforms.linux;
+    pkgsFor = eachSystem (system: nixpkgs.legacyPackages.${system}.appendOverlays [
+      self.overlays.default
+    ]);
+
     makeNixosSystem = {
       hostName,
       system,
@@ -28,10 +35,18 @@
     } @ args: {
       name = hostName;
     };
-  in {
-    inherit overlays; # Glocal Overlays
+  in
+  {
+    # FIXME:
+    overlays = {
+      default = import ./overlays {inherit inputs outputs lib tools;};
+    };
 
-    nixosConfigurations = with self; {
+    packages = eachSystem (system: import ./packages pkgsFor.${system});
+  }
+  // {
+
+    nixosConfigurations = {
       fl-pc = nixpkgs.lib.nixosSystem (import ./hosts/fl-pc {
         inherit inputs outputs lib tools;
       });

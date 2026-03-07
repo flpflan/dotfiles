@@ -11,12 +11,13 @@
   nix.settings.trusted-users = ["@wheel"];
   # nix.settings.warn-dirty = false;
   nixpkgs.config.allowUnfree = true;
-  nixpkgs.overlays = outputs.overlays;
+  nixpkgs.overlays = outputs.overlays.default;
 
-  nix.registry.nixpkgs.flake = nixpkgs;
+  # nix.registry.nixpkgs.flake = nixpkgs;
   nix.channel.enable = false;
-  environment.etc."nix/inputs/nixpkgs".source = "${nixpkgs}";
-  nix.settings.nix-path = lib.mkForce "nixpkgs=/etc/nix/inputs/nixpkgs";
+  # nixpkgs.flake.source = nixpkgs;
+  # environment.etc."nix/inputs/nixpkgs".source = "${nixpkgs}"; # Compatible with commands rely on NIX_PATH
+  # nix.settings.nix-path = lib.mkForce "nixpkgs=/etc/nix/inputs/nixpkgs";
 
   nix.gc = {
     automatic = true;

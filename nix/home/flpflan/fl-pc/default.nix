@@ -20,7 +20,7 @@
     options = "--delete-older-than 7d";
     persistent = true;
   };
-  nixpkgs.overlays = outputs.overlays;
+  nixpkgs.overlays = outputs.overlays.default;
   nixpkgs.config.allowUnfree = true;
 
   programs.home-manager.enable = true;

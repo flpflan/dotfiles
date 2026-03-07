@@ -1,6 +1,13 @@
 # Global Overlays
-{tools, ...} @ inputs: let
+inputs:
+
+let
   source = overlay: import overlay inputs;
-  overlays = tools.scan ./.;
 in
-  map source overlays
+{
+  agenix = source ./agenix.nix;
+  cachyos-kernel = source ./cachyos-kernel.nix;
+  nur = source ./nur.nix;
+  packages = source ./packages.nix;
+  qt6-kde = source ./qt6ct-kde.nix;
+}
