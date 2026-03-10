@@ -292,3 +292,14 @@ window-rule {
     // Use this instead if you want them visible on third-party screenshot tools.
     // block-out-from "screencast"
 }
+
+window-rule {
+    match app-id="btop"
+    open-floating true
+    default-column-width {
+        proportion 0.85;
+    }
+    default-window-height {
+        proportion 0.85;
+    }
+}
