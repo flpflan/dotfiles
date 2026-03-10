@@ -7,7 +7,7 @@ binds {
     // APPLICATION LAUNCHING
     // ---------------------------------
     Mod+Return hotkey-overlay-title="Open a Terminal: foot" { spawn "foot"; }
-    Mod+Space hotkey-overlay-title="Run an Application: launcher" { spawn-sh "noctalia-shell ipc call launcher toggle"; }
+    Mod+Slash hotkey-overlay-title="Run an Application: launcher" { spawn-sh "noctalia-shell ipc call launcher toggle"; }
     Mod+Ctrl+Comma hotkey-overlay-title="Setting" { spawn-sh "noctalia-shell ipc call settings toggle"; }
     Mod+Ctrl+Delete hotkey-overlay-title="Open Session Menu" { spawn-sh "noctalia-shell ipc call sessionMenu toggle"; }
     Ctrl+Alt+Q hotkey-overlay-title="Lock the Screen: lockScreen" { spawn-sh "noctalia-shell ipc call lockScreen lock"; }
