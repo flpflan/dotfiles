@@ -4,5 +4,6 @@
     # godot
     # aseprite
     (krita.override { binaryPlugins = [ ]; })
+    telegram-desktop
   ];
 }
