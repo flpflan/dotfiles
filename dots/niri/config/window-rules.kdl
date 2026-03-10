@@ -303,3 +303,16 @@ window-rule {
         proportion 0.85;
     }
 }
+
+window-rule {
+    match app-id="org.prismlauncher.PrismLauncher"
+    geometry-corner-radius 5
+    shadow {
+        on 
+        softness 10
+        spread 2
+    }
+    focus-ring {
+        width 1
+    }
+}

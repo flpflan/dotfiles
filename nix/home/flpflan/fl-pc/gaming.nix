@@ -1,6 +1,9 @@
-{ pkgs, ... }:
+{ pkgs, tools, ... }:
 
 {
+  imports = [
+    (tools.relative "home/flpflan/common/apps/prism-launcher")
+  ];
   # programs.steam = {
   #   enable = true;
   #   gamescopeSession = true;
@@ -11,6 +14,5 @@
 
   home.packages = with pkgs; [
     # bottles
-    prismlauncher
   ];
 }
