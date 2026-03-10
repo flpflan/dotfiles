@@ -8,7 +8,10 @@
   programs.zen-browser = {
     enable = true;
     profiles."fl-priv" = {
-      sine.enable = true;
+      sine = {
+        enable = true;
+        mods = [ "Neo-Zen" ];
+      };
       settings = {
         "general.smoothScroll.msdPhysics.enabled" = false;
         "browser.tabs.inTitlebar" = 0;
@@ -17,6 +20,10 @@
         "zen.widget.linux.transparency" = true;
         "zen.theme.gradient.show-custom-colors" = true;
         "zen.view.grey-out-inactive-windows" = false;
+
+        "browser.download.dir" = "/home/flpflan/Downloads";
+
+        # "sine.engine.auto-update" = false;
       };
     };
   };
