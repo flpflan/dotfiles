@@ -17,11 +17,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1772736753,
-        "narHash": "sha256-au/m3+EuBLoSzWUCb64a/MZq6QUtOV8oC0D9tY2scPQ=",
+        "lastModified": 1772956932,
+        "narHash": "sha256-M0yS4AafhKxPPmOHGqIV0iKxgNO8bHDWdl1kOwGBwRY=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "917fec990948658ef1ccd07cef2a1ef060786846",
+        "rev": "608d0cadfed240589a7eea422407a547ad626a14",
         "type": "github"
       },
       "original": {
@@ -162,11 +162,11 @@
     "plugins-smart-motion": {
       "flake": false,
       "locked": {
-        "lastModified": 1772664756,
-        "narHash": "sha256-RmRKKsR5krWzvmp5yCrqeEUiCYvfZu4uHLEzTb4fHsk=",
+        "lastModified": 1773090258,
+        "narHash": "sha256-9tl24bK1POyFLRP6XBjSbbdKo7ZD76pOQsWqhM/Go5A=",
         "owner": "FluxxField",
         "repo": "smart-motion.nvim",
-        "rev": "4b5035d277bbc844effadbb99e2887c60a77d705",
+        "rev": "58d76b8d5aa3e4204834d4de46271f6f31245789",
         "type": "github"
       },
       "original": {
