@@ -40,20 +40,20 @@ prepend_keymap = [
     { on = "M", run = "plugin mount", desc = "Mount" },
     # { on = [ "M", "M" ], run = "plugin mount", desc = "Mount" },
     #
-    #    # { on = [ "M", "m" ], run = "plugin gvfs -- select-then-mount", desc = "Mount" },
-    #    { on = [ "M", "m" ], run = "plugin gvfs -- select-then-mount --jump", desc = "Mount(gvfs) && Jump" },
+    # # { on = [ "<C-m>", "m" ], run = "plugin gvfs -- select-then-mount", desc = "Mount" },
+    # { on = [ "<C-m>", "m" ], run = "plugin gvfs -- select-then-mount --jump", desc = "Mount(gvfs) && Jump" },
     #
-    #    { on = [ "M", "R" ], run = "plugin gvfs -- remount-current-cwd-device", desc = "Remount cwd" },
-    #    { on = [ "M", "u" ], run = "plugin gvfs -- select-then-unmount --eject", desc = "Eject" },
-    #    { on = [ "M", "U" ], run = "plugin gvfs -- select-then-unmount --eject --force", desc = "Force eject/unmount" },
+    # { on = [ "<C-m>", "R" ], run = "plugin gvfs -- remount-current-cwd-device", desc = "Remount cwd" },
+    # { on = [ "<C-m>", "u" ], run = "plugin gvfs -- select-then-unmount --eject", desc = "Eject" },
+    # { on = [ "<C-m>", "U" ], run = "plugin gvfs -- select-then-unmount --eject --force", desc = "Force eject/unmount" },
     #
-    #    { on = [ "M", "a" ], run = "plugin gvfs -- add-mount", desc = "Add a GVFS mount URI" },
-    #    { on = [ "M", "e" ], run = "plugin gvfs -- edit-mount", desc = "Edit a GVFS mount URI" },
-    #    { on = [ "M", "r" ], run = "plugin gvfs -- remove-mount", desc = "Remove a GVFS mount URI" },
+    # { on = [ "<C-m>", "a" ], run = "plugin gvfs -- add-mount", desc = "Add a GVFS mount URI" },
+    # { on = [ "<C-m>", "e" ], run = "plugin gvfs -- edit-mount", desc = "Edit a GVFS mount URI" },
+    # { on = [ "<C-m>", "r" ], run = "plugin gvfs -- remove-mount", desc = "Remove a GVFS mount URI" },
     #
-    #    # Jump
-    #    { on = [ "g", "m" ], run = "plugin gvfs -- jump-to-device --automount", desc = "Automount && Jump" },
-    #    { on = [ "`", "`" ], run = "plugin gvfs -- jump-back-prev-cwd", desc = "Jump back" },
+    # # Jump
+    # { on = [ "g", "m" ], run = "plugin gvfs -- jump-to-device --automount", desc = "Automount && Jump" },
+    # { on = [ "`", "`" ], run = "plugin gvfs -- jump-back-prev-cwd", desc = "Jump back" },
 
     # Smart switch
     { on = "2", run = "plugin smart-switch 1", desc = "Switch or create tab 2" },

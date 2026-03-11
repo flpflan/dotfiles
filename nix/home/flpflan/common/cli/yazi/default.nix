@@ -25,7 +25,10 @@ let
   # // (lib.optionalAttrs pkgs.stdenv.isDarwin { mactag = mactag; });
 in
 {
-  home.packages = [ pkgs.yazi ];
+  home.packages = with pkgs; [
+    yazi
+    # glib # For gvfs.yazi
+  ];
 
   xdg.configFile."yazi" = {
     source = outOfStore "${dots}/yazi";

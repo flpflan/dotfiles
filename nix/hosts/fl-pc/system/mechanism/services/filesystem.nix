@@ -18,8 +18,6 @@
       };
     };
   };
-  # services.gvfs = {
-  #   enable = true;
-  #   package = pkgs.gvfs;
-  # };
+
+  # services.gvfs.enable = true;
 }
