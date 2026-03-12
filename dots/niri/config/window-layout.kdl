@@ -41,8 +41,9 @@ layout {
 
     // ----- Shadow Settings -----
     shadow {
-        softness 30
-        spread 5
+        on
+        softness 20
+        spread 3
         offset x=0 y=5
         color "#0007"
     }
