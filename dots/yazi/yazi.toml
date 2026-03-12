@@ -19,7 +19,7 @@ cursor_blink = false
 
 [opener]
 edit = [
-    { run = '${EDITOR:=vi} "$@"', desc = "$EDITOR", block = true },
+    { run = 'direnv exec . ${EDITOR:=vi} $1', desc = "$EDITOR", block = true, for = "unix" },
     { run = 'code "$@"', orphan = true },
 ]
 play = [
@@ -47,8 +47,8 @@ for  = "linux"
 desc = "Set as wallpaper"
 
 [[opener.edit_age]]
-run  = 'cd ~/.dotfiles/nix/secrets; agenix -e $(realpath --relative-to=. "$@")'
-desc = "Edit age file"
+run   = 'cd ~/.dotfiles/nix/secrets; agenix -e $(realpath --relative-to=. "$@")'
+desc  = "Edit age file"
 block = true
 
 [open]
