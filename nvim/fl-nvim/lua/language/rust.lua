@@ -23,7 +23,7 @@ if not nixCats "language.rust" then return end
 ----------------
 ---- Linter ----
 ----------------
-linter("rust", "clippy")
+-- linter("rust", "clippy")
 -----------------
 --- Formatter ---
 -----------------
