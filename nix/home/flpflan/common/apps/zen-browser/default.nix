@@ -10,7 +10,7 @@
     profiles."fl-priv" = {
       sine = {
         enable = true;
-        mods = [ "Neo-Zen" ];
+        # mods = [ "Neo-Zen" ];
       };
       settings = {
         "general.smoothScroll.msdPhysics.enabled" = false;
