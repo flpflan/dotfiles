@@ -2,11 +2,11 @@ final: prev: let
   inherit (prev) stdenv fetchurl autoPatchelfHook makeWrapper;
   clice = stdenv.mkDerivation rec {
     pname = "clice";
-    version = "0.1.0-alpha.2";
+    version = "0.1.0-alpha.4";
 
     src = fetchurl {
-      url = "https://github.com/clice-io/clice/releases/download/v${version}/clice-x86_64-linux-gnu.tar.xz";
-      hash = "sha256-ulk0KCqs0mrgBjt10SZbh97Hvbspt3Xs/oCyamda3JQ=";
+      url = "https://github.com/clice-io/clice/releases/download/v${version}/clice-x86_64-linux-gnu.tar.gz";
+      hash = "sha256-sNwIQHrlpbSABYUATZYNe6SlH75+RevivK5/q+M8f+Q=";
     };
 
     installPhase = ''
