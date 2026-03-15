@@ -6,5 +6,6 @@
     trash-cli
     hyprpicker
     swappy
+    # satty
   ];
 }
