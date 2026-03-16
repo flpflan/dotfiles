@@ -1,6 +1,11 @@
-plugin("toggleterm.nvim"):event_defer():keys {
-  kmap("n", [[<C-\>]], kcmd "ToggleTerm", "Toggle Terminal"),
-}
+plugin("toggleterm.nvim")
+  :event_defer()
+  :keys({
+    kmap("n", [[<C-\>]], kcmd "ToggleTerm", "Toggle Terminal"),
+  })
+  :opts {
+    shell = "$SHELL",
+  }
 
 function _G.set_terminal_keymaps()
   local opts = { buffer = 0 }

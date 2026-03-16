@@ -64,6 +64,7 @@ opt.smartcase = true
 
 -- Misc
 opt.updatetime = 300
+opt.shell = "/usr/bin/env sh"
 
 -- Neovide
 if g.neovide then
