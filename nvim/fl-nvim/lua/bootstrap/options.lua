@@ -65,6 +65,7 @@ opt.smartcase = true
 -- Misc
 opt.updatetime = 300
 opt.shell = "/usr/bin/env sh"
+-- opt.lazyredraw = true -- For large file
 
 -- Neovide
 if g.neovide then

@@ -5,5 +5,7 @@
     # aseprite
     (krita.override { binaryPlugins = [ ]; })
     telegram-desktop
+    # drawy
+    # xournalpp
   ];
 }

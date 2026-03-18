@@ -3,10 +3,12 @@
   pkgs,
   fl-dots,
   ...
-}: let
+}:
+let
   dots = "${fl-dots}/dots";
   outOfStore = config.lib.file.mkOutOfStoreSymlink;
-in {
+in
+{
   i18n.inputMethod = {
     enable = true;
     type = "fcitx5";
@@ -50,6 +52,10 @@ in {
 
           clipboard.globalSection = {
             TriggerKey = "";
+          };
+
+          quickphrase.globalSection = {
+            "TriggerKey/0" = "Alt+semicolon";
           };
         };
         inputMethod = {
