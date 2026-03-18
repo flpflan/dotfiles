@@ -21,6 +21,8 @@
         "zen.theme.gradient.show-custom-colors" = true;
         "zen.view.grey-out-inactive-windows" = false;
 
+        "toolkit.legacyUserProfileCustomizations.stylesheets" = true; # Enable userChrome.css
+
         "browser.download.dir" = "/home/flpflan/Downloads";
 
         # "sine.engine.auto-update" = false;
