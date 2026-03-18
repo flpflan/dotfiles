@@ -7,7 +7,7 @@ binds {
     // APPLICATION LAUNCHING
     // ---------------------------------
     Mod+Return hotkey-overlay-title="Open a Terminal: foot" { spawn "foot"; }
-    Mod+Slash hotkey-overlay-title="Run an Application: launcher" { spawn-sh "noctalia-shell ipc call launcher toggle"; }
+    Mod+Slash repeat=false hotkey-overlay-title="Run an Application: launcher" { spawn-sh "noctalia-shell ipc call launcher toggle"; }
     Mod+Ctrl+Comma hotkey-overlay-title="Setting" { spawn-sh "noctalia-shell ipc call settings toggle"; }
     Mod+Ctrl+Delete hotkey-overlay-title="Open Session Menu" { spawn-sh "noctalia-shell ipc call sessionMenu toggle"; }
     Ctrl+Alt+Q hotkey-overlay-title="Lock the Screen: lockScreen" { spawn-sh "noctalia-shell ipc call lockScreen lock"; }
@@ -22,13 +22,13 @@ binds {
     Mod+Alt+C hotkey-overlay-title="Editor" {
         spawn-sh "$VISUAL"
     }
-    Mod+V hotkey-overlay-title="Clipboard History" {
+    Mod+Semicolon repeat=false hotkey-overlay-title="Clipboard History" {
         spawn-sh "noctalia-shell ipc call launcher clipboard"
     }
-    Mod+Apostrophe hotkey-overlay-title="Emoji Search" {
+    Mod+Apostrophe repeat=false hotkey-overlay-title="Emoji Search" {
         spawn-sh "noctalia-shell ipc call launcher emoji"
     }
-    Mod+Shift+Semicolon hotkey-overlay-title="Command Runner" {
+    Mod+Shift+Semicolon repeat=false hotkey-overlay-title="Command Runner" {
         spawn-sh "noctalia-shell ipc call launcher command"
     }
 
@@ -76,6 +76,7 @@ binds {
     // ---------------------------------
     Mod+Q repeat=false { close-window; }
     Mod+Alt+Space repeat=false       { toggle-window-floating; }
+    Mod+V repeat=false       { toggle-window-floating; }
     Mod+Tab repeat=false { switch-focus-between-floating-and-tiling; }
     Mod+W repeat=false       { toggle-column-tabbed-display; }
 
