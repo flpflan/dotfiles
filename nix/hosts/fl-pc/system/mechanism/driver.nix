@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ huion-driver, ... }:
 
 {
   services.udev.extraHwdb = ''
@@ -7,9 +7,9 @@
      KEYBOARD_KEY_90005=back
   '';
 
-  # hardware.opentabletdriver.enable = true;
-  environment.systemPackages = [ pkgs.huion-hc16-driver ];
-  services.udev.extraRules = ''
-    KERNEL=="uinput", MODE="0666"
-  '';
+  imports = [ huion-driver.nixosModules.default ];
+  programs.huionDriver = {
+    enable = true;
+    package = huion-driver.packages.x86_64-linux.huionDriverCN;
+  };
 }

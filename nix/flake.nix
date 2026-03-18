@@ -152,5 +152,10 @@
       url = "path:../nvim/fl-nvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    huion-driver = {
+      url = "github:flpflan/nix-huion-driver";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 }
