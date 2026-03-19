@@ -4,7 +4,8 @@
   ...
 }: {
   lspsAndRuntimeDeps = with pkgs; [
-    taplo
+    # taplo
+    tombi
   ];
   startupPlugins = with vim_pkgs; [
     (nvim-treesitter.withPlugins (

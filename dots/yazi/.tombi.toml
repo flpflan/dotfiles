@@ -1,0 +1,8 @@
+## https://tombi-toml.github.io/tombi/docs/configuration
+
+[format.rules]
+indent-width = 4
+# line-width = 160
+array-bracket-space-width = 1
+key-value-equals-sign-alignment = true
+trailing-comment-alignment = true
