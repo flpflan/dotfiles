@@ -9,13 +9,17 @@ final: prev: let
       hash = "sha256-sNwIQHrlpbSABYUATZYNe6SlH75+RevivK5/q+M8f+Q=";
     };
 
+    unpackPhase = ''
+      tar -xzf $src
+    '';
+
     installPhase = ''
       runHook preInstall
 
       install -Dt "$out"/bin bin/clice
       cp -r lib clice.toml $out
       wrapProgram $out/bin/clice \
-        --add-flags "--resource-dir $out/lib/clang/20"
+        --add-flags "--resource-dir $out/lib/clang/21"
 
       runHook postInstall
     '';
