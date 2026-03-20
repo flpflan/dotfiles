@@ -30,7 +30,7 @@ vim.treesitter.language.register("tpp", "cpp")
 
 -- Enable treesitter based highlighting
 vim.api.nvim_create_autocmd('FileType', {
-  group = vim.api.nvim_create_augroup("tree-sitter-enable", { clear = true }),
+  pattern = "*",
   callback = function() pcall(vim.treesitter.start) end,
 })
 
@@ -66,12 +66,13 @@ plugin("nvim-treesitter-textobjects")
   -- Swap --
   ----------
   :keys({
-    kmap("n", ">a", klazy("nvim-treesitter-textobjects.swap").swap_next "@parameter.inner", "Swap next argument"),
-    kmap("n", "<a", klazy("nvim-treesitter-textobjects.swap").swap_previous "@parameter.inner", "Swap previous argument"),
-    kmap("n", ">f", klazy("nvim-treesitter-textobjects.swap").swap_next "@function.outer", "Swap next function"),
-    kmap("n", "<f", klazy("nvim-treesitter-textobjects.swap").swap_previous "@function.outer", "Swap previous function"),
-    kmap("n", ">k", klazy("nvim-treesitter-textobjects.swap").swap_next "@block.outer", "Swap next block"),
-    kmap("n", "<k", klazy("nvim-treesitter-textobjects.swap").swap_previous "@block.outer", "Swap previous block"),
+      -- NOTE: Use upper case for swapping, while lower case for indentation(textobjects)
+    kmap("n", ">A", klazy("nvim-treesitter-textobjects.swap").swap_next "@parameter.inner", "Swap next argument"),
+    kmap("n", "<A", klazy("nvim-treesitter-textobjects.swap").swap_previous "@parameter.inner", "Swap previous argument"),
+    kmap("n", ">F", klazy("nvim-treesitter-textobjects.swap").swap_next "@function.outer", "Swap next function"),
+    kmap("n", "<F", klazy("nvim-treesitter-textobjects.swap").swap_previous "@function.outer", "Swap previous function"),
+    kmap("n", ">K", klazy("nvim-treesitter-textobjects.swap").swap_next "@block.outer", "Swap next block"),
+    kmap("n", "<K", klazy("nvim-treesitter-textobjects.swap").swap_previous "@block.outer", "Swap previous block"),
   })
   ----------
   -- Move --
