@@ -7,13 +7,11 @@ local function on_attach(client, buf)
   elseif client.name == "ruff" then
     client.server_capabilities.hoverProvider = false
   elseif client.name == "vtsls" or client.name == "ts_ls" then
-    kmap(
-      "n",
-      "gs",
-      klazy ("vtsls.commands").goto_source_definition(),
-      "Goto Source Definition (vtsls)",
-      { cond = function() return client.name == "vtsls" end }
-    )
+    kmap("n", "gs", klazy("vtsls.commands").goto_source_definition(), "Goto Source Definition (vtsls)", {
+      cond = function()
+        return client.name == "vtsls"
+      end,
+    })
     if vim.bo.filetype == "vue" then
       client.server_capabilities.semanticTokensProvider.full = false
       vim.api.nvim_set_hl(0, "@lsp.type.component", { link = "@type" })
@@ -21,32 +19,29 @@ local function on_attach(client, buf)
       client.server_capabilities.semanticTokensProvider.full = true
     end
   elseif client.name == "clangd" then
-    kmap(
-      "n",
-      "gs",
-      kcmd "LspClangdSwitchSourceHeader",
-      "Goto Source/Header",
-      { cond = function() return client.name == "clangd" end }
-    )
+    kmap("n", "gs", kcmd "LspClangdSwitchSourceHeader", "Goto Source/Header", {
+      cond = function()
+        return client.name == "clangd"
+      end,
+    })
   end
-  if client.server_capabilities.inlayHintProvider then vim.lsp.inlay_hint.enable(true, {
-    bufnr = buf,
-  }) end
+  if client.server_capabilities.inlayHintProvider then
+    vim.lsp.inlay_hint.enable(true, {
+      bufnr = buf,
+    })
+  end
 end
 
 ---@param buf integer
 local function set_lsp_keymaps(buf)
   kopts({ buffer = buf }, {
     kmap({ "n" }, "K", vim.lsp.buf.hover, "Hover"),
-    kmap(
-      { "n" },
-      "<leader>ui",
-      function() vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { bufnr = vim.api.nvim_get_current_buf() }) end,
-      "Toggle Inlay Hint"
-    ),
+    kmap({ "n" }, "<leader>ui", function()
+      vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { bufnr = vim.api.nvim_get_current_buf() })
+    end, "Toggle Inlay Hint"),
     -- kmap({ "n" }, "gd", vim.lsp.buf.definition, "Goto Definition"),
     kmap({ "n" }, "gd", klazy("snacks.picker").lsp_definitions(), "Goto Definition"),
-    kmap({ "n" }, "gD", klazy( "snacks.picker").lsp_declarations(), "Goto Declarations"),
+    kmap({ "n" }, "gD", klazy("snacks.picker").lsp_declarations(), "Goto Declarations"),
     kmap({ "n" }, "gt", klazy("snacks.picker").lsp_type_definitions(), "Goto Type Definition"),
     kmap({ "n" }, "gI", klazy("snacks.picker").lsp_implementations(), "Goto Implementation"),
     kmap({ "n" }, "gr", klazy("snacks.picker").lsp_references(), "Goto Reference"),
@@ -58,12 +53,18 @@ local function set_lsp_keymaps(buf)
           border = "rounded",
           scope = "line",
           prefix = function(_, i, total)
-            if total == 1 then return "", "" end
+            if total == 1 then
+              return "", ""
+            end
             return "(" .. i .. "/" .. total .. ") ", ""
           end,
           source = true,
         }
       end, "Diagnostic Float"),
+      kmap("n", "s", klazy("snacks.picker").lsp_symbols(), "Symbols"),
+      kmap("n", "S", klazy("snacks.picker").lsp_workspace_symbols(), "Workspace Symbols"),
+      kmap("n", "c", klazy("snacks.picker").lsp_incoming_calls(), "Incoming Calls"),
+      kmap("n", "C", klazy("snacks.picker").lsp_outgoing_calls(), "Outgoing Calls"),
     }),
   })
 end
@@ -127,20 +128,20 @@ vim.api.nvim_set_hl(0, "DiagnosticInfo", { fg = "#0db9d7" })
 
 kgroup("<leader>l", "Language Tools", {}, {
   kmap("n", "i", kcmd "LspInfo", "Lsp Info"),
+  kmap("n", "I", klazy("snacks.picker").lsp_config(), "Lsp Configs"),
   kmap("n", "R", function()
     local bufnr = vim.fn.bufnr()
     local clients = vim.lsp.get_clients { bufnr = bufnr }
     for _, client in ipairs(clients) do
-      if client.name == "copilot" then goto continue end
+      if client.name == "copilot" then
+        goto continue
+      end
       vim.lsp.stop_client(client.id, true)
-      vim.defer_fn(
-        function()
-          vim.lsp.start(client.config, {
-            bufnr = bufnr,
-          })
-        end,
-        1000
-      )
+      vim.defer_fn(function()
+        vim.lsp.start(client.config, {
+          bufnr = bufnr,
+        })
+      end, 1000)
       ::continue::
     end
   end, "Restart Language Server"),
