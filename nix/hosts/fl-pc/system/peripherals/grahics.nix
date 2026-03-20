@@ -6,5 +6,4 @@
     # extraPackages = [];
     # extraPackages32 = [];
   };
-  services.xserver.videoDrivers = [ "amdgpu" ];
 }

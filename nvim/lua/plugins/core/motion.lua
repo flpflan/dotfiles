@@ -45,6 +45,8 @@ plugin("flash.nvim")
     vim.api.nvim_set_hl(0, "FlashLabel", { fg = fg, bold = true, underline = true })
   end)
 
+-- TODO: rmagatti/goto-preview
+
 -- TODO:
 -- plugin("smart-motion"):opts {
 --   presets = {

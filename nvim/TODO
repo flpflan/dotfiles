@@ -1,16 +1,8 @@
-file tree
-oil icon
-ui(tab/dashboard(projects)/blink.cmp/indent)
-pair
-indent inconsistency between formatter and autoindent
+ui(blink.cmp)
 keymap
-git integration
 
 icons
-BUG: notifier on startup
-noice message picker
-lensline
 sass
 plugin declaration
 
-treesitter migrate
+in-process LSP

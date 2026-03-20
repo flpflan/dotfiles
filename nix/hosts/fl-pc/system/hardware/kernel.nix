@@ -30,7 +30,7 @@
       # AMD CPU scaling
       # "amd_pstate=guided"
       # "initcall_blacklist=amd_pstate_init" "amd_pstate.enable=0" # Disable amd_pstate for auto-cpufreq
-      "amdgpu"
+      # "amdgpu"
 
       "mitigations=off" "nowatchdog" "nmi_watchdog=0" "resume=UUID=7faaccfe-1ef9-40d3-9238-c63565854bd3" "quiet"
 
