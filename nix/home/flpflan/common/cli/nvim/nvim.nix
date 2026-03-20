@@ -57,7 +57,7 @@ in {
   };
 
   xdg.configFile."nvim" = {
-    source = outOfStore "${fl-dots}/nvim/fl-nvim";
+    source = outOfStore "${fl-dots}/nvim";
     recursive = false;
   };
 }

@@ -149,7 +149,7 @@
     #   inputs.nixpkgs.follows = "nixpkgs";
     # };
     nvim = {
-      url = "path:../nvim/fl-nvim";
+      url = "path:../nvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

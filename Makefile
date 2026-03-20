@@ -2,7 +2,7 @@ deploy: FORCE
 	@nixos-rebuild switch --flake ~/.dotfiles/nix --sudo
 	
 update: FORCE
-	@nix flake update --flake ./nvim/fl-nvim
+	@nix flake update --flake ./nvim
 	@nix flake update --flake ./nix
 	
 clean: FORCE
