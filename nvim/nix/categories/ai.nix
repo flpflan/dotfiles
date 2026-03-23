@@ -4,7 +4,8 @@
   ...
 }: {
   lspsAndRuntimeDeps = with pkgs; [
-    nodejs
+    claude-code
+    opencode
   ];
   optionalPlugins = with vim_pkgs;
     [

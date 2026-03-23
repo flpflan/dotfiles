@@ -7,10 +7,10 @@ plugin("neoscroll.nvim"):for_cat("core"):event_defer():opts {
       "CursorMoved",
     }
   end,
-  post_hook = function()
-    vim.opt.eventignore:remove {
-      "WinScrolled",
-      "CursorMoved",
-    }
-  end,
+  -- post_hook = function()
+  --   vim.opt.eventignore:remove {
+  --     "WinScrolled",
+  --     "CursorMoved",
+  --   }
+  -- end,
 }
