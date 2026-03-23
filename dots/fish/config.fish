@@ -6,6 +6,9 @@ if status is-interactive
     command -v direnv &> /dev/null && direnv hook fish | source
     command -v zoxide &> /dev/null && zoxide init fish --cmd cd | source
 
+    # Enable vi mode
+    # set -g fish_key_bindings fish_vi_key_bindings
+
     # Better ls
     alias ls='eza --icons --group-directories-first -1'
 
