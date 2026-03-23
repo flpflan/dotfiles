@@ -533,10 +533,10 @@
             "normal": true
         },
         "sounds": {
-            "criticalSoundFile": "/home/flpflan/.dotfiles/assets/critical.wav",
+            "criticalSoundFile": "/home/flpflan/.dotfiles/assets/normal.mp3",
             "enabled": true,
             "excludedApps": "discord,vesktop,firefox,chrome,chromium,edge,musicfox",
-            "lowSoundFile": "",
+            "lowSoundFile": "/home/flpflan/.dotfiles/assets/normal.mp3",
             "normalSoundFile": "/home/flpflan/.dotfiles/assets/normal.mp3",
             "separateSounds": true,
             "volume": 0.5
