@@ -257,6 +257,6 @@ binds {
     Mod+Shift+E { quit; }
     Ctrl+Alt+Delete { quit; }
 
-    // Mod+R { spawn-sh "noctalia-shell ipc call controlCenter toggle"; }
-    Mod+Ctrl+Slash { spawn-sh "noctalia-shell ipc call bar toggle"; }
+    Mod+Ctrl+Period hotkey-overlay-title="Control Center" { spawn-sh "noctalia-shell ipc call controlCenter toggle"; }
+    Mod+Ctrl+Slash hotkey-overlay-title="Toggle Bar" { spawn-sh "noctalia-shell ipc call bar toggle"; }
 }
