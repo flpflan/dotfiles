@@ -7,6 +7,6 @@ dark  = "noctalia"
 # light = "catppuccin-latte"
 
 [icon]
-exts = [
-    { name = "age", text = "󰈡", fg = "#aec6ff" }
+prepend_exts = [
+    { name = "age", text = "󰈡" }
 ]
