@@ -9,6 +9,7 @@
     neocmakelsp
   ];
   startupPlugins = with vim_pkgs; [
+    clangd_extensions-nvim
     (nvim-treesitter.withPlugins (
       plugins:
         with plugins; [
@@ -25,7 +26,6 @@
     ))
   ];
   optionalPlugins = with vim_pkgs; [
-    clangd_extensions-nvim
     cmake-tools-nvim
   ];
 }

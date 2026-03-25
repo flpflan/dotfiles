@@ -23,5 +23,5 @@ formatter({ "c", "cpp" }, "clang-format")
 -----------------
 ---- Plugins ----
 -----------------
-plugin("clangd_extensions"):event_defer()
+-- plugin("clangd_extensions"):event_defer()
 plugin("cmake-tools.nvim"):event_defer():dep_on("overseer", "toggleterm")
