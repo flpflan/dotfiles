@@ -19,6 +19,7 @@ plugin("nvim-ts-autotag"):event({ "BufReadPre", "BufNewFile" }):opts {
 
 plugin("nvim-autopairs"):event_typing():opts {
   check_ts = true,
+  -- enable_check_bracket_line = false
 }
 
 plugin("neotab"):event_typing():opts {
