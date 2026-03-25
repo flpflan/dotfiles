@@ -9,9 +9,6 @@ g.maplocalleader = ","
 
 -- Edit
 opt.undofile = true
-opt.autoindent = true
-opt.smartindent = true
-
 --opt.completeopt = "menu,menuone,noinsert,fuzzy,preview,noselect"
 
 -- Encoding
@@ -25,12 +22,15 @@ opt.clipboard = "unnamedplus" -- use system clipboard
 opt.completeopt = { "menu", "menuone", "noselect" }
 opt.mouse = "a"
 
--- Tab
+-- Indent
 opt.tabstop = 4
 opt.softtabstop = 4
 opt.shiftwidth = 4
 opt.expandtab = true
 opt.smarttab = true
+opt.autoindent = true
+opt.smartindent = true
+-- opt.cindent = true
 
 -- UI
 opt.number = true

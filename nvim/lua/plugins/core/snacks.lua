@@ -17,7 +17,7 @@ snacks.setup {
   -- 	enabled = true,
   -- },
   picker = {
-    enabled = false,
+    enabled = true,
     ui_select = true,
     main = {
       file = false,
@@ -27,4 +27,4 @@ snacks.setup {
     },
   },
 }
-vim.ui.select = snacks.picker.select
+-- vim.ui.select = snacks.picker.select

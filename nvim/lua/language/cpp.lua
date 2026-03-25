@@ -18,7 +18,7 @@ lsp "neocmake"
 -----------------
 --- Formatter ---
 -----------------
-formatter({ "c", "cpp" }, "clangd-format")
+formatter({ "c", "cpp" }, "clang-format")
 -- formatter("cmake", "gersemi")
 -----------------
 ---- Plugins ----
