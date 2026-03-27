@@ -1,12 +1,8 @@
 # Language and display
 # set language (for available options, see: https://github.com/Samillion/ModernZ/blob/main/docs/TRANSLATIONS.md)
 language=en
-# set layout: "modern" or "modern-compact"
-layout=modern-compact
 # set icon theme. accepts fluent or material
 icon_theme=fluent
-# set icon style. accepts mixed, filled, outline
-icon_style=mixed
 # font for the OSC (default: mpv-osd-symbols or the one set in mpv.conf)
 font=mpv-osd-symbols
 
@@ -18,33 +14,31 @@ window_top_bar=auto
 showwindowed=yes
 # show OSC when fullscreen
 showfullscreen=yes
-# show OSC when a select menu is open
-showonselect=no
 # show OSC when paused
 showonpause=no
 # disable OSC hide timeout when paused
-keeponpause=no
+keeponpause=yes
 # disable Santa hat in December
 greenandgrumpy=no
 
 # OSC behaviour and scaling
 # time (in ms) before OSC hides if no mouse movement
-hidetimeout=1500
+hidetimeout=800
+# if seeking should reset the hidetimeout
+seek_resets_hidetimeout=yes
 # fade-out duration (in ms), set to 0 for no fade
 fadeduration=200
 # whether to enable fade-in effect
 fadein=yes
 # minimum mouse movement (in pixels) required to show OSC
 minmousemove=1
-# mode for showing OSC/WC on mouse move: always, zones, independent
-zones_hover_mode=always
-# height of the bottom hover zone (in pixels)
+# show OSC only when hovering at the bottom
+bottomhover=no
+# height of hover zone for bottomhover (in pixels)
 bottomhover_zone=130
-# height of the top hover zone (in pixels)
-tophover_zone=130
 # show OSC when seeking
 osc_on_seek=no
-# show OSC/window controls on start of every file (no, bottom, top, both)
+# show OSC on start of every file
 osc_on_start=no
 # keep OSC visible if mouse cursor is within OSC boundaries
 osc_keep_with_cursor=yes
@@ -62,7 +56,7 @@ scalefullscreen=0.75
 
 # Elements display
 # show title in the OSC (above seekbar)
-show_title=no
+show_title=yes
 # title above seekbar format: "${media-title}" or "${filename}"
 title=${media-title}
 # font size of the title text (above seekbar)
@@ -81,8 +75,8 @@ show_chapter_title=yes
 # format for chapter display on seekbar hover (set to "no" to disable)
 chapter_fmt=%s
 
-# show current time instead of remaining time
-timecurrent=yes
+# show total time instead of remaining time
+timetotal=yes
 # show timecodes with milliseconds
 timems=no
 # use the Unicode minus sign in remaining time
@@ -90,11 +84,9 @@ unicodeminus=no
 # "dynamic" or "fixed". dynamic shows MM:SS when possible, fixed always shows HH:MM:SS
 time_format=dynamic
 # font size of the time display
-time_font_size=21
+time_font_size=16
 # tooltips font size
-tooltip_font_size=19
-# speed button font size
-speed_font_size=21
+tooltip_font_size=14
 
 # Title bar settings
 # show window title in borderless/fullscreen mode
@@ -104,36 +96,24 @@ window_title=${media-title}
 # window title font size
 window_title_font_size=26
 # show window controls (close, minimize, maximize) in borderless/fullscreen
-window_controls=no
+window_controls=yes
 
-# Subtitle and OSD display settings
-# IMPORTANT: It is recommended to add the following
-# in your mpv.conf, to circumvent subtitle or OSD
-# bad positioning when watch later options are used
-# watch-later-options-remove=sub-pos
-# watch-later-options-remove=osd-margin-y
-
+# Subtitle display settings
 # raise subtitles above the OSC when shown
-sub_margins=yes
-# adjust OSD to not overlap with OSC
-osd_margins=no
-# update margins dynamically with OSC visibility
-dynamic_margins=yes
+raise_subtitles=yes
+# amount by which subtitles are raised when the OSC is shown (in pixels)
+raise_subtitle_amount=125
 
 # Buttons display and functionality
-# show the subtitles menu button
-subtitles_button=yes
-# show the audio tracks menu button
-audio_tracks_button=no
 # show the jump backward and forward buttons
-jump_buttons=no
+jump_buttons=yes
 # change the jump amount in seconds
 jump_amount=10
-# change the jump amount in seconds on right click
+# change the jump amount in seconds when right-clicking jump buttons and shift-clicking chapter skip buttons
 jump_more_amount=60
 # show different icon when jump_amount is set to 5, 10, or 30
 jump_icon_number=yes
-# seek mode for jump buttons: "relative" or "exact"
+# seek mode for jump buttons
 jump_mode=relative
 # enable continuous jumping when holding down seek buttons
 jump_softrepeat=yes
@@ -148,7 +128,7 @@ track_nextprev_buttons=yes
 volume_control=yes
 # volume scale type: "linear" or "logarithmic"
 volume_control_type=linear
-# show playlist button
+# show playlist button: Left-click for simple playlist, Right-click for interactive playlist
 playlist_button=yes
 # hide playlist button when no playlist exists
 hide_empty_playlist_button=no
@@ -160,11 +140,11 @@ download_button=yes
 # default download directory for videos (https://mpv.io/manual/master/#paths)
 download_path=~~desktop/mpv
 # show screenshot button
-screenshot_button=yes
+screenshot_button=no
 
 # show window on top button
-ontop_button=yes
-# show file loop button
+ontop_button=no
+# show loop button
 loop_button=yes
 # show shuffle button
 shuffle_button=yes
@@ -179,7 +159,7 @@ info_button=no
 # show fullscreen toggle button
 fullscreen_button=yes
 
-# enable loop with mouse actions on pause button
+# enable looping by right-clicking pause
 loop_in_pause=yes
 
 # force buttons to always be active. can add: playlist_prev,playlist_next
@@ -217,7 +197,7 @@ title_color=#FFFFFF
 # color of the cache information
 cache_info_color=#FFFFFF
 # color of the seekbar progress and handle
-seekbarfg_color=#81cfff
+seekbarfg_color=#FFFFFF
 # color of the remaining seekbar
 seekbarbg_color=#374151
 # color of the cache ranges on the seekbar
@@ -238,10 +218,10 @@ playpause_color=#FFFFFF
 held_element_color=#999999
 # color of a hovered button when hover_effect includes "color"
 hover_effect_color=#FFFFFF
-# color of the background for thumbnail box
-thumbnail_box_color=#111111
-# color of the border outline for thumbnail box
-thumbnail_box_outline=#404040
+# color of the border for thumbnails (with thumbfast)
+thumbnail_border_color=#111111
+# color of the border outline for thumbnails
+thumbnail_border_outline=#404040
 
 # alpha of the OSC background box
 fade_alpha=130
@@ -255,22 +235,20 @@ window_fade_alpha=100
 window_fade_blur_strength=100
 # use with "window_fade_blur_strength=0" to create a transparency box
 window_fade_transparency_strength=0
-# thumbnail box padding around the image
-thumbnail_box_padding=4.5
-# round corner radius for thumbnail box border (0 to disable)
-thumbnail_box_radius=4
+# width of the thumbnail border (for thumbfast)
+thumbnail_border=3
+# rounded corner radius for thumbnail border (0 to disable)
+thumbnail_border_radius=3
 
 # Button hover effects
 # active button hover effects: "glow", "size", "color"; can use multiple separated by commas
-hover_effect=glow,color
+hover_effect=size,glow,color
 # relative size of a hovered button if "size" effect is active
-button_hover_size=115
+hover_button_size=115
 # glow intensity when "glow" hover effect is active
 button_glow_amount=5
-# apply size effect only when hovering slider handles
-slider_hover_effect=yes
-# relative size of a hovered slider handle if "slider_hover_effect" is used
-slider_hover_size=130
+# apply hover size effect to slider handle
+hover_effect_for_sliders=yes
 
 # Tooltips and hints
 # enable tooltips for disabled buttons and elements
@@ -289,8 +267,8 @@ seekrangealpha=150
 livemarkers=yes
 # use keyframes when dragging the seekbar
 seekbarkeyframes=no
-# rounded corners seekbar slider
-slider_rounded_corners=yes
+# radius of the seekbar slider (0 to disable rounded corners)
+slider_radius=2
 
 # top chapter nibbles above seekbar
 nibbles_top=yes
@@ -298,10 +276,6 @@ nibbles_top=yes
 nibbles_bottom=yes
 # chapter nibble style. "triangle", "bar" or "single-bar"
 nibbles_style=triangle
-# color of chapter nibbles on the seekbar
-nibble_color=#FB8C00
-# color of the current chapter nibble on the seekbar
-nibble_current_color=#FFFFFF
 
 # automatically set keyframes for the seekbar based on video length
 automatickeyframemode=yes
@@ -309,11 +283,11 @@ automatickeyframemode=yes
 automatickeyframelimit=600
 
 # always show a small progress line at the bottom of the screen
-persistent_progress=yes
+persistentprogress=yes
 # height of the persistent progress bar
-persistent_progress_height=17
-# show cached buffer status in the persistent progress line
-persistent_buffer=yes
+persistentprogressheight=12
+# show buffer status on web videos in the persistent progress line
+persistentbuffer=yes
 
 # Miscellaneous settings
 # only used at init to set visibility_mode(...)
@@ -321,7 +295,7 @@ visibility=auto
 # visibility modes to cycle through, modes are separated by _
 visibility_modes=never_auto_always
 # minimum interval between OSC redraws (in seconds)
-tick_delay=0.0167
+tick_delay=0.03
 # use display FPS as the minimum redraw interval
 tick_delay_follow_display_fps=no
 
@@ -340,6 +314,8 @@ time_codes_height=35
 time_codes_centered_height=57
 # tooltip height position offset
 tooltip_height_offset=2
+# if tooltip contains many characters, it is moved to the left by offset
+tooltip_left_offset=5
 # portrait window width trigger to move some elements
 portrait_window_trigger=1000
 # hide volume bar trigger window width
@@ -359,31 +335,27 @@ osc_height=132
 # title above seekbar mouse actions
 title_mbtn_left_command=script-binding stats/display-page-5
 title_mbtn_mid_command=show-text ${path}
-title_mbtn_right_command=script-binding select/select-watch-history
+title_mbtn_right_command=script-binding select/select-watch-history; script-message-to modernz osc-hide
 
 # playlist button mouse actions
-playlist_mbtn_left_command=script-binding select/select-playlist
-playlist_mbtn_right_command=script-binding select/menu
+playlist_mbtn_left_command=script-binding select/menu; script-message-to modernz osc-hide
+playlist_mbtn_right_command=script-binding select/select-playlist; script-message-to modernz osc-hide
 
-# volume button mouse actions
+# volume mouse actions
 vol_ctrl_mbtn_left_command=no-osd cycle mute
-vol_ctrl_mbtn_right_command=script-binding select/select-audio-device
-vol_ctrl_wheel_down_command=osd-msg add volume -5
-vol_ctrl_wheel_up_command=osd-msg add volume 5
-
-# volume bar mouse actions
-volumebar_wheel_down_command=osd-msg add volume -5
-volumebar_wheel_up_command=osd-msg add volume 5
+vol_ctrl_mbtn_right_command=script-binding select/select-audio-device; script-message-to modernz osc-hide
+vol_ctrl_wheel_down_command=no-osd add volume -5
+vol_ctrl_wheel_up_command=no-osd add volume 5
 
 # audio button mouse actions
-audio_track_mbtn_left_command=script-binding select/select-aid
+audio_track_mbtn_left_command=script-binding select/select-aid; script-message-to modernz osc-hide
 audio_track_mbtn_mid_command=cycle audio down
 audio_track_mbtn_right_command=cycle audio
 audio_track_wheel_down_command=cycle audio
 audio_track_wheel_up_command=cycle audio down
 
 # subtitle button mouse actions
-sub_track_mbtn_left_command=script-binding select/select-sid
+sub_track_mbtn_left_command=script-binding select/select-sid; script-message-to modernz osc-hide
 sub_track_mbtn_mid_command=cycle sub down
 sub_track_mbtn_right_command=cycle sub
 sub_track_wheel_down_command=cycle sub
@@ -392,24 +364,24 @@ sub_track_wheel_up_command=cycle sub down
 # chapter skip buttons mouse actions
 chapter_prev_mbtn_left_command=add chapter -1
 chapter_prev_mbtn_mid_command=show-text ${chapter-list} 3000
-chapter_prev_mbtn_right_command=script-binding select/select-chapter
+chapter_prev_mbtn_right_command=script-binding select/select-chapter; script-message-to modernz osc-hide
 
 chapter_next_mbtn_left_command=add chapter 1
 chapter_next_mbtn_mid_command=show-text ${chapter-list} 3000
-chapter_next_mbtn_right_command=script-binding select/select-chapter
+chapter_next_mbtn_right_command=script-binding select/select-chapter; script-message-to modernz osc-hide
 
 # chapter title (below seekbar) mouse actions
-chapter_title_mbtn_left_command=script-binding select/select-chapter
+chapter_title_mbtn_left_command=script-binding select/select-chapter; script-message-to modernz osc-hide
 chapter_title_mbtn_right_command=show-text ${chapter-list} 3000
 
 # playlist skip buttons mouse actions
 playlist_prev_mbtn_left_command=playlist-prev
 playlist_prev_mbtn_mid_command=show-text ${playlist} 3000
-playlist_prev_mbtn_right_command=script-binding select/select-playlist
+playlist_prev_mbtn_right_command=script-binding select/select-playlist; script-message-to modernz osc-hide
 
 playlist_next_mbtn_left_command=playlist-next
 playlist_next_mbtn_mid_command=show-text ${playlist} 3000
-playlist_next_mbtn_right_command=script-binding select/select-playlist
+playlist_next_mbtn_right_command=script-binding select/select-playlist; script-message-to modernz osc-hide
 
 # fullscreen button mouse actions
 fullscreen_mbtn_left_command=cycle fullscreen
@@ -419,4 +391,4 @@ fullscreen_mbtn_right_command=cycle window-maximized
 info_mbtn_left_command=script-binding stats/display-page-1-toggle
 
 # screenshot button mouse actions
-screenshot_mbtn_left_command=osd-msg screenshot video
+screenshot_mbtn_left_command=osd-msg screenshot subtitles
