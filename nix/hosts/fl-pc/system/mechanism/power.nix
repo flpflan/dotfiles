@@ -3,9 +3,12 @@
   powerManagement = {
     enable = true;
     cpuFreqGovernor = lib.mkDefault "ondemand";
+    # powertop.enable = true;
   };
 
   # services.thermald.enable = true; # Thermald is for intel CPUs
+
+  # services.tlp.enable = true;
 
   #NOTE: Auto-cpufreq is good for laptop
   services.auto-cpufreq = {
