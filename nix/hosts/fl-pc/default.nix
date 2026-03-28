@@ -6,7 +6,7 @@
 }:
 
 let
-  inherit (tools) relative;
+  inherit (tools) relative scan;
   fl-dots = "/home/flpflan/.dotfiles";
 in
 {
@@ -14,10 +14,7 @@ in
     inherit tools fl-dots outputs;
   };
   system = "x86_64-linux";
-  modules = [
-    ./system
-    ./secrets.nix
-    ./overlays.nix
+  modules = (scan ./.) ++ [
     # (relative "hosts/common/chaotic.nix")
     (relative "hosts/common/agenix.nix")
     (relative "hosts/common/facter.nix")

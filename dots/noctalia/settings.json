@@ -197,7 +197,8 @@
                     "hidePassive": false,
                     "id": "Tray",
                     "pinned": [
-                        "Fcitx"
+                        "Fcitx",
+                        "steam"
                     ]
                 },
                 {
@@ -273,6 +274,7 @@
         "monitorForColors": "",
         "predefinedScheme": "Tokyo Night",
         "schedulingMode": "off",
+        "syncGsettings": true,
         "useWallpaperColors": true
     },
     "controlCenter": {

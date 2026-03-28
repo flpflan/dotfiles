@@ -42,6 +42,4 @@
   };
 
   services.upower.enable = true;
-
-  # programs.gamemode.enable = true;
 }
