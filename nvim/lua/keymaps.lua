@@ -25,7 +25,7 @@ keymap.set("n", "<leader>w", "<cmd>w<CR>", { desc = "Save" })
 -- vim.keymap.set("n", "<leader>W", ":noautocmd w<CR>", { desc = "Save No Autocmd" })
 keymap.set("n", "<leader>q", "<cmd>confirm q<CR>", { desc = "Quit Window" })
 keymap.set("n", "<leader>Q", "<cmd>confirm qall<CR>", { desc = "Exit" })
-keymap.set("n", "<leader>bc", "<cmd>confirm bd<CR>", { desc = "Close Buffer" })
+keymap.set("n", "<leader>c", "<cmd>confirm bd<CR>", { desc = "Close Buffer" })
 
 -- Window navigation -- INFO: This is done by plugin
 -- keymap.set('n', '<C-h>', '<C-w>h', opts)

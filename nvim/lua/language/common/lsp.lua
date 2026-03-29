@@ -9,7 +9,11 @@ local function on_attach(client, buf)
   elseif client.name == "vtsls" or client.name == "ts_ls" then
     kmap("n", "gs", klazy("vtsls.commands").goto_source_definition(), "Goto Source Definition (vtsls)", {
       cond = function()
-        return client.name == "vtsls"
+        local buf_clients = vim.lsp.get_clients { bufnr = 0 }
+        for _, buf_client in ipairs(buf_clients) do
+          if buf_client.name == "vtsls" then return true end
+        end
+        return false
       end,
     })
     if vim.bo.filetype == "vue" then
@@ -21,15 +25,17 @@ local function on_attach(client, buf)
   elseif client.name == "clangd" then
     kmap("n", "gs", kcmd "LspClangdSwitchSourceHeader", "Goto Source/Header", {
       cond = function()
-        return client.name == "clangd"
+        local buf_clients = vim.lsp.get_clients { bufnr = 0 }
+        for _, buf_client in ipairs(buf_clients) do
+          if buf_client.name == "clangd" then return true end
+        end
+        return false
       end,
     })
   end
-  if client.server_capabilities.inlayHintProvider then
-    vim.lsp.inlay_hint.enable(true, {
-      bufnr = buf,
-    })
-  end
+  if client.server_capabilities.inlayHintProvider then vim.lsp.inlay_hint.enable(true, {
+    bufnr = buf,
+  }) end
 end
 
 ---@param buf integer
@@ -53,9 +59,7 @@ local function set_lsp_keymaps(buf)
           border = "rounded",
           scope = "line",
           prefix = function(_, i, total)
-            if total == 1 then
-              return "", ""
-            end
+            if total == 1 then return "", "" end
             return "(" .. i .. "/" .. total .. ") ", ""
           end,
           source = true,
@@ -133,9 +137,7 @@ kgroup("<leader>l", "Language Tools", {}, {
     local bufnr = vim.fn.bufnr()
     local clients = vim.lsp.get_clients { bufnr = bufnr }
     for _, client in ipairs(clients) do
-      if client.name == "copilot" then
-        goto continue
-      end
+      if client.name == "copilot" then goto continue end
       vim.lsp.stop_client(client.id, true)
       vim.defer_fn(function()
         vim.lsp.start(client.config, {
