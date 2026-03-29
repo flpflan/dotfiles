@@ -3,15 +3,15 @@ plugin("hop.nvim")
   :event_defer()
   :on_require("hop")
   :keys({
-    kmap({ "n", "x" }, "<M-s>", hop.hop_word, "Hop"),
-    kmap({ "n", "x" }, "<M-S>", hop.hop_char_global, "Jump Char"),
-    kmap({ "n", "x" }, "f", hop.hop_char_line(), "Hop Char l-AC"),
-    kmap({ "n", "x" }, "F", hop.hop_char_line(false), "Hop Char l-BC"),
-    kmap({ "n", "x" }, "t", hop.hop_char_line(true, -1), "Hop Before Char l-AC"),
-    kmap({ "n", "x" }, "T", hop.hop_char_line(false, 1), "Hop After Char l-BC"),
-    kmap("v", "z;", kcmd "HopLine", "Hop Line"),
-    kmap("n", "z;", kcmd "HopLineStart", "Hop Line Start"),
-    kmap("n", "z/", kcmd "HopPattern", "Hop Pattern"),
+    kmap({ "n", "x", "o" }, "z;", hop.hop_word, "Hop"),
+    kmap({ "n", "x", "o" }, "z'", hop.hop_char_global, "Jump Char"),
+    kmap({ "n", "x", "o" }, "f", hop.hop_char_line(), "Hop Char l-AC"),
+    kmap({ "n", "x", "o" }, "F", hop.hop_char_line(false), "Hop Char l-BC"),
+    kmap({ "n", "x", "o" }, "t", hop.hop_char_line(true, -1), "Hop Before Char l-AC"),
+    kmap({ "n", "x", "o" }, "T", hop.hop_char_line(false, 1), "Hop After Char l-BC"),
+    kmap({ "x", "o" }, "z0", kcmd "HopLine", "Hop Line"),
+    kmap("n", "z0", kcmd "HopLineStart", "Hop Line Start"),
+    kmap({ "n", "o" }, "z/", kcmd "HopPattern", "Hop Pattern"),
   })
   :setup(function()
     ---@diagnostic disable-next-line: deprecated
@@ -36,8 +36,12 @@ plugin("flash.nvim")
     },
   })
   :keys({
-    kmap("v", "v", function() require("flash").treesitter() end, "Treesitter"),
-    kmap("v", "/", function() require("flash").treesitter_search() end, "Treesitter Search"),
+    kmap({ "x", "o" }, "v", function()
+      require("flash").treesitter()
+    end, "Treesitter"),
+    kmap({ "x", "o" }, "V", function()
+      require("flash").treesitter_search()
+    end, "Treesitter Search"),
   })
   :setup(function()
     ---@diagnostic disable-next-line: deprecated

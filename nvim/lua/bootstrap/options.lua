@@ -69,10 +69,10 @@ opt.shell = "/usr/bin/env sh"
 
 -- Neovide
 if g.neovide then
-  vim.o.guifont = "FiraCode Nerd Font:h13"
-  g.neovide_padding_top = 30
-  g.neovide_padding_bottom = 15
-  g.neovide_padding_left = 32
+  vim.o.guifont = "FiraCode Nerd Font:h12"
+  g.neovide_padding_top = 24
+  g.neovide_padding_bottom = 24
+  g.neovide_padding_left = 24
   g.neovide_padding_right = 24
   g.neovide_cursor_vfx_mode = "ripple"
   g.neovide_cursor_animation_length = 0.03

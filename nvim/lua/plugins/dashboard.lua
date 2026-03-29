@@ -72,11 +72,11 @@ config.layout[4] = {
   type = "group",
   val = {
     button("n", "  New File", "<cmd>ene <CR>"),
-    button("w", "  Project", '<cmd>lua require("snacks").picker.projects()<CR>'),
+    button("p", "  Project", '<cmd>lua require("snacks").picker.projects()<CR>'),
     button("f", "  Find File", '<cmd>lua require("snacks").picker.pick "files"<CR>'),
     -- button("w", "   Find Text", '<cmd>lua require("snacks").picker.pick "live_grep"<CR>'),
     button("h", "  Recently Opened Files", '<cmd>lua require("snacks").picker.pick "oldfiles"<CR>'),
-    button("m", "  Bookmarks", '<cmd>lua require("snacks").picker.marks<CR>'),
+    button("m", "  Bookmarks", '<cmd>lua require("snacks").picker.marks()<CR>'),
     -- button("SPC f l", "  Open Last Session"),
     button("q", "  Quit", "<cmd>qa<CR>"),
   },
