@@ -11,9 +11,11 @@ local exluded = { "cpp" }
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "*",
   callback = function(args)
-    if vim.tbl_contains(exluded, args.match) then
-      return
+    if vim.tbl_contains(exluded, args.match) then return end
+
+    local lang = vim.treesitter.language.get_lang(args.match)
+    if lang and vim.treesitter.language.add(lang) then
+      vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
     end
-    vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
   end,
 })
