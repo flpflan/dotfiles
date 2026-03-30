@@ -2,15 +2,15 @@ if not nixCats "language.yaml" then return end
 ---------------
 ----- LSP -----
 ---------------
-lsp("yamlls"):ft("yaml", "yaml.docker-compose", "yaml.gitlab"):settings({
-	yaml = {
-		schemaStore = {
-			enable = false,
-			url = "",
-		},
-		schemas = require("schemastore").yaml.schemas(),
-	},
-})
+lsp("yamlls"):ft("yaml", "yaml.docker-compose", "yaml.gitlab"):settings {
+  yaml = {
+    schemaStore = {
+      enable = false,
+      url = "",
+    },
+    schemas = require("schemastore").yaml.schemas(),
+  },
+}
 -----------------
 --- Formatter ---
 -----------------
@@ -18,9 +18,9 @@ formatter("yaml", "prettierd")
 -----------------
 ---- Plugins ----
 -----------------
-plugin("yaml"):ft("yaml", "json", "helm"):on_require("yaml_nvim"):opts({
-	ft = { "yaml", "helm" },
-})
+plugin("yaml"):ft("yaml", "json", "helm"):on_require("yaml_nvim"):opts {
+  ft = { "yaml", "helm" },
+}
 
 -- INFO: This is done by KeyTrailJump
 -- vim.api.nvim_create_autocmd("BufEnter", {
@@ -33,14 +33,13 @@ plugin("yaml"):ft("yaml", "json", "helm"):on_require("yaml_nvim"):opts({
 -- })
 
 plugin("keytrail")
-  :event_defer()
-  :keys(kgroup("<leader>f", "Find", {}, {
-    --TODO: yik for KeyTrailYank for yaml/json buffers
-    kmap("n", "k", kcmd "KeyTrailJump", "Key"),
-  }))
+  :ft("yaml", "json", "jsonc", "json5")
+  -- :keys(kgroup("<leader>f", "Find", {}, {
+  --   --TODO: yik for KeyTrailYank for yaml/json buffers
+  --   kmap("n", "k", kcmd "KeyTrailJump", "Key"),
+  -- }))
   :opts {
     key_mapping = "fk",
-    filetypes = { yaml = true, json = true },
+    filetypes = { yaml = true, json = true, jsonc = true, json5 = true },
     popup = { enabled = false },
   }
-

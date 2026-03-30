@@ -1,4 +1,4 @@
-plugin("lualine.nvim"):event_buffer_enter():dep_on("overseer"):config(function()
+plugin("lualine.nvim"):dep_on("overseer.nvim"):config(function()
 	require("lualine").setup({
 		options = {
 			theme = "auto",

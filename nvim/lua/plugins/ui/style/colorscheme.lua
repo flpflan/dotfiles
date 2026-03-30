@@ -71,10 +71,10 @@ require("catppuccin").setup {
 ----- Setup -----
 -----------------
 -- Ensure colorscheme exists
-local avail = vim.fn.getcompletion("", "color")
-if not vim.tbl_contains(avail, colorscheme) then
-  vim.notify('colorscheme "' .. colorscheme .. '" not found!')
-  return
-end
+-- local avail = vim.fn.getcompletion("", "color")
+-- if not vim.tbl_contains(avail, colorscheme) then
+--   vim.notify('colorscheme "' .. colorscheme .. '" not found!')
+--   return
+-- end
 
 vim.cmd.colorscheme(colorscheme)
