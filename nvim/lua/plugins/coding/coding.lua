@@ -1,14 +1,18 @@
-plugin("nvim-toggler"):event_defer():opts {
-  inverses = {
-    ["Yes"] = "No",
-    ["yes"] = "no",
-    ["Disable"] = "Enable",
-    ["Disabled"] = "Enabled",
-    ["disabled"] = "enabled",
-    ["ON"] = "OFF",
-    ["on"] = "off",
-  },
-}
+plugin("nvim-toggler")
+  :event_defer()
+  :keys({ kmap({ "n", "x" }, "<leader>i", klazy("nvim-toggler").toggle(), "Toggle Invert") })
+  :opts {
+    remove_default_keybinds = true,
+    inverses = {
+      ["Yes"] = "No",
+      ["yes"] = "no",
+      ["Disable"] = "Enable",
+      ["Disabled"] = "Enabled",
+      ["disabled"] = "enabled",
+      ["ON"] = "OFF",
+      ["on"] = "off",
+    },
+  }
 
 plugin("treesj")
   :cmd({ "TSJSplit", "TSJJoin", "TSJToggle" })
