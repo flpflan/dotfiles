@@ -32,14 +32,10 @@ plugin("yaml"):ft("yaml", "json", "helm"):on_require("yaml_nvim"):opts {
 -- 	end,
 -- })
 
-plugin("keytrail")
-  :ft("yaml", "json", "jsonc", "json5")
-  -- :keys(kgroup("<leader>f", "Find", {}, {
-  --   --TODO: yik for KeyTrailYank for yaml/json buffers
-  --   kmap("n", "k", kcmd "KeyTrailJump", "Key"),
-  -- }))
-  :opts {
-    key_mapping = "fk",
-    filetypes = { yaml = true, json = true, jsonc = true, json5 = true },
-    popup = { enabled = false },
-  }
+plugin("keytrail"):ft("yaml", "json", "jsonc", "json5"):opts {
+  key_mapping = "fk",
+  --TODO: yik for KeyTrailYank for yaml/json buffers
+  -- yank_key_mapping = "jy",
+  filetypes = { yaml = true, json = true, jsonc = true, json5 = true },
+  popup = { enabled = false },
+}

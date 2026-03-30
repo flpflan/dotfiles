@@ -297,34 +297,34 @@ plugin("nvim-treesitter-textobjects")
       klazy("nvim-treesitter-textobjects.repeatable_move").repeat_last_move_opposite(),
       "Repeat last move previous"
     ),
-    kmap(
-      { "n", "x", "o" },
-      "f",
-      klazy("nvim-treesitter-textobjects.repeatable_move").builtin_f_expr(),
-      "",
-      { expr = true }
-    ),
-    kmap(
-      { "n", "x", "o" },
-      "F",
-      klazy("nvim-treesitter-textobjects.repeatable_move").builtin_F_expr(),
-      "",
-      { expr = true }
-    ),
-    kmap(
-      { "n", "x", "o" },
-      "t",
-      klazy("nvim-treesitter-textobjects.repeatable_move").builtin_t_expr(),
-      "",
-      { expr = true }
-    ),
-    kmap(
-      { "n", "x", "o" },
-      "T",
-      klazy("nvim-treesitter-textobjects.repeatable_move").builtin_T_expr(),
-      "",
-      { expr = true }
-    ),
+    -- kmap(
+    --   { "n", "x", "o" },
+    --   "f",
+    --   klazy("nvim-treesitter-textobjects.repeatable_move").builtin_f_expr(),
+    --   "",
+    --   { expr = true }
+    -- ),
+    -- kmap(
+    --   { "n", "x", "o" },
+    --   "F",
+    --   klazy("nvim-treesitter-textobjects.repeatable_move").builtin_F_expr(),
+    --   "",
+    --   { expr = true }
+    -- ),
+    -- kmap(
+    --   { "n", "x", "o" },
+    --   "t",
+    --   klazy("nvim-treesitter-textobjects.repeatable_move").builtin_t_expr(),
+    --   "",
+    --   { expr = true }
+    -- ),
+    -- kmap(
+    --   { "n", "x", "o" },
+    --   "T",
+    --   klazy("nvim-treesitter-textobjects.repeatable_move").builtin_T_expr(),
+    --   "",
+    --   { expr = true }
+    -- ),
     kmap(
       { "i" },
       "<C-;>",

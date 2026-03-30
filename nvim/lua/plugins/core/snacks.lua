@@ -26,5 +26,11 @@ snacks.setup {
       frecency = true,
     },
   },
+  -- quickfile = {
+  --   enabled = true
+  -- }
+  -- bigfile = {
+  --   enabled = true,
+  -- },
 }
 -- vim.ui.select = snacks.picker.select

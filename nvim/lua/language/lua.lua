@@ -66,7 +66,7 @@ local libs = {
 local s = vim.split(cwd(), "/", { trimempty = true })
 if s[#s] ~= "nvim" then table.insert(libs, (nixCats.configDir or "") .. "/lua/internal") end
 
-plugin("lazydev.nvim"):ft("lua"):cmd("LazyDev"):opts {
+plugin("lazydev.nvim"):ft("lua"):opts {
   library = vim.list_extend(libs, {
     -- TODO: Donnot add these libs in non-nvim projects
     -- "nvim-dap",
