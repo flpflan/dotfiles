@@ -198,7 +198,8 @@
                     "id": "Tray",
                     "pinned": [
                         "Fcitx",
-                        "steam"
+                        "steam",
+                        "chrome_status_icon_1"
                     ]
                 },
                 {
@@ -445,6 +446,7 @@
         "showHibernateOnLockScreen": true,
         "showScreenCorners": false,
         "showSessionButtonsOnLockScreen": true,
+        "smoothScrollEnabled": true,
         "telemetryEnabled": true
     },
     "hooks": {
@@ -488,7 +490,6 @@
         "weatherShowEffects": true
     },
     "network": {
-        "airplaneModeEnabled": false,
         "bluetoothAutoConnect": true,
         "bluetoothDetailsViewMode": "grid",
         "bluetoothHideUnnamedDevices": false,
@@ -713,6 +714,7 @@
         "fillColor": "#000000",
         "fillMode": "crop",
         "hideWallpaperFilenames": false,
+        "linkLightAndDarkWallpapers": true,
         "monitorDirectories": [
             {
                 "directory": "/home/flpflan/Pictures/wallpaper",

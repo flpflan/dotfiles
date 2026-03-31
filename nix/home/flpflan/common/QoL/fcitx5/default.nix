@@ -48,6 +48,8 @@ in
             # DarkTheme = "FluentDark";
             UseDarkTheme = "True"; # 跟随系统浅色/深色设置
             Font = "Sans Serif 10";
+            MenuFont = "Sans Serif 10";
+            TrayFont = "Sans Serif 10";
           };
 
           clipboard.globalSection = {
