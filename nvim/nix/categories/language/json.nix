@@ -5,8 +5,8 @@
   ...
 }: {
   lspsAndRuntimeDeps = with pkgs; [
-    # vscode-json-languageserver
-    nodePackages_latest.vscode-json-languageserver
+    # TODO: vscode-json-languageserver
+    vscode-langservers-extracted
     prettierd
   ];
   startupPlugins = with vim_pkgs; [

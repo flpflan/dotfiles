@@ -24,6 +24,9 @@ plugin("conform.nvim")
       }),
     }
   end)
+-- :set_o_options {
+--   formatexpr = "v:lua.require'conform'.formatexpr()",
+-- }
 -- :setup(function()
 --   vim.api.nvim_create_autocmd("BufWritePre", {
 --     pattern = "*",
