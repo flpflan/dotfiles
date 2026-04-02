@@ -14,7 +14,14 @@ in
     (prismlauncher.override {
       jdks = [
         # javaPackages.compiler.temurin-bin.jre-8 # Adoptium
-        graalvmPackages.graalvm-ce # GraalVM
+        (graalvmPackages.buildGraalvm {
+          src = fetchurl {
+            sha256 = "sha256-sEgGmqo6mbhPW5V7FizBgaMqQzDLw1QCdmNjxb52rkg=";
+            url = "https://github.com/graalvm/graalvm-ce-builds/releases/download/jdk-21.0.2/graalvm-community-jdk-21.0.2_linux-x64_bin.tar.gz";
+          };
+          version = "21.0.2";
+        })
+        javaPackages.compiler.temurin-bin.jre-17
       ];
     })
   ];
