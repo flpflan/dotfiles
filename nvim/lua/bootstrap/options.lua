@@ -63,7 +63,8 @@ opt.smartcase = true
 -- opt.helplang = "cn"
 
 -- Misc
-opt.updatetime = 300
+vim.o.updatetime = 250
+vim.o.timeoutlen = 300
 opt.shell = "/usr/bin/env sh"
 -- opt.lazyredraw = true -- For large file
 
