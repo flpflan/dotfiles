@@ -1,7 +1,7 @@
 local keymap = vim.keymap
 local opts = {
-    noremap = true, -- non-recursive
-    silent = true,  -- do not show message
+  noremap = true, -- non-recursive
+  silent = true, -- do not show message
 }
 
 -- Paste without overwriting the default register
@@ -45,8 +45,16 @@ keymap.set("n", "<leader>uw", "<Cmd>set wrap!<CR>", { desc = "Toggle Visual Wrap
 keymap.set("n", "|", "<Cmd>vsplit<CR>", { desc = "Vertical Split" })
 keymap.set("n", "\\", "<Cmd>split<CR>", { desc = "Horizontal Split" })
 
+-- Misc
+-- vim.keymap.set("n", "<leader><leader>[", "<cmd>bprev<CR>", { desc = 'Previous buffer' })
+-- vim.keymap.set("n", "<leader><leader>]", "<cmd>bnext<CR>", { desc = 'Next buffer' })
+-- vim.keymap.set("n", "<leader><leader>l", "<cmd>b#<CR>", { desc = 'Last buffer' })
+-- vim.keymap.set("n", "<leader><leader>d", "<cmd>bdelete<CR>", { desc = 'delete buffer' })
+
 -----------------
 -- Visual mode --
 -----------------
-vim.keymap.set('v', '<', '<gv', opts)
-vim.keymap.set('v', '>', '>gv', opts)
+vim.keymap.set("v", "<", "<gv", { desc = "Move Line Left" })
+vim.keymap.set("v", ">", ">gv", { desc = "Move Line Right" })
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move Line Down" })
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move Line Up" })
