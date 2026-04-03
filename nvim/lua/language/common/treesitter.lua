@@ -29,7 +29,6 @@ vim.treesitter.language.register("cpp", "tpp")
 
 -- Enable treesitter based highlighting
 vim.api.nvim_create_autocmd("FileType", {
-  pattern = "*",
   callback = function(args)
     -- pcall(vim.treesitter.start)
     local lang = vim.treesitter.language.get_lang(args.match)

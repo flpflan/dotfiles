@@ -43,11 +43,9 @@ end)
 
 -- Disable auto-comment for new lines
 vim.api.nvim_create_autocmd("FileType", {
-  pattern = "*",
+  desc = "remove formatoptions",
   callback = function()
-    -- Remove 'o' and 'r' from formatoptions for all file types
-    vim.opt.formatoptions:remove("o")
-    vim.opt.formatoptions:remove("r")
+    vim.opt.formatoptions:remove({ "c", "r", "o" })
   end,
 })
 
