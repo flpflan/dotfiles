@@ -54,7 +54,49 @@ keymap.set("n", "\\", "<Cmd>split<CR>", { desc = "Horizontal Split" })
 -----------------
 -- Visual mode --
 -----------------
-vim.keymap.set("v", "<", "<gv", { desc = "Move Line Left" })
-vim.keymap.set("v", ">", ">gv", { desc = "Move Line Right" })
-vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move Line Down" })
-vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move Line Up" })
+vim.keymap.set("x", "<", "<gv", { desc = "Move Line Left" })
+vim.keymap.set("x", ">", ">gv", { desc = "Move Line Right" })
+-- vim.keymap.set("x", "J", ":m '>+1<CR>gv=gv", { desc = "Move Line Down" })
+-- vim.keymap.set("x", "K", ":m '<-2<CR>gv=gv", { desc = "Move Line Up" })
+
+-- INFO: The cmd version does not popup cmdline.
+vim.keymap.set("x", "J", function()
+  local count = vim.v.count1
+  local pos1 = vim.fn.line "v"
+  local pos2 = vim.fn.line "."
+  local top = math.min(pos1, pos2)
+  local bot = math.max(pos1, pos2)
+  local last = vim.fn.line "$"
+  local max = last - bot
+  local moveBy = math.min(count, max)
+  local newpos1 = pos1 + moveBy
+  local newpos2 = pos2 + moveBy
+  local newtop = top + moveBy
+  local newbot = bot + moveBy
+  vim.cmd(top .. "," .. bot .. "m" .. newbot)
+  vim.cmd("normal! " .. newpos1 .. "GV" .. newpos2 .. "G") -- reselect
+  vim.cmd(newtop .. "," .. newbot .. "normal! ==") -- reindent
+  vim.cmd("normal! " .. newpos1 .. "GV" .. newpos2 .. "G") -- reselect, (both reselects are needed)
+end, {
+  desc = "Move Line Down",
+})
+
+vim.keymap.set("x", "K", function()
+  local count = vim.v.count1
+  local pos1 = vim.fn.line "v"
+  local pos2 = vim.fn.line "."
+  local top = math.min(pos1, pos2)
+  local bot = math.max(pos1, pos2)
+  local max = top - 1
+  local moveBy = math.min(count, max)
+  local newpos1 = pos1 - moveBy
+  local newpos2 = pos2 - moveBy
+  local newtop = top - moveBy
+  local newbot = bot - moveBy
+  vim.cmd(top .. "," .. bot .. "m" .. (newtop - 1))
+  vim.cmd("normal! " .. newpos1 .. "GV" .. newpos2 .. "G") -- reselect
+  vim.cmd(newtop .. "," .. newbot .. "normal! ==") --reindent
+  vim.cmd("normal! " .. newpos1 .. "GV" .. newpos2 .. "G") -- reselect, (both reselects are needed)
+end, {
+  desc = "Move Line Up",
+})
