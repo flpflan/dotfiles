@@ -1,29 +1,29 @@
 -- Treesitter based folds
-vim.api.nvim_create_autocmd("FileType", {
-  callback = function()
-    vim.wo[0][0].foldexpr = "v:lua.vim.treesitter.foldexpr()"
-    vim.wo[0][0].foldmethod = "expr"
-    -- vim.wo.foldmethod = "syntax"
-    -- vim.wo.foldexpr = "nvim_treesitter#foldexpr()"
+-- vim.api.nvim_create_autocmd("FileType", {
+--   callback = function()
+--     vim.wo[0][0].foldexpr = "v:lua.vim.treesitter.foldexpr()"
+--     vim.wo[0][0].foldmethod = "expr"
+--     -- vim.wo.foldmethod = "syntax"
+--     -- vim.wo.foldexpr = "nvim_treesitter#foldexpr()"
+--   end,
+-- })
 
-    vim.o.foldlevel = 99
-    vim.o.foldlevelstart = 99
-    vim.o.foldenable = true
-    vim.o.foldcolumn = "0" -- Set to '0' to disable the fold column
-    -- vim.o.foldcolumn = "auto:9"
-    vim.wo.foldnestmax = 1
-    vim.wo.foldminlines = 1
-    vim.o.foldtext =
-      [[substitute(getline(v:foldstart),'\\t',repeat('\ ',&tabstop),'g').' ... ' . '(' . (v:foldend - v:foldstart + 1) . ' lines)']]
-
-    vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
-
-    vim.cmd "highlight Folded ctermbg=NONE guibg=NONE"
-    vim.cmd "highlight FoldColumn ctermfg=NONE guifg=NONE"
-  end,
-})
+-- vim.o.foldmethod = "indent"
+vim.o.foldlevel = 99
+vim.o.foldlevelstart = 99
+vim.o.foldnestmax = 1
+vim.o.foldminlines = 1
+vim.o.foldenable = true
+vim.o.foldcolumn = "0" -- Set to '0' to disable the fold column
+-- vim.o.foldcolumn = "auto:9"
+vim.o.foldtext =
+  [[substitute(getline(v:foldstart),'\\t',repeat('\ ',&tabstop),'g').' ... ' . '(' . (v:foldend - v:foldstart + 1) . ' lines)']]
+vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
 
 plugin("nvim-ufo"):event_defer():config(function()
+  vim.cmd "highlight Folded ctermbg=NONE guibg=NONE"
+  vim.cmd "highlight FoldColumn ctermfg=NONE guifg=NONE"
+
   ---@diagnostic disable-next-line: unused-local
   require("ufo").setup {
     provider_selector = function(bufnr, filetype, buftype)
