@@ -54,6 +54,8 @@ keymap.set("n", "\\", "<Cmd>split<CR>", { desc = "Horizontal Split" })
 -----------------
 -- Visual mode --
 -----------------
+-- TODO: Move word left/right. See: https://github.com/fedepujol/move.nvim
+-- TODO: Move selected text left/right.
 vim.keymap.set("x", "<", "<gv", { desc = "Move Line Left" })
 vim.keymap.set("x", ">", ">gv", { desc = "Move Line Right" })
 -- vim.keymap.set("x", "J", ":m '>+1<CR>gv=gv", { desc = "Move Line Down" })
