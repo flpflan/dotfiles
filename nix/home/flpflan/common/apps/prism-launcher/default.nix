@@ -21,7 +21,9 @@ in
           };
           version = "21.0.2";
         })
-        javaPackages.compiler.temurin-bin.jre-17
+        # javaPackages.compiler.temurin-bin.jre-17
+        # zulu21
+        zulu17
       ];
     })
   ];
