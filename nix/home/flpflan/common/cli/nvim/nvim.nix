@@ -30,7 +30,7 @@ in {
             bundles = {
               frontend = true;
             };
-            kdl = true;
+            # kdl = true;
             nix = true;
             lua = true;
             cpp = true;
@@ -38,9 +38,10 @@ in {
             toml = true;
             yaml = true;
             json = true;
-            python = true;
-            hyprlang = true;
+            # python = true;
+            # hyprlang = true;
             markdown = true;
+            haskell = true;
           };
           ai = false;
           request = false;
