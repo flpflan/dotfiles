@@ -23,7 +23,7 @@
       "kvm-amd"
       "thunderbolt"
       "sdhci_pci" # For SD card reader
-      "sd_mod" "sr_mod" # For SATA SSD/HDD, CD-ROM
+      # "sd_mod" "sr_mod" # For SATA SSD/HDD, CD-ROM
       # "pcips2" "atkbd" "i8042" "rtc_cmos" # x86 stuff
     ];
     kernelParams = [
