@@ -11,6 +11,8 @@
   hardware.xpadneo.enable = true;
 
   # This is not necessary; only used to access the controller's battery level.
-  # Or use this to avoid adding user to `input` group.
+  # Or use this to avoid adding user to `input` group in cable mode.
   hardware.steam-hardware.enable = true;
+
+  users.users.flpflan.extraGroups = [ "input" ];
 }
