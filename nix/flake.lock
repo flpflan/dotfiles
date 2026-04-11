@@ -139,11 +139,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1773829295,
-        "narHash": "sha256-dGmctq2JoP4UDE5sE4h9ssJt5lL2xOSBK2RbME1U9wI=",
+        "lastModified": 1775889112,
+        "narHash": "sha256-fJxxqfp4HHDYs7OXD2oBtHunGYLCDxD8a1vwvhBCuvk=",
         "owner": "flpflan",
         "repo": "nix-huion-driver",
-        "rev": "d7543e00e07aaedba7639015d1e5547350b58b41",
+        "rev": "1f23aed77ecac5f389b6ced6944f18f1d7c445e4",
         "type": "github"
       },
       "original": {

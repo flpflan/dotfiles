@@ -10,6 +10,6 @@
   imports = [ huion-driver.nixosModules.default ];
   programs.huionDriver = {
     enable = true;
-    package = huion-driver.packages.x86_64-linux.huionDriverCN;
+    # package = huion-driver.packages.x86_64-linux.huionDriverCN;
   };
 }
