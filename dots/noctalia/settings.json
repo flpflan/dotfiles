@@ -662,10 +662,6 @@
         "activeTemplates": [
             {
                 "enabled": true,
-                "id": "foot"
-            },
-            {
-                "enabled": true,
                 "id": "gtk"
             },
             {
@@ -695,6 +691,10 @@
             {
                 "enabled": true,
                 "id": "zenBrowser"
+            },
+            {
+                "enabled": true,
+                "id": "foot"
             }
         ],
         "enableUserTheming": false
