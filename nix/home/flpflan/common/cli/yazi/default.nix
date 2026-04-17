@@ -44,7 +44,7 @@ in
     icon = "yazi";
     comment = "Blazing fast terminal file manager written in Rust, based on async I/O";
     terminal = false;
-    exec = "foot -a yazi -T yazi ${fl-dots}/snippets/wrap_term_launch yazi %u";
+    exec = "foot -a yazi -T yazi yazi %u";
     type = "Application";
     mimeType = [ "inode/directory" ];
     categories = [

@@ -12,13 +12,13 @@ binds {
     Mod+Ctrl+Comma hotkey-overlay-title="Setting" { spawn-sh "noctalia-shell ipc call settings toggle"; }
     Mod+Ctrl+Delete hotkey-overlay-title="Open Session Menu" { spawn-sh "noctalia-shell ipc call sessionMenu toggle"; }
     Ctrl+Alt+Q hotkey-overlay-title="Lock the Screen: lockScreen" { spawn-sh "noctalia-shell ipc call lockScreen lock"; }
-    Mod+E hotkey-overlay-title="File Exlorer" { spawn-sh "foot -a yazi -T yazi ~/profile/snippets/wrap_term_launch yazi"; }
-    Ctrl+Shift+Escape hotkey-overlay-title="System Monitor" { spawn-sh "foot -a btop -T btop ~/profile/snippets/wrap_term_launch btop"; }
+    Mod+E hotkey-overlay-title="File Exlorer" { spawn-sh "foot -a yazi -T yazi yazi"; }
+    Ctrl+Shift+Escape hotkey-overlay-title="System Monitor" { spawn-sh "foot -a btop -T btop btop"; }
     Mod+Alt+W hotkey-overlay-title="Web Browser" {
         spawn "google-chrome"
     }
     Mod+Alt+M hotkey-overlay-title="Music Player" {
-        spawn-sh "foot -a musicfox -T musicfox ~/profile/snippets/wrap_term_launch musicfox"
+        spawn-sh "foot -a musicfox -T musicfox musicfox"
     }
     Mod+Alt+C hotkey-overlay-title="Editor" {
         spawn-sh "$VISUAL"
