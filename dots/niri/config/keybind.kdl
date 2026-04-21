@@ -260,4 +260,5 @@ binds {
 
     Mod+Ctrl+Period hotkey-overlay-title="Control Center" { spawn-sh "noctalia-shell ipc call controlCenter toggle"; }
     Mod+Ctrl+Slash hotkey-overlay-title="Toggle Bar" { spawn-sh "noctalia-shell ipc call bar toggle"; }
+    Mod+Ctrl+T hotkey-overlay-title="Wallpaper Selector" { spawn-sh "noctalia-shell ipc call wallpaper toggle"; }
 }
