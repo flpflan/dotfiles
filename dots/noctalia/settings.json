@@ -101,6 +101,7 @@
                 },
                 {
                     "defaultSettings": {
+                        "hideWhenInactive": false,
                         "playerName": "musicfox",
                         "updateInterval": 200,
                         "width": 300
@@ -399,7 +400,7 @@
         "clockStyle": "custom",
         "compactLockScreen": false,
         "dimmerOpacity": 0.2,
-        "enableBlurBehind": true,
+        "enableBlurBehind": false,
         "enableLockScreenCountdown": true,
         "enableLockScreenMediaControls": false,
         "enableShadows": true,

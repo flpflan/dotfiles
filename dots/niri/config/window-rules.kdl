@@ -85,7 +85,6 @@ window-rule {
     default-window-height {
         proportion 0.5;
     }
-
 }
 
 // ----- File Explorer -----
@@ -201,8 +200,17 @@ window-rule {
 }
 
 window-rule {
-    match at-startup=true app-id="zen"
+    match app-id="zen-beta"
     open-on-workspace "browser"
+
+    background-effect {
+        blur true
+        xray false
+    }
+
+    focus-ring {
+        width 1
+    }
 }
 
 window-rule {
