@@ -91,13 +91,13 @@ window-rule {
 // ----- Yazi -----
 window-rule {
     match app-id=r#"yazi$"#
-    open-floating true
+    // open-floating true
     default-column-width {
         proportion 0.5;
     }
-    default-window-height {
-        proportion 0.5;
-    }
+    // default-window-height {
+    //     proportion 0.5;
+    // }
 }
 // ----- Dolphin -----
 window-rule {

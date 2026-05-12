@@ -7,5 +7,6 @@
     telegram-desktop
     # drawy
     # xournalpp
+    # kazumi
   ];
 }
