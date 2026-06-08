@@ -9,7 +9,14 @@ in {
     isNormalUser = true;
     hashedPasswordFile = secrets."users/flpflan/passwd".path;
     description = "flpflan";
-    extraGroups = ["networkmanager" "wheel"];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      # "input"
+      # "video"
+      # "i2c"
+      "dialout" # access to serial devices
+    ];
     #openssh.authorizedKeys.keys = [
     #  "ssh-ed25519 <> flpflan@fl-pc"
     #];
