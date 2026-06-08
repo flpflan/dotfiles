@@ -252,8 +252,10 @@ binds {
     // SYSTEM CONTROL
     // ---------------------------------
     Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
-    Mod+Shift+P { spawn-sh "niri msg output \"eDP-1\" on"; }
-    Mod+Shift+O { spawn-sh "niri msg output \"eDP-1\" off"; }
+    // Mod+Shift+P { spawn-sh "niri msg output \"eDP-1\" on"; }
+    // Mod+Shift+O { spawn-sh "niri msg output \"eDP-1\" off"; }
+    Mod+Shift+P { spawn-sh "noctalia-shell ipc call monitors on"; }
+    Mod+Shift+O { spawn-sh "noctalia-shell ipc call monitors off"; }
 
     Mod+Shift+E { quit; }
     Ctrl+Alt+Delete { quit; }
