@@ -56,3 +56,9 @@ require("whoosh"):setup({
 	bookmarks = bookmarks,
 	bookmarks_path = (os.getenv("HOME") .. "/.config/yazi/plugins/whoosh.yazi/bookmarks"),
 })
+
+-- App Title
+-- ps.sub("ind-app-title", function(args)
+--   args.value = tostring(cx.active.current.cwd)
+--   return args
+-- end)
