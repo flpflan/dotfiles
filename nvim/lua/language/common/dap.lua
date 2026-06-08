@@ -32,6 +32,13 @@ plugin("nvim-dap")
     }),
   }
 
+plugin("nvim-dap-view"):on_plugin("nvim-dap"):keys {
+  kgroup("<leader>d", "DAP", {}, {
+    kmap("n", "u", klazy("dap-view").toggle(), "Toggle Debugger UI"),
+    kmap("n", "h", klazy("dap-view").hover(), "Debugger Hover"),
+  }),
+}
+
 plugin("nvim-dap-ui")
   :on_require("dapui")
   :on_plugin("nvim-dap")
