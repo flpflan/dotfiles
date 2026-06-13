@@ -17,6 +17,7 @@
       # hack-font
       noto-fonts-color-emoji
       # misans
+      unifont
   ];
   fonts.fontconfig = {
     enable = true;
@@ -39,6 +40,7 @@
         # "Noto Sans Mono CJK SC"
         # "Noto Sans Mono CJK TC"
         # "Noto Sans Mono CJK JP"
+        "Unifont"
       ];
       sansSerif = [
         "Merriweather Sans"
@@ -52,6 +54,7 @@
         # "Noto Sans CJK SC"
         # "Noto Sans CJK TC"
         # "Noto Sans CJK JP"
+        "Unifont"
       ];
       serif = [
         "Merriweather"
@@ -65,6 +68,7 @@
         # "Noto Serif CJK SC"
         # "Noto Serif CJK TC"
         # "Noto Serif CJK JP"
+        "Unifont"
       ];
     };
   };
