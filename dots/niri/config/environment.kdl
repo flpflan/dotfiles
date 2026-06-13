@@ -32,6 +32,6 @@ environment {
 }
 
 cursor {
-    xcursor-theme "Bibata-Modern-Classic"
-    xcursor-size 16
+    // xcursor-theme "Bibata-Modern-Classic"
+    // xcursor-size 16
 }
