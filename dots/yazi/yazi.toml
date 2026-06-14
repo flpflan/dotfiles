@@ -18,7 +18,7 @@ cursor_blink = false
 
 [opener]
 edit = [
-    { run = 'direnv exec . ${EDITOR:=vi} $1', desc = "$EDITOR", block = true, for = "unix" },
+    { run = 'direnv exec . ${EDITOR:=vi} "$@"', desc = "$EDITOR", block = true, for = "unix" },
     { run = 'code "$@"', orphan = true, desc = "Code" },
     { run = 'xdg-open %s1', orphan = true, for = "linux", desc = "XDG-Open" },
 ]
