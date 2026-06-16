@@ -39,6 +39,8 @@ in
           };
           Behavior = {
             ShowInputMethodInformation = "False";
+            ShareInputState = "Program";
+            PreeditEnabledByDefault = "False";
           };
         };
         addons = {
@@ -58,6 +60,10 @@ in
 
           quickphrase.globalSection = {
             "TriggerKey/0" = "Alt+semicolon";
+          };
+
+          rime.globalSection = {
+            PreeditMode = "Composing text";
           };
         };
         inputMethod = {
