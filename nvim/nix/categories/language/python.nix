@@ -5,7 +5,8 @@
   ...
 }: {
   lspsAndRuntimeDeps = with pkgs; [
-    basedpyright
+    # basedpyright
+    ty
     ruff
     fd
   ];

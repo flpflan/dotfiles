@@ -38,10 +38,10 @@ in {
             toml = true;
             yaml = true;
             json = true;
-            # python = true;
+            python = true;
             # hyprlang = true;
             markdown = true;
-            haskell = true;
+            # haskell = true;
           };
           ai = false;
           request = false;

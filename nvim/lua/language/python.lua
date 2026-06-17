@@ -2,18 +2,27 @@ if not nixCats "language.python" then return end
 ---------------
 ----- LSP -----
 ---------------
-lsp("basedpyright"):settings {
-  basedpyright = {
-    analysis = {
-      inlayHints = {
-        callArgumentNames = false,
-        genericTypes = true,
-      },
-      diagnosticSeverityOverrides = {
-        reportAny = "none", -- Disable the specific rule
-        reportExplicitAny = "none", -- Disable the specific rule
-      },
-    },
+-- lsp("basedpyright"):settings {
+--   basedpyright = {
+--     analysis = {
+--       inlayHints = {
+--         callArgumentNames = false,
+--         genericTypes = true,
+--       },
+--       diagnosticSeverityOverrides = {
+--         reportAny = "none", -- Disable the specific rule
+--         reportExplicitAny = "none", -- Disable the specific rule
+--       },
+--     },
+--   },
+-- }
+lsp("ty"):settings {
+  ty = {
+    -- inlayHints = {
+    --   callArgumentNames = true,
+    --   genericTypes = true,
+    -- },
+    completeFunctionParentheses = true,
   },
 }
 lsp("ruff"):init_options {
@@ -42,16 +51,14 @@ plugin("venv-selector.nvim")
       poetry = false,
     },
   })
-  :setup(
-    function()
-      kgroup("<leader>l", "Language Tools", {}, {
-        kgroup("v", "Venv", {}, {
-          kmap("n", "v", kcmd "VenvSelect", "Venv Select"),
-          kmap("n", "d", klazy("venv-selector").deactivate(), "Deactivate Current Venv"),
-        }),
-      })
-    end
-  )
+  :setup(function()
+    kgroup("<leader>l", "Language Tools", {}, {
+      kgroup("v", "Venv", {}, {
+        kmap("n", "v", kcmd "VenvSelect", "Venv Select"),
+        kmap("n", "d", klazy("venv-selector").deactivate(), "Deactivate Current Venv"),
+      }),
+    })
+  end)
 
 plugin("nvim-dap-python"):dep_on("nvim-dap"):on_require("dap-python"):ft("python"):config(function()
   require("dap-python").setup("uv", { include_configs = true })
