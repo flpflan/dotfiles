@@ -131,14 +131,14 @@ vim.api.nvim_set_hl(0, "DiagnosticInfo", { fg = "#0db9d7" })
 -- vim.lsp.log.set_level(env.get("NVIM_LSP_LOG_LEVEL") or "OFF")
 
 kgroup("<leader>l", "Language Tools", {}, {
-  kmap("n", "i", kcmd "LspInfo", "Lsp Info"),
+  kmap("n", "i", kcmd "checkhealth vim.lsp", "Lsp Info"),
   kmap("n", "I", klazy("snacks.picker").lsp_config(), "Lsp Configs"),
   kmap("n", "R", function()
     local bufnr = vim.fn.bufnr()
     local clients = vim.lsp.get_clients { bufnr = bufnr }
     for _, client in ipairs(clients) do
       if client.name == "copilot" then goto continue end
-      vim.lsp.stop_client(client.id, true)
+      client:stop(true)
       vim.defer_fn(function()
         vim.lsp.start(client.config, {
           bufnr = bufnr,

@@ -22,7 +22,7 @@ lsp("ty"):settings {
     --   callArgumentNames = true,
     --   genericTypes = true,
     -- },
-    completeFunctionParentheses = true,
+    -- completeFunctionParentheses = true,
   },
 }
 lsp("ruff"):init_options {
