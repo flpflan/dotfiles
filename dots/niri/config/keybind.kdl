@@ -115,10 +115,12 @@ binds {
     // ---------------------------------
     Mod+Left  { focus-column-left; }
     Mod+Ctrl+Left  { focus-column-left; }
+    // Mod+Ctrl+Left  { spawn-sh "niri msg action switch-focus-between-floating-and-tiling && niri msg action focus-column-left && niri msg action switch-focus-between-floating-and-tiling"; }
     Mod+Down  { focus-window-or-workspace-down; }
     Mod+Up    { focus-window-or-workspace-up; }
     Mod+Right { focus-column-right; }
     Mod+Ctrl+Right { focus-column-right; }
+    // Mod+Ctrl+Right  { spawn-sh "niri msg action switch-focus-between-floating-and-tiling && niri msg action focus-column-right && niri msg action switch-focus-between-floating-and-tiling"; }
 
     Mod+H { focus-column-left; }
     Mod+J { focus-window-or-workspace-down; }
