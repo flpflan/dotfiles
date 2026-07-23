@@ -159,7 +159,7 @@ window-rule {
     default-floating-position x=100 y=200 relative-to="bottom-right"
 }
 
-// ----- Noctalia Setting -----
+// ----- Noctalia v4 Setting -----
 window-rule {
     match app-id="org.quickshell" title="Noctalia"
     default-column-width {
@@ -170,6 +170,14 @@ window-rule {
     }
     open-floating true
     // default-floating-position x=100 y=200 relative-to="bottom-right"
+}
+
+// Floating Noctalia settings window.
+window-rule {
+  match app-id="dev.noctalia.Noctalia.Settings"
+  open-floating true
+  default-column-width { fixed 1080; }
+  default-window-height { fixed 920; }
 }
 
 window-rule {

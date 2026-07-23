@@ -17,11 +17,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1781268102,
-        "narHash": "sha256-Zn5KTggEmUB3lXn/ccERNcBdddE6IaOFber9dWViWDg=",
+        "lastModified": 1782948114,
+        "narHash": "sha256-AXmz9ho4Lud5CsbrZsuSVwpQZ4o5FgZ1chxBn5cJ8+0=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "49a4bd0573c376468dd7996ddb6f9fa31d8c4d97",
+        "rev": "9e92285f211dad236540fd617d7e30e0b99bc0e1",
         "type": "github"
       },
       "original": {
@@ -178,11 +178,11 @@
     "plugins-smart-paste": {
       "flake": false,
       "locked": {
-        "lastModified": 1777903841,
-        "narHash": "sha256-aJIiei3YCFKKD9KzytifOjO+KIhhL5EFdfVkpAv2hJc=",
+        "lastModified": 1783067223,
+        "narHash": "sha256-LxkGjcnTYi89zGRSdtkH6So4wArKcXE7xbhozMeqfQ0=",
         "owner": "nemanjamalesija",
         "repo": "smart-paste.nvim",
-        "rev": "7a461d3d83a6bee199d3f1c0b177f7f3e22fa371",
+        "rev": "ba7ef8cac985fbfa99cbe16f702b0b016c267a17",
         "type": "github"
       },
       "original": {

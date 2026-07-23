@@ -13,17 +13,19 @@ in
   home.packages = with pkgs; [
     (prismlauncher.override {
       jdks = [
+        # jre # jre is actually jdk underhood
         # javaPackages.compiler.temurin-bin.jre-8 # Adoptium
-        (graalvmPackages.buildGraalvm {
-          src = fetchurl {
-            sha256 = "sha256-sEgGmqo6mbhPW5V7FizBgaMqQzDLw1QCdmNjxb52rkg=";
-            url = "https://github.com/graalvm/graalvm-ce-builds/releases/download/jdk-21.0.2/graalvm-community-jdk-21.0.2_linux-x64_bin.tar.gz";
-          };
-          version = "21.0.2";
-        })
-        # javaPackages.compiler.temurin-bin.jre-17
+        # (graalvmPackages.buildGraalvm {
+        #   src = fetchurl {
+        #     sha256 = "sha256-sEgGmqo6mbhPW5V7FizBgaMqQzDLw1QCdmNjxb52rkg=";
+        #     url = "https://download.oracle.com/graalvm/21/latest/graalvm-jdk-21_linux-x64_bin.tar.gz";
+        #   };
+        #   version = "21.0.2";
+        # })
         # zulu21
-        zulu17
+        # zulu17
+        temurin-jre-bin-21
+        temurin-jre-bin-17
       ];
     })
   ];

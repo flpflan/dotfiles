@@ -19,5 +19,9 @@ in
     systemd.enable = false;
   };
 
+  # programs.noctalia = {
+  #   enable = true;
+  # };
+
   xdg.configFile."noctalia".source = outOfStore "${dots}/noctalia";
 }

@@ -12,6 +12,7 @@
               pkg-config
               # ncurses
               # Other dependencies
+              qt6.qtbase
             ]
           );
         profile = "export FHS=1";
