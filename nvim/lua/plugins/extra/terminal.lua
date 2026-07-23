@@ -2,6 +2,7 @@ plugin("toggleterm.nvim")
   :event_defer()
   :keys({
     kmap("n", [[<C-\>]], kcmd "ToggleTerm", "Toggle Terminal"),
+    kmap("n", [[<C-S-\>]], kcmd "ToggleTerm direction=vertical", "Toggle Terminal"),
   })
   :opts {
     shell = "$SHELL",

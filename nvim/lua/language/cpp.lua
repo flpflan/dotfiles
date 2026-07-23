@@ -8,7 +8,7 @@ lsp("clangd"):cmd(
   "--clang-tidy",
   -- "--clang-tidy-check=performance-*,bugprone-*",
   "--background-index",
-  "-j=16",
+  -- "-j=16",
   "--completion-style=bundled",
   "--all-scopes-completion",
   "--header-insertion=iwyu",

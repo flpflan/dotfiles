@@ -28,7 +28,7 @@ in {
           core = true;
           language = {
             bundles = {
-              frontend = true;
+              # frontend = true;
             };
             # kdl = true;
             nix = true;

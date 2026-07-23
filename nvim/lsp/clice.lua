@@ -22,7 +22,7 @@ local clice = {
 
   cmd = {
     "clice",
-    "--mode=pipe",
+    "serve",
   },
 }
 
