@@ -1,18 +1,16 @@
-{
-  inputs,
-  outputs,
-  tools,
+inputs@{
   srvos,
   disko,
   ...
 }:
 
 let
+  tools = import ../../tools inputs;
   inherit (tools) relative;
 in
 {
   specialArgs = inputs // {
-    inherit tools outputs;
+    inherit tools;
   };
   system = "x86_64-linux";
   modules = [

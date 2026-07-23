@@ -21,11 +21,6 @@
     ...
   }:
   let
-    inherit (nixpkgs) lib;
-    inherit (self) outputs;
-
-    tools = import ./tools {inherit inputs outputs lib tools;};
-
     eachSystem = nixpkgs.lib.genAttrs nixpkgs.lib.platforms.linux;
     pkgsFor = eachSystem (system: nixpkgs.legacyPackages.${system}.appendOverlays [
       self.overlays.default
@@ -33,11 +28,11 @@
   in
   {
     #
-    # Packages
-    #
-    overlays = import ./overlays {inherit inputs outputs lib tools;};
-    #
     # Overlays
+    #
+    overlays = import ./overlays inputs;
+    #
+    # Packages
     #
     packages = eachSystem (system: import ./packages pkgsFor.${system});
   }
@@ -46,15 +41,9 @@
     # NixOS Configurations
     #
     nixosConfigurations = {
-      fl-pc = nixpkgs.lib.nixosSystem (import ./hosts/fl-pc {
-        inherit inputs outputs lib tools;
-      });
-      opiz3 = nixpkgs.lib.nixosSystem (import ./hosts/opiz3 {
-        inherit inputs outputs lib tools;
-      });
-      fl-vps = nixpkgs.lib.nixosSystem (import ./hosts/fl-vps {
-        inherit inputs outputs lib tools;
-      });
+      fl-pc = nixpkgs.lib.nixosSystem (import ./hosts/fl-pc inputs);
+      opiz3 = nixpkgs.lib.nixosSystem (import ./hosts/opiz3 inputs);
+      fl-vps = nixpkgs.lib.nixosSystem (import ./hosts/fl-vps inputs);
     };
     #
     # OS Images
@@ -70,21 +59,30 @@
       "flpflan@fl-pc" = home-manager.lib.homeManagerConfiguration {
         pkgs = pkgsFor.x86_64-linux;
         modules = [ ./home/flpflan/fl-pc ];
-        extraSpecialArgs = inputs // {inherit outputs tools;} // { fl-dots = "/home/flpflan/.dotfiles"; };
+        extraSpecialArgs = inputs // {
+          tools = import ./tools inputs;
+        } // {
+          fl-dots = "/home/flpflan/.dotfiles";
+        };
       };
     };
   };
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    #nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-25.11";
-    # chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    #
+    # fl-pc
+    #
     nix-cachyos-kernel = {
       url = "github:xddxdd/nix-cachyos-kernel/release";
       # inputs.nixpkgs.follows = "nixpkgs";
     };
-    home-manager = {
-      url = "github:nix-community/home-manager";
+    nur = {
+      url = "github:nix-community/NUR";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     # zen-browser = {
@@ -92,18 +90,6 @@
     #   inputs.nixpkgs.follows = "nixpkgs";
     #   inputs.home-manager.follows = "home-manager";
     # };
-    # zen-nebula = {
-    #   url = "github:JustAdumbPrsn/Nebula-A-Minimal-Theme-for-Zen-Browser";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
-    # opiz3-nix = {
-    #   url = "github:flpflan/orangepizero3-nix";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
-    nur = {
-      url = "github:nix-community/NUR";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     agenix = {
       url = "github:ryantm/agenix";
       inputs = {
@@ -121,23 +107,6 @@
     #   url = "github:nlewo/comin";
     #   inputs.nixpkgs.follows = "nixpkgs";
     # };
-    # srvos = {
-    #   url = "github:nix-community/srvos";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
-    # thb-proxy = {
-    #   url = "git+ssh@github.com:flpflan/thb-proxy.git";
-    #   flake = false;
-    # };
-    # stylix = {
-    #   url = "github:danth/stylix";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
-    # illogical-impulse = {
-    #   url = "github:xBLACKICEx/end-4-dots-hyprland-nixos";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    #   # inputs.illogical-impulse-dotfiles.follows = "";
-    # };
     # caelestia-shell = {
     #   url = "github:caelestia-dots/shell";
     #   inputs.nixpkgs.follows = "nixpkgs";
@@ -146,17 +115,41 @@
       url = "github:noctalia-dev/noctalia/legacy-v4";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    # niri-flake = {
-    #   url = "github:sodiboo/niri-flake";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
     nvim = {
-      url = "path:../nvim";
+      url = "path:../../../nvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     huion-driver = {
       url = "github:flpflan/nix-huion-driver";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    #
+    # fl-vps
+    #
+    disko = {
+      url = "github:nix-community/disko";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    # comin = {
+    #   url = "github:nlewo/comin";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
+    srvos = {
+      url = "github:nix-community/srvos";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    thb-proxy = {
+      url = "git+ssh@github.com:flpflan/thb-proxy.git";
+      flake = false;
+    };
+
+    #
+    # opiz3
+    #
+    opiz3-nix = {
+      url = "github:flpflan/orangepizero3-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };

@@ -1,8 +1,8 @@
-{ lib, ... }:
+{ nixpkgs, ... }:
 let
   inherit (builtins) map attrNames readDir;
-  inherit (lib.attrsets) filterAttrs;
-  inherit (lib.strings) hasSuffix;
+  inherit (nixpkgs.lib.attrsets) filterAttrs;
+  inherit (nixpkgs.lib.strings) hasSuffix;
 
   interested = path: _type:
     (_type == "directory") # Include directories

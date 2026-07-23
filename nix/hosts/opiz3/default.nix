@@ -1,13 +1,11 @@
-{
-  inputs,
-  outputs,
-  tools,
-  ...
-}:
+inputs:
 
+let
+    tools = import ../../tools inputs;
+in 
 {
   specialArgs = inputs // {
-    inherit tools outputs;
+    inherit tools;
   };
   system = "aarch64-linux";
   modules = [

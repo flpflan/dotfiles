@@ -1,7 +1,8 @@
 # Global Overlays
-{ lib, ... }@inputs:
+{ nixpkgs, ... }@inputs:
 
 let
+  inherit (nixpkgs) lib;
   source = overlay: import overlay inputs;
   mkOverlays =
     attrs:

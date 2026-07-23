@@ -1,1 +1,1 @@
-{inputs, ...}: inputs.nix-cachyos-kernel.overlay
+{nix-cachyos-kernel, ...}: nix-cachyos-kernel.overlay

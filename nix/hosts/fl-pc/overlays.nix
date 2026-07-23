@@ -1,6 +1,6 @@
 # Host Specific Overlays
-{ outputs, ... }:
+{ overlays, ... }:
 
 {
-  nixpkgs.overlays = [ outputs.overlays.default ];
+  nixpkgs.overlays = [ overlays.default ];
 }

@@ -1,1 +1,1 @@
-{ inputs, ... }: inputs.nur.overlays.default
+{ nur, ... }: nur.overlays.default

@@ -1,3 +1,3 @@
-{inputs, ...}: final: _: {
-  agenix = inputs.agenix.packages.${final.system}.default;
+{agenix, ...}: final: _: {
+  agenix = agenix.packages.${final.system}.default;
 }

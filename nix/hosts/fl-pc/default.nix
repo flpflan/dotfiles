@@ -1,17 +1,14 @@
-{
-  inputs,
-  outputs,
-  tools,
-  ...
-}:
+inputs:
 
 let
+  overlays = import ../../overlays inputs;
+  tools = import ../../tools inputs;
   inherit (tools) relative scan;
   fl-dots = "/home/flpflan/.dotfiles";
 in
 {
   specialArgs = inputs // {
-    inherit tools fl-dots outputs;
+    inherit overlays tools fl-dots;
   };
   system = "x86_64-linux";
   modules = (scan ./.) ++ [

@@ -1,5 +1,4 @@
 {
-  outputs,
   tools,
   lib,
   ...
@@ -20,7 +19,7 @@
     options = "--delete-older-than 7d";
     persistent = true;
   };
-  nixpkgs.overlays = [ outputs.overlays.default ];
+  # nixpkgs.overlays = [ overlays.default ];
   nixpkgs.config.allowUnfree = true;
 
   programs.home-manager.enable = true;

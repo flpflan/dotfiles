@@ -1,3 +1,3 @@
-{ lib, ... }:
+{ nixpkgs, ... }:
 
-path: lib.path.append ../. path
+path: nixpkgs.lib.path.append ../. path
