@@ -9,10 +9,11 @@
           (base.targetPkgs pkgs)
           ++ (
             with pkgs; [
-              pkg-config
+              # pkg-config
               # ncurses
               # Other dependencies
               qt6.qtbase
+              fuse
             ]
           );
         profile = "export FHS=1";
@@ -20,8 +21,8 @@
         extraOutputsToInstall = ["dev"];
       });
 in {
-  home.packages = with pkgs; [
-    # steam-run-free
-    general-fhs-env
-  ];
+  # home.packages = with pkgs; [
+  #   # steam-run-free
+  #   general-fhs-env
+  # ];
 }
