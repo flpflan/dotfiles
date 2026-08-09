@@ -1,7 +1,5 @@
 {
   config,
-  pkgs,
-  # niri-flake,
   fl-dots,
   ...
 }:
@@ -11,17 +9,11 @@ let
   outOfStore = config.lib.file.mkOutOfStoreSymlink;
 in
 {
-  home.packages = with pkgs; [
-    niri
-    xwayland-satellite
-  ];
+  wayland.windowManager.niri = {
+    enable = true;
+    portalPackage = null;
+    systemd.enable = false;
+  };
 
   xdg.configFile."niri".source = outOfStore "${dots}/niri";
-
-  # imports = [ niri-flake.homeModules.niri ];
-  #
-  # programs.niri = {
-  #   enable = true;
-  #   package = pkgs.niri;
-  # };
 }
