@@ -17,11 +17,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1782948114,
-        "narHash": "sha256-AXmz9ho4Lud5CsbrZsuSVwpQZ4o5FgZ1chxBn5cJ8+0=",
+        "lastModified": 1785975029,
+        "narHash": "sha256-X44cn5rzytELc3NNoQsh0aLkjWA/QzPfc6HPQmsG3sU=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "9e92285f211dad236540fd617d7e30e0b99bc0e1",
+        "rev": "70ce234312134a463ba7728e94da2486a1d237ac",
         "type": "github"
       },
       "original": {
@@ -146,11 +146,11 @@
     "plugins-oil-vcs-status": {
       "flake": false,
       "locked": {
-        "lastModified": 1737881301,
-        "narHash": "sha256-ZxzrGMxD1YOa+3NutEopurrHo7RwWD1GvikWxB1t/VA=",
+        "lastModified": 1784645049,
+        "narHash": "sha256-qq1/fu7klmPTsHcYZxZ6w1olvxy0KgSss1K0mocN/2A=",
         "owner": "SirZenith",
         "repo": "oil-vcs-status",
-        "rev": "e0dd01a19f521b2393018e8466d46120a8ffba71",
+        "rev": "7efd000e9f871ba93f8a73012b74a5ff011dced9",
         "type": "github"
       },
       "original": {
@@ -178,11 +178,11 @@
     "plugins-smart-paste": {
       "flake": false,
       "locked": {
-        "lastModified": 1783067223,
-        "narHash": "sha256-LxkGjcnTYi89zGRSdtkH6So4wArKcXE7xbhozMeqfQ0=",
+        "lastModified": 1784405620,
+        "narHash": "sha256-WuKj0rnh+8lxjXZT4utXNoW169BSG4bVY1xBuUQir3c=",
         "owner": "nemanjamalesija",
         "repo": "smart-paste.nvim",
-        "rev": "ba7ef8cac985fbfa99cbe16f702b0b016c267a17",
+        "rev": "bb46e9a06a728d65f004ad709ff7ee0249717e5e",
         "type": "github"
       },
       "original": {

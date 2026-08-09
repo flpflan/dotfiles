@@ -25,7 +25,7 @@
             gitignore
             ssh_config
             desktop
-            zathurarc
+            # zathurarc
           ]
       ))
     ];
