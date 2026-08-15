@@ -1,0 +1,31 @@
+XKB_DEFAULT_LAYOUT=cn
+
+############# Themes #############
+QT_QPA_PLATFORMTHEME=qt6ct
+QT_WAYLAND_DISABLE_WINDOWDECORATION=1
+QT_AUTO_SCREEN_SCALE_FACTOR=1
+
+######## Toolkit backends ########
+GDK_BACKEND=wayland,x11
+QT_QPA_PLATFORM=wayland;xcb
+SDL_VIDEODRIVER=wayland,x11,windows
+CLUTTER_BACKEND=wayland
+ELECTRON_OZONE_PLATFORM_HINT=auto
+
+####### XDG specifications #######
+XDG_CURRENT_DESKTOP=labwc
+XDG_SESSION_TYPE=wayland
+XDG_SESSION_DESKTOP=labwc
+
+######### Input method ##########
+QT_IM_MODULE=fcitx
+XMODIFIERS=@im=fcitx
+SDL_IM_MODULE=fcitx
+GLFW_IM_MODULE=ibus
+INPUT_METHOD=fcitx
+
+######### UI ##########
+GDK_SCALE=1
+
+############# Others #############
+_JAVA_AWT_WM_NONREPARENTING=1
