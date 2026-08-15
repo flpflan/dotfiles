@@ -7,6 +7,7 @@
     # "home/flpflan/common/desktop/wm/hyprland"
     # "home/flpflan/common/desktop/rice/caelestia"
     "home/flpflan/common/desktop/wm/niri"
+    # "home/flpflan/common/desktop/wm/labwc"
     "home/flpflan/common/desktop/rice/noctalia"
   ];
 
