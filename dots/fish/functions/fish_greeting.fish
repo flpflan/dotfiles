@@ -6,7 +6,7 @@ function fish_greeting
     # echo '  / /___/ /_/ /  __/ /  __(__  ) /_/ / /_/ /  '
     # echo '  \____/\__,_/\___/_/\___/____/\__/_/\__,_/   '
     # set_color normal
-    if not set -q NVIM
+    if not set -q NVIM; and not set -q YAZI_ID
         fastfetch --key-padding-left 5
     end
 end
