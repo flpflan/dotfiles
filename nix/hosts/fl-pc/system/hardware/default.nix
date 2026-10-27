@@ -5,7 +5,7 @@
     (modulesPath + "/installer/scan/not-detected.nix")
     # (modulesPath + "/profiles/headless.nix")
     # (modulesPath + "/profiles/minimal.nix")
-    ./bootloader.nix
+    ./bootloader
     ./kernel.nix
     ./disk.nix
     ./cpu.nix

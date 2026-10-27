@@ -1,0 +1,16 @@
+Add a NixOS icon mapping.
+
+Visor's built-in distro_icon() table has no entry for NixOS, so an entry whose
+title is "NixOS" falls back to linux.png. Map it to nixos.png, which the NixOS
+activation script installs into \EFI\visor\icons\.
+
+--- a/src/config/config_util.c
++++ b/src/config/config_util.c
+@@ -241,6 +241,7 @@
+         { L"suse",       L"opensuse.png" },
+         { L"pop",        L"pop.png" },
+         { L"ubuntu",     L"ubuntu.png" },
+         { L"void",       L"void.png" },
++        { L"nixos",      L"nixos.png" },
+         { NULL, NULL }
+     };

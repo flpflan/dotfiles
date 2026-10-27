@@ -1,0 +1,51 @@
+Sort NixOS BLS deployments by generation number, newest first.
+
+NixOS names BLS entries after a content hash and gives every generation the
+same sort-key ("nixos"), so Visor's directory-order fallback picks an arbitrary
+(usually oldest) generation as the default. NixOS writes the generation number
+into the "version" field ("Generation 614 NixOS ..."), so use that when both
+entries have one. Other BLS producers keep their sort-key ordering.
+
+--- a/src/config/config_bls.c
++++ b/src/config/config_bls.c
+@@ -56,6 +56,27 @@
+ #endif
+ }
+ 
++static int bls_generation_num(CHAR16 *version) {
++    static const CHAR16 word[] = L"Generation";
++    if (!version) return -1;
++    for (UINTN i = 0; version[i]; i++) {
++        if (version[i] != word[0]) continue;
++        UINTN k = 0;
++        while (word[k] && version[i + k] == word[k]) k++;
++        if (word[k]) continue;
++        UINTN j = i + k;
++        while (version[j] == ' ' || version[j] == '\t') j++;
++        int n = 0, got = 0;
++        while (version[j] >= '0' && version[j] <= '9') {
++            n = n * 10 + (version[j] - '0');
++            j++;
++            got = 1;
++        }
++        if (got) return n;
++    }
++    return -1;
++}
++
+ static int bls_deploy_precedes(bls_rec_t *a, bls_rec_t *b, int ia, int ib) {
+     int oa = a->ot_idx, ob = b->ot_idx;
+     if (oa >= 0 || ob >= 0) {
+@@ -71,6 +92,12 @@
+         if (c != 0) return c < 0;
+     }
+     if (a->sort_key && !b->sort_key) return 1;
+     if (!a->sort_key && b->sort_key) return 0;
++    /* NixOS BLS entries all share sort-key "nixos" and their filenames are
++     * content hashes, so directory order says nothing about age. Use the
++     * "Generation N" in version to put the newest deployment first. */
++    int ga = bls_generation_num(a->version);
++    int gb = bls_generation_num(b->version);
++    if (ga >= 0 && gb >= 0 && ga != gb) return ga > gb;
+     return ia < ib;
+ }

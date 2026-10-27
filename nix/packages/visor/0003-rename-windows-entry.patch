@@ -1,0 +1,27 @@
+Rename the detected Windows entry from "Windows Boot Manager" to "Windows".
+
+Visor hardcodes the display name of the Windows entry in both the cold-scan
+and hotplug paths. The firmware/BCD name is still "Windows Boot Manager", but
+the boot menu only needs a short label.
+
+--- a/src/config/config_discover.c
++++ b/src/config/config_discover.c
+@@ -378,7 +378,7 @@
+         if (!windows_found) {
+             for (int i = 0; windows_paths[i] != NULL; i++) {
+                 if (efi_file_exists_root(root, windows_paths[i])) {
+-                    CHAR16 *entry_name = efi_strdup(L"Windows Boot Manager");
++                    CHAR16 *entry_name = efi_strdup(L"Windows");
+                     CHAR16 *entry_icon = icon_path_for(L"windows.png");
+                     CHAR16 *entry_path = efi_strdup(windows_paths[i]);
+                     if (!entry_name || !entry_path) {
+--- a/src/config/config_hotplug.c
++++ b/src/config/config_hotplug.c
+@@ -222,7 +222,7 @@
+         for (int i = 0; win_paths[i]; i++) {
+             if (!efi_file_exists_root(root, win_paths[i])) continue;
+-            CHAR16 *entry_name = efi_strdup(L"Windows Boot Manager");
++            CHAR16 *entry_name = efi_strdup(L"Windows");
+             CHAR16 *entry_icon = icon_path_for(L"windows.png");
+             CHAR16 *entry_path = efi_strdup(win_paths[i]);
+             if (!entry_name || !entry_path ||
