@@ -8,5 +8,6 @@
     jq
     (ouch.override {enableUnfree = true;})
     agenix.packages.x86_64-linux.default
+    evtest
   ];
 }

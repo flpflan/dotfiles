@@ -2,7 +2,7 @@
 
 {
   home.packages = with pkgs; [
-      # lxgw-wenkai-screen
+      lxgw-wenkai-screen
       # lxgw-neoxihei-screen-full
       # fira
       nerd-fonts.fira-code
@@ -18,6 +18,7 @@
       noto-fonts-color-emoji
       # misans
       unifont
+      # comic-mono
   ];
   fonts.fontconfig = {
     enable = true;
