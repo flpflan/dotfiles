@@ -98,6 +98,13 @@ window-rule {
     // default-window-height {
     //     proportion 0.5;
     // }
+    // opacity 0.85 
+    // background-effect {
+    //     blur true
+    //     xray false
+    //     noise 0.03
+    //     saturation 1.2
+    // }
 }
 // ----- Dolphin -----
 window-rule {

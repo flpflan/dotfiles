@@ -2,7 +2,10 @@
 
 {
   nix.settings.experimental-features = ["nix-command" "flakes"];
-  nix.settings.substituters = ["https://cache.nixos.org"];
+  nix.settings.substituters = [
+    "https://mirror.sjtu.edu.cn/nix-channels/store"
+    "https://cache.nixos.org"
+  ];
   nix.settings.trusted-users = ["@wheel"];
   # nix.settings.warn-dirty = false;
   nixpkgs.config.allowUnfree = true;

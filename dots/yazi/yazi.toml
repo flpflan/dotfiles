@@ -18,20 +18,20 @@ cursor_blink = false
 
 [opener]
 edit = [
-    { run = 'direnv exec . ${EDITOR:=vi} "$@"', desc = "$EDITOR", block = true, for = "unix" },
-    { run = 'code "$@"', orphan = true, desc = "Code" },
+    { run = 'direnv exec . ${EDITOR:-vi} "%s"', desc = "$EDITOR", block = true, for = "unix" },
+    { run = 'code "%s"', orphan = true, desc = "Code" },
     { run = 'xdg-open %s1', orphan = true, for = "linux", desc = "XDG-Open" },
 ]
 play = [
-    { run = 'mpv --force-window "$@"', orphan = true },
-    { run = 'iina --no-stdin "$@"' },
+    { run = 'mpv --force-window "%s"', orphan = true },
+    { run = 'iina --no-stdin "%s"' },
     { run = '''mediainfo "$1"; echo "Press enter to exit"; read''', block = true, desc = "Show media info" },
     { run = 'xdg-open %s1', orphan = true, for = "linux", desc = "XDG-Open" },
 ]
 extract = [
     { run = 'ouch d -y %*', desc = "Extract here with ouch", for = "windows" },
-    { run = 'ouch d -y "$@"', desc = "Extract here with ouch", for = "unix" },
-    { run = 'ya pub extract --list "$@"', desc = "Extract here" },
+    { run = 'ouch d -y "%s"', desc = "Extract here with ouch", for = "unix" },
+    { run = 'ya pub extract --list "%s"', desc = "Extract here" },
     { run = '/Applications/MacZip.app/Contents/MacOS/MacZip "$1"', orphan = true, desc = "MacZip" },
     { run = 'xdg-open %s1', orphan = true, for = "linux", desc = "XDG-Open" },
 ]
@@ -41,7 +41,7 @@ subtitle = [
     { run = 'xdg-open %s1', orphan = true, for = "linux", desc = "XDG-Open" },
 ]
 view = [
-    { run = '''imv-dir "$@"''', orphan = true },
+    { run = '''imv-dir "%s"''', orphan = true },
     { run = 'xdg-open %s1', orphan = true, for = "linux", desc = "XDG-Open" },
 ]
 
@@ -51,7 +51,7 @@ for  = "linux"
 desc = "Set as wallpaper"
 
 [[opener.edit_age]]
-run   = 'cd ~/.dotfiles/nix/secrets; agenix -e $(realpath --relative-to=. "$@")'
+run   = 'cd ~/.dotfiles/nix/secrets; agenix -e $(realpath --relative-to=. "%s")'
 desc  = "Edit age file"
 block = true
 

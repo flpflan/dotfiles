@@ -7,11 +7,11 @@ binds {
     // APPLICATION LAUNCHING
     // ---------------------------------
     Mod+Return hotkey-overlay-title="Open a Terminal: foot" { spawn "foot"; }
-    Mod+Slash repeat=false hotkey-overlay-title="Run an Application: launcher" { spawn-sh "noctalia-shell ipc call launcher toggle"; }
-    Mod+Space repeat=false hotkey-overlay-title="Run an Application: launcher" { spawn-sh "noctalia-shell ipc call launcher toggle"; }
-    Mod+Ctrl+Comma hotkey-overlay-title="Setting" { spawn-sh "noctalia-shell ipc call settings toggle"; }
-    Mod+Ctrl+Delete hotkey-overlay-title="Open Session Menu" { spawn-sh "noctalia-shell ipc call sessionMenu toggle"; }
-    Ctrl+Alt+Q hotkey-overlay-title="Lock the Screen: lockScreen" { spawn-sh "noctalia-shell ipc call lockScreen lock"; }
+    Mod+Slash repeat=false hotkey-overlay-title="Run an Application: launcher" { spawn-sh "noctalia msg panel-toggle launcher"; }
+    Mod+Space repeat=false hotkey-overlay-title="Run an Application: launcher" { spawn-sh "noctalia msg panel-toggle launcher"; }
+    Mod+Ctrl+Comma hotkey-overlay-title="Setting" { spawn-sh "noctalia msg settings-toggle [context]"; }
+    Mod+Ctrl+Delete hotkey-overlay-title="Open Session Menu" { spawn-sh "noctalia msg panel-toggle session"; }
+    Ctrl+Alt+Q hotkey-overlay-title="Lock the Screen: lockScreen" { spawn-sh "noctalia msg session lock"; }
     Mod+E hotkey-overlay-title="File Exlorer" { spawn-sh "foot -a yazi -T yazi yazi"; }
     Ctrl+Shift+Escape repeat=false hotkey-overlay-title="System Monitor" { spawn-sh "foot -a btop -T btop btop"; }
     Mod+Alt+W hotkey-overlay-title="Web Browser" {
@@ -24,13 +24,13 @@ binds {
         spawn-sh "$VISUAL"
     }
     Mod+Semicolon repeat=false hotkey-overlay-title="Clipboard History" {
-        spawn-sh "noctalia-shell ipc call launcher clipboard"
+        spawn-sh "noctalia msg panel-toggle clipboard"
     }
     Mod+Apostrophe repeat=false hotkey-overlay-title="Emoji Search" {
-        spawn-sh "noctalia-shell ipc call launcher emoji"
+        spawn-sh "noctalia msg panel-toggle launcher /emo"
     }
     Mod+Shift+Semicolon repeat=false hotkey-overlay-title="Command Runner" {
-        spawn-sh "noctalia-shell ipc call launcher command"
+        spawn-sh "noctalia msg panel-toggle launcher /sh"
     }
 
     // ---------------------------------
@@ -54,16 +54,16 @@ binds {
     // ---------------------------------
     XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05+"; }
     XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05-"; }
-    XF86AudioMute        allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
-    XF86AudioMicMute     allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; }
+    XF86AudioMute repeat=false allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
+    XF86AudioMicMute repeat=false allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; }
 
     // ---------------------------------
     // MEDIA CONTROL
     // ---------------------------------
-    XF86AudioPlay        allow-when-locked=true { spawn-sh "playerctl play-pause"; }
-    XF86AudioStop        allow-when-locked=true { spawn-sh "playerctl stop"; }
-    XF86AudioPrev        allow-when-locked=true { spawn-sh "playerctl previous"; }
-    XF86AudioNext        allow-when-locked=true { spawn-sh "playerctl next"; }
+    XF86AudioPlay repeat=false allow-when-locked=true { spawn-sh "playerctl play-pause"; }
+    XF86AudioStop repeat=false allow-when-locked=true { spawn-sh "playerctl stop"; }
+    XF86AudioPrev repeat=false allow-when-locked=true { spawn-sh "playerctl previous"; }
+    XF86AudioNext repeat=false allow-when-locked=true { spawn-sh "playerctl next"; }
 
     // ---------------------------------
     // BRIGHTNESS CONTROL
@@ -256,13 +256,13 @@ binds {
     Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
     // Mod+Shift+P { spawn-sh "niri msg output \"eDP-1\" on"; }
     // Mod+Shift+O { spawn-sh "niri msg output \"eDP-1\" off"; }
-    Mod+Shift+P { spawn-sh "noctalia-shell ipc call monitors on"; }
-    Mod+Shift+O { spawn-sh "noctalia-shell ipc call monitors off"; }
+    Mod+Shift+P { spawn-sh "noctalia msg dpms-on"; }
+    Mod+Shift+O { spawn-sh "noctalia msg dpms-off"; }
 
     Mod+Shift+E { quit; }
     Ctrl+Alt+Delete { quit; }
 
-    Mod+Ctrl+Period hotkey-overlay-title="Control Center" { spawn-sh "noctalia-shell ipc call controlCenter toggle"; }
-    Mod+Ctrl+Slash hotkey-overlay-title="Toggle Bar" { spawn-sh "noctalia-shell ipc call bar toggle"; }
-    Mod+Ctrl+T hotkey-overlay-title="Wallpaper Selector" { spawn-sh "noctalia-shell ipc call wallpaper toggle"; }
+    Mod+Ctrl+Period hotkey-overlay-title="Control Center" { spawn-sh "noctalia msg panel-toggle control-center [tab]"; }
+    Mod+Ctrl+Slash hotkey-overlay-title="Toggle Bar" { spawn-sh "noctalia msg bar-toggle"; }
+    Mod+Ctrl+T hotkey-overlay-title="Wallpaper Selector" { spawn-sh "noctalia msg panel-toggle wallpaper"; }
 }

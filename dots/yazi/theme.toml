@@ -2,7 +2,7 @@
 
 [flavor]
 light = "noctalia"
-dark  = "noctalia"
+dark = "noctalia"
 # dark  = "catppuccin-macchiato"
 # light = "catppuccin-latte"
 

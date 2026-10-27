@@ -1,6 +1,5 @@
 {
   config,
-  noctalia,
   fl-dots,
   ...
 }:
@@ -10,18 +9,10 @@ let
   outOfStore = config.lib.file.mkOutOfStoreSymlink;
 in
 {
-  imports = [
-    noctalia.homeModules.default
-  ];
-
-  programs.noctalia-shell = {
+  programs.noctalia = {
     enable = true;
-    systemd.enable = false;
+    checkConfig = false;
   };
-
-  # programs.noctalia = {
-  #   enable = true;
-  # };
 
   xdg.configFile."noctalia".source = outOfStore "${dots}/noctalia";
 }

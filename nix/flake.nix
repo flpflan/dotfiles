@@ -2,15 +2,18 @@
   description = "flpflan's NixOS flake";
 
   nixConfig = {
+    allow-import-from-derivation = false;
     extra-substituters = [
       "https://nix-community.cachix.org"
-      "https://attic.xuyh0120.win/lantian"
-      "https://noctalia.cachix.org"
+      "https://cache.lantian.pub/lantian" 
+      # "https://noctalia.cachix.org"
+      # "https://cache.numtide.com"
     ];
     extra-trusted-public-keys = [
       "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
-      "lantian:EeAUQ+W+6r7EtwnmYjeVwx5kOGEBpjlBfPlzGlTNvHc="
-      "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4="
+      "lantian:WVGO7vsRMSEN+h7Lp7kv6SAmrkEXgUGbbXm7jMDjBuQ="
+      # "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4="
+      # "niks3.numtide.com-1:DTx8wZduET09hRmMtKdQDxNNthLQETkc/yaX7M4qK0g="
     ];
   };
 
@@ -94,10 +97,14 @@
       url = "github:ryantm/agenix";
       inputs = {
         nixpkgs.follows = "nixpkgs";
-        darwin.follows = "";
-        home-manager.follows = "home-manager";
+        # darwin.follows = "";
+        # home-manager.follows = "home-manager";
       };
     };
+    # llm-agents = {
+    #   url = "github:numtide/llm-agents.nix";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
     # disko = {
     #   url = "github:nix-community/disko";
     #   inputs.nixpkgs.follows = "nixpkgs";
@@ -111,14 +118,6 @@
     #   url = "github:caelestia-dots/shell";
     #   inputs.nixpkgs.follows = "nixpkgs";
     # };
-    noctalia = {
-      url = "github:noctalia-dev/noctalia";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    noctalia-greeter = {
-      url = "github:noctalia-dev/noctalia-greeter";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     nvim = {
       url = "path:../nvim";
       inputs.nixpkgs.follows = "nixpkgs";
