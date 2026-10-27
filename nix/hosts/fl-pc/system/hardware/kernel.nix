@@ -12,6 +12,10 @@
       "nvme" "xhci_pci" "usb_storage" "usbhid" "ext4" "btrfs" "dm_mod"
     ];
     kernelModules = [];
+
+    # clevis.enable = false;
+    # services.bcache.enable = false;
+    # systemd.dbus.enable = false;
   };
 
   boot = {

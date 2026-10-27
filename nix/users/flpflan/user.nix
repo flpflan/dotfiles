@@ -12,7 +12,7 @@ in {
     extraGroups = [
       "networkmanager"
       "wheel"
-      # "input"
+      "input"
       # "video"
       # "i2c"
       "dialout" # access to serial devices
