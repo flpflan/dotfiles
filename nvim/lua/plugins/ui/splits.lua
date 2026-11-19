@@ -2,10 +2,10 @@ plugin("smart-splits.nvim")
   :event_defer()
   :on_require("smart-splits")
   :opts({
-    resize_mode = {
-      silent = true,
-      quit_key = "",
-    },
+    -- resize_mode = {
+    --   silent = true,
+    --   quit_key = "",
+    -- },
   })
   :keys {
     kmap("n", "<C-Right>", klazy("smart-splits").resize_right(), "resize right"),

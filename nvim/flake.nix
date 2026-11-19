@@ -7,6 +7,10 @@
     #   url = "github:nix-community/neovim-nightly-overlay";
     #   inputs.nixpkgs.follows = "nixpkgs";
     # };
+    "plugins-dial" = {
+      url = "github:monaqa/dial.nvim";
+      flake = false;
+    };
     "plugins-nvim-better-n" = {
       url = "github:jonatan-branting/nvim-better-n";
       flake = false;
@@ -35,10 +39,10 @@
     #   url = "github:LiadOz/nvim-dap-repl-highlights";
     #   flake = false;
     # };
-    "plugins-nvim-toggler" = {
-      url = "github:nguyenvukhang/nvim-toggler";
-      flake = false;
-    };
+    # "plugins-nvim-toggler" = {
+    #   url = "github:nguyenvukhang/nvim-toggler";
+    #   flake = false;
+    # };
     # "plugins-sweetie" = {
     #   url = "github:NTBBloodbath/sweetie.nvim";
     #   flake = false;

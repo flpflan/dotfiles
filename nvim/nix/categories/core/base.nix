@@ -90,7 +90,8 @@
       smart-paste
       smart-motion
       garbage-day
-      nvim-toggler
+      # nvim-toggler
+      dial
       nvim-better-n
       # lualine-lsp-progress
       # esqueleto

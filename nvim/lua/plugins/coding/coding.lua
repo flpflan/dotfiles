@@ -1,17 +1,66 @@
-plugin("nvim-toggler")
+-- plugin("nvim-toggler")
+--   :event_defer()
+--   :keys({ kmap({ "n", "x" }, "<leader>i", klazy("nvim-toggler").toggle(), "Toggle Invert") })
+--   :opts {
+--     remove_default_keybinds = true,
+--     inverses = {
+--       ["Yes"] = "No",
+--       ["yes"] = "no",
+--       ["Disable"] = "Enable",
+--       ["Disabled"] = "Enabled",
+--       ["disabled"] = "enabled",
+--       ["ON"] = "OFF",
+--       ["on"] = "off",
+--     },
+--   }
+
+plugin("dial")
   :event_defer()
-  :keys({ kmap({ "n", "x" }, "<leader>i", klazy("nvim-toggler").toggle(), "Toggle Invert") })
-  :opts {
-    remove_default_keybinds = true,
-    inverses = {
-      ["Yes"] = "No",
-      ["yes"] = "no",
-      ["Disable"] = "Enable",
-      ["Disabled"] = "Enabled",
-      ["disabled"] = "enabled",
-      ["ON"] = "OFF",
-      ["on"] = "off",
-    },
+  :config(function()
+    local augend = require "dial.augend"
+    local function toggler(elms, word, cyclic)
+      return augend.constant.new {
+        elements = elms,
+        word = word or true,
+        cyclic = cyclic or true,
+      }
+    end
+    require("dial.config").augends:register_group {
+      default = {
+        augend.integer.alias.decimal_int,
+        augend.integer.alias.binary,
+        augend.integer.alias.octal,
+        augend.integer.alias.hex,
+        augend.semver.alias.semver,
+        augend.date.alias["%Y-%m-%d"],
+        augend.date.alias["%Y/%m/%d"],
+        augend.date.alias["%Y年%-m月%-d日"],
+        augend.constant.alias.alpha,
+        augend.constant.alias.Alpha,
+      },
+      toggler = {
+        toggler({ "&&", "||" }, false, true),
+        toggler({ "++", "--" }, false, true),
+        toggler({ ">", "<" }, false, true),
+        toggler { "and", "or" },
+        toggler { "let", "const" },
+        toggler { "Yes", "No" },
+        toggler { "yes", "no" },
+        toggler { "disable", "enable" },
+        toggler { "Disable", "Enable" },
+        toggler { "Disabled", "Enabled" },
+        toggler { "disabled", "enabled" },
+        toggler { "ON", "OFF" },
+        toggler { "on", "off" },
+        augend.constant.alias.bool,
+        augend.constant.alias.Bool,
+      },
+    }
+  end)
+  :keys {
+    kmap("n", "<C-a>", klazy("dial.map").manipulate("increment", "normal")),
+    kmap("n", "<C-x>", klazy("dial.map").manipulate("decrement", "normal")),
+    kmap("n", "<leader>i", klazy("dial.map").manipulate("increment", "normal", "toggler"), "Toggle Invert"),
   }
 
 plugin("treesj")

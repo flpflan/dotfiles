@@ -2,11 +2,11 @@
   "nodes": {
     "nixCats": {
       "locked": {
-        "lastModified": 1777273601,
-        "narHash": "sha256-xBUa8Tl9V7IXI+VmLEuDc81La/EhoSn1C3EVSnJ3cfU=",
+        "lastModified": 1787720571,
+        "narHash": "sha256-jvoTU61m2p2knJMIvDwWqkhf5CrmKCkiCO0KR3GIryw=",
         "owner": "BirdeeHub",
         "repo": "nixCats-nvim",
-        "rev": "f69ea013e328841a7def7037ed59788a76be8816",
+        "rev": "8fcebab53bfe800b963e8db5e28b63baa65850d3",
         "type": "github"
       },
       "original": {
@@ -17,11 +17,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1785975029,
-        "narHash": "sha256-X44cn5rzytELc3NNoQsh0aLkjWA/QzPfc6HPQmsG3sU=",
+        "lastModified": 1794495034,
+        "narHash": "sha256-E0hYoioqUtM2XmPPvYYpJgdADF5AW9oOoPSEiM9dTHQ=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "70ce234312134a463ba7728e94da2486a1d237ac",
+        "rev": "2074cc672349f14240fb7ea90d509e0b643e9dd4",
         "type": "github"
       },
       "original": {
@@ -47,6 +47,22 @@
         "type": "github"
       }
     },
+    "plugins-dial": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1766327587,
+        "narHash": "sha256-J2HU746yz8iHos7od5kIdEUd4/bgAPGwC38fLZ4gK+E=",
+        "owner": "monaqa",
+        "repo": "dial.nvim",
+        "rev": "f2634758455cfa52a8acea6f142dcd6271a1bf57",
+        "type": "github"
+      },
+      "original": {
+        "owner": "monaqa",
+        "repo": "dial.nvim",
+        "type": "github"
+      }
+    },
     "plugins-exrc": {
       "flake": false,
       "locked": {
@@ -66,11 +82,11 @@
     "plugins-garbage-day": {
       "flake": false,
       "locked": {
-        "lastModified": 1772039903,
-        "narHash": "sha256-GabA9whTRQpBbQjc5pyGGVnehBG2i+lwiqJLx31tTLE=",
+        "lastModified": 1787099900,
+        "narHash": "sha256-I5P+1DZUU0Gy+sKJURVSDxq/T20NnQ/pve7ZSDOaIMo=",
         "owner": "zeioth",
         "repo": "garbage-day.nvim",
-        "rev": "2fcc56556281de8ee871a5f3beb9db7ab747ef32",
+        "rev": "225b715cf7e502977e5e040219cf5009eed70ee1",
         "type": "github"
       },
       "original": {
@@ -127,30 +143,14 @@
         "type": "github"
       }
     },
-    "plugins-nvim-toggler": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1718462352,
-        "narHash": "sha256-5+pFsPtA2u1m5tjkJHW9hDb/dM848jdhwnu3OWKgeIU=",
-        "owner": "nguyenvukhang",
-        "repo": "nvim-toggler",
-        "rev": "467808600882fd6c9e33b9dbc4889b1b80cfd917",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nguyenvukhang",
-        "repo": "nvim-toggler",
-        "type": "github"
-      }
-    },
     "plugins-oil-vcs-status": {
       "flake": false,
       "locked": {
-        "lastModified": 1784645049,
-        "narHash": "sha256-qq1/fu7klmPTsHcYZxZ6w1olvxy0KgSss1K0mocN/2A=",
+        "lastModified": 1792141439,
+        "narHash": "sha256-xgFh7nKi4rBbe36JOedGp9sLTacuiBUodkTGHrfj9Fg=",
         "owner": "SirZenith",
         "repo": "oil-vcs-status",
-        "rev": "7efd000e9f871ba93f8a73012b74a5ff011dced9",
+        "rev": "bf573c62110e6baa09d9d38728933d4cb77fdf45",
         "type": "github"
       },
       "original": {
@@ -178,11 +178,11 @@
     "plugins-smart-paste": {
       "flake": false,
       "locked": {
-        "lastModified": 1784405620,
-        "narHash": "sha256-WuKj0rnh+8lxjXZT4utXNoW169BSG4bVY1xBuUQir3c=",
+        "lastModified": 1792007242,
+        "narHash": "sha256-fg8Y0pNMQKjRGzxmlIY/vTvVN+mEzna7WECJ4rem1W4=",
         "owner": "nemanjamalesija",
         "repo": "smart-paste.nvim",
-        "rev": "bb46e9a06a728d65f004ad709ff7ee0249717e5e",
+        "rev": "dc70a09bd61266744526557944c5f0b084f0f4f8",
         "type": "github"
       },
       "original": {
@@ -228,12 +228,12 @@
         "nixCats": "nixCats",
         "nixpkgs": "nixpkgs",
         "plugins-cmp-dbee": "plugins-cmp-dbee",
+        "plugins-dial": "plugins-dial",
         "plugins-exrc": "plugins-exrc",
         "plugins-garbage-day": "plugins-garbage-day",
         "plugins-keytrail": "plugins-keytrail",
         "plugins-neotab": "plugins-neotab",
         "plugins-nvim-better-n": "plugins-nvim-better-n",
-        "plugins-nvim-toggler": "plugins-nvim-toggler",
         "plugins-oil-vcs-status": "plugins-oil-vcs-status",
         "plugins-smart-motion": "plugins-smart-motion",
         "plugins-smart-paste": "plugins-smart-paste",
