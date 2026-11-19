@@ -31,14 +31,14 @@
     };
   };
 
-  services.scx = {
+  services.scx-loader = {
     enable = false;
-    package = pkgs.scx.rustscheds;
-    scheduler = "scx_lavd";
-    extraArgs = [
-      # "--autopilot" # Based on system's load
-      "--autopower" # Based on energy profile
-    ];
+    schedsPackages = [ pkgs.scx.rustscheds ];
+    config.default_sched = "scx_lavd";
+    # extraArgs = [
+    #   # "--autopilot" # Based on system's load
+    #   "--autopower" # Based on energy profile
+    # ];
   };
 
   services.upower.enable = true;

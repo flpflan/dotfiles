@@ -10,6 +10,7 @@
       # stylix.homeModules.stylix
       "home/flpflan/common/global/agenix.nix"
       # "home/flpflan/common/global/chaotic.nix"
+      "home/flpflan/common/global/multiverse.nix"
     ]
     ++ tools.scan ./.;
 

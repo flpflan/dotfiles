@@ -24,6 +24,7 @@ in
         # })
         # zulu21
         # zulu17
+        temurin-jre-bin-25
         temurin-jre-bin-21
         temurin-jre-bin-17
         temurin-jre-bin-8

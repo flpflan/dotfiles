@@ -12,6 +12,7 @@ in
   };
   system = "x86_64-linux";
   modules = (scan ./.) ++ [
+    (relative "hosts/common/multiverse.nix")
     # (relative "hosts/common/chaotic.nix")
     (relative "hosts/common/agenix.nix")
     (relative "hosts/common/facter.nix")

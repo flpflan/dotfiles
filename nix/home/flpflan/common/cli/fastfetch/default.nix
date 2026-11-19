@@ -24,7 +24,7 @@ let
 in 
 {
   home.packages = [
-    fastfetch
+    fastfetch pkgs.procps
   ];
   xdg.configFile."fastfetch" = {
     source = outOfStore "${dots}/fastfetch";

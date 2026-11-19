@@ -5,9 +5,9 @@
     allow-import-from-derivation = false;
     extra-substituters = [
       "https://nix-community.cachix.org"
-      "https://cache.lantian.pub/lantian" 
+      "https://cache.lantian.pub/lantian"
       # "https://noctalia.cachix.org"
-      "https://cache.numtide.com"
+      # "https://cache.numtide.com"
     ];
     extra-trusted-public-keys = [
       "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
@@ -73,6 +73,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    multiverse.url = "github:fzakaria/nixpkgs-multiverse";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -101,10 +102,10 @@
         # home-manager.follows = "home-manager";
       };
     };
-    llm-agents = {
-      url = "github:numtide/llm-agents.nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # llm-agents = {
+    #   url = "github:numtide/llm-agents.nix";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
     # disko = {
     #   url = "github:nix-community/disko";
     #   inputs.nixpkgs.follows = "nixpkgs";

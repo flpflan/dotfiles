@@ -1,6 +1,6 @@
-{ pkgs, llm-agents, ... }:
+{ pkgs, ... }:
 {
-  home.packages = with llm-agents.packages.${pkgs.stdenv.hostPlatform.system}; [
-    pi
-  ];
+  # home.packages = with llm-agents.packages.${pkgs.stdenv.hostPlatform.system}; [
+  #   pi
+  # ];
 }
